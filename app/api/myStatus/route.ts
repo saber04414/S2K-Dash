@@ -17,7 +17,7 @@ export async function GET() {
             const response_data = await response.data;
             const filtered_data = response_data.filter((res_item: any) => mycoldkeys.includes(res_item.coldkey));
             const total_stake = filtered_data.reduce((acc: number, item: any) => acc + item.stake, 0);
-            const total_daily = filtered_data.reduce((acc: number, item: any) => acc + item.taoPerDay, 0);
+            const total_daily = filtered_data.reduce((acc: number, item: any) => acc + item.alphaPerDay, 0);
             const subnet_info = subnet_data.find((subnet: any) => subnet.subnet === subnet_uid);
             data.push({ subnet: subnet_uid, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, price: subnet_info.price, marketcap: subnet_info.marketcap, mydata: filtered_data });
         }

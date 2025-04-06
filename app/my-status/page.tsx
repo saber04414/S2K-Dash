@@ -50,7 +50,7 @@ const MyStatusPage = () => {
                                                     <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(subitem.hotkey)}>{showKey(subitem.hotkey)}</td>
                                                     <td className='text-center py-2'>{showNumber(subitem.incentive, 2)}</td>
                                                     <td className='text-center py-2'>{showNumber(subitem.minerPerformance, 2)}</td>
-                                                    <td className='text-center py-2'>{showNumber(subitem.taoPerDay * item.price, 3)} 𝞃 / {showNumber(subitem.taoPerDay, 3)} {item.letter}</td>
+                                                    <td className='text-center py-2'>{showNumber(subitem.alphaPerDay * item.price, 3)} 𝞃 / {showNumber(subitem.alphaPerDay, 3)} {item.letter}</td>
                                                 </tr>
                                             ))
                                         }

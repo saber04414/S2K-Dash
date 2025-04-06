@@ -12,6 +12,9 @@ const showTaoNumber = (number: number) => {
     return parseFloat(taoNumber.toString()).toFixed(2)
 }
 const showNumber = (number: number, unit: number) => {
-    return parseFloat(number.toString()).toFixed(unit)
+    if (number)
+        return parseFloat(number.toString()).toFixed(unit)
+    else
+        return '0'
 }
 export { copyKey, showKey, showTaoNumber, showNumber }
