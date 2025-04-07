@@ -3,7 +3,6 @@ import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
 import PercentBar from "@/components/PercentBar";
 import { copyKey, showKey, showTaoNumber } from "@/lib/main";
 import { fetcher } from "@/utils/fetcher";
-import { ChevronDown } from "lucide-react";
 import useSWR from 'swr'
 
 export default function Home() {
