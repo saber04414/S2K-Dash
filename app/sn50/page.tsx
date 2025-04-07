@@ -48,7 +48,7 @@ const SynthPage = () => {
     return (
         <div className='w-full flex flex-col gap-5 justify-center'>
             <div className='text-2xl font-bold text-center'>Subnet 50</div>
-            <div className='flex flex-row gap-1 w-full items-center justify-center'>
+            <div className='flex flex-start gap-1 w-full items-center overflow-x-auto'>
                 {
                     miners?.map((miner, index) => <ValidateItem key={index} miner={miner} />)
                 }

@@ -20,7 +20,7 @@ const DistributionPage = () => {
                 <div className='text-2xl font-bold text-center'>Registration</div>
                 <div className='flex flex-col gap-10 w-full'>
                     {
-                        data && data.result_data.length > 0 && data.result_data.map((item: any) => (
+                        data && data.result_data && data.result_data.length > 0 && data.result_data.map((item: any) => (
                             <div className='flex flex-col gap-5 items-center justify-center w-full'>
                                 <div className='bg-slate-700 flex flex-row justify-between py-2 px-3 w-full'>
                                     <div className='text-lg'>Subnet {item.netuid}</div>

@@ -1,5 +1,6 @@
 "use client"
 import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
+import PercentBar from "@/components/PercentBar";
 import { copyKey, showKey, showTaoNumber } from "@/lib/main";
 import { fetcher } from "@/utils/fetcher";
 import { ChevronDown } from "lucide-react";
@@ -26,6 +27,7 @@ export default function Home() {
               <th className='text-center py-2'>Coldkey</th>
               <th className='text-center py-2'>Stake</th>
               <th className='text-center py-2'>Free</th>
+              <th className='text-center py-2'>Rate</th>
               <th className='text-center py-2'>Total</th>
               <th className='text-center py-2'></th>
             </tr>
@@ -39,8 +41,8 @@ export default function Home() {
                   <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showKey(item.coldkey)}</td>
                   <td className='text-center py-2'>{showTaoNumber(item.staked)} 𝞃</td>
                   <td className='text-center py-2'>{showTaoNumber(item.free)} 𝞃</td>
+                  <td className='text-center py-2'><PercentBar stake={item.staked} free={item.free} /></td>
                   <td className='text-center py-2'>{showTaoNumber(item.total)} 𝞃</td>
-                  <td className='text-center py-2 cursor-pointer'><ChevronDown /></td>
                 </tr>
               ))
             }
