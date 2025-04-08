@@ -6,6 +6,8 @@ export const revalidate = 0;
 export async function GET() {
     const coldkeys = await prisma.coldkey.findMany();
     const data = []
+    let total_staked = 0
+    let total_free = 0
     for (const cold of coldkeys) {
         const { name, coldkey } = cold
         try {
@@ -18,10 +20,12 @@ export async function GET() {
                 coldkey: coldkey,
                 name: name
             }
+            total_staked += staked
+            total_free += free
             data.push(returned_data)
         } catch (error) {
             console.error(error)
         }
     }
-    return NextResponse.json(data);
+    return NextResponse.json({ data, total_staked, total_free });
 }

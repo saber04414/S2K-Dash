@@ -8,12 +8,12 @@ import useSWR from 'swr'
 export default function Home() {
   const { data, error, isLoading } = useSWR('/api/getDashboard', fetcher);
   if (isLoading) return <div className='w-full h-full'>
-        <ImageLoadingSpinner />
-    </div>
-    if (error) return <div className='w-full h-full flex flex-col gap-3 items-center justify-center'>
-        <img src="/mark.png" className='w-32 h-24' alt='' />
-        Data Fetching Error
-    </div>
+    <ImageLoadingSpinner />
+  </div>
+  if (error) return <div className='w-full h-full flex flex-col gap-3 items-center justify-center'>
+    <img src="/mark.png" className='w-32 h-24' alt='' />
+    Data Fetching Error
+  </div>
   if (data) {
     return (
       <div className="w-full flex flex-col gap-5 items-center justify-center">
@@ -33,7 +33,7 @@ export default function Home() {
           </thead>
           <tbody>
             {
-              data && data.length > 0 && data.map((item: any, index: number) => (
+              data && data.data.length > 0 && data.data.map((item: any, index: number) => (
                 <tr key={index}>
                   <td className="text-center py-2">{index + 1}</td>
                   <td className='text-center py-2'>{item.name}</td>
@@ -45,6 +45,18 @@ export default function Home() {
                 </tr>
               ))
             }
+            <tr>
+              <td colSpan={9}><div className='h-[2px] w-full bg-slate-700'></div></td>
+            </tr>
+            <tr key="total">
+              <td className="text-center py-2"></td>
+              <td className='text-center py-2'></td>
+              <td className='text-center py-2'></td>
+              <td className='text-center py-2'>{showTaoNumber(data.total_staked)} 𝞃</td>
+              <td className='text-center py-2'>{showTaoNumber(data.total_free)} 𝞃</td>
+              <td className='text-center py-2'><PercentBar stake={data.total_staked} free={data.total_free} /></td>
+              <td className='text-center py-2'>{showTaoNumber(data.total_staked + data.total_free)} 𝞃</td>
+            </tr>
           </tbody>
         </table>
       </div >
