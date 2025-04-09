@@ -15,6 +15,7 @@ const Sidebar = () => {
         { name: 'My Status', href: '/my-status' },
         { name: 'Distribution', href: '/distribution' },
         { name: 'Registration', href: '/registration' },
+        { name: 'Reg Cost', href: '/regcost' },
         { name: 'Subnet 50', href: '/sn50' },
         { name: 'APIs', href: '/apis' },
     ]
