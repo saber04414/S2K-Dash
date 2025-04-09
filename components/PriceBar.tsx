@@ -5,7 +5,7 @@ import useSWR from 'swr'
 import { showNumber } from '@/lib/main'
 
 const PriceBar = () => {
-    const { data, error, isLoading } = useSWR('/api/getPrice', fetcher)
+    const { data, error, isLoading } = useSWR('/api/getPrice', fetcher, { revalidateOnFocus: false, revalidateOnReconnect: false, revalidateOnBlur: false, revalidateIfStale: false, revalidateOnWindowFocus: false, refreshInterval: 1000 })
     if (isLoading) return <div className='w-full h-full'>
         ...
     </div>
