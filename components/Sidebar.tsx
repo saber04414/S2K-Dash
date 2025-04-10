@@ -10,7 +10,7 @@ const Sidebar = () => {
     const router = useRouter();
     const pathName = usePathname()
     const menus = [
-        { name: 'Dashboard', href: '/' },
+        { name: 'Dashboard', href: '/dashboard' },
         { name: 'Register', href: '/register' },
         { name: 'My Status', href: '/my-status' },
         { name: 'Distribution', href: '/distribution' },
