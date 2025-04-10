@@ -32,7 +32,7 @@ const RegCostPage = () => {
                             data.data && data.data.map((item: any, index: number) => (
                                 <tr key={index}>
                                     <td className='text-center py-2'>{item.netuid}</td>
-                                    <td className='text-center py-2'>{showNumber(item.registrationCost, 5)}</td>
+                                    <td className='text-center py-2'>{showNumber(item.registrationCost[0], 5)}, {showNumber(item.registrationCost[1], 5)}, {showNumber(item.registrationCost[2], 5)}</td>
                                 </tr>
                             ))
                         }
