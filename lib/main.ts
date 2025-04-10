@@ -17,4 +17,18 @@ const showNumber = (number: number, unit: number) => {
     else
         return '0'
 }
-export { copyKey, showKey, showTaoNumber, showNumber }
+
+const showTimestampToDateTime = (timestamp: number): string => {
+    console.log({ timestamp })
+    const date = new Date(timestamp);
+    const pad = (n: number) => n.toString().padStart(2, '0');
+
+    const year = date.getFullYear();
+    const month = pad(date.getMonth() + 1);
+    const day = pad(date.getDate());
+    const hour = pad(date.getHours());
+    const minute = pad(date.getMinutes());
+
+    return `${year}-${month}-${day} ${hour}:${minute}`;
+};
+export { copyKey, showKey, showTaoNumber, showNumber, showTimestampToDateTime }
