@@ -10,7 +10,7 @@ const ImageLoadingSpinner = () => {
       <img
         src={loadingImages}
         alt="Loading..."
-        className="w-32 h-24 object-contain transition-all duration-300"
+        className="w-32 h-32 object-contain transition-all duration-300"
       />
     </div>
   )

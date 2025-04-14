@@ -34,7 +34,7 @@ export default function Login() {
         onSubmit={loginHandler}
         className="flex flex-col items-center justify-center gap-y-10 p-10 w-fit mx-auto"
       >
-        <Image src="/mark.png" width={100} height={60} className='w-32 h-20' alt='' />
+        <Image src="/mark.png" width={100} height={60} className='w-32 h-32' alt='' />
         <div className='flex flex-col gap-3'>
           <div className='flex flex-row items-center gap-3 border border-slate-800 rounded-md px-2'>
             <Key className='text-white' size={15} />
