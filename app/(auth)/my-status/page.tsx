@@ -59,6 +59,9 @@ const MyStatusPage = () => {
                                 <div className='flex flex-row justify-between items-end'>
                                     <div className='text-xl text-semibold text-left underline'>Subnet {item.subnet}</div>
                                     <div className='flex flex-row gap-5 items-center'>
+                                        <div className='text-sm pr-5'>Alpha: {showNumber(item.price, 4)} 𝞃</div>
+                                        <div className='text-sm pr-5'>Registration: {showNumber(item.regcost, 4)} 𝞃</div>
+
                                         <div className='text-sm pr-5'>Mechanism: {incentive_countdowns[index] === -1
                                             ? '-1'
                                             : `${Math.floor(incentive_countdowns[index] / 3600)}h ${Math.floor((incentive_countdowns[index] % 3600) / 60)}m ${incentive_countdowns[index] % 60}s`

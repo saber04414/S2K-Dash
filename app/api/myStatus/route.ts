@@ -24,7 +24,10 @@ export async function GET() {
             const total_stake = filtered_data.reduce((acc: number, item: any) => acc + item.stake, 0);
             const total_daily = filtered_data.reduce((acc: number, item: any) => acc + item.alphaPerDay, 0);
             const subnet_info = subnet_data.find((subnet: any) => subnet.subnet === subnet_uid);
-            data.push({ subnet: subnet_uid, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, price: subnet_info.price, marketcap: subnet_info.marketcap, mydata: filtered_data });
+            const taox_api = await axios.post(`https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`, { netuid: subnet_uid })
+            const price = await taox_api.data
+            const response_reg = await axios.post(`https://taomarketcap.com/api/subnets/${subnet_uid}/burn`)
+            data.push({ subnet: subnet_uid, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, price: price.price, marketcap: subnet_info.marketcap, mydata: filtered_data, regcost: response_reg.data[response_reg.data.length - 1].value });
         }
         const bittensor_data = await queryBittensorData(mysubnets);
         return NextResponse.json({ data, bittensor_data }, { status: 201 });
