@@ -14,16 +14,12 @@ export async function GET() {
     const subnets_slice = subnets.filter((item:any)=> merged.includes(item.subnet))
     try {
         for(const subnet of subnets_slice) {
-            const allowres = await axios.get(`https://taomarketcap.com/api/subnets/${subnet.subnet}/sidebar`)
-            const allowdata = allowres.data.networkRegistrationAllowed
-            console.log({allowdata})
             const response = await axios.post(`https://taomarketcap.com/api/subnets/${subnet.subnet}/burn`)
             const response_data = await response.data;
             const res = {
                 netuid: subnet.subnet,
                 name: subnet.name,
                 letter: subnet.letter,
-                registration: allowdata,
                 registrationCost: response_data.slice(-5)
             }
             data.push(res)
