@@ -27,7 +27,16 @@ export async function GET() {
             const taox_api = await axios.post(`https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`, { netuid: subnet_uid })
             const price = await taox_api.data
             const response_reg = await axios.post(`https://taomarketcap.com/api/subnets/${subnet_uid}/burn`)
-            data.push({ subnet: subnet_uid, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, price: price.price, marketcap: subnet_info.marketcap, mydata: filtered_data, regcost: response_reg.data[response_reg.data.length - 1].value });
+
+            //danger list
+            const danger_list = response_data.filter((res_item: any) => res_item.miner === true && res_item.immunityPeriod < 0 && res_item.validator === false).sort((a: any, b: any) => a.registeredAt - b.registeredAt).sort((a: any, b: any) => a.incentive - b.incentive).map((item: any, i: number) => ({
+                ...item, ranking: i+1
+            })).slice(0, 6);
+            const filtered_danger_list = danger_list.filter((item: any) => mycoldkeys.includes(item.coldkey));
+            const final_data = filtered_data.map((item: any) => ({
+                ...item, danger: filtered_danger_list.find((danger: any) => danger.hotkey === item.hotkey) || null
+            }));
+            data.push({ subnet: subnet_uid, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value });
         }
         const bittensor_data = await queryBittensorData(mysubnets);
         return NextResponse.json({ data, bittensor_data }, { status: 201 });

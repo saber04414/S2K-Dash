@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { fetcher } from '@/utils/fetcher'
 import { showKey, copyKey, showNumber } from '@/lib/main'
-import { Immune, Active } from '@/components/MinerIcon'
+import { Immune, Active, Danger } from '@/components/MinerIcon'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
 
 const MyStatusPage = () => {
@@ -92,7 +92,7 @@ const MyStatusPage = () => {
                                                 <tr key={subindex}>
                                                     <td className='text-center py-2'>{subindex + 1}</td>
                                                     <td className='text-center py-2'>{subitem.uid}</td>
-                                                    <td className='text-center py-2'>{subitem.immunityPeriod > 0 ? <Immune /> : <Active />}</td>
+                                                    <td className='text-center py-2'>{ subitem.danger == null && (subitem.immunityPeriod > 0 ? <Immune /> : <Active />)} {subitem.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{subitem.danger.ranking}</span> : null}</td>
                                                     <td className='text-center py-2'>{showNumber(subitem.stake * item.price, 2)} 𝞃 / {showNumber(subitem.stake, 2)} {item.letter}</td>
                                                     <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(subitem.coldkey)}>{showKey(subitem.coldkey)}</td>
                                                     <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(subitem.hotkey)}>{showKey(subitem.hotkey)}</td>
