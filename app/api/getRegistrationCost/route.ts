@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 0;
 import axios from 'axios';
 import prisma from '@/lib/prisma';
+import { skip } from 'node:test';
 export async function GET() {
     const data = []
     const subnets_res = await axios.get('https://taomarketcap.com/api/subnets')
@@ -14,12 +15,16 @@ export async function GET() {
     const subnets_slice = subnets.filter((item:any)=> merged.includes(item.subnet))
     try {
         for(const subnet of subnets_slice) {
+            const allowres = await axios.post(`https://taoxnet.io/api/v1/netuid/paramUpdate?network=mainnet`, {netuid: subnet.subnet, skip: 0, take: 10})
+            const allowdata = await allowres.data
+            const registrationStatus = allowdata.data.param
             const response = await axios.post(`https://taomarketcap.com/api/subnets/${subnet.subnet}/burn`)
             const response_data = await response.data;
             const res = {
                 netuid: subnet.subnet,
                 name: subnet.name,
                 letter: subnet.letter,
+                registration: registrationStatus,
                 registrationCost: response_data.slice(-5)
             }
             data.push(res)

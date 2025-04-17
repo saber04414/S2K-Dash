@@ -5,6 +5,7 @@ import { fetcher } from '@/utils/fetcher';
 import React from 'react'
 import useSWR from 'swr';
 import { LineChart, Line, Tooltip } from 'recharts';
+import { Allow, Disable } from '@/components/MinerIcon';
 
 const CustomTooltip = ({ active, payload }: any) => {
     if (active && payload && payload.length) {
@@ -40,6 +41,7 @@ const RegCostPage = () => {
                         <tr className='bg-slate-700'>
                             <th className='text-center py-2'>NetUID</th>
                             <th className='text-center py-2'>Registration Cost</th>
+                            <th className='text-center py-2'>Allow</th>
                             <th className='text-center py-2'>History</th>
                         </tr>
                     </thead>
@@ -49,6 +51,7 @@ const RegCostPage = () => {
                                 <tr key={index}>
                                     <td className='text-center py-2'>{item.netuid}</td>
                                     <td className='text-center py-2'>{showNumber(item.registrationCost[item.registrationCost.length - 1].value, 5)}</td>
+                                    <td className='text-center py-2'>{item.registration == true? <Allow /> : <Disable />}</td>
                                     <td className='flex flex-row justify-center'>
                                         <LineChart
                                             width={250}
