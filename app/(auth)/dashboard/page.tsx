@@ -33,7 +33,7 @@ export default function Home() {
           </thead>
           <tbody>
             {
-              data && data.data.length > 0 && data.data.map((item: any, index: number) => (
+              data && data.data && data.data.length > 0 && data.data.map((item: any, index: number) => (
                 <tr key={index}>
                   <td className="text-center py-2">{index + 1}</td>
                   <td className='text-center py-2'>{item.name}</td>

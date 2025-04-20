@@ -54,7 +54,7 @@ const MyStatusPage = () => {
                 <div className='text-2xl font-bold text-center'>My Status</div>
                 <div className='flex flex-col gap-10'>
                     {
-                        data && data.data.length > 0 && data.bittensor_data && data.data.map((item: any, index: number) => (
+                        data &&data.data&& data.data.length > 0 && data.bittensor_data && data.data.map((item: any, index: number) => (
                             <div key={index} className='flex flex-col gap-2 w-full'>
                                 <div className='flex flex-row justify-between items-end'>
                                     <div className='text-xl text-semibold text-left underline'>Subnet {item.subnet}</div>
@@ -88,7 +88,7 @@ const MyStatusPage = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            item && item.mydata && item.mydata.map((subitem: any, subindex: number) => (
+                                            item && item.mydata && item.mydata && item.mydata.map((subitem: any, subindex: number) => (
                                                 <tr key={subindex}>
                                                     <td className='text-center py-2'>{subindex + 1}</td>
                                                     <td className='text-center py-2'>{subitem.uid}</td>
