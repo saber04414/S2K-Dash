@@ -36,7 +36,7 @@ export async function GET() {
             const final_data = filtered_data.map((item: any) => ({
                 ...item, danger: filtered_danger_list.find((danger: any) => danger.hotkey === item.hotkey) || null
             }));
-            data.push({ subnet: subnet_uid, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value });
+            data.push({ subnet: subnet_uid, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value });
         }
         const bittensor_data = await queryBittensorData(mysubnets);
         return NextResponse.json({ data, bittensor_data }, { status: 201 });

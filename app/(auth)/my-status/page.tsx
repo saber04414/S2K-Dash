@@ -2,9 +2,15 @@
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { fetcher } from '@/utils/fetcher'
-import { showKey, copyKey, showNumber } from '@/lib/main'
+import { showKey, copyKey, showNumber, showTaoNumber } from '@/lib/main'
 import { Immune, Active, Danger } from '@/components/MinerIcon'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 const MyStatusPage = () => {
     const { data, error, isLoading } = useSWR(`/api/myStatus`, fetcher, {
@@ -54,11 +60,28 @@ const MyStatusPage = () => {
                 <div className='text-2xl font-bold text-center'>My Status</div>
                 <div className='flex flex-col gap-10'>
                     {
-                        data &&data.data&& data.data.length > 0 && data.bittensor_data && data.data.map((item: any, index: number) => (
+                        data && data.data && data.data.length > 0 && data.bittensor_data && data.data.map((item: any, index: number) => (
                             <div key={index} className='flex flex-col gap-2 w-full'>
                                 <div className='flex flex-row justify-between items-end'>
-                                    <div className='text-xl text-semibold text-left underline'>Subnet {item.subnet}</div>
+                                    <TooltipProvider>
+                                        <Tooltip>
+                                            <TooltipTrigger asChild>
+                                                <div className='text-xl text-semibold text-left underline cursor-pointer'>Subnet {item.subnet}</div>
+                                            </TooltipTrigger>
+                                            <TooltipContent side="bottom" className='border-slate-500 border'>
+                                                <div className='flex flex-col gap-2'>
+                                                    <div className='text-md'>Subnet Information</div>
+                                                    <div className='text-sm'>Name: {item.name}</div>
+                                                    <div className='text-sm'>Letter: {item.letter}</div>
+                                                    <div className='text-sm'>Emission: {item.emission}</div>
+                                                    <div className='text-sm'>Tao In Pool: {showTaoNumber(item.taoInpool)} 𝞃</div>
+                                                    <div className='text-sm'>Alpha In Pool: {showTaoNumber(item.alphaInpool)} 𝞃</div>
+                                                </div>
+                                            </TooltipContent>
+                                        </Tooltip>
+                                    </TooltipProvider>
                                     <div className='flex flex-row gap-5 items-center'>
+                                        <div className='text-sm pr-5'>TAO Pool: {showTaoNumber(item.taoInpool)} 𝞃</div>
                                         <div className='text-sm pr-5'>Alpha: {showNumber(item.price, 4)} 𝞃</div>
                                         <div className='text-sm pr-5'>Registration: {showNumber(item.regcost, 4)} 𝞃</div>
 
@@ -92,7 +115,7 @@ const MyStatusPage = () => {
                                                 <tr key={subindex}>
                                                     <td className='text-center py-2'>{subindex + 1}</td>
                                                     <td className='text-center py-2'>{subitem.uid}</td>
-                                                    <td className='text-center py-2'>{ subitem.danger == null && (subitem.immunityPeriod > 0 ? <Immune /> : <Active />)} {subitem.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{subitem.danger.ranking}</span> : null}</td>
+                                                    <td className='text-center py-2'>{subitem.danger == null && (subitem.immunityPeriod > 0 ? <Immune /> : <Active />)} {subitem.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{subitem.danger.ranking}</span> : null}</td>
                                                     <td className='text-center py-2'>{showNumber(subitem.stake * item.price, 2)} 𝞃 / {showNumber(subitem.stake, 2)} {item.letter}</td>
                                                     <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(subitem.coldkey)}>{showKey(subitem.coldkey)}</td>
                                                     <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(subitem.hotkey)}>{showKey(subitem.hotkey)}</td>
