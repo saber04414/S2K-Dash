@@ -70,12 +70,13 @@ const MyStatusPage = () => {
                                             </TooltipTrigger>
                                             <TooltipContent side="bottom" className='border-slate-500 border'>
                                                 <div className='flex flex-col gap-2'>
-                                                    <div className='text-md'>Subnet Information</div>
-                                                    <div className='text-sm'>Name: {item.name}</div>
-                                                    <div className='text-sm'>Letter: {item.letter}</div>
-                                                    <div className='text-sm'>Emission: {item.emission}</div>
+                                                    <div className='text-base font-bold'>Subnet Information</div>
+                                                    <div className='flex flex-col gap-0'>
+                                                    <div className='text-sm'>Name: {item.name} {item.letter}</div>
+                                                    <div className='text-sm'>Emission: {showNumber(item.emission, 4)} %</div>
                                                     <div className='text-sm'>Tao In Pool: {showTaoNumber(item.taoInpool)} 𝞃</div>
                                                     <div className='text-sm'>Alpha In Pool: {showTaoNumber(item.alphaInpool)} 𝞃</div>
+                                                    </div>
                                                 </div>
                                             </TooltipContent>
                                         </Tooltip>
