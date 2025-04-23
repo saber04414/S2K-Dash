@@ -82,7 +82,6 @@ const MyStatusPage = () => {
                                         </Tooltip>
                                     </TooltipProvider>
                                     <div className='flex flex-row gap-5 items-center'>
-                                        <div className='text-sm pr-5'>TAO Pool: {showTaoNumber(item.taoInpool)} 𝞃</div>
                                         <div className='text-sm pr-5'>Alpha: {showNumber(item.price, 4)} 𝞃</div>
                                         <div className='text-sm pr-5'>Registration: {showNumber(item.regcost, 4)} 𝞃</div>
 
