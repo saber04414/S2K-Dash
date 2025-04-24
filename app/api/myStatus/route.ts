@@ -16,6 +16,19 @@ export async function GET() {
     const data = [];
     const res = await axios.get(`https://taomarketcap.com/api/subnets`)
     const subnet_data = await res.data;
+    const response = await fetch("https://api.mexc.com/api/v3/ticker/price?symbol=TAOUSDT", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        cache: "no-cache"
+      });
+  
+      if (!response.ok) {
+        return NextResponse.json({ error: "Failed to fetch data" });
+      }
+      const resdata = await response.json();
+      const taoPrice = resdata.price
     try {
         for (const subnet_uid of mysubnets) {
             const response = await axios.get(`https://taomarketcap.com/api/subnets/${subnet_uid}/metagraph`)
@@ -39,7 +52,7 @@ export async function GET() {
             data.push({ subnet: subnet_uid, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value });
         }
         const bittensor_data = await queryBittensorData(mysubnets);
-        return NextResponse.json({ data, bittensor_data }, { status: 201 });
+        return NextResponse.json({ data, bittensor_data, taoPrice }, { status: 201 });
     } catch (error) {
         console.error(error);
         return NextResponse.json({ error: 'Failed to save score' }, { status: 500 });
