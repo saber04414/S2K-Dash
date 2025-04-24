@@ -72,17 +72,17 @@ const MyStatusPage = () => {
                                                 <div className='flex flex-col gap-2'>
                                                     <div className='text-base font-bold'>Subnet Information</div>
                                                     <div className='flex flex-col gap-0'>
-                                                    <div className='text-sm'>Name: {item.name} {item.letter}</div>
-                                                    <div className='text-sm'>Emission: {showNumber(item.emission, 4)} %</div>
-                                                    <div className='text-sm'>Tao In Pool: {showTaoNumber(item.taoInpool)} 𝞃</div>
-                                                    <div className='text-sm'>Alpha In Pool: {showTaoNumber(item.alphaInpool)} 𝞃</div>
+                                                        <div className='text-sm'>Name: {item.name} {item.letter}</div>
+                                                        <div className='text-sm'>Emission: {showNumber(item.emission, 4)} %</div>
+                                                        <div className='text-sm'>Tao In Pool: {showTaoNumber(item.taoInpool)} 𝞃</div>
+                                                        <div className='text-sm'>Alpha In Pool: {showTaoNumber(item.alphaInpool)} 𝞃</div>
                                                     </div>
                                                 </div>
                                             </TooltipContent>
                                         </Tooltip>
                                     </TooltipProvider>
                                     <div className='flex flex-row gap-5 items-center'>
-                                        <div className='text-sm pr-5'>Alpha: {showNumber(item.price, 4)} 𝞃 / {data.taoPrice} $</div>
+                                        <div className='text-sm pr-5'>Alpha: {showNumber(item.price, 4)} 𝞃 / {showNumber(item.price * data.taoPrice)} $</div>
                                         <div className='text-sm pr-5'>Registration: {showNumber(item.regcost, 4)} 𝞃</div>
 
                                         <div className='text-sm pr-5'>Mechanism: {incentive_countdowns[index] === -1
