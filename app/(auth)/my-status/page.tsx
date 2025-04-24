@@ -82,7 +82,7 @@ const MyStatusPage = () => {
                                         </Tooltip>
                                     </TooltipProvider>
                                     <div className='flex flex-row gap-5 items-center'>
-                                        <div className='text-sm pr-5'>Alpha: {showNumber(item.price, 4)} 𝞃 / {showNumber(item.price * data.taoPrice)} $</div>
+                                        <div className='text-sm pr-5'>Alpha: {showNumber(item.price, 4)} 𝞃 / {showNumber(item.price * data.taoPrice, 4)} $</div>
                                         <div className='text-sm pr-5'>Registration: {showNumber(item.regcost, 4)} 𝞃</div>
 
                                         <div className='text-sm pr-5'>Mechanism: {incentive_countdowns[index] === -1
