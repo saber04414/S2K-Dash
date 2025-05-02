@@ -10,7 +10,7 @@ const networkEntryPoint = "wss://entrypoint-finney.opentensor.ai:443";
 
 export async function GET(req: Request) {
     const url = new URL(req.url); // Create a URL object from the request URL
-    const subnetId = url.searchParams.get('subnet') as string; // Get the 'day' query parameter
+    const subnetId = Number(url.searchParams.get('subnet')) as number; // Get the 'day' query parameter
     const coldkeys = await prisma.coldkey.findMany();
     const mycoldkeys = coldkeys.map((coldkey) => coldkey.coldkey);
     const res = await axios.get(`https://taomarketcap.com/api/subnets`)
@@ -18,16 +18,16 @@ export async function GET(req: Request) {
     const response = await fetch("https://api.mexc.com/api/v3/ticker/price?symbol=TAOUSDT", {
         method: "GET",
         headers: {
-          "Content-Type": "application/json",
+            "Content-Type": "application/json",
         },
         cache: "no-cache"
-      });
-  
-      if (!response.ok) {
+    });
+
+    if (!response.ok) {
         return NextResponse.json({ error: "Failed to fetch data" });
-      }
-      const resdata = await response.json();
-      const taoPrice = resdata.price
+    }
+    const resdata = await response.json();
+    const taoPrice = resdata.price
     try {
         const response = await axios.get(`https://taomarketcap.com/api/subnets/${subnetId}/metagraph`)
         const response_data = await response.data;
@@ -35,19 +35,19 @@ export async function GET(req: Request) {
         const total_stake = filtered_data.reduce((acc: number, item: any) => acc + item.stake, 0);
         const total_daily = filtered_data.reduce((acc: number, item: any) => acc + item.alphaPerDay, 0);
         const subnet_info = subnet_data.find((subnet: any) => subnet.subnet === subnetId);
-        const taox_api = await axios.post(`https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`, { netuid: subnetId })
-        const price = await taox_api.data
+        // const taox_api = await axios.post(`https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`, { netuid: subnetId })
+        // const price = await taox_api.data
         const response_reg = await axios.post(`https://taomarketcap.com/api/subnets/${subnetId}/burn`)
 
         //danger list
         const danger_list = response_data.filter((res_item: any) => res_item.miner === true && res_item.immunityPeriod < 0 && res_item.validator === false).sort((a: any, b: any) => a.registeredAt - b.registeredAt).sort((a: any, b: any) => a.incentive - b.incentive).map((item: any, i: number) => ({
-            ...item, ranking: i+1
+            ...item, ranking: i + 1
         })).slice(0, 6);
         const filtered_danger_list = danger_list.filter((item: any) => mycoldkeys.includes(item.coldkey));
         const final_data = filtered_data.map((item: any) => ({
             ...item, danger: filtered_danger_list.find((danger: any) => danger.hotkey === item.hotkey) || null
         }));
-        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value };
+        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: 0, alphaInpool: 0, emission: 0, price: 0.1, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value };
         const bittensor_data = await queryBittensorData([Number(subnetId)]);
         return NextResponse.json({ data, bittensor_data, taoPrice }, { status: 201 });
     } catch (error) {

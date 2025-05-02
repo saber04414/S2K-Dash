@@ -19,8 +19,8 @@ const MyStatusPage = () => {
         refreshInterval: 12_000,
         revalidateOnFocus: false, // optional: prevent refetch on tab focus
     })
-    const [incentive_countdowns, setIncentiveCountdowns] = useState<number[]>([])
-    const [registration_countdowns, setRegistrationCountdowns] = useState<number[]>([])
+    const [incentive_countdowns, setIncentiveCountdowns] = useState(0)
+    const [registration_countdowns, setRegistrationCountdowns] = useState(0)
 
     useEffect(() => {
         if (data?.bittensor_data) {
@@ -38,10 +38,10 @@ const MyStatusPage = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             setIncentiveCountdowns(prev =>
-                prev.map(sec => (sec > 0 ? sec - 1 : sec))
+                prev - 1
             );
             setRegistrationCountdowns(prev =>
-                prev.map(sec => (sec > 0 ? sec - 1 : sec))
+                prev - 1
             );
         }, 1000);
 
@@ -62,42 +62,42 @@ const MyStatusPage = () => {
                 <div className='text-2xl font-bold text-center'>My Status</div>
                 <div className='flex flex-col gap-10'>
                     {
-                        data && data.data && data.data.length > 0 && data.bittensor_data && data.data.map((item: any, index: number) => (
-                            <div key={index} className='flex flex-col gap-2 w-full'>
-                                <div className='flex flex-row justify-between items-end'>
-                                    <TooltipProvider>
-                                        <Tooltip>
-                                            <TooltipTrigger asChild>
-                                                <div className='text-xl text-semibold text-left underline cursor-pointer'>Subnet {item.subnet}</div>
-                                            </TooltipTrigger>
-                                            <TooltipContent side="bottom" className='border-slate-500 border'>
-                                                <div className='flex flex-col gap-2'>
-                                                    <div className='text-base font-bold'>Subnet Information</div>
-                                                    <div className='flex flex-col gap-0'>
-                                                        <div className='text-sm'>Name: {item.name} {item.letter}</div>
-                                                        <div className='text-sm'>Emission: {showNumber(item.emission, 4)} %</div>
-                                                        <div className='text-sm'>Tao In Pool: {showTaoNumber(item.taoInpool)} 𝞃</div>
-                                                        <div className='text-sm'>Alpha In Pool: {showTaoNumber(item.alphaInpool)} 𝞃</div>
-                                                    </div>
+                        data && data.data && data.bittensor_data && (
+                            <div className='flex flex-col gap-1'>
+                            <div className='flex flex-row justify-between items-end'>
+                                <TooltipProvider>
+                                    <Tooltip>
+                                        <TooltipTrigger asChild>
+                                            <div className='text-xl text-semibold text-left underline cursor-pointer'>Subnet {data.data.subnet}</div>
+                                        </TooltipTrigger>
+                                        <TooltipContent side="bottom" className='border-slate-500 border'>
+                                            <div className='flex flex-col gap-2'>
+                                                <div className='text-base font-bold'>Subnet Information</div>
+                                                <div className='flex flex-col gap-0'>
+                                                    <div className='text-sm'>Name: {data.data.name} {data.data.letter}</div>
+                                                    <div className='text-sm'>Emission: {showNumber(data.data.emission, 4)} %</div>
+                                                    <div className='text-sm'>Tao In Pool: {showTaoNumber(data.data.taoInpool)} 𝞃</div>
+                                                    <div className='text-sm'>Alpha In Pool: {showTaoNumber(data.data.alphaInpool)} 𝞃</div>
                                                 </div>
-                                            </TooltipContent>
-                                        </Tooltip>
-                                    </TooltipProvider>
-                                    <div className='flex flex-row gap-5 items-center'>
-                                        <div className='text-sm pr-5'>Alpha: {showNumber(item.price, 4)} 𝞃 / {showNumber(item.price * data.taoPrice, 4)} $</div>
-                                        <div className='text-sm pr-5'>Registration: {showNumber(item.regcost, 4)} 𝞃</div>
+                                            </div>
+                                        </TooltipContent>
+                                    </Tooltip>
+                                </TooltipProvider>
+                                <div className='flex flex-row gap-5 items-center'>
+                                    <div className='text-sm pr-5'>Alpha: {showNumber(data.data.price, 4)} 𝞃 / {showNumber(data.data.price * data.taoPrice, 4)} $</div>
+                                    <div className='text-sm pr-5'>Registration: {showNumber(data.data.regcost, 4)} 𝞃</div>
 
-                                        <div className='text-sm pr-5'>Mechanism: {incentive_countdowns[index] === -1
-                                            ? '-1'
-                                            : `${Math.floor(incentive_countdowns[index] / 3600)}h ${Math.floor((incentive_countdowns[index] % 3600) / 60)}m ${incentive_countdowns[index] % 60}s`
-                                        }</div>
-                                        <div className='text-sm pr-5'>Registration: {registration_countdowns[index] === -1
-                                            ? '-1'
-                                            : `${Math.floor(registration_countdowns[index] / 3600)}h ${Math.floor((registration_countdowns[index] % 3600) / 60)}m ${registration_countdowns[index] % 60}s`
-                                        }</div>
-                                    </div>
+                                    <div className='text-sm pr-5'>Mechanism: {incentive_countdowns === -1
+                                        ? '-1'
+                                        : `${Math.floor(incentive_countdowns / 3600)}h ${Math.floor((incentive_countdowns % 3600) / 60)}m ${incentive_countdowns % 60}s`
+                                    }</div>
+                                    <div className='text-sm pr-5'>Registration: {registration_countdowns === -1
+                                        ? '-1'
+                                        : `${Math.floor(registration_countdowns / 3600)}h ${Math.floor((registration_countdowns % 3600) / 60)}m ${registration_countdowns % 60}s`
+                                    }</div>
                                 </div>
-                                <table key={index} className='w-full'>
+                                </div>
+                                <table className='w-full'>
                                     <thead>
                                         <tr className='bg-slate-700'>
                                             <th className='text-center py-2'>No</th>
@@ -113,17 +113,17 @@ const MyStatusPage = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            item && item.mydata && item.mydata && item.mydata.map((subitem: any, subindex: number) => (
-                                                <tr key={subindex}>
-                                                    <td className='text-center py-2'>{subindex + 1}</td>
-                                                    <td className='text-center py-2'>{subitem.uid}</td>
-                                                    <td className='text-center py-2'>{subitem.danger == null && (subitem.immunityPeriod > 0 ? <Immune /> : <Active />)} {subitem.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{subitem.danger.ranking}</span> : null}</td>
-                                                    <td className='text-center py-2'>{showNumber(subitem.stake * item.price, 2)} 𝞃 / {showNumber(subitem.stake, 2)} {item.letter}</td>
-                                                    <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(subitem.coldkey)}>{showKey(subitem.coldkey)}</td>
-                                                    <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(subitem.hotkey)}>{showKey(subitem.hotkey)}</td>
-                                                    <td className='text-center py-2'>{showNumber(subitem.incentive, 2)}</td>
-                                                    <td className='text-center py-2'>{showNumber(subitem.minerPerformance, 2)}</td>
-                                                    <td className='text-center py-2'>{showNumber(subitem.alphaPerDay * item.price, 3)} 𝞃 / {showNumber(subitem.alphaPerDay, 3)} {item.letter}</td>
+                                            data.data && data.data.mydata && data.data.mydata && data.data.mydata.map((item: any, index: number) => (
+                                                <tr key={index}>
+                                                    <td className='text-center py-2'>{index + 1}</td>
+                                                    <td className='text-center py-2'>{item.uid}</td>
+                                                    <td className='text-center py-2'>{item.danger == null && (item.immunityPeriod > 0 ? <Immune /> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
+                                                    <td className='text-center py-2'>{showNumber(item.stake * data.data.price, 2)} 𝞃 / {showNumber(item.stake, 2)} {data.data.letter}</td>
+                                                    <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showKey(item.coldkey)}</td>
+                                                    <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.hotkey)}>{showKey(item.hotkey)}</td>
+                                                    <td className='text-center py-2'>{showNumber(item.incentive, 2)}</td>
+                                                    <td className='text-center py-2'>{showNumber(item.minerPerformance, 2)}</td>
+                                                    <td className='text-center py-2'>{showNumber(item.alphaPerDay * data.data.price, 3)} 𝞃 / {showNumber(item.alphaPerDay, 3)} {data.data.letter}</td>
                                                 </tr>
                                             ))
                                         }
@@ -134,17 +134,17 @@ const MyStatusPage = () => {
                                             <td className='text-center py-2'>Total</td>
                                             <td></td>
                                             <td></td>
-                                            <td className='text-center py-2'>{showNumber(item.total_stake * item.price, 2)} 𝞃 / {showNumber(item.total_stake, 2)} {item.letter}</td>
+                                            <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td className='text-center py-2'>{showNumber(item.total_daily * item.price, 2)} 𝞃 / {showNumber(item.total_daily, 2)} {item.letter}</td>
+                                            <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-                        ))
+                        )
                     }
                 </div>
             </div>
