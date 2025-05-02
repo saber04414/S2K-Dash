@@ -39,6 +39,7 @@ export default function Login() {
           <div className='flex flex-row items-center gap-3 border border-slate-800 rounded-md px-2'>
             <Key className='text-white' size={15} />
             <input
+              autoFocus
               value={password}
               type="password"
               onChange={(e) => setPassword(e.target.value)}
