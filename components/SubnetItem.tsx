@@ -34,7 +34,7 @@ const SubnetItem = (props: Props) => {
             <div className='py-2 flex flex-col gap-1'>
                 <div className='flex flex-row justify-between items-center px-4 pb-2'>
                     <div className='text-xl font-bold'>Subnet {props.subnet_id}</div>
-                    <div className='text-sm'>UIDs: {props.active} / {props.maxAllowedUids}</div>
+                    <div className='text-sm px-2 bg-red-500 rounded-full'>{props.active} / {props.maxAllowedUids}</div>
                 </div>
                 <div className='flex flex-row justify-between items-center px-4'>
                     <div className='text-sm'>Name: {props.name}</div>
@@ -44,9 +44,10 @@ const SubnetItem = (props: Props) => {
                     <div className='text-sm'>Alpha In Pool: {showTaoNumber(props.subnetAlphaIn)} 𝞃</div>
                     <div className='text-sm'>TAO In Pool: {showTaoNumber(props.subnetTAO)} 𝞃</div>
                 </div>
-                {props.github && <div className='flex justify-end px-4 pt-2 z-50'>
-                    <button className='hover:scale-[1.2] transition-all' onClick={() => router.push(props.github)}><GithubIcon size={18} /></button>
-                </div>}
+                <div className='flex flex-row gap-2'>
+                    <div className='text-sm'>Price: {showNumber(props.price, 4)} 𝞃</div>
+                    {props.github && <button className='hover:scale-[1.2] transition-all' onClick={() => router.push(props.github)}><GithubIcon size={18} /></button>}
+                </div>
             </div>
         </div>
     )
