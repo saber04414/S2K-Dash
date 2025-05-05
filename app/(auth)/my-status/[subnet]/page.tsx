@@ -117,7 +117,7 @@ const MyStatusPage = () => {
                                     <tbody>
                                         {
                                             data.data && data.data.mydata && data.data.mydata && data.data.mydata.map((item: any, index: number) => (
-                                                <tr key={index}>
+                                                <tr key={index} className='hover:bg-slate-600 transition-all cursor-pointer'>
                                                     <td className='text-center py-2'>{index + 1}</td>
                                                     <td className='text-center py-2'>{item.uid}</td>
                                                     <td className='text-center py-2'>{item.danger == null && (item.immunityPeriod > 0 ? <Immune /> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
