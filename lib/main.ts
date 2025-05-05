@@ -5,7 +5,7 @@ const copyKey = (key: string) => {
     toast.success('Copied to clipboard')
 }
 const showKey = (key: string) => {
-    return key.slice(0, 2) + '***' + key.slice(-1)
+    return key.slice(0, 2) + '***' + key.slice(-4)
 }
 const showTaoNumber = (number: number) => {
     const taoNumber = number / 1e9
