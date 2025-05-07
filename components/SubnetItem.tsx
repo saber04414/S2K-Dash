@@ -26,11 +26,11 @@ type Props = {
 
 const SubnetItem = (props: Props) => {
     const router = useRouter()
-    const [src, setSrc] = useState(props.image_url || './default.png')
+    const [src, setSrc] = useState(props.image_url || '/default.png')
     return (
         <div className='w-full rounded-md border border-slate-500 cursor-pointer flex flex-col gap-0 hover:scale-[1.01] transition-all relative' onClick={() => router.push(`/my-status/${props.subnet_id}`)}>
             <div className="absolute inset-0 bg-gray-200 opacity-0 hover:opacity-40 transition-opacity duration-300" />
-            <Image className='w-full h-56 bg-slate-500 rounded-t-md' src={src} width="500" height="500" alt='' onError={() => setSrc('./default.png')} />
+            <Image className='w-full h-56 bg-slate-500 rounded-t-md' src={src} width="500" height="500" alt='' onError={() => setSrc('/default.png')} />
             <div className='py-2 flex flex-col gap-1'>
                 <div className='flex flex-row justify-between items-center px-4 pb-2'>
                     <div className='text-xl font-bold'>Subnet {props.subnet_id}</div>

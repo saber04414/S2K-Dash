@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { fetcher } from '@/utils/fetcher'
-import { showKey, copyKey, showNumber, showTaoNumber } from '@/lib/main'
+import { showKey, copyKey, showNumber, showTaoNumber, showTimestampToDateTime } from '@/lib/main'
 import { Immune, Active, Danger } from '@/components/MinerIcon'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
 import { ArrowLeft } from 'lucide-react'
@@ -59,9 +59,10 @@ const MyStatusPage = () => {
         Data Fetching Error
     </div>
     if (data) {
+        console.log({ data })
         return (
             <div className='w-full flex flex-col gap-10 justify-center relative'>
-                <div className='absolute top-0 left-0 w-fit text-center p-2 cursor-pointer flex flex-row gap-2 items-center' onClick={() => router.back()}><ArrowLeft size={18}/>Back</div>
+                <div className='absolute top-0 left-0 w-fit text-center p-2 cursor-pointer flex flex-row gap-2 items-center' onClick={() => router.back()}><ArrowLeft size={18} />Back</div>
                 <div className='text-2xl font-bold text-center'>My Status</div>
                 <div className='flex flex-col gap-10'>
                     {
@@ -105,6 +106,7 @@ const MyStatusPage = () => {
                                         <tr className='bg-slate-700'>
                                             <th className='text-center py-2'>No</th>
                                             <th className='text-center py-2'>UID</th>
+                                            <th className='text-center py-2'>Register At</th>
                                             <th className='text-center py-2'>Status</th>
                                             <th className='text-center py-2'>Stake</th>
                                             <th className='text-center py-2'>Coldkey</th>
@@ -120,6 +122,7 @@ const MyStatusPage = () => {
                                                 <tr key={index} className='hover:bg-slate-600 transition-all cursor-pointer'>
                                                     <td className='text-center py-2'>{index + 1}</td>
                                                     <td className='text-center py-2'>{item.uid}</td>
+                                                    <td className='text-center py-2'>{showTimestampToDateTime(item.registeredAt)}</td>
                                                     <td className='text-center py-2'>{item.danger == null && (item.immunityPeriod > 0 ? <Immune /> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
                                                     <td className='text-center py-2'>{showNumber(item.stake * data.data.price, 2)} 𝞃 / {showNumber(item.stake, 2)} {data.data.letter}</td>
                                                     <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showKey(item.coldkey)}</td>
@@ -131,10 +134,11 @@ const MyStatusPage = () => {
                                             ))
                                         }
                                         <tr>
-                                            <td colSpan={9}><div className='h-[2px] w-full bg-slate-700'></div></td>
+                                            <td colSpan={10}><div className='h-[2px] w-full bg-slate-700'></div></td>
                                         </tr>
                                         <tr>
                                             <td className='text-center py-2'>Total</td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td>
