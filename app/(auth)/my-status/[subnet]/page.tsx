@@ -141,12 +141,12 @@ const MyStatusPage = () => {
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td>
+                                            <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_stake, 2)} {data.data.letter} {`( $ ${showNumber(data.data.total_stake / data.taoPrice, 2)} )`}</td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td>
+                                            <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_daily, 2)} {data.data.letter} {`( $ ${showNumber(data.data.total_daily / data.taoPrice, 2)} )`}</td>
                                         </tr>
                                     </tbody>
                                 </table>
