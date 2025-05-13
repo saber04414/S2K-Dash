@@ -2,8 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
 import { fetcher } from '@/utils/fetcher'
-import { showKey, copyKey, showNumber, showTaoNumber, showTimestampToDateTime } from '@/lib/main'
-import { Immune, Active, Danger } from '@/components/MinerIcon'
+import { showNumber, showTaoNumber } from '@/lib/main'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
 import { ArrowLeft } from 'lucide-react'
 import {
@@ -12,8 +11,8 @@ import {
     TooltipProvider,
     TooltipTrigger,
 } from "@/components/ui/tooltip"
-import { useParams } from 'next/navigation'
-import { useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
+import StatusTr from '@/components/StatusTr'
 
 const MyStatusPage = () => {
     const router = useRouter()
@@ -50,6 +49,8 @@ const MyStatusPage = () => {
 
         return () => clearInterval(timer);
     }, []);
+
+    
 
     if (isLoading) return <div className='w-full h-full'>
         <ImageLoadingSpinner />
@@ -114,23 +115,13 @@ const MyStatusPage = () => {
                                             <th className='text-center py-2'>Incentive</th>
                                             <th className='text-center py-2'>Performance</th>
                                             <th className='text-center py-2'>Daily</th>
+                                            <th className='text-center py-2'>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {
                                             data.data && data.data.mydata && data.data.mydata && data.data.mydata.map((item: any, index: number) => (
-                                                <tr key={index} className='hover:bg-slate-600 transition-all cursor-pointer'>
-                                                    <td className='text-center py-2'>{index + 1}</td>
-                                                    <td className='text-center py-2'>{item.uid}</td>
-                                                    <td className='text-center py-2'>{showTimestampToDateTime(item.registeredAt)}</td>
-                                                    <td className='text-center py-2'>{item.danger == null && (item.immunityPeriod > 0 ? <Immune /> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
-                                                    <td className='text-center py-2'>{showNumber(item.stake * data.data.price, 2)} 𝞃 / {showNumber(item.stake, 2)} {data.data.letter}</td>
-                                                    <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showKey(item.coldkey)}</td>
-                                                    <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.hotkey)}>{showKey(item.hotkey)}</td>
-                                                    <td className='text-center py-2'>{showNumber(item.incentive, 2)}</td>
-                                                    <td className='text-center py-2'>{showNumber(item.minerPerformance, 2)}</td>
-                                                    <td className='text-center py-2'>{showNumber(item.alphaPerDay * data.data.price, 3)} 𝞃 / {showNumber(item.alphaPerDay, 3)} {data.data.letter}</td>
-                                                </tr>
+                                                <StatusTr key={index} index={index} item={item} data={data} />
                                             ))
                                         }
                                         <tr>
@@ -142,6 +133,7 @@ const MyStatusPage = () => {
                                             <td></td>
                                             <td></td>
                                             <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
