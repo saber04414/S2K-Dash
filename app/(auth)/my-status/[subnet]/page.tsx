@@ -137,7 +137,6 @@ const MyStatusPage = () => {
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td></td>
                                             <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td>
                                         </tr>
                                     </tbody>
