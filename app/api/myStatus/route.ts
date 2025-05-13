@@ -31,6 +31,8 @@ export async function GET(req: Request) {
     try {
         const response = await axios.get(`https://taomarketcap.com/api/subnets/${subnetId}/metagraph`)
         const response_data = await response.data;
+        const sidebar_res = await axios.get(`https://taomarketcap.com/api/subnets/${subnetId}/sidebar`)
+        const sidebar_data = await sidebar_res.data;
         const filtered_data = response_data.filter((res_item: any) => mycoldkeys.includes(res_item.coldkey));
         const total_stake = filtered_data.reduce((acc: number, item: any) => acc + item.stake, 0);
         const total_daily = filtered_data.reduce((acc: number, item: any) => acc + item.alphaPerDay, 0);
@@ -47,7 +49,7 @@ export async function GET(req: Request) {
         const final_data = filtered_data.map((item: any) => ({
             ...item, danger: filtered_danger_list.find((danger: any) => danger.hotkey === item.hotkey) || null
         }));
-        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value };
+        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value, sidebar: sidebar_data };
         const bittensor_data = await queryBittensorData([Number(subnetId)]);
         return NextResponse.json({ data, bittensor_data, taoPrice }, { status: 201 });
     } catch (error) {

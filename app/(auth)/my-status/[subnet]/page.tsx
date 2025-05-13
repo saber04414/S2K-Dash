@@ -50,7 +50,7 @@ const MyStatusPage = () => {
         return () => clearInterval(timer);
     }, []);
 
-    
+
 
     if (isLoading) return <div className='w-full h-full'>
         <ImageLoadingSpinner />
@@ -90,8 +90,21 @@ const MyStatusPage = () => {
                                     </TooltipProvider>
                                     <div className='flex flex-row gap-5 items-center'>
                                         <div className='text-sm pr-5'>Alpha: {showNumber(data.data.price, 4)} 𝞃 / {showNumber(data.data.price * data.taoPrice, 4)} $</div>
-                                        <div className='text-sm pr-5'>Registration: {showNumber(data.data.regcost, 4)} 𝞃</div>
-
+                                        <div className='text-sm pr-3'>Reg Cost: {showNumber(data.data.regcost, 4)} 𝞃</div>
+                                        <div className='text-sm pr-5 flex flex-row gap-1'>
+                                            {Array.from({ length: data.data.sidebar.burnRegistrationsThisInterval }).map((_, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="w-4 h-4 rounded-full bg-red-500"
+                                                />
+                                            ))}
+                                            {Array.from({ length: data.data.sidebar.maxRegsPerInterval - data.data.sidebar.burnRegistrationsThisInterval }).map((_, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="w-4 h-4 rounded-full bg-green-400"
+                                                />
+                                            ))}
+                                        </div>
                                         <div className='text-sm pr-5'>Mechanism: {incentive_countdowns === -1
                                             ? '-1'
                                             : `${Math.floor(incentive_countdowns / 3600)}h ${Math.floor((incentive_countdowns % 3600) / 60)}m ${incentive_countdowns % 60}s`
