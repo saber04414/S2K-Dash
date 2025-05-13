@@ -39,7 +39,7 @@ const StatusTr = (props: Props) => {
             <td className='text-center py-2'>{showNumber(item.minerPerformance, 2)}</td>
             <td className='text-center py-2'>{showNumber(item.alphaPerDay * data.data.price, 3)} 𝞃 / {showNumber(item.alphaPerDay, 3)} {data.data.letter}</td>
             <td className='text-center py-2'>
-                {item.stake != 0 ? <button className='px-2 py-1 rounded-md hover:bg-slate-600 transition-all cursor-pointer' onClick={() => unstake(item.coldkey, item.hotkey, data.data.subnet, item.stake)}>{loading ? <LoaderCircle className='animate-spin' /> : 'Unstake'}</button> : <button className='px-2 py-1 rounded-md hover:bg-slate-600 transition-all cursor-not-allowed' disabled>{loading ? <LoaderCircle className='animate-spin' /> : 'Unstake'}</button>}
+                <button className={item.stake != 0 ? 'px-2 py-1 rounded-md hover:bg-slate-600 transition-all cursor-pointer' : 'px-2 py-1 rounded-md cursor-not-allowed'} onClick={() => unstake(item.coldkey, item.hotkey, data.data.subnet, item.stake)}>{loading ? <LoaderCircle className='animate-spin' /> : 'Unstake'}</button>
             </td>
         </tr>
     )
