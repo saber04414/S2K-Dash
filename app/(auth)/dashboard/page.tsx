@@ -3,10 +3,13 @@ import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
 import PercentBar from "@/components/PercentBar";
 import { copyKey, showKey, showTaoNumber } from "@/lib/main";
 import { fetcher } from "@/utils/fetcher";
+import { ArrowRight } from "lucide-react";
 import useSWR from 'swr'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
-  const { data, error, isLoading } = useSWR('/api/getDashboard', fetcher);
+    const router = useRouter()
+    const { data, error, isLoading } = useSWR('/api/getDashboard', fetcher);
   if (isLoading) return <div className='w-full h-full'>
     <ImageLoadingSpinner />
   </div>
@@ -42,6 +45,7 @@ export default function Home() {
                   <td className='text-center py-2'>{showTaoNumber(item.free)} 𝞃</td>
                   <td className='text-center py-2'><PercentBar stake={item.staked} free={item.free} /></td>
                   <td className='text-center py-2'>{showTaoNumber(item.total)} 𝞃</td>
+                  <td className='text-center py-2 cursor-pointer' onClick={() => router.push(`/assets/${item.coldkey}`)}><ArrowRight size={18} /></td>
                 </tr>
               ))
             }
