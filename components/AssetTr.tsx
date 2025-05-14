@@ -20,8 +20,9 @@ const AssetTr = (props: Props) => {
         setLoading(true)
         await axios.post("/api/unstake", { coldkey_address: coldkey, hotkey_address: hotkey, netuid: netuid, amount: amount }).then(() => {
             toast.success("Successfully unstaked")
-        }).catch(() => {
+        }).catch((e) => {
             setLoading(false)
+            console.log({e})
             toast.error("Failed to unstake")
         });
         setLoading(false)
