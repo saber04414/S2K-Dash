@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import prisma from "@/lib/prisma";
-import axios from "axios";
 export const dynamic = 'force-dynamic'
 export const revalidate = 0;
 type EXPORT_DATA = {
@@ -9,8 +7,6 @@ type EXPORT_DATA = {
 }
 export async function GET() {
   try {
-    const subnets = await prisma.subnets.findMany({ orderBy: { subnet: 'asc' } });
-    const mysubnets = subnets.map((subnet: any) => subnet.subnet);
     const response = await fetch("https://api.mexc.com/api/v3/ticker/price", {
       method: "GET",
       headers: {
