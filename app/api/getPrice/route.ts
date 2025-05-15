@@ -35,14 +35,14 @@ export async function GET() {
         price: btcPrice
       }
     ]
-    for (const subnet_uid of mysubnets) {
-      const taox_api = await axios.post(`https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`, { netuid: subnet_uid })
-      const price = await taox_api.data
-      response_data.push({
-        name: `Subnet ${subnet_uid}`,
-        price: price.price
-      })
-    }
+    // for (const subnet_uid of mysubnets) {
+    //   const taox_api = await axios.post(`https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`, { netuid: subnet_uid })
+    //   const price = await taox_api.data
+    //   response_data.push({
+    //     name: `Subnet ${subnet_uid}`,
+    //     price: price.price
+    //   })
+    // }
     return NextResponse.json(response_data);
   } catch (error) {
     return NextResponse.json({ error: (error as Error).message || "Internal Server Error" });
