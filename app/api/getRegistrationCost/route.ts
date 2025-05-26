@@ -9,7 +9,7 @@ export async function GET() {
     const subnets = await subnets_res.data
     const subnets_ids = await prisma.subnets.findMany({ orderBy: { subnet: 'asc' } });
     const mysubnets = subnets_ids.map((ss: any) => ss.subnet);
-    const arr = Array.from({ length: subnets.length - 50 }, (_, i) => i + 50);
+    const arr = Array.from({ length: subnets.length - 80 }, (_, i) => i + 80);
     const merged = Array.from(new Set([...arr, ...mysubnets])).sort((a, b) => a - b);
     const subnets_slice = subnets.filter((item:any)=> merged.includes(item.subnet))
     try {
@@ -20,7 +20,7 @@ export async function GET() {
                 netuid: subnet.subnet,
                 name: subnet.name,
                 letter: subnet.letter,
-                registrationCost: response_data.slice(-5)
+                registrationCost: response_data.slice(-80)
             }
             data.push(res)
         }
