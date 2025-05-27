@@ -20,7 +20,7 @@ export async function GET() {
                 netuid: subnet.subnet,
                 name: subnet.name,
                 letter: subnet.letter,
-                registrationCost: response_data.slice(-80)
+                registrationCost: response_data.slice(-5)
             }
             data.push(res)
         }

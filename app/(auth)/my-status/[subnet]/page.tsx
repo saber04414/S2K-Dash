@@ -91,6 +91,7 @@ const MyStatusPage = () => {
                                     <div className='flex flex-row gap-5 items-center'>
                                         <div className='text-sm pr-5'>Alpha: {showNumber(data.data.price, 4)} 𝞃 / {showNumber(data.data.price * data.taoPrice, 4)} $</div>
                                         <div className='text-sm pr-3'>Reg Cost: {showNumber(data.data.regcost, 4)} 𝞃</div>
+                                        <div className='text-sm pr-3'>Next Reg Cost: {showNumber(data.data.next_burn, 4)} 𝞃</div>
                                         <div className='text-sm pr-5 flex flex-row gap-1'>
                                             {Array.from({ length: data.data.sidebar.burnRegistrationsThisInterval }).map((_, i) => (
                                                 <div

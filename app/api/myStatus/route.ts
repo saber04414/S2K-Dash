@@ -49,7 +49,8 @@ export async function GET(req: Request) {
         const final_data = filtered_data.map((item: any) => ({
             ...item, danger: filtered_danger_list.find((danger: any) => danger.hotkey === item.hotkey) || null
         }));
-        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value, sidebar: sidebar_data };
+        const next_burn = calculateNextBurn(response_reg.data[response_reg.data.length - 1].value, sidebar_data.registrationsThisInterval, sidebar_data.targetRegistrationsPerInterval, sidebar_data.adjustmentAlpha)
+        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value, sidebar: sidebar_data, next_burn };
         const bittensor_data = await queryBittensorData([Number(subnetId)]);
         return NextResponse.json({ data, bittensor_data, taoPrice }, { status: 201 });
     } catch (error) {
@@ -57,6 +58,17 @@ export async function GET(req: Request) {
         return NextResponse.json({ error: 'Failed to save score' }, { status: 500 });
     }
 }
+
+function calculateNextBurn(currentBurn:number, registrationsThisInterval:number, targetRegistrationsPerInterval:number, adjustmentAlpha:number) {
+    const registrations = BigInt(registrationsThisInterval);
+    const target = BigInt(targetRegistrationsPerInterval);
+    const current = Number(currentBurn); // Assume currentBurn is a Number for now
+    const updatedBurn = current * Number((registrations + target)) / Number((target + target));
+    const nextValue = adjustmentAlpha * current + (1 - adjustmentAlpha) * updatedBurn;
+
+    return nextValue;
+}
+
 
 async function queryBittensorData(subnets: number[]) {
     const wsProvider = new WsProvider(networkEntryPoint);
