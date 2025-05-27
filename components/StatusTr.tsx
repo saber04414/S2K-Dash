@@ -10,11 +10,12 @@ type Props = {
     index: number,
     item: any,
     data: any,
+    currency: string
 }
 
 const StatusTr = (props: Props) => {
     const [loading, setLoading] = React.useState(false)
-    const { index, item, data } = props
+    const { index, item, data, currency } = props
 
     const unstake = async (coldkey: string, hotkey: string, netuid: string, amount: number) => {
         setLoading(true)
@@ -33,12 +34,20 @@ const StatusTr = (props: Props) => {
             <td className='text-center py-2'>{item.uid}</td>
             <td className='text-center py-2'>{showTimestampToDateTime(item.registeredAt)}</td>
             <td className='text-center py-2'>{item.danger == null && (item.immunityPeriod > 0 ? <Immune /> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
-            <td className='text-center py-2'>{showNumber(item.stake * data.data.price, 2)} 𝞃 / {showNumber(item.stake, 2)} {data.data.letter}</td>
+            {
+                currency === 'TAO' ?
+                <td className='text-center py-2'>{showNumber(item.stake * data.data.price, 2)} 𝞃 / {showNumber(item.stake, 2)} {data.data.letter}</td> :
+                <td className='text-center py-2'>{showNumber(item.stake * data.data.price * data.taoPrice, 2)} $ / {showNumber(item.stake, 2)} {data.data.letter}</td>
+            }
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showKey(item.coldkey)}</td>
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.hotkey)}>{showKey(item.hotkey)}</td>
             <td className='text-center py-2'>{showNumber(item.incentive, 2)}</td>
             <td className='text-center py-2'>{showNumber(item.minerPerformance, 2)}</td>
-            <td className='text-center py-2'>{showNumber(item.alphaPerDay * data.data.price, 3)} 𝞃 / {showNumber(item.alphaPerDay, 3)} {data.data.letter}</td>
+            {
+                currency === 'TAO' ?
+                <td className='text-center py-2'>{showNumber(item.alphaPerDay * data.data.price, 3)} 𝞃 / {showNumber(item.alphaPerDay, 3)} {data.data.letter}</td> :
+                <td className='text-center py-2'>{showNumber(item.alphaPerDay * data.data.price * data.taoPrice, 3)} $ / {showNumber(item.alphaPerDay, 3)} {data.data.letter}</td>
+            }
             <td className='text-center py-2'>
                 <button className={item.stake != 0 ? 'px-2 py-1 rounded-md hover:bg-slate-600 transition-all cursor-pointer' : 'px-2 py-1 rounded-md cursor-not-allowed'} onClick={() => unstake(item.coldkey, item.hotkey, data.data.subnet, item.stake)}>{loading ? <LoaderCircle className='animate-spin' /> : 'Unstake'}</button>
             </td>

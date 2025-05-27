@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect, useState } from 'react'
 import useSWR from 'swr'
+import Image from 'next/image'
 import { fetcher } from '@/utils/fetcher'
 import { showNumber, showTaoNumber } from '@/lib/main'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
@@ -13,6 +14,7 @@ import {
 } from "@/components/ui/tooltip"
 import { useParams, useRouter } from 'next/navigation'
 import StatusTr from '@/components/StatusTr'
+import clsx from 'clsx'
 
 const MyStatusPage = () => {
     const router = useRouter()
@@ -23,6 +25,7 @@ const MyStatusPage = () => {
     })
     const [incentive_countdowns, setIncentiveCountdowns] = useState(0)
     const [registration_countdowns, setRegistrationCountdowns] = useState(0)
+    const [currency, setCurrency] = useState('TAO')
 
     useEffect(() => {
         if (data?.bittensor_data) {
@@ -65,6 +68,10 @@ const MyStatusPage = () => {
             <div className='w-full flex flex-col gap-10 justify-center relative'>
                 <div className='absolute top-0 left-0 w-fit text-center p-2 cursor-pointer flex flex-row gap-2 items-center' onClick={() => router.back()}><ArrowLeft size={18} />Back</div>
                 <div className='text-2xl font-bold text-center'>My Status</div>
+                <div className='absolute top-0 right-0 w-fit text-center cursor-pointer flex flex-row gap-2 items-center py-1 px-2 border border-slate-500 rounded-md'>
+                    <button onClick={() => setCurrency('TAO')} className={clsx('flex flex-row gap-2 items-center justify-center px-2 py-1 rounded-md border border-slate-500', currency === 'TAO' && 'border-white text-white')}><Image className='rounded-full w-5 h-5' src="/tao.png" alt="" width={20} height={20} />TAO</button>
+                    <button onClick={() => setCurrency('USD')} className={clsx('flex flex-row gap-2 items-center justify-center px-2 py-1 rounded-md border border-slate-500', currency === 'USD' && 'border-white text-white')}><Image className='rounded-full w-5 h-5' src="/dollar.png" alt="" width={20} height={20} />USD</button>
+                </div>
                 <div className='flex flex-col gap-10'>
                     {
                         data && data.data && data.bittensor_data && (
@@ -135,7 +142,7 @@ const MyStatusPage = () => {
                                     <tbody>
                                         {
                                             data.data && data.data.mydata && data.data.mydata && data.data.mydata.map((item: any, index: number) => (
-                                                <StatusTr key={index} index={index} item={item} data={data} />
+                                                <StatusTr key={index} index={index} item={item} data={data} currency={currency}/>
                                             ))
                                         }
                                         <tr>
@@ -146,12 +153,20 @@ const MyStatusPage = () => {
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td>
+                                            {
+                                                currency === 'TAO' ?
+                                                <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td> :
+                                                <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price * data.taoPrice, 2)} $ / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td>
+                                            }
                                             <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
-                                            <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td>
+                                            {
+                                                currency === 'TAO' ?
+                                                <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td> :
+                                                <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price * data.taoPrice, 2)} $ / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td>
+                                            }
                                         </tr>
                                     </tbody>
                                 </table>
