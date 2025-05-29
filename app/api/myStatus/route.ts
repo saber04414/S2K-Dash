@@ -14,6 +14,7 @@ export async function GET(req: Request) {
     const coldkeys = await prisma.coldkey.findMany();
     const mycoldkeys = coldkeys.map((coldkey) => coldkey.coldkey);
     const res = await axios.get(`https://taomarketcap.com/api/subnets`)
+    console.log("Hello 1")
     const subnet_data = await res.data;
     const response = await fetch("https://api.mexc.com/api/v3/ticker/price?symbol=TAOUSDT", {
         method: "GET",
@@ -22,12 +23,15 @@ export async function GET(req: Request) {
         },
         cache: "no-cache"
     });
+    console.log("Hello 2")
 
     if (!response.ok) {
         return NextResponse.json({ error: "Failed to fetch data" });
     }
     const resdata = await response.json();
     const taoPrice = resdata.price
+    console.log("Hello 3")
+
     try {
         const response = await axios.get(`https://taomarketcap.com/api/subnets/${subnetId}/metagraph`)
         const response_data = await response.data;
@@ -35,6 +39,8 @@ export async function GET(req: Request) {
         const sidebar_data = await sidebar_res.data;
         const filtered_data = response_data.filter((res_item: any) => mycoldkeys.includes(res_item.coldkey));
         const total_stake = filtered_data.reduce((acc: number, item: any) => acc + item.stake, 0);
+        console.log("Hello 4")
+
         const total_daily = filtered_data.reduce((acc: number, item: any) => acc + item.alphaPerDay, 0);
         const subnet_info = subnet_data.find((subnet: any) => subnet.subnet === subnetId);
         const taox_api = await axios.post(`https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`, { netuid: subnetId })
@@ -59,7 +65,7 @@ export async function GET(req: Request) {
     }
 }
 
-function calculateNextBurn(currentBurn:number, registrationsThisInterval:number, targetRegistrationsPerInterval:number, adjustmentAlpha:number) {
+function calculateNextBurn(currentBurn: number, registrationsThisInterval: number, targetRegistrationsPerInterval: number, adjustmentAlpha: number) {
     const registrations = BigInt(registrationsThisInterval);
     const target = BigInt(targetRegistrationsPerInterval);
     const current = Number(currentBurn); // Assume currentBurn is a Number for now
