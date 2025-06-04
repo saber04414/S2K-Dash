@@ -6,6 +6,7 @@ import { fetcher } from "@/utils/fetcher";
 import { ArrowRight } from "lucide-react";
 import useSWR from 'swr'
 import { useRouter } from 'next/navigation'
+import { Transaction } from "@/components/TransactionIcon";
 
 export default function Home() {
     const router = useRouter()
@@ -45,7 +46,12 @@ export default function Home() {
                   <td className='text-center py-2'>{showTaoNumber(item.free)} 𝞃</td>
                   <td className='text-center py-2'><PercentBar stake={item.staked} free={item.free} /></td>
                   <td className='text-center py-2'>{showTaoNumber(item.total)} 𝞃</td>
-                  <td className='text-center py-2 cursor-pointer' onClick={() => router.push(`/assets/${item.coldkey}`)}><ArrowRight size={18} /></td>
+                  <td className='text-center py-2'>
+                    <div className="flex flex-row gap-5 justify-center items-center">
+                      <div className="cursor-pointer" onClick={() => router.push(`/assets/${item.coldkey}`)}><ArrowRight size={18} /></div>
+                      <div className="cursor-pointer" onClick={() => router.push(`/transaction/${item.coldkey}`)}><Transaction /></div>
+                    </div>
+                  </td>
                 </tr>
               ))
             }

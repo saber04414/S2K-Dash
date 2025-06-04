@@ -1,11 +1,16 @@
 import toast from 'react-hot-toast'
+import { convertAddressToName } from './convertAddress'
 
 const copyKey = (key: string) => {
     navigator.clipboard.writeText(key)
     toast.success('Copied to clipboard')
 }
 const showKey = (key: string) => {
-    return key.slice(0, 2) + '***' + key.slice(-4)
+    const name = convertAddressToName(key)
+    if (name != key)
+        return name
+    else
+        return key.slice(0, 2) + '***' + key.slice(-4)
 }
 const showTaoNumber = (number: number) => {
     const taoNumber = number / 1e9
