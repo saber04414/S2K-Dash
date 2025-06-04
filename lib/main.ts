@@ -12,6 +12,9 @@ const showKey = (key: string) => {
     else
         return key.slice(0, 2) + '***' + key.slice(-4)
 }
+const showDashKey = (key: string) => {
+    return key.slice(0, 2) + '***' + key.slice(-4)
+}
 const showTaoNumber = (number: number) => {
     const taoNumber = number / 1e9
     return parseFloat(taoNumber.toString()).toFixed(2)
@@ -36,4 +39,4 @@ const showTimestampToDateTime = (timestamp: number): string => {
 
     return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
 };
-export { copyKey, showKey, showTaoNumber, showNumber, showTimestampToDateTime }
+export { copyKey, showKey, showTaoNumber, showNumber, showTimestampToDateTime, showDashKey }

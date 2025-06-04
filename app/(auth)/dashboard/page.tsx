@@ -1,7 +1,7 @@
 "use client"
 import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
 import PercentBar from "@/components/PercentBar";
-import { copyKey, showKey, showTaoNumber } from "@/lib/main";
+import { copyKey, showTaoNumber, showDashKey } from "@/lib/main";
 import { fetcher } from "@/utils/fetcher";
 import { ArrowRight } from "lucide-react";
 import useSWR from 'swr'
@@ -41,7 +41,7 @@ export default function Home() {
                 <tr key={index}>
                   <td className="text-center py-2">{index + 1}</td>
                   <td className='text-center py-2'>{item.name}</td>
-                  <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showKey(item.coldkey)}</td>
+                  <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showDashKey(item.coldkey)}</td>
                   <td className='text-center py-2'>{showTaoNumber(item.staked)} 𝞃</td>
                   <td className='text-center py-2'>{showTaoNumber(item.free)} 𝞃</td>
                   <td className='text-center py-2'><PercentBar stake={item.staked} free={item.free} /></td>
