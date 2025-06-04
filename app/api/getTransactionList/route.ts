@@ -6,7 +6,7 @@ export async function GET(req: Request) {
     try {
         const url = new URL(req.url); // Create a URL object from the request URL
         const coldkey_address = url.searchParams.get('coldkey_address'); // Get the 'day' query parameter
-        const result = await axios.post(`https://taoxnet.io/api/v1/transfer/address?network=mainnet`, {address: coldkey_address, skip: 0, take: 20});
+        const result = await axios.post(`https://taoxnet.io/api/v1/transfer/address?network=mainnet`, {address: coldkey_address, skip: 0, take: 100});
         const data = result.data.data;
         return NextResponse.json(data);
 
