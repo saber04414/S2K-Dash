@@ -14,7 +14,7 @@ type Props = {
 const TransactionTr = (props: Props) => {
     const { fromAddress, toAddress, amount, blockNumber, timestamp, index } = props
     console.log({ fromAddress, toAddress, amount, blockNumber, timestamp, index })
-    const type = amount > 0 ? "IN" : "OUT"
+    const type = amount < 0 ? "IN" : "OUT"
     return (
         <tr key={index} className={clsx('transition-all cursor-pointer', index % 2 === 0 ? '' : 'bg-slate-700')}>
             <td className='text-center py-2'>{index + 1}</td>
