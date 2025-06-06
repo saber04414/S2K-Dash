@@ -212,7 +212,7 @@ const MyStatusPage = () => {
                                             ))
                                         }
                                         <tr>
-                                            <td colSpan={11}><div className='h-[2px] w-full bg-slate-700'></div></td>
+                                            <td colSpan={12}><div className='h-[2px] w-full bg-slate-700'></div></td>
                                         </tr>
                                         <tr>
                                             <td className='text-center py-2'>Total</td>
