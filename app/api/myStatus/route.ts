@@ -52,11 +52,14 @@ export async function GET(req: Request) {
             ...item, ranking: i + 1
         })).slice(0, 6);
         const filtered_danger_list = danger_list.filter((item: any) => mycoldkeys.includes(item.coldkey));
+
+        const my_coldkeys = Array.from(new Set(filtered_data.map((item: any) => item.coldkey)));
+
         const final_data = filtered_data.map((item: any) => ({
             ...item, danger: filtered_danger_list.find((danger: any) => danger.hotkey === item.hotkey) || null
         }));
         const next_burn = calculateNextBurn(response_reg.data[response_reg.data.length - 1].value, sidebar_data.registrationsThisInterval, sidebar_data.targetRegistrationsPerInterval, sidebar_data.adjustmentAlpha)
-        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value, sidebar: sidebar_data, next_burn };
+        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value, sidebar: sidebar_data, next_burn, mycoldkeys: my_coldkeys };
         const bittensor_data = await queryBittensorData([Number(subnetId)]);
         return NextResponse.json({ data, bittensor_data, taoPrice }, { status: 201 });
     } catch (error) {

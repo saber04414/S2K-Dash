@@ -9,8 +9,8 @@ import { useRouter } from 'next/navigation'
 import { Transaction } from "@/components/TransactionIcon";
 
 export default function Home() {
-    const router = useRouter()
-    const { data, error, isLoading } = useSWR('/api/getDashboard', fetcher);
+  const router = useRouter()
+  const { data, error, isLoading } = useSWR('/api/getDashboard', fetcher);
   if (isLoading) return <div className='w-full h-full'>
     <ImageLoadingSpinner />
   </div>

@@ -1,5 +1,5 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import useSWR from 'swr'
 import Image from 'next/image'
 import { fetcher } from '@/utils/fetcher'
@@ -26,7 +26,23 @@ const MyStatusPage = () => {
     const [incentive_countdowns, setIncentiveCountdowns] = useState(0)
     const [registration_countdowns, setRegistrationCountdowns] = useState(0)
     const [currency, setCurrency] = useState('TAO')
-
+    const [showPopup, setShowPopup] = useState(false);
+    const [selected, setSelected] = useState<string[]>([]);
+    const popupRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (popupRef.current && !popupRef.current.contains(event.target as Node)) {
+                setShowPopup(false);
+            }
+        };
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+    const toggleSelect = (key: string) => {
+        setSelected(prev =>
+            prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key]
+        );
+    };
     useEffect(() => {
         if (data?.bittensor_data) {
             const newIncentiveCountdowns = data.bittensor_data.incentive_res.map((t: any) =>
@@ -131,7 +147,48 @@ const MyStatusPage = () => {
                                             <th className='text-center py-2'>Register At</th>
                                             <th className='text-center py-2'>Status</th>
                                             <th className='text-center py-2'>Stake</th>
-                                            <th className='text-center py-2'>Coldkey</th>
+                                            <th className="relative text-center py-2">
+                                                <div
+                                                    className="flex items-center justify-center gap-1 cursor-pointer"
+                                                    onClick={() => setShowPopup(prev => !prev)}
+                                                >
+                                                    <span className="font-semibold">Coldkey</span>
+                                                    <span className="text-xs bg-yellow-500 text-white rounded-full w-5 h-5 flex items-center justify-center">
+                                                        {data.data.mycoldkeys.length}
+                                                    </span>
+                                                </div>
+
+                                                {showPopup && (
+                                                    <div className="absolute top-full mt-2 right-0 bg-slate-900 shadow-lg border border-slate-500 rounded-md p-2 z-10 w-48 max-h-60 overflow-y-auto" ref={popupRef}>
+                                                        {data.data.mycoldkeys.map((key: string) => (
+                                                            <label key={key} className="flex items-center space-x-2 text-sm py-1 cursor-pointer group justify-center">
+                                                                <input
+                                                                    type="checkbox"
+                                                                    checked={selected.includes(key)}
+                                                                    onChange={() => toggleSelect(key)}
+                                                                    className="peer hidden"
+                                                                />
+                                                                <div className="w-4 h-4 rounded border-2 border-gray-400 flex items-center justify-center peer-checked:border-white peer-checked:bg-white transition-all">
+                                                                    <svg
+                                                                        className="w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity"
+                                                                        viewBox="0 0 24 24"
+                                                                        fill="none"
+                                                                        stroke="currentColor"
+                                                                        strokeWidth="3"
+                                                                        strokeLinecap="round"
+                                                                        strokeLinejoin="round"
+                                                                    >
+                                                                        <polyline points="20 6 9 17 4 12" />
+                                                                    </svg>
+                                                                </div>
+                                                                <span className="truncate select-none text-white group-hover:text-slate-500">
+                                                                    {key}
+                                                                </span>
+                                                            </label>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </th>
                                             <th className='text-center py-2'>Hotkey</th>
                                             <th className='text-center py-2'>Incentive</th>
                                             <th className='text-center py-2'>Performance</th>
@@ -141,8 +198,8 @@ const MyStatusPage = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            data.data && data.data.mydata && data.data.mydata && data.data.mydata.map((item: any, index: number) => (
-                                                <StatusTr key={index} index={index} item={item} data={data} currency={currency}/>
+                                            data.data && data.data.mydata && data.data.mydata && data.data.mydata.filter((item: any) => selected.length === 0 || selected.includes(item.coldkey)).map((item: any, index: number) => (
+                                                <StatusTr key={index} index={index} item={item} data={data} currency={currency} />
                                             ))
                                         }
                                         <tr>
@@ -155,8 +212,8 @@ const MyStatusPage = () => {
                                             <td></td>
                                             {
                                                 currency === 'TAO' ?
-                                                <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td> :
-                                                <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price * data.taoPrice, 2)} $ / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td>
+                                                    <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td> :
+                                                    <td className='text-center py-2'>{showNumber(data.data.total_stake * data.data.price * data.taoPrice, 2)} $ / {showNumber(data.data.total_stake, 2)} {data.data.letter}</td>
                                             }
                                             <td></td>
                                             <td></td>
@@ -164,8 +221,8 @@ const MyStatusPage = () => {
                                             <td></td>
                                             {
                                                 currency === 'TAO' ?
-                                                <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td> :
-                                                <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price * data.taoPrice, 2)} $ / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td>
+                                                    <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price, 2)} 𝞃 / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td> :
+                                                    <td className='text-center py-2'>{showNumber(data.data.total_daily * data.data.price * data.taoPrice, 2)} $ / {showNumber(data.data.total_daily, 2)} {data.data.letter}</td>
                                             }
                                         </tr>
                                     </tbody>
