@@ -53,9 +53,11 @@ export async function GET(req: Request) {
         })).slice(0, 6);
         const filtered_danger_list = danger_list.filter((item: any) => mycoldkeys.includes(item.coldkey));
         // registration list
-        const registration_list = response_data.filter((res_item: any) => res_item.miner === true && res_item.immunityPeriod >= 0 && res_item.validator === false).sort((a: any, b: any) => a.registeredAt - b.registeredAt).sort((a: any, b: any) => a.registeredAt - b.registeredAt).map((item: any, i: number) => ({
+        const registration_list = response_data.filter((res_item: any) => res_item.miner === true && res_item.immunityPeriod >= 0 && res_item.validator === false).sort((a: any, b: any) => a.registeredAt - b.registeredAt).sort((a: any, b: any) => b.registeredAt - a.registeredAt).map((item: any, i: number) => ({
             ...item, ranking: i + 1
         })).slice(0, sidebar_data.burnRegistrationsThisInterval);
+
+        const sorted_registration_list = registration_list.sort((a: any, b: any) => a.registeredAt - b.registeredAt)
 
         const my_coldkeys = Array.from(new Set(filtered_data.map((item: any) => item.coldkey)));
 
@@ -63,7 +65,7 @@ export async function GET(req: Request) {
             ...item, danger: filtered_danger_list.find((danger: any) => danger.hotkey === item.hotkey) || null
         }));
         const next_burn = calculateNextBurn(response_reg.data[response_reg.data.length - 1].value, sidebar_data.registrationsThisInterval, sidebar_data.targetRegistrationsPerInterval, sidebar_data.adjustmentAlpha)
-        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value, sidebar: sidebar_data, next_burn, mycoldkeys: my_coldkeys, reglist: registration_list };
+        const data = { subnet: subnetId, total_stake, total_daily, name: subnet_info.name, letter: subnet_info.letter, taoInpool: price.subnetTAO, alphaInpool: price.subnetAlphaIn, emission: price.emissionRate, price: price.price, marketcap: subnet_info.marketcap, mydata: final_data, regcost: response_reg.data[response_reg.data.length - 1].value, sidebar: sidebar_data, next_burn, mycoldkeys: my_coldkeys, reglist: sorted_registration_list };
         const bittensor_data = await queryBittensorData([Number(subnetId)]);
         return NextResponse.json({ data, bittensor_data, taoPrice }, { status: 201 });
     } catch (error) {
