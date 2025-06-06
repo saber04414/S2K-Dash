@@ -53,7 +53,7 @@ export async function GET(req: Request) {
         })).slice(0, 6);
         const filtered_danger_list = danger_list.filter((item: any) => mycoldkeys.includes(item.coldkey));
         // registration list
-        const registration_list = response_data.filter((res_item: any) => res_item.miner === true && res_item.immunityPeriod >= 0 && res_item.validator === false).sort((a: any, b: any) => a.registeredAt - b.registeredAt).sort((a: any, b: any) => b.registeredAt - a.registeredAt).map((item: any, i: number) => ({
+        const registration_list = response_data.filter((res_item: any) => res_item.miner === true && res_item.immunityPeriod >= 0 && res_item.validator === false).sort((a: any, b: any) => a.registeredAt - b.registeredAt).sort((a: any, b: any) => a.registeredAt - b.registeredAt).map((item: any, i: number) => ({
             ...item, ranking: i + 1
         })).slice(0, sidebar_data.burnRegistrationsThisInterval);
 
