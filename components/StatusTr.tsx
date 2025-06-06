@@ -43,6 +43,7 @@ const StatusTr = (props: Props) => {
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.hotkey)}>{showKey(item.hotkey)}</td>
             <td className='text-center py-2'>{showNumber(item.incentive, 4)}</td>
             <td className='text-center py-2'>{showNumber(item.minerPerformance, 2)}</td>
+            <td className='text-center py-2'>{item.ip}</td>
             {
                 currency === 'TAO' ?
                 <td className='text-center py-2'>{showNumber(item.alphaPerDay * data.data.price, 3)} 𝞃 / {showNumber(item.alphaPerDay, 3)} {data.data.letter}</td> :

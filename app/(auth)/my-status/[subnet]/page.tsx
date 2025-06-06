@@ -200,6 +200,7 @@ const MyStatusPage = () => {
                                             <th className='text-center py-2'>Hotkey</th>
                                             <th className='text-center py-2'>Incentive</th>
                                             <th className='text-center py-2'>Performance</th>
+                                            <th className='text-center py-2'>Axon</th>
                                             <th className='text-center py-2'>Daily</th>
                                             <th className='text-center py-2'>Action</th>
                                         </tr>
