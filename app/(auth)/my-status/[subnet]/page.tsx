@@ -117,10 +117,18 @@ const MyStatusPage = () => {
                                         <div className='text-sm pr-3'>Next Reg Cost: {showNumber(data.data.next_burn, 4)} 𝞃</div>
                                         <div className='text-sm pr-5 flex flex-row gap-1'>
                                             {Array.from({ length: data.data.sidebar.burnRegistrationsThisInterval }).map((_, i) => (
-                                                <div
-                                                    key={i}
-                                                    className="w-4 h-4 rounded-full bg-red-500"
-                                                />
+                                                <TooltipProvider key={i}>
+                                                    <Tooltip>
+                                                        <TooltipTrigger asChild>
+                                                            <div className="w-4 h-4 rounded-full bg-red-500 cursor-pointer" />
+                                                        </TooltipTrigger>
+                                                        <TooltipContent side="top" className="text-xs border border-slate-500 bg-slate-900 text-white flex flex-col">
+                                                            <div>{`UID    : ${data.data.reglist[i].uid}`}</div>
+                                                            <div>{`Coldkey: ${data.data.reglist[i].coldkey}`}</div>
+                                                            <div>{`Hotkey : ${data.data.reglist[i].hotkey}`}</div>
+                                                        </TooltipContent>
+                                                    </Tooltip>
+                                                </TooltipProvider>
                                             ))}
                                             {Array.from({ length: data.data.sidebar.maxRegsPerInterval - data.data.sidebar.burnRegistrationsThisInterval }).map((_, i) => (
                                                 <div
