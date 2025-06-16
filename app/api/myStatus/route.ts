@@ -6,7 +6,8 @@ import { u64 } from '@polkadot/types';
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0;
-const networkEntryPoint = "ws://95.216.101.25:9944";
+// const networkEntryPoint = "ws://95.216.101.25:9944";
+const networkEntryPoint = "wss://entrypoint-finney.opentensor.ai:443";
 
 export async function GET(req: Request) {
     const url = new URL(req.url); // Create a URL object from the request URL

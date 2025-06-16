@@ -19,6 +19,8 @@ import clsx from 'clsx'
 const MyStatusPage = () => {
     const router = useRouter()
     const params = useParams();
+    const [sortKey, setSortKey] = useState('');
+    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
     const { data, error, isLoading } = useSWR(`/api/myStatus?subnet=${params.subnet}`, fetcher, {
         refreshInterval: 12_000,
         revalidateOnFocus: false, // optional: prevent refetch on tab focus
@@ -38,6 +40,32 @@ const MyStatusPage = () => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
+    const handleSort = (key: string) => {
+        if (sortKey === key) {
+            setSortOrder(prev => (prev === 'asc' ? 'desc' : 'asc'));
+        } else {
+            setSortKey(key);
+            setSortOrder('asc');
+        }
+    };
+
+    const sortedData = [...(data?.data?.mydata || [])].filter((item: any) => selected.length === 0 || selected.includes(item.coldkey)).sort((a: any, b: any) => {
+        const dir = sortOrder === 'asc' ? 1 : -1;
+        switch (sortKey) {
+            case 'uid': return dir * (a.uid - b.uid);
+            case 'registerAt': return dir * (new Date(a.registeredAt).getTime() - new Date(b.registeredAt).getTime());
+            case 'stake': return dir * (a.stake - b.stake);
+            case 'coldkey': return dir * a.coldkey.localeCompare(b.coldkey);
+            case 'hotkey': return dir * a.hotkey.localeCompare(b.hotkey);
+            case 'incentive': return dir * (a.incentive - b.incentive);
+            case 'performance': return dir * (a.minerPerformance - b.minerPerformance);
+            case 'axon': return dir * a.ip.localeCompare(b.ip);
+            case 'daily': return dir * (a.alphaPerDay - b.alphaPerDay);
+            default: return 0;
+        }
+    });
+    
+    
     const toggleSelect = (key: string) => {
         setSelected(prev =>
             prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key]
@@ -150,11 +178,11 @@ const MyStatusPage = () => {
                                 <table className='w-full'>
                                     <thead>
                                         <tr className='bg-slate-700'>
-                                            <th className='text-center py-2'>No</th>
-                                            <th className='text-center py-2'>UID</th>
-                                            <th className='text-center py-2'>Register At</th>
+                                            <th className='text-center py-2 cursor-pointer'>No</th>
+                                            <th className='text-center py-2 cursor-pointer' onClick={() => handleSort('uid')}>UID</th>
+                                            <th className='text-center py-2 cursor-pointer' onClick={() => handleSort('registerAt')}>Register At</th>
                                             <th className='text-center py-2'>Status</th>
-                                            <th className='text-center py-2'>Stake</th>
+                                            <th className='text-center py-2 cursor-pointer' onClick={() => handleSort('stake')}>Stake</th>
                                             <th className="relative text-center py-2">
                                                 <div
                                                     className="flex items-center justify-center gap-1 cursor-pointer"
@@ -197,17 +225,17 @@ const MyStatusPage = () => {
                                                     </div>
                                                 )}
                                             </th>
-                                            <th className='text-center py-2'>Hotkey</th>
-                                            <th className='text-center py-2'>Incentive</th>
-                                            <th className='text-center py-2'>Performance</th>
-                                            <th className='text-center py-2'>Axon</th>
-                                            <th className='text-center py-2'>Daily</th>
+                                            <th className='text-center py-2 cursor-pointer' onClick={() => handleSort('hotkey')}>Hotkey</th>
+                                            <th className='text-center py-2 cursor-pointer' onClick={() => handleSort('incentive')}>Incentive</th>
+                                            <th className='text-center py-2 cursor-pointer' onClick={() => handleSort('performance')}>Performance</th>
+                                            <th className='text-center py-2 cursor-pointer' onClick={() => handleSort('axon')}>Axon</th>
+                                            <th className='text-center py-2 cursor-pointer' onClick={() => handleSort('daily')}>Daily</th>
                                             <th className='text-center py-2'>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         {
-                                            data.data && data.data.mydata && data.data.mydata && data.data.mydata.filter((item: any) => selected.length === 0 || selected.includes(item.coldkey)).map((item: any, index: number) => (
+                                            sortedData && sortedData.filter((item: any) => selected.length === 0 || selected.includes(item.coldkey)).map((item: any, index: number) => (
                                                 <StatusTr key={index} index={index} item={item} data={data} currency={currency} />
                                             ))
                                         }

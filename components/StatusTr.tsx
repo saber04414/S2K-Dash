@@ -10,7 +10,7 @@ type Props = {
     index: number,
     item: any,
     data: any,
-    currency: string
+    currency: string,
 }
 
 const StatusTr = (props: Props) => {
