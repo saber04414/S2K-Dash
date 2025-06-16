@@ -44,7 +44,7 @@ const SubnetItem = (props: Props) => {
                     <div className='text-sm'>Alpha In Pool: {showTaoNumber(props.subnetAlphaIn)} 𝞃</div>
                     <div className='text-sm'>TAO In Pool: {showTaoNumber(props.subnetTAO)} 𝞃</div>
                 </div>
-                <div className='flex flex-row gap-2 justify-between items-center px-4 pb-2'>
+                <div className='flex flex-row gap-2 justify-between items-center px-4 pb-2 z-50'>
                     <div className='text-sm'>Price: {showNumber(props.price, 4)} 𝞃</div>
                     {props.github && <button className='hover:scale-[1.2] transition-all' onClick={() => router.push(props.github)}><GithubIcon size={18} /></button>}
                 </div>
