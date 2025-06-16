@@ -38,9 +38,9 @@ const SubnetItem = (props: Props) => {
     }
     return (
         <div className='w-full rounded-md border border-slate-500 cursor-pointer flex flex-col gap-0 hover:scale-[1.01] transition-all relative'>
-            <div className="absolute inset-0 bg-gray-200 opacity-0 hover:opacity-40 transition-opacity duration-300" />
-            <Image className='w-full h-56 bg-slate-500 rounded-t-md' src={src} width="500" height="500" alt='' onError={() => setSrc('/default.png')} onClick={() => router.push(`/my-status/${props.subnet_id}`)} />
-            <div className='py-2 flex flex-col gap-1' onClick={() => router.push(`/my-status/${props.subnet_id}`)}>
+            <div className="absolute z-10 inset-0 bg-gray-200 opacity-0 hover:opacity-40 transition-opacity duration-300"  onClick={() => router.push(`/my-status/${props.subnet_id}`)}/>
+            <Image className='w-full h-56 bg-slate-500 rounded-t-md' src={src} width="500" height="500" alt='' onError={() => setSrc('/default.png')} />
+            <div className='py-2 flex flex-col gap-1'>
                 <div className='flex flex-row justify-between items-center px-4 pb-2'>
                     <div className='text-xl font-bold'>Subnet {props.subnet_id}</div>
                     <div className='text-sm px-2 bg-red-500 rounded-full'>{props.active} / {props.maxAllowedUids}</div>
@@ -55,7 +55,7 @@ const SubnetItem = (props: Props) => {
                 </div>
                 <div className='flex flex-row gap-2 justify-between items-center px-4 pb-2 z-50'>
                     <div className='text-sm'>Price: {showNumber(props.price, 4)} 𝞃</div>
-                    <div className='flex flex-row justify-center items-center'>
+                    <div className='flex flex-row justify-center items-center gap-2'>
                         {props.github && <button className='hover:scale-[1.2] transition-all' onClick={() => router.push(props.github)}><GithubIcon size={18} /></button>}
                         {<button className='hover:scale-[1.2] transition-all text-red-700' onClick={() => handleDelete(props.subnet_id)}><Trash2 size={18} /></button>}
                     </div>
