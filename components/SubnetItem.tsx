@@ -33,6 +33,7 @@ const SubnetItem = (props: Props) => {
         const response = await axios.post("/api/deleteSubnet", { netuid: netuid });
         if (response.status === 201) {
             toast.success("Subnet deleted successfully");
+            router.refresh()
         } else {
             toast.error("Failed to delete subnet");
         }
