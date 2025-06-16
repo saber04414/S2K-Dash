@@ -6,6 +6,7 @@ import { showNumber, showTaoNumber } from '@/lib/main'
 import { useState } from 'react'
 import { Trash2, GithubIcon } from 'lucide-react'
 import axios from 'axios'
+import toast from 'react-hot-toast'
 type Props = {
     subnet_id: number
     active: number
@@ -29,11 +30,11 @@ const SubnetItem = (props: Props) => {
     const router = useRouter()
     const [src, setSrc] = useState(props.image_url || '/default.png')
     const handleDelete = async (netuid: number) => {
-        const response = await axios.post("/api/deleteSubnet", { netuid });
-        if (response.status === 200) {
-            console.log("Subnet deleted successfully");
+        const response = await axios.post("/api/deleteSubnet", { netuid: netuid });
+        if (response.status === 201) {
+            toast.success("Subnet deleted successfully");
         } else {
-            console.log("Failed to delete subnet");
+            toast.error("Failed to delete subnet");
         }
     }
     return (
