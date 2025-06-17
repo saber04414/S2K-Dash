@@ -10,8 +10,8 @@ export const AddressName: { [key: string]: string } = {
     '5G1KHsJZG12FktWDocKpUYC7Af2jgXeNJSc8avfjUY1HgQgd': 'Union8',
     '5CRrgW7W5ZDWRukPLi1DdCBtbUrLta6qthJE8r6hA9GhPqw4': 'Moon1',
     '5HZAKfn97xkdpFQ6kUmVGz6aVSFLaxn6bJ887zxpEv2VdF9g': 'SKX1',
-    '5CqUe8FKvN7Yvfd1N1w8F7Qg58mkeEudf3iCJ9heY737iUDM': 'SKX2',
-    '5DMJv8NQJKRGH1nLK8W8bxy41agZBPvF5ek9zBTZXTrXbDRp': 'SKX3',
+    '5DMJv8NQJKRGH1nLK8W8bxy41agZBPvF5ek9zBTZXTrXbDRp': 'SKX2',
+    '5CqUe8FKvN7Yvfd1N1w8F7Qg58mkeEudf3iCJ9heY737iUDM': 'SKX3',
     '5Fh2X1HqStsN2TZJPLBCy8ZybZh3SHCXGcYTDHnh7kAnFF7T': 'S2K Labs',
     '5HbDZ6ULuwZegAMSPaS2kaUfBLMDaht5t48RcDrQATSgGCAR': 'S2K Labs',
     '5FkHiULruUhoTSe58oRrFwoNRZ72iz9BFtLvLVVjeCTK8N9r': 'K2'
