@@ -11,11 +11,12 @@ type Props = {
     item: any,
     data: any,
     currency: string,
+    blur: boolean,
 }
 
 const StatusTr = (props: Props) => {
     const [loading, setLoading] = React.useState(false)
-    const { index, item, data, currency } = props
+    const { index, item, data, currency, blur } = props
 
     const unstake = async (coldkey: string, hotkey: string, netuid: string, amount: number) => {
         setLoading(true)
@@ -31,7 +32,7 @@ const StatusTr = (props: Props) => {
     return (
         <tr key={index} className={clsx('transition-all cursor-pointer', index % 2 === 0 ? '' : 'bg-slate-700')}>
             <td className='text-center py-2'>{index + 1}</td>
-            <td className='text-center py-2'>{item.uid}</td>
+            <td className={clsx('text-center py-2', blur ? 'blur-sm': 'blur-none')}>{item.uid}</td>
             <td className='text-center py-2'>{showTimestampToDateTime(item.registeredAt)}</td>
             <td className='text-center py-2'>{item.danger == null && (item.immunityPeriod > 0 ? <Immune /> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
             {

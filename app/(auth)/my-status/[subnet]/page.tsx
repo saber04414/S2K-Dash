@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { fetcher } from '@/utils/fetcher'
 import { showNumber, showTaoNumber } from '@/lib/main'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Droplet } from 'lucide-react'
 import {
     Tooltip,
     TooltipContent,
@@ -20,6 +20,7 @@ const MyStatusPage = () => {
     const router = useRouter()
     const params = useParams();
     const [sortKey, setSortKey] = useState('');
+    const [blur, setBlur] = useState(true);
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
     const { data, error, isLoading } = useSWR(`/api/myStatus?subnet=${params.subnet}`, fetcher, {
         refreshInterval: 12_000,
@@ -115,6 +116,7 @@ const MyStatusPage = () => {
                 <div className='absolute top-0 right-0 w-fit text-center cursor-pointer flex flex-row gap-2 items-center py-1 px-2 border border-slate-500 rounded-md'>
                     <button onClick={() => setCurrency('TAO')} className={clsx('flex flex-row gap-2 items-center justify-center px-2 py-1 rounded-md border border-slate-500', currency === 'TAO' && 'border-white text-white')}><Image className='rounded-full w-5 h-5' src="/tao.png" alt="" width={20} height={20} />TAO</button>
                     <button onClick={() => setCurrency('USD')} className={clsx('flex flex-row gap-2 items-center justify-center px-2 py-1 rounded-md border border-slate-500', currency === 'USD' && 'border-white text-white')}><Image className='rounded-full w-5 h-5' src="/dollar.png" alt="" width={20} height={20} />USD</button>
+                    <button className={clsx('flex border px-2 py-1 items-center justify-center rounded-md', blur ? 'border-2 border-white' : 'border-1 border-white')} onClick={()=> setBlur(!blur)}><Droplet size={20} /></button>
                 </div>
                 <div className='flex flex-col gap-10'>
                     {
@@ -124,7 +126,7 @@ const MyStatusPage = () => {
                                     <TooltipProvider>
                                         <Tooltip>
                                             <TooltipTrigger asChild>
-                                                <div className='text-xl text-semibold text-left underline cursor-pointer'>Subnet {data.data.subnet}</div>
+                                                <div className='text-xl text-semibold text-left underline cursor-pointer'>Subnet <span className={clsx(blur ? 'blur-sm' : 'blur-none')}>{data.data.subnet}</span></div>
                                             </TooltipTrigger>
                                             <TooltipContent side="bottom" className='border-slate-500 border'>
                                                 <div className='flex flex-col gap-2'>
@@ -236,7 +238,7 @@ const MyStatusPage = () => {
                                     <tbody>
                                         {
                                             sortedData && sortedData.filter((item: any) => selected.length === 0 || selected.includes(item.coldkey)).map((item: any, index: number) => (
-                                                <StatusTr key={index} index={index} item={item} data={data} currency={currency} />
+                                                <StatusTr key={index} index={index} item={item} data={data} currency={currency} blur={blur}/>
                                             ))
                                         }
                                         <tr>
