@@ -116,7 +116,15 @@ const MyStatusPage = () => {
                 <div className='absolute top-0 right-0 w-fit text-center cursor-pointer flex flex-row gap-2 items-center py-1 px-2 border border-slate-500 rounded-md'>
                     <button onClick={() => setCurrency('TAO')} className={clsx('flex flex-row gap-2 items-center justify-center px-2 py-1 rounded-md border border-slate-500', currency === 'TAO' && 'border-white text-white')}><Image className='rounded-full w-5 h-5' src="/tao.png" alt="" width={20} height={20} />TAO</button>
                     <button onClick={() => setCurrency('USD')} className={clsx('flex flex-row gap-2 items-center justify-center px-2 py-1 rounded-md border border-slate-500', currency === 'USD' && 'border-white text-white')}><Image className='rounded-full w-5 h-5' src="/dollar.png" alt="" width={20} height={20} />USD</button>
-                    <button className={clsx('flex border px-2 py-1 items-center justify-center rounded-md', blur ? 'border-2 border-white' : 'border-1 border-white')} onClick={()=> setBlur(!blur)}><Droplet size={20} /></button>
+                    <button
+                    className={clsx(
+                        'flex px-2 py-1 items-center justify-center rounded-md border border-white transition-all',
+                        blur ? 'backdrop-blur-md shadow-lg' : ''
+                    )}
+                    onClick={() => setBlur(!blur)}
+                    >
+                    <Droplet size={20} />
+                    </button>
                 </div>
                 <div className='flex flex-col gap-10'>
                     {
