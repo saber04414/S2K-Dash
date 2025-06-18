@@ -112,15 +112,15 @@ const MyStatusPage = () => {
         return (
             <div className='w-full flex flex-col gap-10 justify-center relative'>
                 <div className='absolute top-0 left-0 w-fit text-center p-2 cursor-pointer flex flex-row gap-2 items-center' onClick={() => router.back()}><ArrowLeft size={18} />Back</div>
-                <div className='absolute bottom-0 right-0 w-fit z-10 text-center p-2 cursor-pointer flex flex-row gap-2'>
-                    <a href={`https://taostats.io/subnets/${data.data.subnet}/metagraph`} >
-                        <Image className='rounded-full w-8 h-8 transition-transform duration-200 hover:scale-125' src="/taostats.png" alt="" width={25} height={25} />
+                <div className='fixed bottom-5 right-10 w-fit z-10 text-center p-2 cursor-pointer flex flex-row gap-2 bg-slate-500/30 backdrop-blur-md rounded-md'>
+                    <a href={`https://taostats.io/subnets/${data.data.subnet}/metagraph`} target="__blank">
+                        <Image className='rounded-full w-6 h-6 transition-transform duration-200 hover:scale-125' src="/taostats.png" alt="" width={20} height={20} />
                     </a>
-                    <a href={`https://taoxnet.io/subnets/${data.data.subnet}/metagraph`}>
-                        <Image className='rounded-full w-8 h-8 transition-transform duration-200 hover:scale-125' src="/taoxnet.png" alt="" width={25} height={25} />
+                    <a href={`https://taoxnet.io/subnets/${data.data.subnet}/metagraph`} target="__blank">
+                        <Image className='rounded-full w-6 h-6 transition-transform duration-200 hover:scale-125' src="/taoxnet.png" alt="" width={20} height={20} />
                     </a>
-                    <a href={`https://taomarketcap.com/subnets/${data.data.subnet}/miners`}>
-                        <Image className='rounded-full w-8 h-8 transition-transform duration-200 hover:scale-125' src="/taomarketcap.png" alt="" width={25} height={25} />
+                    <a href={`https://taomarketcap.com/subnets/${data.data.subnet}/miners`} target="__blank">
+                        <Image className='rounded-full w-6 h-6 transition-transform duration-200 hover:scale-125' src="/taomarketcap.png" alt="" width={20} height={20} />
                     </a>
                 </div>
                 <div className='text-2xl font-bold text-center'>My Status</div>
