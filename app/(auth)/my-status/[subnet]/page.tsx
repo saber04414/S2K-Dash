@@ -118,8 +118,8 @@ const MyStatusPage = () => {
                     <button onClick={() => setCurrency('USD')} className={clsx('flex flex-row gap-2 items-center justify-center px-2 py-1 rounded-md border border-slate-500', currency === 'USD' && 'border-white text-white')}><Image className='rounded-full w-5 h-5' src="/dollar.png" alt="" width={20} height={20} />USD</button>
                     <button
                         className={clsx(
-                            'flex px-2 py-2 items-center justify-center rounded-md border border-white transition-all',
-                            blur ? 'shadow-lg' : 'shadow-none'
+                            'flex px-2 py-2 items-center justify-center rounded-md border transition-all',
+                            blur ? 'shadow-lg border-white' : 'shadow-none border-slate-500'
                         )}
                         onClick={() => setBlur(!blur)}
                     >
