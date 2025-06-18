@@ -112,6 +112,17 @@ const MyStatusPage = () => {
         return (
             <div className='w-full flex flex-col gap-10 justify-center relative'>
                 <div className='absolute top-0 left-0 w-fit text-center p-2 cursor-pointer flex flex-row gap-2 items-center' onClick={() => router.back()}><ArrowLeft size={18} />Back</div>
+                <div className='absolute bottom-0 right-0 w-fit z-10 text-center p-2 cursor-pointer flex flex-row gap-2'>
+                    <a href={`https://taostats.io/subnets/${data.data.subnet}/metagraph`} >
+                        <Image className='rounded-full w-8 h-8 transition-transform duration-200 hover:scale-125' src="/taostats.png" alt="" width={25} height={25} />
+                    </a>
+                    <a href={`https://taoxnet.io/subnets/${data.data.subnet}/metagraph`}>
+                        <Image className='rounded-full w-8 h-8 transition-transform duration-200 hover:scale-125' src="/taoxnet.png" alt="" width={25} height={25} />
+                    </a>
+                    <a href={`https://taomarketcap.com/subnets/${data.data.subnet}/miners`}>
+                        <Image className='rounded-full w-8 h-8 transition-transform duration-200 hover:scale-125' src="/taomarketcap.png" alt="" width={25} height={25} />
+                    </a>
+                </div>
                 <div className='text-2xl font-bold text-center'>My Status</div>
                 <div className='absolute top-0 right-0 w-fit text-center cursor-pointer flex flex-row gap-2 items-center py-1 px-2 border border-slate-500 rounded-md h-[50px]'>
                     <button onClick={() => setCurrency('TAO')} className={clsx('flex flex-row gap-2 items-center justify-center px-2 h-full rounded-md border border-slate-500', currency === 'TAO' && 'border-white text-white')}><Image className='rounded-full w-5 h-5' src="/tao.png" alt="" width={20} height={20} />TAO</button>
