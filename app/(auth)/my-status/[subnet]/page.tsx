@@ -56,13 +56,6 @@ const MyStatusPage = () => {
   const popupRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!isValidS2k(params.subnet as string)) {
-      const numeric = parseInt(params.subnet as string, 10);
-      if (!isNaN(numeric)) {
-        const corrected = getS2kUrl(numeric);
-        router.replace(`/my-status/${corrected}`);
-      }
-    }
     const fetchData = async () => {
       const response = await axios.post("/api/subnetInfo", {
         netuid: decodeS2kUrl(params.subnet as string),
@@ -74,7 +67,15 @@ const MyStatusPage = () => {
       }
       return response_data;
     };
-    fetchData();
+    if (!isValidS2k(params.subnet as string)) {
+      const numeric = parseInt(params.subnet as string, 10);
+      if (!isNaN(numeric)) {
+        const corrected = getS2kUrl(numeric);
+        router.replace(`/my-status/${corrected}`);
+      }
+    } else {
+      fetchData();
+    }
   }, [params.subnet]);
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
