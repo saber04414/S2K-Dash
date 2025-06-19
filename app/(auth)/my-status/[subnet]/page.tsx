@@ -68,6 +68,7 @@ const MyStatusPage = () => {
       return response_data;
     };
     if (!isValidS2k(params.subnet as string)) {
+      console.log("Invalid url");
       const numeric = parseInt(params.subnet as string, 10);
       if (!isNaN(numeric)) {
         const corrected = getS2kUrl(numeric);
