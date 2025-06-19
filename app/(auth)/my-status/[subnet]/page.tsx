@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import useSWR from "swr";
 import Image from "next/image";
 import { fetcher } from "@/utils/fetcher";
-import { showNumber, showTaoNumber } from "@/lib/main";
+import { decodeS2kUrl, showNumber, showTaoNumber } from "@/lib/main";
 import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
 import {
   ArrowLeft,
@@ -32,7 +32,7 @@ const MyStatusPage = () => {
   const [showChart, setShowChart] = useState(false);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const { data, error, isLoading } = useSWR(
-    `/api/myStatus?subnet=${params.subnet}`,
+    `/api/myStatus?subnet=${decodeS2kUrl(params.subnet as string)}`,
     fetcher,
     {
       refreshInterval: 12_000,

@@ -40,6 +40,38 @@ const showTimestampToDateTime = (timestamp: number): string => {
 
   return `${year}-${month}-${day} ${hour}:${minute}:${second}`;
 };
+
+const getS2kUrl = (aa: number): string => {
+  const str = aa.toString();
+
+  if (aa < 10) {
+    return `0s2k${str}`;
+  } else if (aa < 100) {
+    return `${str[0]}s2k${str[1]}`;
+  } else {
+    return `${str[0]}${str[1]}s2k${str[2]}`;
+  }
+};
+
+const decodeS2kUrl = (s2kStr: string): number => {
+  const [part1, part2] = s2kStr.split("s2k");
+
+  if (!part1 || !part2) throw new Error("Invalid s2k format");
+
+  if (part1 === "0" && part2.length === 1) {
+    // e.g., "0s2k3" → 3
+    return parseInt(part2, 10);
+  } else if (part1.length === 1 && part2.length === 1) {
+    // e.g., "4s2k2" → 42
+    return parseInt(part1 + part2, 10);
+  } else if (part1.length === 2 && part2.length === 1) {
+    // e.g., "12s2k8" → 128
+    return parseInt(part1 + part2, 10);
+  } else {
+    throw new Error("Unsupported pattern");
+  }
+};
+
 export {
   copyKey,
   showKey,
@@ -48,4 +80,6 @@ export {
   showNumber,
   showTimestampToDateTime,
   showDashKey,
+  getS2kUrl,
+  decodeS2kUrl,
 };
