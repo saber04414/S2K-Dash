@@ -46,7 +46,7 @@ export async function GET(req: Request) {
     const price_res = await axios.get(
       `https://taomarketcap.com/api/subnets/${subnetId}/candle_chart?type=1hr`
     );
-    const price_data = await price_res.data;
+    const price_data = await price_res.data.data;
     const filtered_data = response_data.filter((res_item: any) =>
       mycoldkeys.includes(res_item.coldkey)
     );

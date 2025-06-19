@@ -13,6 +13,10 @@ type RawCandleData = {
   low: number;
   close: number;
   timestamp: number;
+  last_processed_block: number;
+  start_block: number;
+  subnet: number;
+  volume: number;
 };
 
 interface PriceChartProps {
@@ -31,6 +35,7 @@ function convertToCandleData(data: RawCandleData[]): CandlestickData[] {
 
 const PriceChart: React.FC<PriceChartProps> = ({ data }) => {
   const chartContainerRef = useRef<HTMLDivElement>(null);
+  console.log({ data });
 
   useEffect(() => {
     if (!chartContainerRef.current) return;

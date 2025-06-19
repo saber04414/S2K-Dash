@@ -28,7 +28,7 @@ const MyStatusPage = () => {
   const params = useParams();
   const [sortKey, setSortKey] = useState("");
   const [blur, setBlur] = useState(true);
-  const [price, setPrice] = useState(true);
+  const [price, setPrice] = useState(false);
   const [showChart, setShowChart] = useState(false);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const { data, error, isLoading } = useSWR(
@@ -143,7 +143,6 @@ const MyStatusPage = () => {
       </div>
     );
   if (data) {
-    console.log({ data });
     return (
       <div className="w-full flex flex-col gap-10 justify-center relative">
         <div
@@ -362,12 +361,12 @@ const MyStatusPage = () => {
               </div>
               {showChart && (
                 <div className="flex flex-col items-center justify-center w-full">
-                  <MinersChart chartData={data.price_data} />
+                  <MinersChart chartData={data.chartData} />
                 </div>
               )}
               {price && (
                 <div className="flex flex-col items-center justify-center w-full">
-                  <PriceChart data={data.chartData} />
+                  <PriceChart data={data.price_data} />
                 </div>
               )}
               <table className="w-full">
