@@ -63,9 +63,6 @@ const MyStatusPage = () => {
         router.replace(`/my-status/${corrected}`);
       }
     }
-  }, [params.subnet, router]);
-
-  useEffect(() => {
     const fetchData = async () => {
       const response = await axios.post("/api/subnetInfo", {
         netuid: decodeS2kUrl(params.subnet as string),
