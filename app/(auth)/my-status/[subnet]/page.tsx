@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import useSWR from "swr";
 import Image from "next/image";
 import { fetcher } from "@/utils/fetcher";
-import { decodeS2kUrl, showNumber, showTaoNumber } from "@/lib/main";
+import { decodeS2kUrl, getS2kUrl, showNumber, showTaoNumber } from "@/lib/main";
 import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
 import {
   ArrowLeft,
@@ -169,13 +169,14 @@ const MyStatusPage = () => {
           <ArrowLeft size={18} />
           Back
         </div>
-        <div className="flex flex-row gap-2 bg-slate-500/30 backdrop-blur-md rounded-md cursor-pointer text-center z-10 fixed top-5 right-10">
+        <div className="flex flex-row gap-2 bg-slate-500/30 backdrop-blur-md rounded-md cursor-pointer text-center z-10 fixed top-5 right-10 py-1 px-2">
           {subnets &&
             subnets.length > 0 &&
             subnets.map((item: number, index: number) => (
               <div
                 className="blur-sm hover:blur-none text-sm hover:scale-110 transition-transform duration-200"
                 key={index}
+                onClick={() => router.push(`/my-status/${getS2kUrl(item)}`)}
               >
                 {item}
               </div>
