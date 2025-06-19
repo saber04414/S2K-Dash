@@ -54,6 +54,7 @@ export async function GET() {
             stake: item.stake,
             immunity: item.immunityPeriod > 0,
             coldkey: item.coldkey,
+            hotkey: item.hotkey,
             registerDuration: item.registeredAt,
             owner: mycoldkeys.includes(item.coldkey) ? "Mine" : "Unknown",
           };

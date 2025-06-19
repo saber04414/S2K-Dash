@@ -10,6 +10,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { showStatusKey } from "@/lib/main";
 
 const CustomizedBar = (props: any) => {
   const { formattedGraphicalItems } = props;
@@ -46,6 +47,8 @@ const CustomTooltip = (props: any) => {
         <div className="flex flex-col gap-2 mt-6">
           <div>UID: {props.payload[0].payload.uid}</div>
           <div>Owner: {props.payload[0].payload.owner}</div>
+          <div>Coldkey: {showStatusKey(props.payload[0].payload.coldkey)}</div>
+          <div>Hotkey: {showStatusKey(props.payload[0].payload.hotkey)}</div>
           <div>Daily: τ{props.payload[0].payload.daily.toLocaleString()}</div>
           <div>
             Register:{" "}
