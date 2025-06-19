@@ -22,6 +22,7 @@ import { useParams, useRouter } from "next/navigation";
 import StatusTr from "@/components/StatusTr";
 import clsx from "clsx";
 import PriceChart from "@/components/PriceChart";
+import axios from "axios";
 
 const MyStatusPage = () => {
   const router = useRouter();
@@ -44,7 +45,23 @@ const MyStatusPage = () => {
   const [currency, setCurrency] = useState("TAO");
   const [showPopup, setShowPopup] = useState(false);
   const [selected, setSelected] = useState<string[]>([]);
+  const [subnets, setSubnets] = useState<number[]>([]);
+  const [priceData, setPriceData] = useState<any[]>([]);
   const popupRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.post("/api/subnetInfo", {
+        netuid: decodeS2kUrl(params.subnet as string),
+      });
+      const response_data = await response.data;
+      if (response_data.subnets && response_data.priceData) {
+        setSubnets(response_data.subnets);
+        setPriceData(response_data.priceData);
+      }
+      return response_data;
+    };
+    fetchData();
+  }, [params.subnet]);
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -151,6 +168,18 @@ const MyStatusPage = () => {
         >
           <ArrowLeft size={18} />
           Back
+        </div>
+        <div className="flex flex-row gap-2 bg-slate-500/30 backdrop-blur-md rounded-md cursor-pointer text-center z-10 fixed top-5 right-10">
+          {subnets &&
+            subnets.length > 0 &&
+            subnets.map((item: number, index: number) => (
+              <div
+                className="blur-sm hover:blur-none text-sm hover:scale-110 transition-transform duration-200"
+                key={index}
+              >
+                {item}
+              </div>
+            ))}
         </div>
         <div className="fixed bottom-5 right-10 w-fit z-10 text-center p-2 cursor-pointer flex flex-row gap-2 bg-slate-500/30 backdrop-blur-md rounded-md">
           <a
@@ -366,7 +395,7 @@ const MyStatusPage = () => {
               )}
               {price && (
                 <div className="flex flex-col items-center justify-center w-full">
-                  <PriceChart data={data.price_data} />
+                  <PriceChart data={priceData} />
                 </div>
               )}
               <table className="w-full">
