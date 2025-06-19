@@ -72,6 +72,10 @@ const decodeS2kUrl = (s2kStr: string): number => {
   }
 };
 
+const isValidS2k = (s: string): boolean => {
+  return s.includes("s2k") && /^\d{0,2}s2k\d{1}$/.test(s);
+};
+
 export {
   copyKey,
   showKey,
@@ -82,4 +86,5 @@ export {
   showDashKey,
   getS2kUrl,
   decodeS2kUrl,
+  isValidS2k,
 };

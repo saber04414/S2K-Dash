@@ -3,7 +3,13 @@ import React, { useEffect, useRef, useState } from "react";
 import useSWR from "swr";
 import Image from "next/image";
 import { fetcher } from "@/utils/fetcher";
-import { decodeS2kUrl, getS2kUrl, showNumber, showTaoNumber } from "@/lib/main";
+import {
+  decodeS2kUrl,
+  getS2kUrl,
+  showNumber,
+  showTaoNumber,
+  isValidS2k,
+} from "@/lib/main";
 import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
 import {
   ArrowLeft,
@@ -48,6 +54,17 @@ const MyStatusPage = () => {
   const [subnets, setSubnets] = useState<number[]>([]);
   const [priceData, setPriceData] = useState<any[]>([]);
   const popupRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isValidS2k(params.subnet as string)) {
+      const numeric = parseInt(params.subnet as string, 10);
+      if (!isNaN(numeric)) {
+        const corrected = getS2kUrl(numeric);
+        router.replace(`/my-status/${corrected}`);
+      }
+    }
+  }, [params.subnet, router]);
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.post("/api/subnetInfo", {
