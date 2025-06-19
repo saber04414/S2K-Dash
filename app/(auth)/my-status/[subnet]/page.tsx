@@ -5,7 +5,12 @@ import Image from "next/image";
 import { fetcher } from "@/utils/fetcher";
 import { showNumber, showTaoNumber } from "@/lib/main";
 import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
-import { ArrowLeft, Droplet, ChartNoAxesCombined } from "lucide-react";
+import {
+  ArrowLeft,
+  Droplet,
+  ChartNoAxesCombined,
+  ChartSpline,
+} from "lucide-react";
 import MinersChart from "@/components/MinersChart";
 import {
   Tooltip,
@@ -16,12 +21,14 @@ import {
 import { useParams, useRouter } from "next/navigation";
 import StatusTr from "@/components/StatusTr";
 import clsx from "clsx";
+import PriceChart from "@/components/PriceChart";
 
 const MyStatusPage = () => {
   const router = useRouter();
   const params = useParams();
   const [sortKey, setSortKey] = useState("");
   const [blur, setBlur] = useState(true);
+  const [price, setPrice] = useState(true);
   const [showChart, setShowChart] = useState(false);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   const { data, error, isLoading } = useSWR(
@@ -238,6 +245,15 @@ const MyStatusPage = () => {
           >
             <ChartNoAxesCombined size={20} />
           </button>
+          <button
+            className={clsx(
+              "flex px-2 py-1 items-center justify-center rounded-md border transition-all h-full",
+              price ? "shadow-lg border-white" : "shadow-none border-slate-500"
+            )}
+            onClick={() => setPrice(!price)}
+          >
+            <ChartSpline size={20} />
+          </button>
         </div>
         <div className="flex flex-col gap-10">
           {data && data.data && data.bittensor_data && (
@@ -346,7 +362,12 @@ const MyStatusPage = () => {
               </div>
               {showChart && (
                 <div className="flex flex-col items-center justify-center w-full">
-                  <MinersChart chartData={data.chartData} />
+                  <MinersChart chartData={data.price_data} />
+                </div>
+              )}
+              {price && (
+                <div className="flex flex-col items-center justify-center w-full">
+                  <PriceChart data={data.chartData} />
                 </div>
               )}
               <table className="w-full">
