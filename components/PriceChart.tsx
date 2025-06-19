@@ -38,11 +38,11 @@ const PriceChart: React.FC<PriceChartProps> = ({ data }) => {
   console.log({ data });
 
   useEffect(() => {
-    if (!chartContainerRef.current) return;
+    if (!chartContainerRef.current || data.length === 0) return;
 
     const chart = createChart(chartContainerRef.current, {
       width: chartContainerRef.current.clientWidth,
-      height: 400,
+      height: 300,
       layout: {
         background: { color: "#00000000" },
         textColor: "#d1d4dc",
@@ -80,9 +80,11 @@ const PriceChart: React.FC<PriceChartProps> = ({ data }) => {
     candlestickSeries.setData(convertToCandleData(data));
 
     return () => chart.remove();
-  }, []);
+  }, [data]);
 
-  return <div ref={chartContainerRef} />;
+  return (
+    <div ref={chartContainerRef} style={{ width: "100%", height: "400px" }} />
+  );
 };
 
 export default PriceChart;
