@@ -28,7 +28,7 @@ const CustomizedBar = (props: any) => {
       const match =
         item.coldkey?.toLowerCase().includes(searchLower) ||
         item.hotkey?.toLowerCase().includes(searchLower);
-      fillColor = match ? "#F90" : "#d1d5db"; // Highlight or gray
+      fillColor = match ? "#ccc" : "#666666"; // Highlight or gray
     } else {
       // Original logic
       fillColor =
