@@ -1,6 +1,6 @@
 "use client"
 import { formattedTimeFromSeconds } from "@/utils/date";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Bar,
   BarChart,
@@ -11,7 +11,9 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { X } from "lucide-react";
 import { showStatusKey } from "@/lib/main";
+import clsx from "clsx";
 
 const CustomizedBar = (props: any) => {
   const { formattedGraphicalItems, search } = props;
@@ -81,17 +83,49 @@ const CustomTooltip = (props: any) => {
   return null;
 };
 
+type Result = {
+  numMiners: number;
+  dailyAlpha: number;
+}
+
 const MinersChart = ({ chartData }: any) => {
   const [search, setSearch] = useState("");
+  const [search_result, setSearchResult] = useState<Result>({numMiners: 0, dailyAlpha: 0});
 
   const data = chartData;
   if (!data || data.length === 0) {
     return <div>No data available</div>;
   }
 
+  useEffect(() => {
+  if (!search) {
+    setSearchResult({ numMiners: 0, dailyAlpha: 0 });
+    return;
+  }
+
+  const lowerSearch = search.toLowerCase();
+
+  const filtered = data.filter((item: any) => 
+    item.coldkey?.toLowerCase().includes(lowerSearch) ||
+    item.hotkey?.toLowerCase().includes(lowerSearch)
+  );
+
+  const numMiners = filtered.length;
+  const dailyAlpha = filtered.reduce((sum: number, item: any) => sum + (item.daily || 0), 0);
+
+  setSearchResult({ numMiners, dailyAlpha });
+}, [search, data]);
+
   return (
     <div className="relative w-full h-[300px]">
-      <input type="text" placeholder="Search..." className="px-2 py-1 text-sm text-white bg-slate-900 border border-slate-500 focus:border-slate-200 absolute z-10 right-0 top-5 rounded-md" onChange={(e) => setSearch(e.target.value)} />
+      <div className="absolute right-0 top-5 w-fit z-10">
+        <input type="text" placeholder="Search..." className="px-2 py-1 text-sm text-white bg-slate-900 border border-slate-500 focus:border-slate-200 rounded-md" onChange={(e) => setSearch(e.target.value)} value={search} />
+        {search && <X className="absolute right-2 z-10 translate-y-1/2 top-0 cursor-pointer" size={15} onClick={()=> setSearch("")}/>}
+        <div className={clsx("w-full bg-slate-700 border border-slate-500 h-fit gap-1 mt-2 rounded-md p-2 transition-transform duration-200", search ? "flex flex-col" : "hidden")}>
+          <div className="text-sm text-white">Total Miner: {search_result.numMiners}</div>
+          <div className="text-sm text-white">Daily Alaha: {search_result.dailyAlpha.toFixed(2)} τ</div>
+        </div>
+      </div>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           barCategoryGap={0.4}
