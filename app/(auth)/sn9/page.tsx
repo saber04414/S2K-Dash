@@ -11,6 +11,7 @@ export default function Subnet9() {
 
   const [sortKey, setSortKey] = useState("uid");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const numericFields = ["uid", "layer", "backwards_since_reset", "processed_activations"];
 
@@ -58,6 +59,15 @@ export default function Subnet9() {
   return (
     <div className="w-full flex flex-col gap-5 items-center justify-center">
       <div className="text-2xl font-bold text-center">IOTA Dashboard</div>
+
+      <input
+        type="text"
+        placeholder="Search coldkey or hotkey..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className="px-4 py-2 w-full max-w-md border border-gray-300 rounded-lg mb-4 text-black"
+      />
+
       <table className="w-full">
         <thead>
           <tr className="bg-slate-700">
@@ -68,21 +78,31 @@ export default function Subnet9() {
             <th className="text-center py-2 cursor-pointer" onClick={() => handleSort("layer")}>Layer</th>
             <th className="text-center py-2 cursor-pointer" onClick={() => handleSort("backwards_since_reset")}>Backward Activation</th>
             <th className="text-center py-2 cursor-pointer" onClick={() => handleSort("processed_activations")}>Total Activation</th>
+            <th className="text-center py-2 cursor-pointer" onClick={() => handleSort("score")}>Score</th>
           </tr>
         </thead>
         <tbody>
           {
-            sortedData.map((item: any, index: number) => (
-              <tr key={index} className={clsx(index % 2 !== 0 ? "bg-slate-700" : "")}>
-                <td className="text-center py-2">{index + 1}</td>
-                <td className="text-center py-2">{item.uid}</td>
-                <td className='text-center py-2' onClick={() => copyKey(item.coldkey)}>{showStatusKey(item.coldkey)}</td>
-                <td className='text-center py-2' onClick={() => copyKey(item.hotkey)}>{showStatusKey(item.hotkey)}</td>
-                <td className='text-center py-2'>{item.layer}</td>
-                <td className='text-center py-2'>{item.backwards_since_reset}</td>
-                <td className='text-center py-2'>{item.processed_activations}</td>
-              </tr>
-            ))
+            sortedData
+              .filter((item: any) => {
+                const term = searchTerm.toLowerCase();
+                return (
+                  item.coldkey?.toLowerCase().includes(term) ||
+                  item.hotkey?.toLowerCase().includes(term)
+                );
+              })
+              .map((item: any, index: number) => (
+                <tr key={index} className={clsx(index % 2 !== 0 ? "bg-slate-700" : "")}>
+                  <td className="text-center py-2">{index + 1}</td>
+                  <td className="text-center py-2">{item.uid}</td>
+                  <td className='text-center py-2' onClick={() => copyKey(item.coldkey)}>{showStatusKey(item.coldkey)}</td>
+                  <td className='text-center py-2' onClick={() => copyKey(item.hotkey)}>{showStatusKey(item.hotkey)}</td>
+                  <td className='text-center py-2'>{item.layer}</td>
+                  <td className='text-center py-2'>{item.backwards_since_reset}</td>
+                  <td className='text-center py-2'>{item.processed_activations}</td>
+                  <td className='text-center py-2'>{item.score}</td>
+                </tr>
+              ))
           }
           <tr>
             <td colSpan={9}><div className='h-[2px] w-full bg-slate-700'></div></td>
