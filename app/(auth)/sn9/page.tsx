@@ -3,12 +3,11 @@ import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
 import { fetcher } from "@/utils/fetcher";
 import useSWR from 'swr';
 import { useRouter } from 'next/navigation';
-import { showKey, copyKey, showDashKey, showStatusKey } from "@/lib/main";
+import { copyKey, showStatusKey } from "@/lib/main";
 import clsx from "clsx";
 import { useState } from "react";
 
 export default function Subnet9() {
-  const router = useRouter();
   const { data, error, isLoading } = useSWR('/api/getIOTA', fetcher);
 
   const [sortKey, setSortKey] = useState("uid");
