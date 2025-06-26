@@ -2,7 +2,6 @@
 import ImageLoadingSpinner from "@/components/ImageLoadingSpinner";
 import { fetcher } from "@/utils/fetcher";
 import useSWR from 'swr';
-import { useRouter } from 'next/navigation';
 import { copyKey, showStatusKey } from "@/lib/main";
 import clsx from "clsx";
 import { useState } from "react";
