@@ -13,7 +13,7 @@ export default function Subnet9() {
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
   const [searchTerm, setSearchTerm] = useState("");
 
-  const numericFields = ["uid", "layer", "backwards_since_reset", "processed_activations"];
+  const numericFields = ["uid", "layer", "backwards_since_reset", "processed_activations", "score"];
 
   const handleSort = (key: string) => {
     if (sortKey === key) {
