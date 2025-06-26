@@ -57,15 +57,15 @@ export default function Subnet9() {
   );
 
   return (
-    <div className="w-full flex flex-col gap-5 items-center justify-center">
+    <div className="w-full flex flex-col gap-5 justify-center">
       <div className="text-2xl font-bold text-center">IOTA Dashboard</div>
-
+      <div className="w-full flex flex-col gap-3 justify-center">
       <input
         type="text"
         placeholder="Search coldkey or hotkey..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
-        className="px-4 py-2 w-full max-w-md border border-gray-300 rounded-lg mb-4 text-black"
+        className="px-4 py-2 w-full max-w-md bg-transparent border border-gray-300 rounded-lg text-white"
       />
 
       <table className="w-full">
@@ -109,6 +109,7 @@ export default function Subnet9() {
           </tr>
         </tbody>
       </table>
+    </div>
     </div>
   );
 }
