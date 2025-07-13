@@ -7,7 +7,7 @@ export async function GET(req: Request) {
   const subnetIDs = url.searchParams.get('subnetIDs') as string; // Get the 'day' query parameter
   const subnet_ids = subnetIDs.split(',').map((subnet: string) => parseInt(subnet.trim(), 10));
   try {
-    const response = await fetch("https://taomarketcap.com/api/subnets", {
+    const response = await fetch("https://api.dev.taomarketcap.com/internal/v1/subnets/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -15,8 +15,9 @@ export async function GET(req: Request) {
       cache: "no-cache"
     });
 
-    const subnets = await response.json();
-    const filteredSubnets = subnets.filter((subnet: any) => subnet_ids.includes(subnet.subnet));
+    const subnets_dd = await response.json();
+    const subnets = subnets_dd.results
+    const filteredSubnets = subnets.filter((subnet: any) => subnet_ids.includes(subnet.netuid));
 
     for (const id of subnet_ids) {
       const res = await axios.post(`https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`, { netuid: id }, { headers: { "Content-Type": "application/json" } })

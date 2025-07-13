@@ -118,8 +118,8 @@ const MyStatusPage = () => {
           case "registerAt":
             return (
               dir *
-              (new Date(a.registeredAt).getTime() -
-                new Date(b.registeredAt).getTime())
+              (new Date(a.registration_block_time).getTime() -
+                new Date(b.registration_block_time).getTime())
             );
           case "stake":
             return dir * (a.stake - b.stake);

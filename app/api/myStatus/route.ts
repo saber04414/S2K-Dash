@@ -14,7 +14,7 @@ export async function GET(req: Request) {
   const subnetId = Number(url.searchParams.get("subnet")) as number; // Get the 'day' query parameter
   const coldkeys = await prisma.coldkey.findMany();
   const mycoldkeys = coldkeys.map((coldkey) => coldkey.coldkey);
-  const res = await axios.get(`https://taomarketcap.com/api/subnets`);
+  const res = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/subnets/`);
   const subnet_data = await res.data;
   const response = await fetch(
     "https://api.mexc.com/api/v3/ticker/price?symbol=TAOUSDT",
@@ -32,17 +32,16 @@ export async function GET(req: Request) {
   }
   const resdata = await response.json();
   const taoPrice = resdata.price;
-  console.log("Hello 3");
 
   try {
     const response = await axios.get(
-      `https://taomarketcap.com/api/subnets/${subnetId}/metagraph`
+      `https://api.dev.taomarketcap.com/internal/v1/subnets/neurons/${subnetId}/`
     );
     const response_data = await response.data;
     const sidebar_res = await axios.get(
-      `https://taomarketcap.com/api/subnets/${subnetId}/sidebar`
+      `https://api.dev.taomarketcap.com/internal/v1/subnets/${subnetId}/`
     );
-    const sidebar_data = await sidebar_res.data;
+    const sidebar_data = await sidebar_res.data.latest_snapshot;
 
     const filtered_data = response_data.filter((res_item: any) =>
       mycoldkeys.includes(res_item.coldkey)
@@ -63,7 +62,7 @@ export async function GET(req: Request) {
           immunity: item.immunityPeriod > 0,
           coldkey: item.coldkey,
           hotkey: item.hotkey,
-          registerDuration: item.registeredAt,
+          registerDuration: item.registration_block_time,
           owner: mycoldkeys.includes(item.coldkey) ? "Mine" : "Unknown",
         };
       })
@@ -75,7 +74,7 @@ export async function GET(req: Request) {
       0
     );
     const subnet_info = subnet_data.find(
-      (subnet: any) => subnet.subnet === subnetId
+      (subnet: any) => subnet.netuid === subnetId
     );
     const taox_api = await axios.post(
       `https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`,
@@ -83,7 +82,7 @@ export async function GET(req: Request) {
     );
     const price = await taox_api.data;
     const response_reg = await axios.post(
-      `https://taomarketcap.com/api/subnets/${subnetId}/burn`
+      `https://api.dev.taomarketcap.com/internal/v1/subnets/burn/${subnetId}/?span=ALL`
     );
 
     //danger list
@@ -94,7 +93,7 @@ export async function GET(req: Request) {
           res_item.immunityPeriod < 0 &&
           res_item.validator === false
       )
-      .sort((a: any, b: any) => a.registeredAt - b.registeredAt)
+      .sort((a: any, b: any) => a.registration_block_time - b.registration_block_time)
       .sort((a: any, b: any) => a.incentive - b.incentive)
       .map((item: any, i: number) => ({
         ...item,
@@ -112,16 +111,16 @@ export async function GET(req: Request) {
           res_item.immunityPeriod >= 0 &&
           res_item.validator === false
       )
-      .sort((a: any, b: any) => a.registeredAt - b.registeredAt)
-      .sort((a: any, b: any) => b.registeredAt - a.registeredAt)
+      .sort((a: any, b: any) => a.registration_block_time - b.registration_block_time)
+      .sort((a: any, b: any) => b.registration_block_time - a.registration_block_time)
       .map((item: any, i: number) => ({
         ...item,
         ranking: i + 1,
       }))
-      .slice(0, sidebar_data.burnRegistrationsThisInterval);
+      .slice(0, sidebar_data.burn_registrations_this_interval);
 
     const sorted_registration_list = registration_list.sort(
-      (a: any, b: any) => a.registeredAt - b.registeredAt
+      (a: any, b: any) => a.registration_block_time - b.registration_block_time
     );
 
     const my_coldkeys = Array.from(
@@ -136,24 +135,24 @@ export async function GET(req: Request) {
         ) || null,
     }));
     const next_burn = calculateNextBurn(
-      response_reg.data[response_reg.data.length - 1].value,
-      sidebar_data.registrationsThisInterval,
-      sidebar_data.targetRegistrationsPerInterval,
-      sidebar_data.adjustmentAlpha
+      response_reg.data[response_reg.data.length - 1].burn,
+      sidebar_data.registrations_this_interval,
+      sidebar_data.target_registrations_per_interval,
+      sidebar_data.adjustment_alpha
     );
     const data = {
       subnet: subnetId,
       total_stake,
       total_daily,
-      name: subnet_info.name,
-      letter: subnet_info.letter,
-      taoInpool: price.subnetTAO,
-      alphaInpool: price.subnetAlphaIn,
-      emission: price.emissionRate,
-      price: price.price,
-      marketcap: subnet_info.marketcap,
+      name: subnet_info.subnet_identities_v3.subnetName,
+      letter: subnet_info.token_symbol,
+      taoInpool: subnet_info.subnet_tao,
+      alphaInpool: subnet_info.subnet_alpha_in,
+      emission: subnet_info.subnet_tao_in_emission,
+      price: subnet_info.price,
+      marketcap: subnet_info.dtao.marketCap,
       mydata: final_data,
-      regcost: response_reg.data[response_reg.data.length - 1].value,
+      regcost: response_reg.data[response_reg.data.length - 1].burn,
       sidebar: sidebar_data,
       next_burn,
       mycoldkeys: my_coldkeys,

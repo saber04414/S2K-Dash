@@ -14,7 +14,7 @@ export async function GET() {
     const subnets_slice = subnets.filter((item:any)=> merged.includes(item.subnet))
     try {
         for(const subnet of subnets_slice) {
-            const response = await axios.post(`https://taomarketcap.com/api/subnets/${subnet.subnet}/burn`)
+            const response = await axios.post(`https://api.dev.taomarketcap.com/internal/v1/subnets/neurons/${subnet.subnet}/`)
             const response_data = await response.data;
             const res = {
                 netuid: subnet.subnet,

@@ -33,7 +33,7 @@ const StatusTr = (props: Props) => {
         <tr key={index} className={clsx('transition-all cursor-pointer', index % 2 === 0 ? '' : 'bg-slate-700')}>
             <td className='text-center py-2'>{index + 1}</td>
             <td className={clsx('text-center py-2', blur ? 'blur-sm': 'blur-none')}>{item.uid}</td>
-            <td className='text-center py-2'>{showTimestampToDateTime(item.registeredAt)}</td>
+            <td className='text-center py-2'>{showTimestampToDateTime(item.registration_block_time)}</td>
             <td className='text-center py-2'>{item.danger == null && (item.immunityPeriod > 0 ? <Immune /> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
             {
                 currency === 'TAO' ?

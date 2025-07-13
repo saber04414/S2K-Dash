@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
   try {
     const price_res = await axios.get(
-      `https://taomarketcap.com/api/subnets/${netuid}/candle_chart?type=1hr`
+      `https://api.dev.taomarketcap.com/internal/v1/subnets/${netuid}/candle-chart/?period=1h`
     );
     const price_data = await price_res.data.data;
     return NextResponse.json(

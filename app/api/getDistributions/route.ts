@@ -31,46 +31,45 @@ export async function GET() {
   const subnets = await prisma.subnets.findMany({ orderBy: { subnet: "asc" } });
   const mysubnets = subnets.map((subnet: any) => subnet.subnet);
   const data = [];
-  const res = await axios.get(`https://taomarketcap.com/api/subnets`);
-  const subnet_data = await res.data;
   try {
     for (const subnet_uid of mysubnets) {
       const response = await axios.get(
-        `https://taomarketcap.com/api/subnets/${subnet_uid}/metagraph`
+        `https://api.dev.taomarketcap.com/internal/v1/subnets/neurons/${subnet_uid}/`
       );
       const response_data = await response.data;
       data.push({ netuid: subnet_uid, data: response_data });
     }
     const result_data: SubnetResult[] = [];
 
-    data.map((subnet) => {
+    data.map(async(subnet) => {
       const chartData = subnet.data
         .map((item: any) => {
           return {
             uid: item.uid,
-            isMiner: item.validator == false,
+            isMiner: item.validator_permit == false,
             incentive: item.incentive,
-            daily: item.alphaPerDay,
-            stake: item.stake,
-            immunity: item.immunityPeriod > 0,
-            coldkey: item.coldkey,
+            daily: item.alpha_per_day,
+            stake: item.alpha_stake,
+            immunity: item.block_number - item.block_at_registration > item.immunity_period,
+            coldkey: item.owner,
             hotkey: item.hotkey,
-            registerDuration: item.registeredAt,
-            owner: mycoldkeys.includes(item.coldkey) ? "Mine" : "Unknown",
+            registerDuration: item.registration_block_time,
+            owner: mycoldkeys.includes(item.owner) ? "Mine" : "Unknown",
           };
         })
-        .filter((item: any) => item.isMiner)
+        .filter((item: any) => !item.validator_permit)
         .sort((a: any, b: any) => b.incentive - a.incentive)
         .map((item: any, i: number) => ({ ...item, ranking: i + 1 }));
-      const subnet_info = subnet_data.find(
-        (item: any) => item.subnet === subnet.netuid
-      );
+
+      const res = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/subnets/${subnet.netuid}/`);
+      const subnet_info = await res.data
+
       result_data.push({
         netuid: subnet.netuid,
-        name: subnet_info.name,
-        letter: subnet_info.letter,
+        name: subnet_info.subnet_identities_v3.subnetName,
+        letter: subnet_info.token_symbol,
         price: subnet_info.price,
-        marketcap: subnet_info.marketcap,
+        marketcap: subnet_info.dtao.marketCap,
         chartData,
       });
     });
