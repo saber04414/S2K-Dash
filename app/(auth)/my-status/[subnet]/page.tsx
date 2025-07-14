@@ -132,7 +132,7 @@ const MyStatusPage = () => {
           case "performance":
             return dir * (a.miner_performance - b.miner_performance);
           case "axon":
-            return dir * a.ip.localeCompare(b.ip);
+            return dir * a.axon.localeCompare(b.axon);
           case "daily":
             return dir * (a.alpha_per_day - b.alpha_per_day);
           default:
