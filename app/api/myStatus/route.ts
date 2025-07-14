@@ -90,7 +90,7 @@ export async function GET(req: Request) {
       .filter(
         (res_item: any) =>
           res_item.validator_permit === false &&
-          res_item.block_number - res_item.block_at_registration < res_item.immunity_period
+          res_item.block_number - res_item.block_at_registration > res_item.immunity_period
       )
       .sort((a: any, b: any) => a.registration_block_time - b.registration_block_time)
       .sort((a: any, b: any) => a.incentive - b.incentive)
