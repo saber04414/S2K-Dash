@@ -63,7 +63,7 @@ export async function GET() {
           daily: n.alpha_per_day,
           stake: n.alpha_stake / 1e9,
           immunity:
-            n.block_number - n.block_at_registration > n.immunity_period,
+            n.block_number - n.block_at_registration < n.immunity_period,
           coldkey: n.owner,
           registerDuration: n.registration_block_time,
           owner: mycoldkeys.includes(n.owner) ? "Mine" : "Unknown",
