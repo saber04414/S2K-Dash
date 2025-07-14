@@ -80,7 +80,6 @@ export async function GET(req: Request) {
       `https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`,
       { netuid: subnetId }
     );
-    const price = await taox_api.data;
     const response_reg = await axios.get(
       `https://api.dev.taomarketcap.com/internal/v1/subnets/burn/${subnetId}/?span=ALL`
     );
@@ -136,7 +135,7 @@ export async function GET(req: Request) {
       parseFloat(response_reg.data[response_reg.data.length - 1].burn) / 1e10,
       sidebar_data.registrations_this_interval,
       sidebar_data.target_registrations_per_interval,
-      parseFloat(sidebar_data.adjustment_alpha) / 1e19
+      parseFloat(sidebar_data.adjustment_alpha) / 1e18
     );
     const data = {
       subnet: subnetId,

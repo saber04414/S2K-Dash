@@ -22,12 +22,6 @@ interface PriceChartProps {
   data: RawCandleData[];
 }
 
-// 🧠 Helper to convert ISO or number to UTCTimestamp
-function toUTCTimestamp(ts: string | number): UTCTimestamp {
-  const date = typeof ts === "string" ? new Date(ts) : new Date(ts);
-  return Math.floor(date.getTime() / 1000) as UTCTimestamp;
-}
-
 function convertToCandleData(data: RawCandleData[]): CandlestickData[] {
   // 1) map → epoch-seconds
   const candles = data.map((item) => ({
