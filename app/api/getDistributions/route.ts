@@ -39,7 +39,7 @@ export async function GET() {
     const subnets = await prisma.subnets.findMany({
       orderBy: { subnet: "asc" },
     });
-    const subnetIds = subnets.map(s => s.subnet as number);
+    const subnetIds = Array.from({ length: 129 }, (_, i) => i + 1);
 
     /* ──► 2. Fetch neuron snapshots for all subnets in parallel */
     const neuronSnapshots = await Promise.all(
