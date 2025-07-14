@@ -34,7 +34,7 @@ const StatusTr = (props: Props) => {
             <td className='text-center py-2'>{index + 1}</td>
             <td className={clsx('text-center py-2', blur ? 'blur-sm': 'blur-none')}>{item.uid}</td>
             <td className='text-center py-2'>{showTimestampToDateTime(item.registration_block_time)}</td>
-            <td className='text-center py-2'>{item.danger == null && (item.block_number - item.block_at_registration < item.immunity_period ? <Immune /> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
+            <td className='text-center py-2'>{item.danger == null && (item.block_number - item.block_at_registration < item.immunity_period ? <div className='flex flex-row gap-1'><Immune /><span>{(item.immunity_period + item.block_at_registration - item.block_number) * 12} s</span></div> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
             {
                 currency === 'TAO' ?
                 <td className='text-center py-2'>{showNumber(item.alpha_stake/1e9 * data.data.price, 2)} 𝞃 / {showNumber(item.alpha_stake/1e9, 2)} {data.data.letter}</td> :

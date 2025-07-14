@@ -3,7 +3,7 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 0;
 export async function GET() {
   try {
-    const response = await fetch("https://api.dev.taomarketcap.com/internal/v1/subnets/?limit=129neurons/50/", {
+    const response = await fetch("https://api.dev.taomarketcap.com/internal/v1/subnets/neurons/50/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
