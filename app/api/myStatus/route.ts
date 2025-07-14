@@ -76,10 +76,6 @@ export async function GET(req: Request) {
       (subnet: any) => subnet.netuid === subnetId
     );
 
-    const taox_api = await axios.post(
-      `https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`,
-      { netuid: subnetId }
-    );
     const response_reg = await axios.get(
       `https://api.dev.taomarketcap.com/internal/v1/subnets/burn/${subnetId}/?span=ALL`
     );

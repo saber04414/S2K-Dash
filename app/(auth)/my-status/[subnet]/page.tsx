@@ -122,7 +122,7 @@ const MyStatusPage = () => {
                 new Date(b.registration_block_time).getTime())
             );
           case "stake":
-            return dir * (a.stake - b.stake);
+            return dir * (a.alpha_stake - b.alpha_stake);
           case "coldkey":
             return dir * a.owner.localeCompare(b.owner);
           case "hotkey":
