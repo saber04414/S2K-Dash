@@ -65,6 +65,7 @@ export async function GET() {
           immunity:
             n.block_number - n.block_at_registration < n.immunity_period,
           coldkey: n.owner,
+          hotkey: n.hotkey,
           registerDuration: n.registration_block_time,
           owner: mycoldkeys.includes(n.owner) ? "Mine" : "Unknown",
         }))
