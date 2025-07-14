@@ -47,7 +47,7 @@ export async function GET(req: Request) {
       mycoldkeys.includes(res_item.owner)
     );
     const total_stake = filtered_data.reduce(
-      (acc: number, item: any) => acc + item.stake,
+      (acc: number, item: any) => acc + item.alpha_stake / 1e9,
       0
     );
     const chartData = response_data
@@ -57,7 +57,7 @@ export async function GET(req: Request) {
           isMiner: item.validator_permit == false,
           incentive: item.incentive,
           daily: item.alpha_per_day,
-          stake: item.tao_stake,
+          stake: item.alpha_stake / 1e9,
           immunity: item.block_number - item.block_at_registration < item.immunity_period,
           coldkey: item.owner,
           hotkey: item.hotkey,
@@ -69,7 +69,7 @@ export async function GET(req: Request) {
       .sort((a: any, b: any) => b.incentive - a.incentive)
       .map((item: any, i: number) => ({ ...item, ranking: i + 1 }));
     const total_daily = filtered_data.reduce(
-      (acc: number, item: any) => acc + item.alphaPerDay,
+      (acc: number, item: any) => acc + item.alpha_per_day,
       0
     );
     const subnet_info = subnet_data.find(

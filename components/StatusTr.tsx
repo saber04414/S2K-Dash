@@ -37,8 +37,8 @@ const StatusTr = (props: Props) => {
             <td className='text-center py-2'>{item.danger == null && (item.block_number - item.block_at_registration < item.immunity_period ? <Immune /> : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
             {
                 currency === 'TAO' ?
-                <td className='text-center py-2'>{showNumber(item.stake * data.data.price, 2)} 𝞃 / {showNumber(item.stake, 2)} {data.data.letter}</td> :
-                <td className='text-center py-2'>{showNumber(item.stake * data.data.price * data.taoPrice, 2)} $ / {showNumber(item.stake, 2)} {data.data.letter}</td>
+                <td className='text-center py-2'>{showNumber(item.alpha_stake/1e9 * data.data.price, 2)} 𝞃 / {showNumber(item.alpha_stake/1e9, 2)} {data.data.letter}</td> :
+                <td className='text-center py-2'>{showNumber(item.alpha_stake/1e9 * data.data.price * data.taoPrice, 2)} $ / {showNumber(item.alpha_stake/1e9, 2)} {data.data.letter}</td>
             }
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.owner)}>{showKey(item.owner)}</td>
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.hotkey)}>{showKey(item.hotkey)}</td>
@@ -51,7 +51,7 @@ const StatusTr = (props: Props) => {
                 <td className='text-center py-2'>{showNumber(item.alpha_per_day * data.data.price * data.taoPrice, 3)} $ / {showNumber(item.alpha_per_day, 3)} {data.data.letter}</td>
             }
             <td className='text-center py-2'>
-                <button className={item.stake != 0 ? 'px-2 py-1 rounded-md hover:bg-slate-600 transition-all cursor-pointer' : 'px-2 py-1 rounded-md cursor-not-allowed'} onClick={() => unstake(item.coldkey, item.hotkey, data.data.subnet, item.stake)}>{loading ? <LoaderCircle className='animate-spin' /> : 'Unstake'}</button>
+                <button className={item.alpha_stake/1e9 != 0 ? 'px-2 py-1 rounded-md hover:bg-slate-600 transition-all cursor-pointer' : 'px-2 py-1 rounded-md cursor-not-allowed'} onClick={() => unstake(item.coldkey, item.hotkey, data.data.subnet, item.stake)}>{loading ? <LoaderCircle className='animate-spin' /> : 'Unstake'}</button>
             </td>
         </tr>
     )

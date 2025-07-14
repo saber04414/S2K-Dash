@@ -34,7 +34,7 @@ export async function GET() {
   try {
     for (const subnet_uid of mysubnets) {
       const response = await axios.get(
-        `https://api.dev.taomarketcap.com/internal/v1/subnets/?limit=129neurons/${subnet_uid}/`
+        `https://api.dev.taomarketcap.com/internal/v1/subnets/neurons/${subnet_uid}/`
       );
       const response_data = await response.data;
       data.push({ netuid: subnet_uid, data: response_data });
@@ -49,7 +49,7 @@ export async function GET() {
             isMiner: item.validator_permit == false,
             incentive: item.incentive,
             daily: item.alpha_per_day,
-            stake: item.alpha_stake,
+            stake: item.alpha_stake / 1e9,
             immunity: item.block_number - item.block_at_registration > item.immunity_period,
             coldkey: item.owner,
             hotkey: item.hotkey,
@@ -61,7 +61,7 @@ export async function GET() {
         .sort((a: any, b: any) => b.incentive - a.incentive)
         .map((item: any, i: number) => ({ ...item, ranking: i + 1 }));
 
-      const res = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/subnets/?limit=129${subnet.netuid}/`);
+      const res = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/subnets/${subnet.netuid}/`);
       const subnet_info = await res.data
 
       result_data.push({
