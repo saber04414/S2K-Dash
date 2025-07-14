@@ -6,12 +6,6 @@ import { Active, Danger, Immune } from './MinerIcon'
 import { LoaderCircle } from 'lucide-react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
-import {
-    Tooltip,
-    TooltipContent,
-    TooltipProvider,
-    TooltipTrigger,
-} from "@/components/ui/tooltip";
 type Props = {
     index: number,
     item: any,
