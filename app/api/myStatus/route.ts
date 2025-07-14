@@ -122,6 +122,7 @@ export async function GET(req: Request) {
 
     const final_data = filtered_data.map((item: any) => ({
       ...item,
+      axon: item.axon ? item.axon:"0.0.0.0",
       danger:
         filtered_danger_list.find(
           (danger: any) => danger.hotkey === item.hotkey
