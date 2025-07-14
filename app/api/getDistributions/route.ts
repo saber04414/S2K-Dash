@@ -1,8 +1,10 @@
 import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
 import axios from "axios";
+
+export const dynamic = "force-dynamic"; // Next-JS route options
+export const revalidate = 0;
+
 type ChartItem = {
   uid: number;
   isMiner: boolean;
@@ -26,59 +28,70 @@ type SubnetResult = {
 };
 
 export async function GET() {
-  const coldkeys = await prisma.coldkey.findMany();
-  const mycoldkeys = coldkeys.map((coldkey) => coldkey.coldkey);
-  const subnets = await prisma.subnets.findMany({ orderBy: { subnet: "asc" } });
-  const mysubnets = subnets.map((subnet: any) => subnet.subnet);
-  const data = [];
   try {
-    for (const subnet_uid of mysubnets) {
-      const response = await axios.get(
-        `https://api.dev.taomarketcap.com/internal/v1/subnets/neurons/${subnet_uid}/`
-      );
-      const response_data = await response.data;
-      data.push({ netuid: subnet_uid, data: response_data });
-    }
+    /* ──► 1. Load coldkeys & subnet IDs from your DB */
+    const coldkeys = await prisma.coldkey.findMany();
+    const mycoldkeys = coldkeys.map(c => c.coldkey);
+    const infoRes = await axios.get(
+      `https://api.dev.taomarketcap.com/internal/v1/subnets/?limit=129`,
+    );
+    const info = infoRes.data.results;
+    const subnets = await prisma.subnets.findMany({
+      orderBy: { subnet: "asc" },
+    });
+    const subnetIds = subnets.map(s => s.subnet as number);
+
+    /* ──► 2. Fetch neuron snapshots for all subnets in parallel */
+    const neuronSnapshots = await Promise.all(
+      subnetIds.map(async netuid => {
+        const res = await axios.get(
+          `https://api.dev.taomarketcap.com/internal/v1/subnets/neurons/${netuid}/`,
+        );
+        return { netuid, data: res.data };
+      }),
+    );
+
+    /* ──► 3. Build the final result array, one subnet at a time */
     const result_data: SubnetResult[] = [];
 
-    data.map(async(subnet) => {
-      const chartData = subnet.data
-        .map((item: any) => {
-          return {
-            uid: item.uid,
-            isMiner: item.validator_permit == false,
-            incentive: item.incentive,
-            daily: item.alpha_per_day,
-            stake: item.alpha_stake / 1e9,
-            immunity: item.block_number - item.block_at_registration > item.immunity_period,
-            coldkey: item.owner,
-            hotkey: item.hotkey,
-            registerDuration: item.registration_block_time,
-            owner: mycoldkeys.includes(item.owner) ? "Mine" : "Unknown",
-          };
-        })
-        .filter((item: any) => !item.validator_permit)
+    for (const snapshot of neuronSnapshots) {
+      const chartData: ChartItem[] = snapshot.data
+        .map((n: any) => ({
+          uid: n.uid,
+          isMiner: n.validator_permit === false,
+          incentive: n.incentive,
+          daily: n.alpha_per_day,
+          stake: n.alpha_stake / 1e9,
+          immunity:
+            n.block_number - n.block_at_registration > n.immunity_period,
+          coldkey: n.owner,
+          registerDuration: n.registration_block_time,
+          owner: mycoldkeys.includes(n.owner) ? "Mine" : "Unknown",
+        }))
+        .filter((n: any) => n.isMiner) // only miners, not validators
         .sort((a: any, b: any) => b.incentive - a.incentive)
-        .map((item: any, i: number) => ({ ...item, ranking: i + 1 }));
+        .map((n: any, i: number) => ({ ...n, ranking: i + 1 }));
 
-      const res = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/subnets/${subnet.netuid}/`);
-      const subnet_info = await res.data
+      // fetch subnet-level stats
+        const specific = info[snapshot.netuid+1].latest_snapshot
 
       result_data.push({
-        netuid: subnet.netuid,
-        name: subnet_info.subnet_identities_v3.subnetName,
-        letter: subnet_info.token_symbol,
-        price: subnet_info.price,
-        marketcap: subnet_info.dtao.marketCap,
+        netuid: snapshot.netuid,
+        name: specific.subnet_identities_v3.subnetName,
+        letter: specific.token_symbol,
+        price: specific.price,
+        marketcap: specific.dtao.marketCap,
         chartData,
       });
-    });
-    return NextResponse.json({ result_data }, { status: 201 });
-  } catch (error) {
-    console.error(error);
+    }
+
+    /* ──► 4. Send JSON response */
+    return NextResponse.json({ result_data }, { status: 200 });
+  } catch (err) {
+    console.error(err);
     return NextResponse.json(
-      { error: "Failed to save score" },
-      { status: 500 }
+      { error: "Failed to build subnet data" },
+      { status: 500 },
     );
   }
 }
