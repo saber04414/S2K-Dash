@@ -5,12 +5,12 @@ export async function POST(req: Request) {
   const { netuid } = await req.json();
   const subnets = await prisma.subnets.findMany({ orderBy: { subnet: "asc" } });
   const subnets_ids = subnets.map((ss: any) => ss.subnet);
-
+  console.log({subnets_ids})
   try {
     const price_res = await axios.get(
-      `https://api.dev.taomarketcap.com/internal/v1/subnets/${netuid}/candle-chart/?period=1h`
+      `https://api.dev.taomarketcap.com/internal/v1/subnets/${netuid}/candle-chart/?period=5m`
     );
-    const price_data = await price_res.data.data;
+    const price_data = await price_res.data;
     return NextResponse.json(
       { subnets: subnets_ids, priceData: price_data },
       { status: 201 }

@@ -12,9 +12,8 @@ type RawCandleData = {
   high: number;
   low: number;
   close: number;
-  timestamp: number;
-  last_processed_block: number;
-  start_block: number;
+  timestamp: string; // ISO string
+  block_number: number;
   subnet: number;
   volume: number;
 };
@@ -23,19 +22,35 @@ interface PriceChartProps {
   data: RawCandleData[];
 }
 
+// 🧠 Helper to convert ISO or number to UTCTimestamp
+function toUTCTimestamp(ts: string | number): UTCTimestamp {
+  const date = typeof ts === "string" ? new Date(ts) : new Date(ts);
+  return Math.floor(date.getTime() / 1000) as UTCTimestamp;
+}
+
 function convertToCandleData(data: RawCandleData[]): CandlestickData[] {
-  return data.map((item) => ({
-    time: Math.floor(item.timestamp / 1000) as UTCTimestamp,
-    open: parseFloat(item.open.toFixed(4)),
-    high: parseFloat(item.high.toFixed(4)),
-    low: parseFloat(item.low.toFixed(4)),
-    close: parseFloat(item.close.toFixed(4)),
+  // 1) map → epoch-seconds
+  const candles = data.map((item) => ({
+    time : Math.floor(new Date(item.timestamp).getTime() / 1000) as UTCTimestamp,
+    open : +item.open .toFixed(4),
+    high : +item.high .toFixed(4),
+    low  : +item.low  .toFixed(4),
+    close: +item.close.toFixed(4),
   }));
+
+  // 2) sort ascending
+  candles.sort((a, b) => a.time - b.time);
+
+  // 3) deduplicate by keeping the last candle for each time key
+  const dedup: Record<number, CandlestickData> = {};
+  for (const c of candles) dedup[c.time] = c;
+
+  // 4) return values() already in ascending order
+  return Object.values(dedup);
 }
 
 const PriceChart: React.FC<PriceChartProps> = ({ data }) => {
   const chartContainerRef = useRef<HTMLDivElement>(null);
-  console.log({ data });
 
   useEffect(() => {
     if (!chartContainerRef.current || data.length === 0) return;

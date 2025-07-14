@@ -14,8 +14,8 @@ export async function GET(req: Request) {
   const subnetId = Number(url.searchParams.get("subnet")) as number; // Get the 'day' query parameter
   const coldkeys = await prisma.coldkey.findMany();
   const mycoldkeys = coldkeys.map((coldkey) => coldkey.coldkey);
-  const res = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/subnets/`);
-  const subnet_data = await res.data;
+  const res = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/subnets/?limit=129`);
+  const subnet_data = await res.data.results;
   const response = await fetch(
     "https://api.mexc.com/api/v3/ticker/price?symbol=TAOUSDT",
     {
@@ -44,26 +44,25 @@ export async function GET(req: Request) {
     const sidebar_data = await sidebar_res.data.latest_snapshot;
 
     const filtered_data = response_data.filter((res_item: any) =>
-      mycoldkeys.includes(res_item.coldkey)
+      mycoldkeys.includes(res_item.owner)
     );
     const total_stake = filtered_data.reduce(
       (acc: number, item: any) => acc + item.stake,
       0
     );
-
     const chartData = response_data
       .map((item: any) => {
         return {
           uid: item.uid,
-          isMiner: item.validator == false,
+          isMiner: item.validator_permit == false,
           incentive: item.incentive,
-          daily: item.alphaPerDay,
-          stake: item.stake,
-          immunity: item.immunityPeriod > 0,
-          coldkey: item.coldkey,
+          daily: item.alpha_per_day,
+          stake: item.tao_stake,
+          immunity: item.block_number - item.block_at_registration < item.immunity_period,
+          coldkey: item.owner,
           hotkey: item.hotkey,
           registerDuration: item.registration_block_time,
-          owner: mycoldkeys.includes(item.coldkey) ? "Mine" : "Unknown",
+          owner: mycoldkeys.includes(item.owner) ? "Mine" : "Unknown",
         };
       })
       .filter((item: any) => item.isMiner)
@@ -76,12 +75,13 @@ export async function GET(req: Request) {
     const subnet_info = subnet_data.find(
       (subnet: any) => subnet.netuid === subnetId
     );
+
     const taox_api = await axios.post(
       `https://taoxnet.io/api/v1/netuid/netinfo?network=mainnet`,
       { netuid: subnetId }
     );
     const price = await taox_api.data;
-    const response_reg = await axios.post(
+    const response_reg = await axios.get(
       `https://api.dev.taomarketcap.com/internal/v1/subnets/burn/${subnetId}/?span=ALL`
     );
 
@@ -89,9 +89,8 @@ export async function GET(req: Request) {
     const danger_list = response_data
       .filter(
         (res_item: any) =>
-          res_item.miner === true &&
-          res_item.immunityPeriod < 0 &&
-          res_item.validator === false
+          res_item.validator_permit === false &&
+          res_item.block_number - res_item.block_at_registration < res_item.immunity_period
       )
       .sort((a: any, b: any) => a.registration_block_time - b.registration_block_time)
       .sort((a: any, b: any) => a.incentive - b.incentive)
@@ -101,15 +100,14 @@ export async function GET(req: Request) {
       }))
       .slice(0, 6);
     const filtered_danger_list = danger_list.filter((item: any) =>
-      mycoldkeys.includes(item.coldkey)
+      mycoldkeys.includes(item.owner)
     );
     // registration list
     const registration_list = response_data
       .filter(
         (res_item: any) =>
-          res_item.miner === true &&
-          res_item.immunityPeriod >= 0 &&
-          res_item.validator === false
+          res_item.validator_permit === false &&
+          res_item.block_number - res_item.block_at_registration >= res_item.immunity_period
       )
       .sort((a: any, b: any) => a.registration_block_time - b.registration_block_time)
       .sort((a: any, b: any) => b.registration_block_time - a.registration_block_time)
@@ -124,7 +122,7 @@ export async function GET(req: Request) {
     );
 
     const my_coldkeys = Array.from(
-      new Set(filtered_data.map((item: any) => item.coldkey))
+      new Set(filtered_data.map((item: any) => item.owner))
     );
 
     const final_data = filtered_data.map((item: any) => ({
@@ -135,24 +133,24 @@ export async function GET(req: Request) {
         ) || null,
     }));
     const next_burn = calculateNextBurn(
-      response_reg.data[response_reg.data.length - 1].burn,
+      parseFloat(response_reg.data[response_reg.data.length - 1].burn) / 1e10,
       sidebar_data.registrations_this_interval,
       sidebar_data.target_registrations_per_interval,
-      sidebar_data.adjustment_alpha
+      parseFloat(sidebar_data.adjustment_alpha) / 1e18
     );
     const data = {
       subnet: subnetId,
       total_stake,
       total_daily,
-      name: subnet_info.subnet_identities_v3.subnetName,
-      letter: subnet_info.token_symbol,
-      taoInpool: subnet_info.subnet_tao,
-      alphaInpool: subnet_info.subnet_alpha_in,
-      emission: subnet_info.subnet_tao_in_emission,
-      price: subnet_info.price,
-      marketcap: subnet_info.dtao.marketCap,
+      name: subnet_info.latest_snapshot.subnet_identities_v3.subnetName,
+      letter: subnet_info.latest_snapshot.token_symbol,
+      taoInpool: subnet_info.latest_snapshot.subnet_tao,
+      alphaInpool: subnet_info.latest_snapshot.subnet_alpha_in,
+      emission: subnet_info.latest_snapshot.subnet_tao_in_emission,
+      price: subnet_info.latest_snapshot.price,
+      marketcap: subnet_info.latest_snapshot.dtao.marketCap,
       mydata: final_data,
-      regcost: response_reg.data[response_reg.data.length - 1].burn,
+      regcost: parseFloat(response_reg.data[response_reg.data.length - 1].burn) / 1e10,
       sidebar: sidebar_data,
       next_burn,
       mycoldkeys: my_coldkeys,
@@ -180,7 +178,7 @@ function calculateNextBurn(
 ) {
   const registrations = BigInt(registrationsThisInterval);
   const target = BigInt(targetRegistrationsPerInterval);
-  const current = Number(currentBurn); // Assume currentBurn is a Number for now
+  const current = currentBurn; // Assume currentBurn is a Number for now
   const updatedBurn =
     (current * Number(registrations + target)) / Number(target + target);
   const nextValue =

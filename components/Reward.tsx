@@ -26,7 +26,7 @@ const Reward = ({ miners }: Props) => {
             UID: item.uid,
             Stake: item.stake,
             Incentive: item.incentive,
-            Performance: item.minerPerformance,
+            Performance: item.miner_performance,
             daily: item.taoPerDay,
             Score: item.score,
         }));

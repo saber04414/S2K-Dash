@@ -105,10 +105,10 @@ const MyStatusPage = () => {
         setSortOrder("asc");
       }
     };
-
+    console.log("data: ", data)
     const sortedData = [...(data?.data?.mydata || [])]
       .filter(
-        (item: any) => selected.length === 0 || selected.includes(item.coldkey)
+        (item: any) => selected.length === 0 || selected.includes(item.owner)
       )
       .sort((a: any, b: any) => {
         const dir = sortOrder === "asc" ? 1 : -1;
@@ -124,17 +124,17 @@ const MyStatusPage = () => {
           case "stake":
             return dir * (a.stake - b.stake);
           case "coldkey":
-            return dir * a.coldkey.localeCompare(b.coldkey);
+            return dir * a.owner.localeCompare(b.owner);
           case "hotkey":
             return dir * a.hotkey.localeCompare(b.hotkey);
           case "incentive":
             return dir * (a.incentive - b.incentive);
           case "performance":
-            return dir * (a.minerPerformance - b.minerPerformance);
+            return dir * (a.miner_performance - b.miner_performance);
           case "axon":
             return dir * a.ip.localeCompare(b.ip);
           case "daily":
-            return dir * (a.alphaPerDay - b.alphaPerDay);
+            return dir * (a.alpha_per_day - b.alpha_per_day);
           default:
             return 0;
         }
@@ -366,7 +366,7 @@ const MyStatusPage = () => {
                     </div>
                     <div className="text-sm pr-5 flex flex-row gap-1">
                       {Array.from({
-                        length: data.data.sidebar.burnRegistrationsThisInterval,
+                        length: data.data.sidebar.burn_registrations_this_interval,
                       }).map((_, i) => (
                         <TooltipProvider key={i}>
                           <Tooltip>
@@ -378,7 +378,7 @@ const MyStatusPage = () => {
                               className="text-xs border border-slate-500 bg-slate-900 text-white flex flex-col"
                             >
                               <div>{`UID    : ${data.data.reglist[i].uid}`}</div>
-                              <div>{`Coldkey: ${data.data.reglist[i].coldkey}`}</div>
+                              <div>{`Coldkey: ${data.data.reglist[i].owner}`}</div>
                               <div>{`Hotkey : ${data.data.reglist[i].hotkey}`}</div>
                             </TooltipContent>
                           </Tooltip>

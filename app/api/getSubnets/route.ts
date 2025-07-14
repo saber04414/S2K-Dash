@@ -7,7 +7,7 @@ export async function GET(req: Request) {
   const subnetIDs = url.searchParams.get('subnetIDs') as string; // Get the 'day' query parameter
   const subnet_ids = subnetIDs.split(',').map((subnet: string) => parseInt(subnet.trim(), 10));
   try {
-    const response = await fetch("https://api.dev.taomarketcap.com/internal/v1/subnets/", {
+    const response = await fetch("https://api.dev.taomarketcap.com/internal/v1/subnets/?limit=129", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
