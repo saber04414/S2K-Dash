@@ -36,9 +36,6 @@ export async function GET() {
       `https://api.dev.taomarketcap.com/internal/v1/subnets/?limit=129`,
     );
     const info = infoRes.data.results;
-    const subnets = await prisma.subnets.findMany({
-      orderBy: { subnet: "asc" },
-    });
     const subnetIds = Array.from({ length: 129 }, (_, i) => i + 1);
 
     /* ──► 2. Fetch neuron snapshots for all subnets in parallel */
