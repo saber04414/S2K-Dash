@@ -92,7 +92,7 @@ export async function GET(req: Request) {
           res_item.validator_permit === false &&
           res_item.block_number - res_item.block_at_registration > res_item.immunity_period
       )
-      .sort((a: any, b: any) => a.registration_block_time - b.registration_block_time)
+      .sort((a: any, b: any) => a.block_at_registration - b.block_at_registration)
       .sort((a: any, b: any) => a.incentive - b.incentive)
       .map((item: any, i: number) => ({
         ...item,
@@ -136,7 +136,7 @@ export async function GET(req: Request) {
       parseFloat(response_reg.data[response_reg.data.length - 1].burn) / 1e10,
       sidebar_data.registrations_this_interval,
       sidebar_data.target_registrations_per_interval,
-      parseFloat(sidebar_data.adjustment_alpha) / 1e18
+      parseFloat(sidebar_data.adjustment_alpha) / 1e19
     );
     const data = {
       subnet: subnetId,
