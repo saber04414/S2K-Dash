@@ -537,7 +537,7 @@ const MyStatusPage = () => {
                         .filter(
                           (item: any) =>
                             selected.length === 0 ||
-                            selected.includes(item.coldkey)
+                            selected.includes(item.owner)
                         )
                         .map((item: any, index: number) => (
                           <StatusTr
