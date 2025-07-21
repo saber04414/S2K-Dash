@@ -104,8 +104,8 @@ export async function GET(req: Request) {
           res_item.validator_permit === false &&
           res_item.block_number - res_item.block_at_registration >= res_item.immunity_period
       )
-      .sort((a: any, b: any) => a.block_at_registration - b.block_at_registration)
       .sort((a: any, b: any) => b.block_at_registration - a.block_at_registration)
+      .sort((a: any, b: any) => a.block_at_registration - b.block_at_registration)
       .map((item: any, i: number) => ({
         ...item,
         ranking: i + 1,
