@@ -104,8 +104,8 @@ export async function GET(req: Request) {
           res_item.validator_permit === false &&
           res_item.block_number - res_item.block_at_registration >= res_item.immunity_period
       )
-      .sort((a: any, b: any) => a.registration_block_time - b.registration_block_time)
-      .sort((a: any, b: any) => b.registration_block_time - a.registration_block_time)
+      .sort((a: any, b: any) => a.block_at_registration - b.block_at_registration)
+      .sort((a: any, b: any) => b.block_at_registration - a.block_at_registration)
       .map((item: any, i: number) => ({
         ...item,
         ranking: i + 1,
@@ -113,7 +113,7 @@ export async function GET(req: Request) {
       .slice(0, sidebar_data.burn_registrations_this_interval);
 
     const sorted_registration_list = registration_list.sort(
-      (a: any, b: any) => a.registration_block_time - b.registration_block_time
+      (a: any, b: any) => a.block_at_registration - b.block_at_registration
     );
 
     const my_coldkeys = Array.from(
