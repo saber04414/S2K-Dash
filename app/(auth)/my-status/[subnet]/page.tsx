@@ -182,11 +182,17 @@ const MyStatusPage = () => {
         setRegistrationCountdowns(newRegistrationCountdowns);
       }
       if (data?.data?.mydata) {
-        const axons = data?.data?.mydata.map((item: any) => {
-          return { axon: item.axon, status: 0 }
-        })
-        setAxonList(axons)
+        setAxonList((prev) => {
+          return data.data.mydata.map((item: any) => {
+            const existing = prev.find(p => p.axon === item.axon);
+            return {
+              axon: item.axon,
+              status: existing?.status ?? 0, // Keep 1 or -1, default to 0
+            };
+          });
+        });
       }
+
     }, [data]);
 
     useEffect(() => {
