@@ -602,7 +602,7 @@ const MyStatusPage = () => {
                           />
                         ))}
                     <tr>
-                      <td colSpan={12}>
+                      <td colSpan={13}>
                         <div className="h-[2px] w-full bg-slate-700"></div>
                       </td>
                     </tr>
