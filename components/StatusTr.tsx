@@ -6,18 +6,23 @@ import { Active, Danger, Immune } from './MinerIcon'
 import { LoaderCircle } from 'lucide-react'
 import axios from 'axios'
 import toast from 'react-hot-toast'
+type AxonStatus = {
+    axon: string,
+    status: number
+}
 type Props = {
     index: number,
     item: any,
     data: any,
     currency: string,
     blur: boolean,
+    axons: AxonStatus[]
 }
 
 const StatusTr = (props: Props) => {
     const [immune, setImmune] = React.useState(false)
     const [loading, setLoading] = React.useState(false)
-    const { index, item, data, currency, blur } = props
+    const { index, item, data, currency, blur, axons } = props
 
     const unstake = async (coldkey: string, hotkey: string, netuid: string, amount: number) => {
         setLoading(true)
@@ -58,6 +63,19 @@ const StatusTr = (props: Props) => {
             <td className='text-center py-2'>{showNumber(item.incentive, 4)}</td>
             <td className='text-center py-2'>{showNumber(item.miner_performance, 2)}</td>
             <td className='text-center py-2'>{item.axon}</td>
+            <td className="text-center py-2">
+                {
+                    (() => {
+                        const match = axons.find((items: AxonStatus) => items.axon === item.axon);
+                        if (!match) return '❓';          // Not found
+                        if (match.status === 1) return '🟢'; // Online
+                        if (match.status === 0) return ''; // Offline
+                        if (match.status === -1) return '🔴'; // Offline
+                        return '⚪';                      // Unknown
+                    })()
+                }
+            </td>
+
             {
                 currency === 'TAO' ?
                     <td className='text-center py-2'>{showNumber(item.alpha_per_day * data.data.price, 3)} 𝞃 / {showNumber(item.alpha_per_day, 3)} {data.data.letter}</td> :

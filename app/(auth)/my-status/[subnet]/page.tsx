@@ -16,6 +16,7 @@ import {
   Droplet,
   ChartNoAxesCombined,
   ChartSpline,
+  RefreshCcw,
 } from "lucide-react";
 import MinersChart from "@/components/MinersChart";
 import {
@@ -29,6 +30,11 @@ import StatusTr from "@/components/StatusTr";
 import clsx from "clsx";
 import PriceChart from "@/components/PriceChart";
 import axios from "axios";
+
+type AxonStatus = {
+  axon: string,
+  status: number
+}
 
 const MyStatusPage = () => {
   const router = useRouter();
@@ -60,6 +66,7 @@ const MyStatusPage = () => {
     const [selected, setSelected] = useState<string[]>([]);
     const [subnets, setSubnets] = useState<number[]>([]);
     const [priceData, setPriceData] = useState<any[]>([]);
+    const [axonList, setAxonList] = useState<AxonStatus[]>([])
     const popupRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -145,6 +152,22 @@ const MyStatusPage = () => {
         prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]
       );
     };
+    const checkPing = async () => {
+      const updatedList = await Promise.all(
+        axonList.map(async (item: AxonStatus) => {
+          try {
+            const res = await fetch(`http://${item.axon}/`, { method: 'GET' });
+            const status = res.ok ? 1 : -1;
+            return { ...item, status };
+          } catch (err) {
+            return { ...item, status: -1 }; // 0 = Closed/Offline
+          }
+        })
+      );
+
+      setAxonList(updatedList);
+    };
+
     useEffect(() => {
       if (data?.bittensor_data) {
         const newIncentiveCountdowns = data.bittensor_data.incentive_res.map(
@@ -157,6 +180,12 @@ const MyStatusPage = () => {
             t.hour === -1 ? -1 : t.hour * 3600 + t.minute * 60 + t.second
           );
         setRegistrationCountdowns(newRegistrationCountdowns);
+      }
+      if (data?.data?.mydata) {
+        const axons = data?.data?.mydata.map((item: any) => {
+          return { axon: item.axon, status: 0 }
+        })
+        setAxonList(axons)
       }
     }, [data]);
 
@@ -308,6 +337,17 @@ const MyStatusPage = () => {
             >
               <ChartSpline size={20} />
             </button>
+            <button
+              className={clsx(
+                "flex px-2 py-1 items-center justify-center rounded-md border transition-all h-full",
+                price
+                  ? "shadow-lg border-white"
+                  : "shadow-none border-slate-500"
+              )}
+              onClick={checkPing}
+            >
+              <RefreshCcw size={20} />
+            </button>
           </div>
           <div className="flex flex-col gap-10">
             {data && data.data && data.bittensor_data && (
@@ -400,20 +440,20 @@ const MyStatusPage = () => {
                       {incentive_countdowns === -1
                         ? "-1"
                         : `${Math.floor(
-                            incentive_countdowns / 3600
-                          )}h ${Math.floor(
-                            (incentive_countdowns % 3600) / 60
-                          )}m ${incentive_countdowns % 60}s`}
+                          incentive_countdowns / 3600
+                        )}h ${Math.floor(
+                          (incentive_countdowns % 3600) / 60
+                        )}m ${incentive_countdowns % 60}s`}
                     </div>
                     <div className="text-sm pr-5">
                       Registration:{" "}
                       {registration_countdowns === -1
                         ? "-1"
                         : `${Math.floor(
-                            registration_countdowns / 3600
-                          )}h ${Math.floor(
-                            (registration_countdowns % 3600) / 60
-                          )}m ${registration_countdowns % 60}s`}
+                          registration_countdowns / 3600
+                        )}h ${Math.floor(
+                          (registration_countdowns % 3600) / 60
+                        )}m ${registration_countdowns % 60}s`}
                     </div>
                   </div>
                 </div>
@@ -523,6 +563,11 @@ const MyStatusPage = () => {
                         Axon
                       </th>
                       <th
+                        className="text-center py-2"
+                      >
+                        Ping
+                      </th>
+                      <th
                         className="text-center py-2 cursor-pointer"
                         onClick={() => handleSort("daily")}
                       >
@@ -547,6 +592,7 @@ const MyStatusPage = () => {
                             data={data}
                             currency={currency}
                             blur={blur}
+                            axons={axonList}
                           />
                         ))}
                     <tr>
@@ -572,8 +618,8 @@ const MyStatusPage = () => {
                         <td className="text-center py-2">
                           {showNumber(
                             data.data.total_stake *
-                              data.data.price *
-                              data.taoPrice,
+                            data.data.price *
+                            data.taoPrice,
                             2
                           )}{" "}
                           $ / {showNumber(data.data.total_stake, 2)}{" "}
@@ -598,8 +644,8 @@ const MyStatusPage = () => {
                         <td className="text-center py-2">
                           {showNumber(
                             data.data.total_daily *
-                              data.data.price *
-                              data.taoPrice,
+                            data.data.price *
+                            data.taoPrice,
                             2
                           )}{" "}
                           $ / {showNumber(data.data.total_daily, 2)}{" "}
