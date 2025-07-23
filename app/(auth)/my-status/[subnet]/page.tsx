@@ -156,8 +156,8 @@ const MyStatusPage = () => {
       const updatedList = await Promise.all(
         axonList.map(async (item: AxonStatus) => {
           try {
-            const res = await fetch(`http://${item.axon}/`, { method: 'GET' });
-            const status = res.ok ? 1 : -1;
+            const res = await axios.post(`/api/checkPing`, { axon: item.axon }, { method: 'GET' });
+            const status = res.data.status
             return { ...item, status };
           } catch (err) {
             return { ...item, status: -1 }; // 0 = Closed/Offline
