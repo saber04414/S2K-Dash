@@ -6,7 +6,7 @@ export const revalidate = 0;
 export async function GET() {
     const coldkeys = await prisma.coldkey.findMany({
         where: {
-            ghost: false,
+            ghost: true,
         },
     });
     const data = []

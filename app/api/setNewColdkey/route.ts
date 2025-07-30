@@ -2,12 +2,12 @@ import prisma from '@/lib/prisma';
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
-    const { name, coldkey } = await req.json();
+    const { name, coldkey, ghost } = await req.json();
     // Validate input
     if (!name || typeof name !== 'string' || !coldkey || typeof coldkey !== 'string') {
         return NextResponse.json({ error: 'Invalid name or coldkey value' }, { status: 400 });
     }
-    console.log({ name, coldkey })
+    console.log({ name, coldkey, ghost })
     try {
         // Check if uid already exists
         const existingColdkey = await prisma.coldkey.findFirst({
@@ -21,7 +21,7 @@ export async function POST(req: Request) {
         } else {
             // Create new coldkey entry
             savedColdkey = await prisma.coldkey.create({
-                data: { name, coldkey },
+                data: { name, coldkey, ghost },
             });
         }
 

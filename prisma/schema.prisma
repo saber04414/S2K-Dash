@@ -35,6 +35,7 @@ model Coldkey {
   coldkey   String
   name      String
   createdAt DateTime @default(now())
+  ghost     Boolean  @default(false)
 }
 
 model Subnets {

@@ -11,6 +11,7 @@ const Sidebar = () => {
     const pathName = usePathname()
     const menus = [
         { name: 'Dashboard', href: '/dashboard' },
+        { name: 'Ghost', href: '/ghost' },
         { name: 'Register', href: '/register' },
         { name: 'My Status', href: '/my-status' },
         { name: 'Distribution', href: '/distribution' },

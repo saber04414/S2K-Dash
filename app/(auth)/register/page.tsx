@@ -10,6 +10,7 @@ const RegisterPage = () => {
     const [loading1, setLoading1] = useState(false)
     const [loading2, setLoading2] = useState(false)
     const [loading3, setLoading3] = useState(false)
+    const [ghost, setGhost] = useState(false)
     const [net, setNet] = useState(0)
     const handleUIDChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setUid(Number(e.target.value))
@@ -34,7 +35,7 @@ const RegisterPage = () => {
     }
     const handleColdkeyRegister = async () => {
         setLoading1(true)
-        await axios.post("/api/setNewColdkey", { name, coldkey }).then(() => {
+        await axios.post("/api/setNewColdkey", { name, coldkey, ghost }).then(() => {
             toast.success("Successfully added")
         }).catch(() => {
             toast.error("Failed to save coldkey")
@@ -50,6 +51,10 @@ const RegisterPage = () => {
         });
         setLoading2(false)
     }
+
+    const handleCheckBox = async () => {
+        setGhost(!ghost)
+    }
     return (
         <div className="w-full flex flex-col gap-5 items-center justify-center">
             <div className="text-2xl font-bold text-center">Register</div>
@@ -58,6 +63,15 @@ const RegisterPage = () => {
                     <div className='flex flex-row gap-2 items-center justify-center text-lg'>Coldkey Registration: </div>
                     <input type="text" placeholder="Name" className='w-full px-4 py-2 border border-slate-700 rounded-2xl text-slate-900' onChange={handleNameChange} />
                     <input type="text" placeholder="Coldkey" className='w-full px-4 py-2 border border-slate-700 rounded-2xl text-slate-900' onChange={handleColdkeyChange} />
+                    <label className="inline-flex items-center space-x-2 w-full flex-start px-4">
+                        <input
+                            type="checkbox"
+                            onChange={handleCheckBox}
+                            checked={ghost}
+                            className="scale-150"
+                        />
+                        <span>Is it ghost?</span>
+                    </label>
                     <button className='w-full px-4 py-2 border border-slate-700 rounded-2xl hover:bg-slate-500' onClick={handleColdkeyRegister}>{loading1 ? 'Loading...' : 'Register'}</button>
                 </div>
                 <div className='flex flex-col gap-5 w-full items-center justify-between border border-slate-700 rounded-2xl p-7'>
