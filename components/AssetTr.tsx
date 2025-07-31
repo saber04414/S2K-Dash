@@ -17,7 +17,6 @@ const AssetTr = (props: Props) => {
     const [loading, setLoading] = React.useState(false)
     const { index, item, price } = props
     const router = useRouter()
-
     const unstake = async (coldkey: string, hotkey: string, netuid: string, amount: number) => {
         setLoading(true)
         await axios.post("/api/unstake", { coldkey_address: coldkey, hotkey_address: hotkey, netuid: netuid, amount: amount }).then(() => {
@@ -36,7 +35,7 @@ const AssetTr = (props: Props) => {
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.hotkey_ss58)}>{showKey(item.hotkey_ss58)}</td>
             <td className='text-center py-2'>{item.is_registered ? <Active /> : ''}</td>
             <td className='text-center py-2 underline' onClick={() => router.push(`https://s2k-labs.vercel.app/my-status/${item.netuid}`)}>{item.netuid}</td>
-            <td className='text-center py-2'>{showTaoNumber(item.stake.rao * price[item.netuid+1].latest_snapshot.price)} 𝞃 / {showTaoNumber(item.stake.rao)} {price[item.netuid].letter}</td>
+            <td className='text-center py-2'>{showTaoNumber(item.stake.rao * price[item.netuid].latest_snapshot.price)} 𝞃 / {showTaoNumber(item.stake.rao)} {price[item.netuid].letter}</td>
             <td className='text-center py-2'>
                 <button className={item.stake != 0 ? 'px-2 py-1 rounded-md hover:bg-slate-600 transition-all cursor-pointer' : 'px-2 py-1 rounded-md cursor-not-allowed'} onClick={() => unstake(item.coldkey_ss58, item.hotkey_ss58, item.stake.netuid, item.stake.rao)}>{loading ? <LoaderCircle className='animate-spin' /> : 'Unstake'}</button>
             </td>
