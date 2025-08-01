@@ -30,7 +30,7 @@ const Sidebar = () => {
                 <Image src="/mark.png" width={150} height={100} alt='' className='w-24 h-24 mx-auto' />
                 <div className="flex flex-col items-center">
                     {menus.map((menu) => (
-                        <div key={menu.name} className={clsx('py-3 cursor-pointer hover:bg-slate-500 w-full text-center text-lg', pathName === menu.href && 'bg-slate-500')} onClick={() => handleMenuClick(menu.href)}>
+                        <div key={menu.name} className={clsx('py-3 cursor-pointer hover:bg-gradient-to-r hover:from-slate-600 hover:to-transparnet w-full text-center text-lg', pathName === menu.href && 'bg-gradient-to-r from-slate-600 to-transparent')} onClick={() => handleMenuClick(menu.href)}>
                             {menu.name}
                         </div>
                     ))}

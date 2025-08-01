@@ -7,9 +7,11 @@ import { ArrowRight } from "lucide-react";
 import useSWR from 'swr'
 import { useRouter } from 'next/navigation'
 import { Transaction } from "@/components/TransactionIcon";
-
+import { useState } from "react";
+import { ChartNoAxesCombined } from "lucide-react";
 export default function Home() {
   const router = useRouter()
+  const [selectedIndex, setSelectedIndex] = useState(-1)
   const { data, error, isLoading } = useSWR('/api/getGhostDashboard', fetcher);
   if (isLoading) return <div className='w-full h-full'>
     <ImageLoadingSpinner />
@@ -20,7 +22,7 @@ export default function Home() {
   </div>
   if (data) {
     return (
-      <div className="w-full flex flex-col gap-5 items-center justify-center">
+      <div className="w-full h-full flex flex-col gap-5 items-center">
         <div className="text-2xl font-bold text-center">Dashboard (Ghost)</div>
         <table className="w-full">
           <thead>
@@ -38,21 +40,33 @@ export default function Home() {
           <tbody>
             {
               data && data.data && data.data.length > 0 && data.data.map((item: any, index: number) => (
-                <tr key={index}>
-                  <td className="text-center py-2">{index + 1}</td>
-                  <td className='text-center py-2'>{item.name}</td>
-                  <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showDashKey(item.coldkey)}</td>
-                  <td className='text-center py-2'>{showTaoNumber(item.staked)} 𝞃</td>
-                  <td className='text-center py-2'>{showTaoNumber(item.free)} 𝞃</td>
-                  <td className='text-center py-2'><PercentBar stake={item.staked} free={item.free} /></td>
-                  <td className='text-center py-2'>{showTaoNumber(item.total)} 𝞃</td>
-                  <td className='text-center py-2'>
-                    <div className="flex flex-row gap-5 justify-center items-center">
-                      <div className="cursor-pointer" onClick={() => router.push(`/assets/${item.coldkey}`)}><ArrowRight size={18} /></div>
-                      <div className="cursor-pointer" onClick={() => router.push(`/transaction/${item.coldkey}`)}><Transaction /></div>
-                    </div>
-                  </td>
-                </tr>
+                <>
+                  <tr key={index}>
+                    <td className="text-center py-2">{index + 1}</td>
+                    <td className='text-center py-2'>{item.name}</td>
+                    <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showDashKey(item.coldkey)}</td>
+                    <td className='text-center py-2'>{showTaoNumber(item.staked)} 𝞃</td>
+                    <td className='text-center py-2'>{showTaoNumber(item.free)} 𝞃</td>
+                    <td className='text-center py-2'><PercentBar stake={item.staked} free={item.free} /></td>
+                    <td className='text-center py-2'>{showTaoNumber(item.total)} 𝞃</td>
+                    <td className='text-center py-2'>
+                      <div className="flex flex-row gap-5 justify-center items-center">
+                        <div className="cursor-pointer hover:scale-125 hover:duration-300" onClick={() => router.push(`/assets/${item.coldkey}`)}><ArrowRight size={22} /></div>
+                        <div className="cursor-pointer hover:scale-125 hover:duration-300" onClick={() => router.push(`/transaction/${item.coldkey}`)}><Transaction /></div>
+                        <div className="cursor-pointer hover:scale-125 hover:duration-300" onClick={() => setSelectedIndex(selectedIndex === index ? -1 : index)}><ChartNoAxesCombined size={22} /></div>
+                      </div>
+                    </td>
+                  </tr >
+                  <tr key={index + 50}>
+                    <td colSpan={8}>
+                      {(selectedIndex == index) && <iframe
+                        src={`https://taostats.io/coldkey/${item.coldkey}`}
+                        className="w-full h-[80vh] border-none"
+                        title="Embedded Website"
+                      ></iframe>}
+                    </td>
+                  </tr>
+                </>
               ))
             }
             <tr>
