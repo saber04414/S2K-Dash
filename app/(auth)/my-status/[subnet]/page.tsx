@@ -405,7 +405,8 @@ const MyStatusPage = () => {
                       {showNumber(data.data.price * data.taoPrice, 4)} $
                     </div>
                     <div className="text-sm pr-3">
-                      Reg Cost: {showNumber(data.data.regcost, 4)} 𝞃
+                      Reg Cost: {showNumber(data.data.regcost, 4)} 𝞃 /{" "}
+                      {showNumber(data.data.regcost * data.taoPrice, 4)} $
                     </div>
                     <div className="text-sm pr-3">
                       Next Reg Cost: {showNumber(data.data.next_burn, 4)} 𝞃
