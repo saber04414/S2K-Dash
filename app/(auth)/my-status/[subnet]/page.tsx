@@ -418,7 +418,7 @@ const MyStatusPage = () => {
                       Next Reg Cost: {showNumber(data.data.next_burn, 4)} 𝞃
                     </div>
                     <div className="text-sm pr-5 flex flex-row gap-1">
-                      {Array.from({
+                      {data.data.reglist.length != 0 && Array.from({
                         length: data.data.sidebar.burn_registrations_this_interval,
                       }).map((_, i) => (
                         <TooltipProvider key={i}>
