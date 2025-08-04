@@ -43,7 +43,7 @@ const MyStatusPage = () => {
   const [sortKey, setSortKey] = useState("");
   const [blur, setBlur] = useState(true);
   const [price, setPrice] = useState(false);
-  const [showChart, setShowChart] = useState(false);
+  const [showChart, setShowChart] = useState(true);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   if (!isValidS2k(params.subnet as string)) {
     const numeric = parseInt(params.subnet as string, 10);
