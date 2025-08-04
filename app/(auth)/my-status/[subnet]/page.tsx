@@ -17,6 +17,7 @@ import {
   ChartNoAxesCombined,
   ChartSpline,
   RefreshCcw,
+  ArrowRight,
 } from "lucide-react";
 import MinersChart from "@/components/MinersChart";
 import {
@@ -227,6 +228,7 @@ const MyStatusPage = () => {
             <ArrowLeft size={18} />
             Back
           </div>
+
           <div className="flex flex-row gap-2 bg-slate-500/30 backdrop-blur-md rounded-md cursor-pointer text-center z-10 fixed top-5 right-10 py-1 px-2">
             {subnets &&
               subnets.length > 0 &&
@@ -278,7 +280,11 @@ const MyStatusPage = () => {
               />
             </a>
           </div>
-          <div className="text-2xl font-bold text-center">My Status</div>
+          <div className="text-2xl font-bold text-center flex flex-row justify-center items-center gap-10">
+            <div onClick={() => router.push(`/my-status/${data.data.subnet - 1}`)} className="cursor-pointer hover:scale-125 active:scale-100"><ArrowLeft /></div>
+            <span>My Status ( {data.data.subnet} )</span>
+            <div onClick={() => router.push(`/my-status/${data.data.subnet + 1}`)} className="cursor-pointer hover:scale-125 active:scale-100"><ArrowRight /></div>
+          </div>
           <div className="absolute top-0 right-0 w-fit text-center cursor-pointer flex flex-row gap-2 items-center py-1 px-2 border border-slate-500 rounded-md h-[50px]">
             <button
               onClick={() => setCurrency("TAO")}
