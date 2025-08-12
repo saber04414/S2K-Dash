@@ -132,7 +132,7 @@ export async function GET(req: Request) {
       parseFloat(response_reg.data[0].burn) / 1e9,
       sidebar_data.registrations_this_interval,
       sidebar_data.target_registrations_per_interval,
-      parseFloat(sidebar_data.adjustment_alpha) / 1e18
+      parseFloat(sidebar_data.adjustment_alpha) / 2**64
     );
     const data = {
       subnet: subnetId,
