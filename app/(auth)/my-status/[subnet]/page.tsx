@@ -18,6 +18,7 @@ import {
   ChartSpline,
   RefreshCcw,
   ArrowRight,
+  Eye,
 } from "lucide-react";
 import MinersChart from "@/components/MinersChart";
 import {
@@ -44,6 +45,7 @@ const MyStatusPage = () => {
   const [blur, setBlur] = useState(true);
   const [price, setPrice] = useState(false);
   const [showChart, setShowChart] = useState(true);
+  const [showMetagraph, setShowMetagraph] = useState(true);
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
   if (!isValidS2k(params.subnet as string)) {
     const numeric = parseInt(params.subnet as string, 10);
@@ -351,14 +353,22 @@ const MyStatusPage = () => {
             </button>
             <button
               className={clsx(
-                "flex px-2 py-1 items-center justify-center rounded-md border transition-all h-full",
-                price
-                  ? "shadow-lg border-white"
-                  : "shadow-none border-slate-500"
+                "flex px-2 py-1 items-center justify-center rounded-md border transition-all h-full"
               )}
               onClick={checkPing}
             >
               <RefreshCcw size={20} />
+            </button>
+            <button
+              className={clsx(
+                "flex px-2 py-1 items-center justify-center rounded-md border transition-all h-full",
+                showMetagraph
+                  ? "shadow-lg border-white"
+                  : "shadow-none border-slate-500"
+              )}
+              onClick={() => setShowMetagraph(!showMetagraph)}
+            >
+              <Eye size={20} />
             </button>
           </div>
           <div className="flex flex-col gap-10">
@@ -480,7 +490,7 @@ const MyStatusPage = () => {
                     <PriceChart data={priceData} />
                   </div>
                 )}
-                <table className="w-full">
+                {showMetagraph && <table className="w-full">
                   <thead>
                     <tr className="bg-slate-700">
                       <th className="text-center py-2 cursor-pointer">No</th>
@@ -668,7 +678,7 @@ const MyStatusPage = () => {
                       )}
                     </tr>
                   </tbody>
-                </table>
+                </table>}
               </div>
             )}
           </div>
