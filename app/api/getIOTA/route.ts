@@ -6,9 +6,9 @@ export const revalidate = 0;
 
 export async function GET() {
     try {
-        const res = await axios.get('http://195.201.240.242:5000/api/results');
+        const res = await axios.get('https://iota.macrocosmos.ai/api/mainnet/miners');
         return NextResponse.json(
-            { data: res.data },
+            { data: res.data.miners },
             {
                 status: 200,
                 headers: {
