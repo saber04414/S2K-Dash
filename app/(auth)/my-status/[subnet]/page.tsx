@@ -19,6 +19,7 @@ import {
   RefreshCcw,
   ArrowRight,
   Eye,
+  EyeOff,
 } from "lucide-react";
 import MinersChart from "@/components/MinersChart";
 import {
@@ -368,7 +369,7 @@ const MyStatusPage = () => {
               )}
               onClick={() => setShowMetagraph(!showMetagraph)}
             >
-              <Eye size={20} />
+              {showMetagraph ? <EyeOff size={20} /> : <Eye size={20}/>}
             </button>
           </div>
           <div className="flex flex-col gap-10">
