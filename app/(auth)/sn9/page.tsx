@@ -25,12 +25,15 @@ type MinerRow = {
   run_id?: string;
 };
 
+type StatusFilter = "all" | "active" | "inactive";
+
 export default function Subnet9() {
   const { data, error, isLoading } = useSWR("/api/getIOTA", fetcher);
 
   const [sortKey, setSortKey] = useState<keyof MinerRow | "location_name" | "uptime">("miner_uid");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
   const [searchTerm, setSearchTerm] = useState("");
+  const [statusFilter, setStatusFilter] = useState<StatusFilter>("all");
 
   const rows: MinerRow[] = useMemo(() => {
     if (Array.isArray(data)) return data as MinerRow[];
@@ -51,9 +54,8 @@ export default function Subnet9() {
   ];
 
   const handleSort = (key: keyof MinerRow | "location_name" | "uptime") => {
-    if (sortKey === key) {
-      setSortOrder(sortOrder === "asc" ? "desc" : "asc");
-    } else {
+    if (sortKey === key) setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+    else {
       setSortKey(key);
       setSortOrder("desc");
     }
@@ -77,15 +79,12 @@ export default function Subnet9() {
     const d = Math.floor(secs / 86400);
     const h = Math.floor((secs % 86400) / 3600);
     const m = Math.floor((secs % 3600) / 60);
-  
-    const parts = [];
+    const parts: string[] = [];
     if (d > 0) parts.push(`${d}d`);
     if (h > 0) parts.push(`${h}h`);
-    if (m > 0 || parts.length === 0) parts.push(`${m}m`); // always show minutes if everything else is 0
-  
+    if (m > 0 || parts.length === 0) parts.push(`${m}m`);
     return parts.join(" ");
   };
-  
 
   const sortedData = useMemo(() => {
     const arr = rows.map((r) => {
@@ -94,21 +93,13 @@ export default function Subnet9() {
       return { ...r, uptime };
     });
 
-    const isNumeric = (k: keyof MinerRow | "location_name" | "uptime") =>
-      numericFields.includes(k);
-
-    const parse = (val: any, k: keyof MinerRow | "location_name" | "uptime") => {
-      if (isNumeric(k)) {
-        const num = Number(val);
-        return Number.isNaN(num) ? -Infinity : num;
-      }
-      return (val ?? "").toString().toLowerCase();
-    };
+    const isNumeric = (k: keyof MinerRow | "location_name" | "uptime") => numericFields.includes(k);
+    const parse = (val: any, k: keyof MinerRow | "location_name" | "uptime") =>
+      isNumeric(k) ? (Number.isNaN(Number(val)) ? -Infinity : Number(val)) : (val ?? "").toString().toLowerCase();
 
     arr.sort((a, b) => {
       const aVal = parse((a as any)[sortKey], sortKey);
       const bVal = parse((b as any)[sortKey], sortKey);
-
       if (aVal < bVal) return sortOrder === "asc" ? -1 : 1;
       if (aVal > bVal) return sortOrder === "asc" ? 1 : -1;
       return 0;
@@ -119,9 +110,15 @@ export default function Subnet9() {
 
   const filtered = useMemo(() => {
     const term = searchTerm.trim().toLowerCase();
-    if (!term) return sortedData;
-    return sortedData.filter((r) =>
-      [
+
+    return sortedData.filter((r) => {
+      // status filter
+      if (statusFilter === "active" && !r.is_active) return false;
+      if (statusFilter === "inactive" && r.is_active) return false;
+
+      // text search
+      if (!term) return true;
+      return [
         r.coldkey,
         r.hotkey,
         r.unique_miner_id,
@@ -131,9 +128,9 @@ export default function Subnet9() {
         String(r.layer),
       ]
         .filter(Boolean)
-        .some((v) => v!.toString().toLowerCase().includes(term))
-    );
-  }, [sortedData, searchTerm]);
+        .some((v) => v!.toString().toLowerCase().includes(term));
+    });
+  }, [sortedData, searchTerm, statusFilter]);
 
   if (isLoading)
     return (
@@ -150,18 +147,59 @@ export default function Subnet9() {
       </div>
     );
 
+  const total = rows.length;
+  const activeCount = rows.filter((r) => r.is_active).length;
+  const inactiveCount = total - activeCount;
+
   return (
     <div className="w-full flex flex-col gap-5 justify-center">
       <div className="text-2xl font-bold text-center">IOTA Dashboard</div>
 
       <div className="w-full flex flex-col gap-3 justify-center">
-        <input
-          type="text"
-          placeholder="Search coldkey, hotkey, miner id, location, IP..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="px-4 py-2 w-full max-w-md bg-transparent border border-gray-300 rounded-lg text-white"
-        />
+        {/* Controls */}
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-3">
+          <input
+            type="text"
+            placeholder="Search coldkey, hotkey, miner id, location, IP..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="px-4 py-2 w-full md:w-96 bg-transparent border border-gray-300 rounded-lg text-white"
+          />
+
+          {/* Status Filter */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setStatusFilter("all")}
+              className={clsx(
+                "px-3 py-2 rounded border",
+                statusFilter === "all" ? "bg-slate-600 border-slate-400" : "bg-transparent border-gray-500"
+              )}
+              title="Show all miners"
+            >
+              All ({total})
+            </button>
+            <button
+              onClick={() => setStatusFilter("active")}
+              className={clsx(
+                "px-3 py-2 rounded border",
+                statusFilter === "active" ? "bg-green-700/40 border-green-500" : "bg-transparent border-gray-500"
+              )}
+              title="Only active miners"
+            >
+              Active ({activeCount})
+            </button>
+            <button
+              onClick={() => setStatusFilter("inactive")}
+              className={clsx(
+                "px-3 py-2 rounded border",
+                statusFilter === "inactive" ? "bg-red-700/40 border-red-500" : "bg-transparent border-gray-500"
+              )}
+              title="Only inactive miners"
+            >
+              Inactive ({inactiveCount})
+            </button>
+          </div>
+        </div>
 
         <table className="w-full">
           <thead>
@@ -200,11 +238,16 @@ export default function Subnet9() {
                 <td className="text-center py-2">{formatNum(item.incentive, 6)}</td>
                 <td className="text-center py-2">{item.location_name ?? "-"}</td>
                 <td className="text-center py-2">
-                  <span className={clsx("px-2 py-1 rounded text-xs", item.is_active ? "bg-green-600/30 text-green-300" : "bg-red-600/30 text-red-300")}>
+                  <span
+                    className={clsx(
+                      "px-2 py-1 rounded text-xs",
+                      item.is_active ? "bg-green-600/30 text-green-300" : "bg-red-600/30 text-red-300"
+                    )}
+                  >
                     {item.is_active ? "Active" : "Inactive"}
                   </span>
                 </td>
-                <td className="text-center py-2">{formatUptime(item.uptime)}</td>
+                <td className="text-center py-2">{formatUptime((item as any).uptime)}</td>
                 <td className="text-center py-2">{formatDate(item.timestamp)}</td>
               </tr>
             ))}
