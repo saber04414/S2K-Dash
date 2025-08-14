@@ -66,7 +66,7 @@ export async function GET(req: Request) {
         };
       })
       .filter((item: any) => item.isMiner)
-      .sort((a: any, b: any) => b.alpha_per_day - a.alpha_per_day)
+      .sort((a: any, b: any) => b.daily - a.daily)
       .map((item: any, i: number) => ({ ...item, ranking: i + 1 }));
     const total_daily = filtered_data.reduce(
       (acc: number, item: any) => acc + item.alpha_per_day,
