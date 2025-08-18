@@ -13,6 +13,7 @@ export async function GET(req: Request) {
   const url = new URL(req.url); // Create a URL object from the request URL
   const subnetId = Number(url.searchParams.get("subnet")) as number; // Get the 'day' query parameter
   const coldkeys = await prisma.coldkey.findMany();
+  console.log("Hello1")
   const mycoldkeys = coldkeys.map((coldkey) => coldkey.coldkey);
   const res = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/subnets/?limit=129`);
   const subnet_data = await res.data.results;
