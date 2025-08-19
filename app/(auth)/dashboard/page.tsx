@@ -61,7 +61,7 @@ export default function Home() {
                   <tr key={index + 50}>
                     <td colSpan={8}>
                       {(selectedIndex == index) && <iframe
-                        src={`https://taostats.io/coldkey/${item.coldkey}`}
+                        src={`https://taoxnet.io/coldkey/${item.coldkey}`}
                         className="w-full h-[80vh] border-none"
                         title="Embedded Website"
                       ></iframe>}
