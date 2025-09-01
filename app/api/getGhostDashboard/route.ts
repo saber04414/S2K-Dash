@@ -17,6 +17,7 @@ export async function GET() {
         try {
             const result = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/accounts/coldkeys/${coldkey}`, { headers: { "Content-Type": "application/json" } })
             const { free, tao_staked } = result.data
+            const staked = tao_staked
             const returned_data = {
                 staked: staked,
                 free: free,
