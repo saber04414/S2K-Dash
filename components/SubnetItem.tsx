@@ -8,45 +8,49 @@ import { Trash2, GithubIcon } from "lucide-react";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { getS2kUrl } from "@/lib/main";
+// type Props = {
+//   subnet_id: number;
+//   active: number;
+//   bittensor_id: string;
+//   description: string;
+//   emission: number;
+//   emissionRate: number;
+//   github: string;
+//   history: any;
+//   image_url: string;
+//   maxAllowedUids: number;
+//   maxAllowedValidators: number;
+//   name: string;
+//   otheruid: number;
+//   price: number;
+//   subnetAlphaIn: number;
+//   subnetTAO: number;
+// };
 type Props = {
-  subnet_id: number;
-  active: number;
-  bittensor_id: string;
-  description: string;
-  emission: number;
-  emissionRate: number;
-  github: string;
-  history: any;
-  image_url: string;
-  maxAllowedUids: number;
-  maxAllowedValidators: number;
-  name: string;
-  otheruid: number;
-  price: number;
-  subnetAlphaIn: number;
-  subnetTAO: number;
-};
+  subnet: number
+}
 
 const SubnetItem = (props: Props) => {
   const router = useRouter();
-  const [src, setSrc] = useState(props.image_url || "/default.png");
-  const handleDelete = async (netuid: number) => {
-    const response = await axios.post("/api/deleteSubnet", { netuid: netuid });
-    if (response.status === 201) {
-      toast.success("Subnet deleted successfully");
-      router.refresh();
-    } else {
-      toast.error("Failed to delete subnet");
-    }
-  };
+  // const [src, setSrc] = useState(props.image_url || "/default.png");
+  // const handleDelete = async (netuid: number) => {
+  //   const response = await axios.post("/api/deleteSubnet", { netuid: netuid });
+  //   if (response.status === 201) {
+  //     toast.success("Subnet deleted successfully");
+  //     router.refresh();
+  //   } else {
+  //     toast.error("Failed to delete subnet");
+  //   }
+  // };
 
   return (
     <div className="w-full rounded-md border border-slate-500 cursor-pointer flex flex-col gap-0 hover:scale-[1.01] transition-all relative">
-      <div
+      <div className="w-full h-32 flex justify-center items-center text-xl" onClick={() => router.push(`/my-status/${getS2kUrl(props.subnet)}`)}>{props.subnet}</div>
+      {/* <div
         className="absolute z-10 inset-0 bg-gray-200 opacity-0 hover:opacity-40 transition-opacity duration-300"
         onClick={() => router.push(`/my-status/${getS2kUrl(props.subnet_id)}`)}
-      />
-      <Image
+      /> */}
+      {/* <Image
         className="w-full h-56 bg-slate-500 rounded-t-md"
         src={src}
         width="500"
@@ -96,7 +100,7 @@ const SubnetItem = (props: Props) => {
             }
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

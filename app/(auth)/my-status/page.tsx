@@ -27,7 +27,8 @@ const MySubnetsPage = () => {
                     <div className='grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-8 w-full'>
                         {
                             data && data.data && data.data.map((subnet: any, index: number) => (
-                                <SubnetItem key={index} {...subnet} />
+                                // <SubnetItem key={index} {...subnet} />
+                                <SubnetItem key={index} subnet={subnet} />
                             ))
                         }
                     </div>
