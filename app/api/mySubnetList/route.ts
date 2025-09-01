@@ -1,5 +1,5 @@
 import prisma from '@/lib/prisma';
-import axios from 'axios';
+// import axios from 'axios';
 import { NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic'

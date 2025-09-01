@@ -1,12 +1,12 @@
 "use clinet";
 import React from "react";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
-import { showNumber, showTaoNumber } from "@/lib/main";
-import { useState } from "react";
-import { Trash2, GithubIcon } from "lucide-react";
-import axios from "axios";
-import toast from "react-hot-toast";
+// import Image from "next/image";
+// import { showNumber, showTaoNumber } from "@/lib/main";
+// import { useState } from "react";
+// import { Trash2, GithubIcon } from "lucide-react";
+// import axios from "axios";
+// import toast from "react-hot-toast";
 import { getS2kUrl } from "@/lib/main";
 // type Props = {
 //   subnet_id: number;
