@@ -15,8 +15,8 @@ export async function GET() {
     for (const cold of coldkeys) {
         const { name, coldkey } = cold
         try {
-            const result = await axios.post('https://taoxnet.io/api/v1/address/get?network=mainnet', { address: coldkey }, { headers: { "Content-Type": "application/json" } })
-            const { staked, free } = result.data
+            const result = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/accounts/coldkeys/${coldkey}`, { headers: { "Content-Type": "application/json" } })
+            const { free, tao_staked } = result.data
             const returned_data = {
                 staked: staked,
                 free: free,
