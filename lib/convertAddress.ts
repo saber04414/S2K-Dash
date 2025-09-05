@@ -16,7 +16,9 @@ export const AddressName: { [key: string]: string } = {
     '5HbDZ6ULuwZegAMSPaS2kaUfBLMDaht5t48RcDrQATSgGCAR': 'S2K Labs',
     '5FkHiULruUhoTSe58oRrFwoNRZ72iz9BFtLvLVVjeCTK8N9r': 'K2',
     '5FbZXuyucSr6BzCY9sRSiRyL5HBo54nAxp4dFNxCd4Q8C5yy': 'Ghost1',
-    '5G8rwaxuL54qci8xQRtFnduwuzpsy7ebYUfps3b6qBVgbm6B': 'OOO'
+    '5G8rwaxuL54qci8xQRtFnduwuzpsy7ebYUfps3b6qBVgbm6B': 'OOO',
+    '5CXuhs6iCGQn25fPPTbaaL83pfPbbjCrff5rXkBtXtHVNnaD': 'Ghost2',
+    '5HDyRMcx24THnpWgCo9v6pauDN5xH5DEYqKAvrAbPM93Lska': 'Ghost3',
   };
   
 type AddressKey = keyof typeof AddressName;
