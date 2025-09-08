@@ -1,5 +1,5 @@
 export const AddressName: { [key: string]: string } = {
-    '5HNfPMwyTkqo4jLuYkZN4kXCQd5tDoKQZdqQ82Jm9gg7Tspi': 'Co-S-K',
+    '5HNfPMwyTkqo4jLuYkZN4kXCQd5tDoKQZdqQ82Jm9gg7Tspi': 'Union1',
     '5HQQ7WLJb6frv78W1t92tge8y8yib2uf9PvRHrffumrhFdQz': 'Union2',
     '5HgxZ1z1RYkc3yx68BwJVbZKfEqYusLf3RbDfxjm82nSmaxP': 'SN85',
     '5GYsGZe8Ckmjo4RcHCGVyQSdvnDMPLBH29JPMzMv1eJQSE3u': 'Union4',
@@ -19,6 +19,7 @@ export const AddressName: { [key: string]: string } = {
     '5G8rwaxuL54qci8xQRtFnduwuzpsy7ebYUfps3b6qBVgbm6B': 'OOO',
     '5CXuhs6iCGQn25fPPTbaaL83pfPbbjCrff5rXkBtXtHVNnaD': 'Ghost2',
     '5HDyRMcx24THnpWgCo9v6pauDN5xH5DEYqKAvrAbPM93Lska': 'Ghost3',
+    '5GeQumgMBbj8Nf4fgDBmeZTRUpyuc99uN1SD3e5srbvZ8XaN': 'aioV2',
   };
   
 type AddressKey = keyof typeof AddressName;
