@@ -15,7 +15,7 @@ export default function Login() {
     e.preventDefault()
 
     if (password === process.env.NEXT_PUBLIC_SECRET) {
-      const minutesToExpire = 30;
+      const minutesToExpire = 60;
 
       const expires = new Date();
       expires.setTime(expires.getTime() + (minutesToExpire * 60 * 1000));
