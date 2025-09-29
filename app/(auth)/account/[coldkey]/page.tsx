@@ -5,7 +5,6 @@ import { fetcher } from '@/utils/fetcher'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
 import { ArrowLeft } from 'lucide-react'
 import { useParams, useRouter } from 'next/navigation'
-import AssetTr from '@/components/AssetTr'
 import clsx from 'clsx'
 import { Active, Validator } from '@/components/MinerIcon'
 import { copyKey, showKey, showNumber } from '@/lib/main'
@@ -93,37 +92,6 @@ const AccountPage = () => {
                         </div>
                     )
                 }
-                {/* <div className='flex flex-col gap-10'>
-                    {
-                        data && data.data && data.price && (
-                            <div className='flex flex-col gap-1'>
-                                <table className='w-full'>
-                                    <thead>
-                                        <tr className='bg-slate-700'>
-                                            <th className='text-center py-3'>No</th>
-                                            <th className='text-center py-3'>Coldkey</th>
-                                            <th className='text-center py-3'>Hotkey</th>
-                                            <th className='text-center py-3'>Status</th>
-                                            <th className='text-center py-3'>Netuid</th>
-                                            <th className='text-center py-3'>Stake</th>
-                                            <th className='text-center py-3'>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {
-                                            data && data.data.alpha_balance && data.data.alpha_balance.map((item: any, index: number) => (
-                                                <AssetTr key={index} index={index} item={item} price={data.price} />
-                                            ))
-                                        }
-                                        <tr>
-                                            <td colSpan={7}><div className='h-[2px] w-full bg-slate-700'></div></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        )
-                    }
-                </div> */}
             </div>
         )
     }
