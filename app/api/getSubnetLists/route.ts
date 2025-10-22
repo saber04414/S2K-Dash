@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 import axios from 'axios';
 export const dynamic = 'force-dynamic'
 export const revalidate = 0;
-export async function GET(req: Request) {
+export async function GET() {
     try {
         const result = await axios.get(`http://2.56.179.136:41410/subnets`);
         const data = result.data;
