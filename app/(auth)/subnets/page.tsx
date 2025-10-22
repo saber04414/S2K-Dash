@@ -42,7 +42,7 @@ export default function SubnetsPage() {
               <th className="text-center py-2">Adjustment Alpha</th>
               <th className="text-center py-2">Max Burn</th>
               <th className="text-center py-2">Min Burn</th>
-              <th className="text-center py-2">Burn Rate</th>
+              <th className="text-center py-2">🔥Burn Rate</th>
               <th className="text-center py-2">Registration Allowed</th>
             </tr>
           </thead>
@@ -56,7 +56,7 @@ export default function SubnetsPage() {
                   <td className="text-center py-2">{(hyperparams?.adjustment_alpha / 2**64).toFixed(2) || "N/A"}</td>
                   <td className="text-center py-2">{(hyperparams?.max_burn / 10**9).toFixed(4) || "N/A"}</td>
                   <td className="text-center py-2">{(hyperparams?.min_burn / 10**9).toFixed(4) || "N/A"}</td>
-                  <td className="text-center py-2">{subnet?.burn?.burn_rate || "N/A"}%  </td>
+                  <td className="text-center py-2">{subnet?.subnet_info?.burn?.burn_rate.toFixed(2) || "0"}%  </td>
                   <td className="text-center py-2">
                     <span
                       className={clsx(
