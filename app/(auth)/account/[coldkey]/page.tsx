@@ -69,11 +69,11 @@ const AccountPage = () => {
                                                                 <td className='text-center'>{miner.validator_permit ? <Validator /> : <Active />}</td>
                                                                 <td className='text-center py-3'>{showNumber(miner.total_stake.rao / 1e9, 2)}</td>
                                                                 <td className='text-center py-3'>{miner.validator_trust}</td>
-                                                                <td className='text-center py-3'>{showNumber(miner.trust * 20, 2)}</td>
-                                                                <td className='text-center py-3'>{showNumber(miner.consensus * 20, 2)}</td>
-                                                                <td className='text-center py-3'>{showNumber(miner.incentive * 20, 2)}</td>
-                                                                <td className='text-center py-3'>{showNumber(miner.dividends * 20, 2)}</td>
-                                                                <td className='text-center py-3'>{showNumber(miner.emission * 20, 2)}</td>
+                                                                <td className='text-center py-3'>{showNumber(miner.trust, 2)}</td>
+                                                                <td className='text-center py-3'>{showNumber(miner.consensus, 2)}</td>
+                                                                <td className='text-center py-3'>{showNumber(miner.incentive, 2)}</td>
+                                                                <td className='text-center py-3'>{showNumber(miner.dividends, 2)}</td>
+                                                                <td className='text-center py-3'>{showNumber(miner.emission, 2)}</td>
                                                                 <td className='text-center py-3'>{miner.last_update}</td>
                                                                 <td className='text-center py-3'>{miner.axon_info.ip}{miner.axon_info.port ? <span>{":"} {miner.axon_info.port}</span> : ''}</td>
                                                                 <td className='text-center py-3 cursor-pointer' onClick={() => copyKey(miner.hotkey)}>{showKey(miner.hotkey)}</td>
