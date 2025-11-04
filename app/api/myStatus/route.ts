@@ -130,7 +130,7 @@ export async function GET(req: Request) {
         ) || null,
     }));
     const next_burn = calculateNextBurn(
-      parseFloat(response_reg.data[response_reg.data.length - 1].burn) / 1e9,
+      parseFloat(response_reg.data[0].burn) / 1e9,
       sidebar_data.registrations_this_interval,
       sidebar_data.target_registrations_per_interval,
       parseFloat(sidebar_data.adjustment_alpha) / 2**64
@@ -147,7 +147,7 @@ export async function GET(req: Request) {
       price: subnet_info.latest_snapshot.price,
       marketcap: subnet_info.latest_snapshot.dtao.marketCap,
       mydata: final_data,
-      regcost: parseFloat(response_reg.data[response_reg.data.length - 1].burn) / 1e9,
+      regcost: parseFloat(response_reg.data[0].burn) / 1e9,
       sidebar: sidebar_data,
       next_burn,
       mycoldkeys: my_coldkeys,
