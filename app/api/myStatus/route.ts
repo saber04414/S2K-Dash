@@ -62,6 +62,7 @@ export async function GET(req: Request) {
           immunity: item.block_number - item.block_at_registration < item.immunity_period,
           coldkey: item.owner,
           hotkey: item.hotkey,
+          axon: item.axon ? item.axon : "0.0.0.0",
           registerDuration: item.registration_block_time,
           owner: mycoldkeys.includes(item.owner) ? "Mine" : "Unknown",
         };
@@ -123,7 +124,7 @@ export async function GET(req: Request) {
 
     const final_data = filtered_data.map((item: any) => ({
       ...item,
-      axon: item.axon ? item.axon:"0.0.0.0",
+      axon: item.axon ? item.axon : "0.0.0.0",
       danger:
         filtered_danger_list.find(
           (danger: any) => danger.hotkey === item.hotkey
@@ -133,7 +134,7 @@ export async function GET(req: Request) {
       parseFloat(response_reg.data[0].burn) / 1e9,
       sidebar_data.registrations_this_interval,
       sidebar_data.target_registrations_per_interval,
-      parseFloat(sidebar_data.adjustment_alpha) / 2**64
+      parseFloat(sidebar_data.adjustment_alpha) / 2 ** 64
     );
     const data = {
       subnet: subnetId,

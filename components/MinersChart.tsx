@@ -29,7 +29,8 @@ const CustomizedBar = (props: any) => {
     if (search !== "") {
       const match =
         item.coldkey?.toLowerCase().includes(searchLower) ||
-        item.hotkey?.toLowerCase().includes(searchLower);
+        item.hotkey?.toLowerCase().includes(searchLower) ||
+        item.axon?.toLowerCase().includes(searchLower);
       fillColor = match ? "#00DBBC" : "#666666"; // Highlight or gray
     } else {
       // Original logic
@@ -66,6 +67,7 @@ const CustomTooltip = (props: any) => {
           <div>Owner: {props.payload[0].payload.owner}</div>
           <div>Coldkey: {showStatusKey(props.payload[0].payload.coldkey)}</div>
           <div>Hotkey: {showStatusKey(props.payload[0].payload.hotkey)}</div>
+          <div>Axon: {props.payload[0].payload.axon}</div>
           <div>Daily: τ{props.payload[0].payload.daily.toLocaleString()}</div>
           <div>
             Register:{" "}
@@ -107,7 +109,8 @@ const MinersChart = ({ chartData }: any) => {
 
   const filtered = data.filter((item: any) => 
     item.coldkey?.toLowerCase().includes(lowerSearch) ||
-    item.hotkey?.toLowerCase().includes(lowerSearch)
+    item.hotkey?.toLowerCase().includes(lowerSearch) ||
+    item.axon?.toLowerCase().includes(lowerSearch)
   );
 
   const numMiners = filtered.length;
