@@ -35,6 +35,7 @@ const AccountPage = () => {
                             <div className='flex flex-col gap-2'>
                                 <div className='flex flex-row w-[650px] py-3 px-4 rounded-xl text-white bg-slate-800 gap-3'>Coldkey: <span>{params.coldkey}</span></div>
                                 <div className='flex flex-row w-[650px] py-3 px-4 rounded-xl text-white bg-slate-800 gap-3'>Neurons: <span>{data.data.numMiner}</span></div>
+                                <div className='flex flex-row w-[650px] py-3 px-4 rounded-xl text-white bg-slate-800 gap-3'>Daily Alpha: <span>{showNumber(data.total_daily_dtao, 2)}  {'/'} {showNumber(data.total_daily, 2)} {'𝞃   /   '} ${showNumber(data.total_daily_usd, 2)}</span></div>
                                 <div className='flex flex-row w-[650px] py-3 px-4 rounded-xl text-white bg-slate-800 gap-3'>Subnets: <div className='flex flex-row gap-2'>{data.data.data.map((item: any) => <div>{item.netuid}</div>)}</div></div>
                             </div>
                             <div className='flex flex-col gap-10'>
