@@ -5,26 +5,39 @@ const copyKey = (key: string) => {
   navigator.clipboard.writeText(key);
   toast.success("Copied to clipboard");
 };
+
 const showKey = (key: string) => {
   const name = convertAddressToName(key);
   if (name != key) return name;
   else return key.slice(0, 2) + "***" + key.slice(-4);
 };
+
 const showStatusKey = (key: string) => {
   const name = convertAddressToName(key);
   if (name != key) return name;
   else return key.slice(0, 4) + "***" + key.slice(-3);
 };
+
 const showDashKey = (key: string) => {
   return key.slice(0, 2) + "***" + key.slice(-4);
 };
+
+/** Format a number to fixed decimals, then trim trailing zeros and any dangling dot. */
+const formatTrimZeros = (value: number, decimals: number): string => {
+  if (!Number.isFinite(value)) return "0";
+  const s = value.toFixed(decimals);
+  // remove trailing zeros after decimal, and remove decimal point if nothing remains
+  return s.replace(/(\.\d*?[1-9])0+$/, "$1").replace(/\.0+$/, "").replace(/\.$/, "");
+};
+
 const showTaoNumber = (number: number) => {
   const taoNumber = number / 1e9;
-  return parseFloat(taoNumber.toString()).toFixed(2);
+  return formatTrimZeros(taoNumber, 2);
 };
+
 const showNumber = (number: number, unit: number) => {
-  if (number) return parseFloat(number.toString()).toFixed(unit);
-  else return "0";
+  if (!Number.isFinite(number)) return "0";
+  return formatTrimZeros(number, unit);
 };
 
 const showTimestampToDateTime = (timestamp: number): string => {

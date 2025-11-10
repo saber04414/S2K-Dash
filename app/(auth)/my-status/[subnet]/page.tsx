@@ -426,7 +426,7 @@ const MyStatusPage = () => {
                       {showNumber(data.data.regcost * data.taoPrice, 4)} $
                     </div>
                     <div className="text-sm pr-3">
-                      Next Reg Cost: {showNumber(data.data.next_burn, 4)} 𝞃
+                      Next Reg Cost: {showNumber(data.data.next_burn, 4)} 𝞃 {'('} {showNumber(data.data.sidebar.adjustment_alpha / 2 ** 64, 2)} {')'}
                     </div>
                     <div className="text-sm pr-5 flex flex-row gap-1">
                       {data.data.reglist.length != 0 && Array.from({
