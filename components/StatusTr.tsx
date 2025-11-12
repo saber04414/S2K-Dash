@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import clsx from 'clsx'
-import { copyKey, showKey, showNumber, showTimestampToDateTime } from '@/lib/main'
+import { copyKey, showKey, showNumber, diffblockToTime } from '@/lib/main'
 import { Active, Danger, Immune } from './MinerIcon'
 import { LoaderCircle } from 'lucide-react'
 import axios from 'axios'
@@ -48,7 +48,7 @@ const StatusTr = (props: Props) => {
         <tr key={index} className={clsx('transition-all cursor-pointer', index % 2 === 0 ? '' : 'bg-slate-700')}>
             <td className='text-center py-2'>{index + 1}</td>
             <td className={clsx('text-center py-2', blur ? 'blur-sm' : 'blur-none')}>{item.uid}</td>
-            <td className='text-center py-2'>{showTimestampToDateTime(item.registration_block_time)}</td>
+            <td className='text-center py-2'>{diffblockToTime(item.registration_block_time)}</td>
             <td className='text-center py-2'>{item.danger == null && (item.block_number - item.block_at_registration < item.immunity_period ? <div className='flex flex-row gap-1 items-center justify-center'>
                 <div onClick={() => setImmune(!immune)}><Immune /></div>
                 {immune && <span className='text-sm'>{formatDHMS((item.immunity_period + item.block_at_registration - item.block_number) * 12)}</span>}</div>
@@ -58,7 +58,7 @@ const StatusTr = (props: Props) => {
                     <td className='text-center py-2'>{showNumber(item.alpha_stake / 1e9 * data.data.price, 2)} 𝞃 / {showNumber(item.alpha_stake / 1e9, 2)} {data.data.letter}</td> :
                     <td className='text-center py-2'>{showNumber(item.alpha_stake / 1e9 * data.data.price * data.taoPrice, 2)} $ / {showNumber(item.alpha_stake / 1e9, 2)} {data.data.letter}</td>
             }
-            <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.owner)}>{showKey(item.owner)}</td>
+            <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showKey(item.coldkey)}</td>
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.hotkey)}>{showKey(item.hotkey)}</td>
             <td className='text-center py-2'>{showNumber(item.incentive, 4)}</td>
             <td className='text-center py-2'>{showNumber(item.miner_performance, 2)}</td>
@@ -78,8 +78,8 @@ const StatusTr = (props: Props) => {
 
             {
                 currency === 'TAO' ?
-                    <td className='text-center py-2'>{showNumber(item.alpha_per_day * data.data.price, 3)} 𝞃 / {showNumber(item.alpha_per_day, 3)} {data.data.letter}</td> :
-                    <td className='text-center py-2'>{showNumber(item.alpha_per_day * data.data.price * data.taoPrice, 3)} $ / {showNumber(item.alpha_per_day, 3)} {data.data.letter}</td>
+                    <td className='text-center py-2'>{showNumber(item.emission * 20 * data.data.price, 3)} 𝞃 / {showNumber(item.emission * 20, 3)} {data.data.letter}</td> :
+                    <td className='text-center py-2'>{showNumber(item.emission * 20 * data.data.price * data.taoPrice, 3)} $ / {showNumber(item.emission * 20, 3)} {data.data.letter}</td>
             }
             <td className='text-center py-2'>
                 <button className={item.alpha_stake / 1e9 != 0 ? 'px-2 py-1 rounded-md hover:bg-slate-600 transition-all cursor-pointer' : 'px-2 py-1 rounded-md cursor-not-allowed'} onClick={() => unstake(item.coldkey, item.hotkey, data.data.subnet, item.stake)}>{loading ? <LoaderCircle className='animate-spin' /> : 'Unstake'}</button>
