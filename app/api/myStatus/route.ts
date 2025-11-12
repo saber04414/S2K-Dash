@@ -114,7 +114,7 @@ export async function GET(req: Request) {
 
     const final_data = filtered_data.map((item: any) => ({
       ...item,
-      axon: item.axon ? item.axon : "0.0.0.0",
+      axon: item.axon_info ? item.axon_info.ip + ":" + item.axon_info.port : "0.0.0.0",
       registration_block_time: response_data.data.block - response_data.data.neurons.block_at_registration[item.uid],
       danger:
         filtered_danger_list.find(
