@@ -13,10 +13,7 @@ export async function GET(req: Request) {
   const url = new URL(req.url); // Create a URL object from the request URL
   const subnetId = Number(url.searchParams.get("subnet")) as number; // Get the 'day' query parameter
   const coldkeys = await prisma.coldkey.findMany();
-  console.log("Hello1")
   const mycoldkeys = coldkeys.map((coldkey) => coldkey.coldkey);
-  const res = await axios.get(`https://api.dev.taomarketcap.com/internal/v1/subnets/?limit=129`);
-  const subnet_data = await res.data.results;
   const response = await fetch(
     "https://api.mexc.com/api/v3/ticker/price?symbol=TAOUSDT",
     {
@@ -36,7 +33,7 @@ export async function GET(req: Request) {
 
   try {
     const response = await axios.get(
-      `https://api.dev.taomarketcap.com/internal/v1/subnets/neurons/${subnetId}/`
+      `http://2.56.179.136:41410/metagraph/netuid/${subnetId}/`
     );
     const response_data = await response.data;
     const sidebar_res = await axios.get(
@@ -44,52 +41,45 @@ export async function GET(req: Request) {
     );
     const sidebar_data = await sidebar_res.data.latest_snapshot;
 
-    const filtered_data = response_data.filter((res_item: any) =>
-      mycoldkeys.includes(res_item.owner)
+    const filtered_data = response_data.data.neurons.neurons.filter((res_item: any) =>
+      mycoldkeys.includes(res_item.coldkey)
     );
     const total_stake = filtered_data.reduce(
-      (acc: number, item: any) => acc + item.alpha_stake / 1e9,
+      (acc: number, item: any) => acc + item.stake.rao / 1e9,
       0
     );
-    const chartData = response_data
+    const chartData = response_data.data.neurons.neurons
       .map((item: any) => {
         return {
           uid: item.uid,
           isMiner: item.validator_permit == false,
           incentive: item.incentive,
-          daily: item.alpha_per_day,
-          stake: item.alpha_stake / 1e9,
-          immunity: item.block_number - item.block_at_registration < item.immunity_period,
-          coldkey: item.owner,
+          daily: item.emission * 20,
+          stake: item.stake.rao / 1e9,
+          immunity: response_data.data.block - response_data.data.neurons.block_at_registration[item.uid] < response_data.data.neurons.hparams.immunity_period,
+          coldkey: item.coldkey,
           hotkey: item.hotkey,
-          axon: item.axon ? item.axon : "0.0.0.0",
-          registerDuration: item.registration_block_time,
-          owner: mycoldkeys.includes(item.owner) ? "Mine" : "Unknown",
+          axon: item.axon_info ? item.axon_info.ip + ":" + item.axon_info.port : "0.0.0.0",
+          registerDuration: response_data.data.block - response_data.data.neurons.block_at_registration[item.uid],
+          owner: mycoldkeys.includes(item.coldkey) ? "Mine" : "Unknown",
         };
       })
       .filter((item: any) => item.isMiner)
       .sort((a: any, b: any) => b.daily - a.daily)
       .map((item: any, i: number) => ({ ...item, ranking: i + 1 }));
     const total_daily = filtered_data.reduce(
-      (acc: number, item: any) => acc + item.alpha_per_day,
+      (acc: number, item: any) => acc + item.emission * 20,
       0
-    );
-    const subnet_info = subnet_data.find(
-      (subnet: any) => subnet.netuid === subnetId
-    );
-
-    const response_reg = await axios.get(
-      `https://api.dev.taomarketcap.com/internal/v1/subnets/burn/${subnetId}/?span=ALL`
     );
 
     //danger list
-    const danger_list = response_data
+    const danger_list = response_data.data.neurons.neurons
       .filter(
         (res_item: any) =>
           res_item.validator_permit === false &&
-          res_item.block_number - res_item.block_at_registration > res_item.immunity_period
+          response_data.data.block - response_data.data.neurons.block_at_registration[res_item.uid] > response_data.data.neurons.hparams.immunity_period
       )
-      .sort((a: any, b: any) => a.block_at_registration - b.block_at_registration)
+      .sort((a: any, b: any) => response_data.data.neurons.block_at_registration[a.uid] - response_data.data.neurons.block_at_registration[b.uid])
       .sort((a: any, b: any) => a.incentive - b.incentive)
       .map((item: any, i: number) => ({
         ...item,
@@ -97,17 +87,17 @@ export async function GET(req: Request) {
       }))
       .slice(0, 6);
     const filtered_danger_list = danger_list.filter((item: any) =>
-      mycoldkeys.includes(item.owner)
+      mycoldkeys.includes(item.coldkey)
     );
     // registration list
-    const registration_list = response_data
+    const registration_list = response_data.data.neurons.neurons
       .filter(
         (res_item: any) =>
           res_item.validator_permit === false &&
-          res_item.block_number - res_item.block_at_registration >= res_item.immunity_period
+          response_data.data.block - response_data.data.neurons.block_at_registration[res_item.uid] >= response_data.data.neurons.hparams.immunity_period
       )
-      .sort((a: any, b: any) => b.block_at_registration - a.block_at_registration)
-      .sort((a: any, b: any) => a.block_at_registration - b.block_at_registration)
+      .sort((a: any, b: any) => response_data.data.neurons.block_at_registration[b.uid] - response_data.data.neurons.block_at_registration[a.uid])
+      .sort((a: any, b: any) => response_data.data.neurons.block_at_registration[a.uid] - response_data.data.neurons.block_at_registration[b.uid])
       .map((item: any, i: number) => ({
         ...item,
         ranking: i + 1,
@@ -115,23 +105,24 @@ export async function GET(req: Request) {
       .slice(0, sidebar_data.burn_registrations_this_interval);
 
     const sorted_registration_list = registration_list.sort(
-      (a: any, b: any) => a.block_at_registration - b.block_at_registration
+      (a: any, b: any) => response_data.data.neurons.block_at_registration[a.uid] - response_data.data.neurons.block_at_registration[b.uid]
     );
 
     const my_coldkeys = Array.from(
-      new Set(filtered_data.map((item: any) => item.owner))
+      new Set(filtered_data.map((item: any) => item.coldkey))
     );
 
     const final_data = filtered_data.map((item: any) => ({
       ...item,
       axon: item.axon ? item.axon : "0.0.0.0",
+      registration_block_time: response_data.data.block - response_data.data.neurons.block_at_registration[item.uid],
       danger:
         filtered_danger_list.find(
           (danger: any) => danger.hotkey === item.hotkey
         ) || null,
     }));
     const next_burn = calculateNextBurn(
-      parseFloat(response_reg.data[0].burn) / 1e9,
+      parseFloat(response_data.data.neurons.hparams.burn),
       sidebar_data.registrations_this_interval,
       sidebar_data.target_registrations_per_interval,
       parseFloat(sidebar_data.adjustment_alpha) / 2 ** 64
@@ -140,15 +131,15 @@ export async function GET(req: Request) {
       subnet: subnetId,
       total_stake,
       total_daily,
-      name: subnet_info.latest_snapshot.subnet_identities_v3.subnetName,
-      letter: subnet_info.latest_snapshot.token_symbol,
-      taoInpool: subnet_info.latest_snapshot.subnet_tao,
-      alphaInpool: subnet_info.latest_snapshot.subnet_alpha_in,
-      emission: subnet_info.latest_snapshot.subnet_tao_in_emission,
-      price: subnet_info.latest_snapshot.price,
-      marketcap: subnet_info.latest_snapshot.dtao.marketCap,
+      name: response_data.data.neurons.identity.subnet_name,
+      letter: response_data.data.neurons.symbol,
+      taoInpool: response_data.data.neurons.pool.tao_in,
+      alphaInpool: response_data.data.neurons.pool.alpha_in,
+      emission: response_data.data.neurons.emissions.tao_in_emission,
+      price: response_data.data.price,
+      marketcap: response_data.data.neurons.subnet_volume,
       mydata: final_data,
-      regcost: parseFloat(response_reg.data[0].burn) / 1e9,
+      regcost: parseFloat(response_data.data.neurons.hparams.burn),
       sidebar: sidebar_data,
       next_burn,
       mycoldkeys: my_coldkeys,

@@ -35,6 +35,24 @@ const showNumber = (number: number, unit: number) => {
   else return "0";
 };
 
+const diffblockToTime = (block: number): string => {
+  const diff = block * 12;
+  const months = Math.floor(diff / (30 * 86400));
+  const days = Math.floor((diff % (30 * 86400)) / 86400);
+  const hours = Math.floor((diff % 86400) / 3600);
+  const minutes = Math.floor((diff % 3600) / 60);
+  const seconds = Math.floor(diff % 60);
+  
+  const parts: string[] = [];
+  if (months > 0) parts.push(`${months}mo`);
+  if (days > 0) parts.push(`${days}d`);
+  if (hours > 0) parts.push(`${hours}h`);
+  if (minutes > 0) parts.push(`${minutes}m`);
+  if (seconds > 0) parts.push(`${seconds}s`);
+  
+  return parts.length > 0 ? `${parts.join(' ')} ago` : 'incredibly ago';
+};
+
 const showTimestampToDateTime = (timestamp: number): string => {
   const date = new Date(timestamp);
   const pad = (n: number) => n.toString().padStart(2, "0");
@@ -94,5 +112,6 @@ export {
   showDashKey,
   getS2kUrl,
   decodeS2kUrl,
+  diffblockToTime,
   isValidS2k,
 };
