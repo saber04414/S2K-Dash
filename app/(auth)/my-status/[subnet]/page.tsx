@@ -132,15 +132,15 @@ const MyStatusPage = () => {
               (a.registration_block_time - b.registration_block_time)
             );
           case "stake":
-            return dir * (a.stake - b.stake);
+            return dir * (a.stake.rao - b.stake.rao);
           case "coldkey":
             return dir * a.coldkey.localeCompare(b.coldkey);
           case "hotkey":
             return dir * a.hotkey.localeCompare(b.hotkey);
           case "incentive":
             return dir * (a.incentive - b.incentive);
-          case "performance":
-            return dir * (a.miner_performance - b.miner_performance);
+          // case "performance":
+          //   return dir * (a.miner_performance - b.miner_performance);
           case "axon":
             return dir * a.axon.localeCompare(b.axon);
           case "daily":
@@ -573,12 +573,12 @@ const MyStatusPage = () => {
                       >
                         Incentive
                       </th>
-                      <th
+                      {/* <th
                         className="text-center py-2 cursor-pointer"
                         onClick={() => handleSort("performance")}
                       >
                         Performance
-                      </th>
+                      </th> */}
                       <th
                         className="text-center py-2 cursor-pointer"
                         onClick={() => handleSort("axon")}
@@ -649,7 +649,6 @@ const MyStatusPage = () => {
                           {data.data.letter}
                         </td>
                       )}
-                      <td></td>
                       <td></td>
                       <td></td>
                       <td></td>
