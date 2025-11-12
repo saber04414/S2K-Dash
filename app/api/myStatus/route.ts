@@ -74,13 +74,27 @@ export async function GET(req: Request) {
 
     //danger list
     const danger_list = response_data.data.neurons.neurons
-      .filter(
-        (res_item: any) =>
-          res_item.validator_permit === false &&
-          response_data.data.block - response_data.data.neurons.block_at_registration[res_item.uid] > response_data.data.neurons.hparams.immunity_period
-      )
-      .sort((a: any, b: any) => response_data.data.neurons.block_at_registration[a.uid] - response_data.data.neurons.block_at_registration[b.uid])
-      .sort((a: any, b: any) => a.incentive - b.incentive)
+      .filter((n: any) => {
+        const blockNow = response_data.data.block ?? 0;
+        const regBlock = response_data.data.neurons.block_at_registration?.[n.uid] ?? Infinity;
+        const immunity = response_data.data.neurons.hparams?.immunity_period ?? 0;
+
+        return n?.validator_permit === false && (blockNow - regBlock) > immunity;
+      })
+      .sort((a: any, b: any) => {
+        // 1) emission ascending
+        const incA = Number(a.emission ?? Infinity);
+        const incB = Number(b.emission ?? Infinity);
+        if (incA !== incB) return incA - incB;
+
+        // 2) registration block ascending (older first)
+        const regA = response_data.data.neurons.block_at_registration?.[a.uid] ?? Infinity;
+        const regB = response_data.data.neurons.block_at_registration?.[b.uid] ?? Infinity;
+        if (regA !== regB) return regA - regB;
+
+        // 3) uid ascending as final tie-breaker
+        return Number(a.uid) - Number(b.uid);
+      })
       .map((item: any, i: number) => ({
         ...item,
         ranking: i + 1,
@@ -91,31 +105,26 @@ export async function GET(req: Request) {
     );
     // registration list
     const registration_list = response_data.data.neurons.neurons
-      .filter(
-        (res_item: any) =>
-          res_item.validator_permit === false &&
-          response_data.data.block - response_data.data.neurons.block_at_registration[res_item.uid] >= response_data.data.neurons.hparams.immunity_period
-      )
-      .sort((a: any, b: any) => response_data.data.neurons.block_at_registration[b.uid] - response_data.data.neurons.block_at_registration[a.uid])
-      .sort((a: any, b: any) => response_data.data.neurons.block_at_registration[a.uid] - response_data.data.neurons.block_at_registration[b.uid])
+    .sort((a: any, b: any) => response_data.data.neurons.block_at_registration[a.uid] - response_data.data.neurons.block_at_registration[b.uid])
+    .sort((a: any, b: any) => response_data.data.neurons.block_at_registration[b.uid] - response_data.data.neurons.block_at_registration[a.uid])
       .map((item: any, i: number) => ({
         ...item,
         ranking: i + 1,
       }))
       .slice(0, sidebar_data.burn_registrations_this_interval);
 
-    const sorted_registration_list = registration_list.sort(
-      (a: any, b: any) => response_data.data.neurons.block_at_registration[a.uid] - response_data.data.neurons.block_at_registration[b.uid]
-    );
+    console.log({registration_list})
 
     const my_coldkeys = Array.from(
       new Set(filtered_data.map((item: any) => item.coldkey))
     );
-
     const final_data = filtered_data.map((item: any) => ({
       ...item,
       axon: item.axon_info ? item.axon_info.ip + ":" + item.axon_info.port : "0.0.0.0",
       registration_block_time: response_data.data.block - response_data.data.neurons.block_at_registration[item.uid],
+      block_number: response_data.data.block,
+      block_at_registration: response_data.data.neurons.block_at_registration[item.uid],
+      immunity_period: response_data.data.neurons.hparams.immunity_period,
       danger:
         filtered_danger_list.find(
           (danger: any) => danger.hotkey === item.hotkey
@@ -143,7 +152,7 @@ export async function GET(req: Request) {
       sidebar: sidebar_data,
       next_burn,
       mycoldkeys: my_coldkeys,
-      reglist: sorted_registration_list,
+      reglist: registration_list,
     };
     const bittensor_data = await queryBittensorData([Number(subnetId)]);
     return NextResponse.json(
