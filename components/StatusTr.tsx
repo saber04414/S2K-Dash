@@ -55,13 +55,13 @@ const StatusTr = (props: Props) => {
                 : <Active />)} {item.danger != null ? <span className='text-red-500 text-sm flex flex-row justify-center items-center gap-1'><Danger /> -{item.danger.ranking}</span> : null}</td>
             {
                 currency === 'TAO' ?
-                    <td className='text-center py-2'>{showNumber(item.alpha_stake / 1e9 * data.data.price, 2)} 𝞃 / {showNumber(item.alpha_stake / 1e9, 2)} {data.data.letter}</td> :
-                    <td className='text-center py-2'>{showNumber(item.alpha_stake / 1e9 * data.data.price * data.taoPrice, 2)} $ / {showNumber(item.alpha_stake / 1e9, 2)} {data.data.letter}</td>
+                    <td className='text-center py-2'>{showNumber(item.stake.rao / 1e9 * data.data.price, 2)} 𝞃 / {showNumber(item.stake.rao / 1e9, 2)} {data.data.letter}</td> :
+                    <td className='text-center py-2'>{showNumber(item.stake.rao / 1e9 * data.data.price * data.taoPrice, 2)} $ / {showNumber(item.stake.rao / 1e9, 2)} {data.data.letter}</td>
             }
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showKey(item.coldkey)}</td>
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.hotkey)}>{showKey(item.hotkey)}</td>
             <td className='text-center py-2'>{showNumber(item.incentive, 4)}</td>
-            <td className='text-center py-2'>{showNumber(item.miner_performance, 2)}</td>
+            {/* <td className='text-center py-2'>{showNumber(item.miner_performance, 2)}</td> */}
             <td className='text-center py-2'>{item.axon}</td>
             <td className="text-center py-2">
                 {
