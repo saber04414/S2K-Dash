@@ -425,6 +425,9 @@ const MyStatusPage = () => {
                   </TooltipProvider>
                   <div className="flex flex-row gap-5 items-center">
                     <div className="text-sm pr-5">
+                      Burn Rate: {showNumber(data.data.burn_rate, 2)} %
+                    </div>
+                    <div className="text-sm pr-5">
                       Alpha: {showNumber(data.data.price, 4)} 𝞃 /{" "}
                       {showNumber(data.data.price * data.taoPrice, 4)} $
                     </div>
