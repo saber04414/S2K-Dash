@@ -139,7 +139,7 @@ export async function GET(req: Request) {
     const data = {
       subnet: subnetId,
       total_stake,
-      burn_rate: response_data.data.subnet_info.burn.burn_rate,
+      burn_rate: response_data.data.subnet_info?.burn?.burn_rate,
       total_daily,
       name: response_data.data.neurons.identity.subnet_name,
       letter: response_data.data.neurons.symbol,
