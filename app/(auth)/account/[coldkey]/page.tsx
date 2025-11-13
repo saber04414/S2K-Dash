@@ -1,9 +1,9 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import useSWR from 'swr'
 import { fetcher } from '@/utils/fetcher'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, ArrowUp, ArrowDown } from 'lucide-react'
 import { useParams, useRouter } from 'next/navigation'
 import clsx from 'clsx'
 import { Active, Validator } from '@/components/MinerIcon'
@@ -12,10 +12,66 @@ import { copyKey, showKey, showNumber } from '@/lib/main'
 const AccountPage = () => {
     const router = useRouter()
     const params = useParams();
+    const [sortKey, setSortKey] = useState<string>('');
+    const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
     const { data, error, isLoading } = useSWR(`/api/getAccount?coldkey_address=${params.coldkey}`, fetcher, {
         refreshInterval: 12_000,
         revalidateOnFocus: false, // optional: prevent refetch on tab focus
     })
+
+    const handleSort = (key: string) => {
+        if (sortKey === key) {
+            setSortOrder((prev) => (prev === "asc" ? "desc" : "asc"));
+        } else {
+            setSortKey(key);
+            setSortOrder("asc");
+        }
+    };
+
+    const renderSortIcon = (key: string) => {
+        if (sortKey !== key) return null;
+        return sortOrder === "asc" ? <ArrowUp size={14} className="inline ml-1" /> : <ArrowDown size={14} className="inline ml-1" />;
+    };
+
+    const sortNeurons = (neurons: any[]) => {
+        if (!sortKey) return neurons;
+        
+        return [...neurons].sort((a: any, b: any) => {
+            const dir = sortOrder === "asc" ? 1 : -1;
+            switch (sortKey) {
+                case "uid":
+                    return dir * (a.uid - b.uid);
+                case "stakeWeights":
+                    return dir * (a.total_stake.rao - b.total_stake.rao);
+                case "vTrust":
+                    return dir * (a.validator_trust - b.validator_trust);
+                case "trust":
+                    return dir * (a.trust - b.trust);
+                case "consensus":
+                    return dir * (a.consensus - b.consensus);
+                case "incentive":
+                    return dir * (a.incentive - b.incentive);
+                case "dividens":
+                    return dir * (a.dividends - b.dividends);
+                case "emission":
+                    return dir * (a.emission - b.emission);
+                case "updated":
+                    return dir * (a.last_update.localeCompare(b.last_update));
+                case "axon":
+                    const axonA = `${a.axon_info.ip}${a.axon_info.port ? `:${a.axon_info.port}` : ''}`;
+                    const axonB = `${b.axon_info.ip}${b.axon_info.port ? `:${b.axon_info.port}` : ''}`;
+                    return dir * axonA.localeCompare(axonB);
+                case "hotkey":
+                    return dir * a.hotkey.localeCompare(b.hotkey);
+                case "coldkey":
+                    return dir * a.coldkey.localeCompare(b.coldkey);
+                case "daily":
+                    return dir * (a.emission * 20 - b.emission * 20);
+                default:
+                    return 0;
+            }
+        });
+    };
     if (isLoading) return <div className='w-full h-full'>
         <ImageLoadingSpinner />
     </div>
@@ -46,25 +102,51 @@ const AccountPage = () => {
                                             <table className='w-full'>
                                                 <thead>
                                                     <tr className='bg-slate-700'>
-                                                        <th className='text-center py-3'>UID</th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('uid')}>
+                                                            UID {renderSortIcon('uid')}
+                                                        </th>
                                                         <th className='text-center py-3'>Type</th>
-                                                        <th className='text-center py-3'>Stake Weights</th>
-                                                        <th className='text-center py-3'>VTrust</th>
-                                                        <th className='text-center py-3'>Trust</th>
-                                                        <th className='text-center py-3'>Consensus</th>
-                                                        <th className='text-center py-3'>Incentive</th>
-                                                        <th className='text-center py-3'>Dividens</th>
-                                                        <th className='text-center py-3'>Emission{"("}p{")"}</th>
-                                                        <th className='text-center py-3'>Updated</th>
-                                                        <th className='text-center py-3'>Axon</th>
-                                                        <th className='text-center py-3'>Hotkey</th>
-                                                        <th className='text-center py-3'>Coldkey</th>
-                                                        <th className='text-center py-3'>Daily</th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('stakeWeights')}>
+                                                            Stake Weights {renderSortIcon('stakeWeights')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('vTrust')}>
+                                                            VTrust {renderSortIcon('vTrust')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('trust')}>
+                                                            Trust {renderSortIcon('trust')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('consensus')}>
+                                                            Consensus {renderSortIcon('consensus')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('incentive')}>
+                                                            Incentive {renderSortIcon('incentive')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('dividens')}>
+                                                            Dividens {renderSortIcon('dividens')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('emission')}>
+                                                            Emission{"("}p{")"} {renderSortIcon('emission')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('updated')}>
+                                                            Updated {renderSortIcon('updated')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('axon')}>
+                                                            Axon {renderSortIcon('axon')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('hotkey')}>
+                                                            Hotkey {renderSortIcon('hotkey')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('coldkey')}>
+                                                            Coldkey {renderSortIcon('coldkey')}
+                                                        </th>
+                                                        <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('daily')}>
+                                                            Daily {renderSortIcon('daily')}
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
                                                     {
-                                                        subnets.neurons.map((miner: any, index: number) => (
+                                                        sortNeurons(subnets.neurons).map((miner: any, index: number) => (
                                                             <tr key={index} className={clsx('transition-all', index % 2 === 0 ? '' : 'bg-slate-800')}>
                                                                 <td className='text-center py-3'>{miner.uid}</td>
                                                                 <td className='text-center'>{miner.validator_permit ? <Validator /> : <Active />}</td>
