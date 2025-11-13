@@ -20,6 +20,8 @@ import {
   ArrowRight,
   Eye,
   EyeOff,
+  ArrowUp,
+  ArrowDown,
 } from "lucide-react";
 import MinersChart from "@/components/MinersChart";
 import {
@@ -116,6 +118,12 @@ const MyStatusPage = () => {
         setSortOrder("asc");
       }
     };
+
+    const renderSortIcon = (key: string) => {
+      if (sortKey !== key) return null;
+      return sortOrder === "asc" ? <ArrowUp size={14} className="inline ml-1" /> : <ArrowDown size={14} className="inline ml-1" />;
+    };
+
     console.log("data: ", data)
     const sortedData = [...(data?.data?.mydata || [])]
       .filter(
@@ -493,25 +501,25 @@ const MyStatusPage = () => {
                 {showMetagraph && <table className="w-full">
                   <thead>
                     <tr className="bg-slate-700">
-                      <th className="text-center py-2 cursor-pointer">No</th>
+                      <th className="text-center py-2">No</th>
                       <th
-                        className="text-center py-2 cursor-pointer"
+                        className="text-center py-2 cursor-pointer hover:bg-slate-600 transition-colors"
                         onClick={() => handleSort("uid")}
                       >
-                        UID
+                        UID {renderSortIcon("uid")}
                       </th>
                       <th
-                        className="text-center py-2 cursor-pointer"
+                        className="text-center py-2 cursor-pointer hover:bg-slate-600 transition-colors"
                         onClick={() => handleSort("registerAt")}
                       >
-                        Register At
+                        Register At {renderSortIcon("registerAt")}
                       </th>
                       <th className="text-center py-2">Status</th>
                       <th
-                        className="text-center py-2 cursor-pointer"
+                        className="text-center py-2 cursor-pointer hover:bg-slate-600 transition-colors"
                         onClick={() => handleSort("stake")}
                       >
-                        Stake
+                        Stake {renderSortIcon("stake")}
                       </th>
                       <th className="relative text-center py-2">
                         <div
@@ -562,16 +570,16 @@ const MyStatusPage = () => {
                         )}
                       </th>
                       <th
-                        className="text-center py-2 cursor-pointer"
+                        className="text-center py-2 cursor-pointer hover:bg-slate-600 transition-colors"
                         onClick={() => handleSort("hotkey")}
                       >
-                        Hotkey
+                        Hotkey {renderSortIcon("hotkey")}
                       </th>
                       <th
-                        className="text-center py-2 cursor-pointer"
+                        className="text-center py-2 cursor-pointer hover:bg-slate-600 transition-colors"
                         onClick={() => handleSort("incentive")}
                       >
-                        Incentive
+                        Incentive {renderSortIcon("incentive")}
                       </th>
                       {/* <th
                         className="text-center py-2 cursor-pointer"
@@ -580,10 +588,10 @@ const MyStatusPage = () => {
                         Performance
                       </th> */}
                       <th
-                        className="text-center py-2 cursor-pointer"
+                        className="text-center py-2 cursor-pointer hover:bg-slate-600 transition-colors"
                         onClick={() => handleSort("axon")}
                       >
-                        Axon
+                        Axon {renderSortIcon("axon")}
                       </th>
                       <th
                         className="text-center py-2"
@@ -591,10 +599,10 @@ const MyStatusPage = () => {
                         Ping
                       </th>
                       <th
-                        className="text-center py-2 cursor-pointer"
+                        className="text-center py-2 cursor-pointer hover:bg-slate-600 transition-colors"
                         onClick={() => handleSort("daily")}
                       >
-                        Daily
+                        Daily {renderSortIcon("daily")}
                       </th>
                       <th className="text-center py-2">Action</th>
                     </tr>
