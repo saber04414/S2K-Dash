@@ -57,10 +57,11 @@ const AccountPage = () => {
                     return dir * (a.emission - b.emission);
                 case "updated":
                     return dir * (a.last_update.localeCompare(b.last_update));
-                case "axon":
+                case "axon": {
                     const axonA = `${a.axon_info.ip}${a.axon_info.port ? `:${a.axon_info.port}` : ''}`;
                     const axonB = `${b.axon_info.ip}${b.axon_info.port ? `:${b.axon_info.port}` : ''}`;
                     return dir * axonA.localeCompare(axonB);
+                }
                 case "hotkey":
                     return dir * a.hotkey.localeCompare(b.hotkey);
                 case "coldkey":
