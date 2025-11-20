@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import useSWR from 'swr'
 import { fetcher } from '@/utils/fetcher'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
-import { ArrowLeft, ArrowUp, ArrowDown, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowLeft, ArrowUp, ArrowDown, ChevronLeft, ChevronRight, Search } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import clsx from 'clsx'
 
@@ -23,6 +23,8 @@ const Sn74Page = () => {
     const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [itemsPerPage, setItemsPerPage] = useState<number>(50);
+    const [searchQuery, setSearchQuery] = useState<string>('');
+    const [selectedLanguage, setSelectedLanguage] = useState<string>('all');
     const { data, error, isLoading } = useSWR('/gittensor.json', fetcher, {
         revalidateOnFocus: false,
     })
@@ -60,6 +62,22 @@ const Sn74Page = () => {
         if (unit.includes('year')) return value * 365;
         
         return Infinity;
+    };
+
+    const filterData = (data: GitTensorItem[]) => {
+        if (!data) return [];
+        
+        return data.filter((item: GitTensorItem) => {
+            // Search filter
+            const matchesSearch = searchQuery === '' || 
+                item.fullName.toLowerCase().includes(searchQuery.toLowerCase());
+            
+            // Language filter
+            const matchesLanguage = selectedLanguage === 'all' || 
+                (item.languages && item.languages.includes(selectedLanguage));
+            
+            return matchesSearch && matchesLanguage;
+        });
     };
 
     const sortData = (data: GitTensorItem[]) => {
@@ -108,7 +126,8 @@ const Sn74Page = () => {
     )
 
     if (data) {
-        const sortedData = sortData(data as GitTensorItem[]);
+        const filteredData = filterData(data as GitTensorItem[]);
+        const sortedData = sortData(filteredData);
         const totalItems = sortedData.length;
         const totalPages = Math.ceil(totalItems / itemsPerPage);
         const startIndex = (currentPage - 1) * itemsPerPage;
@@ -154,6 +173,38 @@ const Sn74Page = () => {
                     Back
                 </div>
                 <div className='text-2xl font-bold text-center'>Subnet 74 - GitTensor</div>
+                {/* Search and Filter Controls */}
+                <div className='flex flex-row gap-4 items-center justify-center'>
+                    <div className='relative flex items-center'>
+                        <Search size={18} className='absolute left-3 text-slate-400' />
+                        <input
+                            type='text'
+                            placeholder='Search by repository name...'
+                            value={searchQuery}
+                            onChange={(e) => {
+                                setSearchQuery(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='pl-10 pr-4 py-2 bg-slate-800 border border-slate-600 rounded-md text-white placeholder-slate-400 focus:outline-none focus:border-slate-500 w-80'
+                        />
+                    </div>
+                    <div className='flex flex-row items-center gap-2'>
+                        <label className='text-sm text-slate-400'>Filter by language:</label>
+                        <select
+                            value={selectedLanguage}
+                            onChange={(e) => {
+                                setSelectedLanguage(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white focus:outline-none focus:border-slate-500'
+                        >
+                            <option value='all'>All Languages</option>
+                            {ALLOWED_LANGUAGES.map((lang) => (
+                                <option key={lang} value={lang}>{lang}</option>
+                            ))}
+                        </select>
+                    </div>
+                </div>
                 <div className='flex flex-col gap-2'>
                     <table className='w-full'>
                         <thead>
