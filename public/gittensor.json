@@ -2642,5 +2642,8121 @@
         ],
         "openIssues": 11,
         "openPRs": 2
+    },
+    {
+        "fullName": "netchx/netch",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "C#",
+            "C++",
+            "C",
+            "PowerShell",
+            "Go"
+        ],
+        "openIssues": 2,
+        "openPRs": 2
+    },
+    {
+        "fullName": "boostorg/boost",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 months ago",
+        "languages": [
+            "HTML",
+            "Shell",
+            "Python",
+            "CSS",
+            "Batchfile",
+            "Perl",
+            "CMake"
+        ],
+        "openIssues": 193,
+        "openPRs": 12
+    },
+    {
+        "fullName": "wger-project/wger",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "CSS",
+            "Dockerfile",
+            "Smarty",
+            "JavaScript",
+            "Shell",
+            "SCSS"
+        ],
+        "openIssues": 209,
+        "openPRs": 10
+    },
+    {
+        "fullName": "souzatharsis/podcastfy",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "TeX",
+            "Dockerfile",
+            "Makefile",
+            "Shell"
+        ],
+        "openIssues": 86,
+        "openPRs": 24
+    },
+    {
+        "fullName": "cirosantilli/linux-kernel-module-cheat",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "54 months ago",
+        "languages": [
+            "Python",
+            "C",
+            "Assembly",
+            "C++",
+            "Shell",
+            "JavaScript",
+            "Makefile",
+            "Ruby",
+            "Java",
+            "Gnuplot",
+            "Linker Script",
+            "TypeScript",
+            "HTML",
+            "Cython",
+            "Dockerfile",
+            "E"
+        ],
+        "openIssues": 70,
+        "openPRs": 1
+    },
+    {
+        "fullName": "uber/causalml",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 days ago",
+        "languages": [
+            "Python",
+            "Cython",
+            "Makefile"
+        ],
+        "openIssues": 43,
+        "openPRs": 2
+    },
+    {
+        "fullName": "naver/dust3r",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 132,
+        "openPRs": 9
+    },
+    {
+        "fullName": "extremecoders-re/pyinstxtractor",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "29 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 14,
+        "openPRs": 2
+    },
+    {
+        "fullName": "CVHub520/X-AnyLabeling",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "26 days ago",
+        "languages": [
+            "Python",
+            "Cuda",
+            "C++",
+            "Shell"
+        ],
+        "openIssues": 10,
+        "openPRs": 1
+    },
+    {
+        "fullName": "clearml/clearml",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 526,
+        "openPRs": 13
+    },
+    {
+        "fullName": "antvis/G6",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "Shell",
+            "Less"
+        ],
+        "openIssues": 272,
+        "openPRs": 10
+    },
+    {
+        "fullName": "chartbrew/chartbrew",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 days ago",
+        "languages": [
+            "JavaScript",
+            "EJS",
+            "CSS",
+            "Shell",
+            "HTML",
+            "Dockerfile"
+        ],
+        "openIssues": 4,
+        "openPRs": 0
+    },
+    {
+        "fullName": "antvis/G2",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "TypeScript",
+            "HTML",
+            "JavaScript",
+            "CSS",
+            "Less",
+            "Shell"
+        ],
+        "openIssues": 161,
+        "openPRs": 8
+    },
+    {
+        "fullName": "multimodal-art-projection/YuE",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "C++",
+            "Shell",
+            "Makefile"
+        ],
+        "openIssues": 77,
+        "openPRs": 1
+    },
+    {
+        "fullName": "zeromq/pyzmq",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "24 days ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "CMake",
+            "Cython",
+            "C",
+            "Shell",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 44,
+        "openPRs": 11
+    },
+    {
+        "fullName": "mqttjs/MQTT.js",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 31,
+        "openPRs": 6
+    },
+    {
+        "fullName": "devicons/devicon",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 days ago",
+        "languages": [
+            "CSS",
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 383,
+        "openPRs": 45
+    },
+    {
+        "fullName": "LuckyPennySoftware/MediatR",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 days ago",
+        "languages": [
+            "C#",
+            "PowerShell"
+        ],
+        "openIssues": 5,
+        "openPRs": 0
+    },
+    {
+        "fullName": "mozillazg/python-pinyin",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 days ago",
+        "languages": [
+            "Python",
+            "Makefile"
+        ],
+        "openIssues": 36,
+        "openPRs": 2
+    },
+    {
+        "fullName": "apple/coremltools",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "20 days ago",
+        "languages": [
+            "Python",
+            "C++",
+            "Swift",
+            "C",
+            "Objective-C++",
+            "CMake",
+            "Shell",
+            "Objective-C",
+            "Makefile",
+            "Mustache",
+            "Batchfile",
+            "CSS"
+        ],
+        "openIssues": 409,
+        "openPRs": 31
+    },
+    {
+        "fullName": "didi/KnowStreaming",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "65 months ago",
+        "languages": [
+            "Java",
+            "TypeScript",
+            "Less",
+            "Shell",
+            "Python",
+            "JavaScript",
+            "Makefile",
+            "Smarty",
+            "Mustache",
+            "HTML"
+        ],
+        "openIssues": 146,
+        "openPRs": 7
+    },
+    {
+        "fullName": "t3l3machus/Villain",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 months ago",
+        "languages": [
+            "Python",
+            "Batchfile",
+            "Shell",
+            "PowerShell"
+        ],
+        "openIssues": 20,
+        "openPRs": 5
+    },
+    {
+        "fullName": "motioneye-project/motioneye",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "23 hours ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Shell",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 1005,
+        "openPRs": 13
+    },
+    {
+        "fullName": "spec-first/connexion",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 137,
+        "openPRs": 33
+    },
+    {
+        "fullName": "facebook/folly",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "C++",
+            "Starlark",
+            "Python",
+            "CMake",
+            "C",
+            "Rust",
+            "Cython",
+            "Shell",
+            "Assembly",
+            "Ruby",
+            "GDB",
+            "Batchfile",
+            "Makefile",
+            "CSS",
+            "Dockerfile",
+            "Verilog",
+            "Linker Script"
+        ],
+        "openIssues": 303,
+        "openPRs": 112
+    },
+    {
+        "fullName": "mongodb/node-mongodb-native",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Shell",
+            "Python",
+            "Makefile"
+        ],
+        "openIssues": 0,
+        "openPRs": 15
+    },
+    {
+        "fullName": "wasp-lang/open-saas",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 hours ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "JavaScript",
+            "Astro",
+            "Shell",
+            "CSS"
+        ],
+        "openIssues": 100,
+        "openPRs": 16
+    },
+    {
+        "fullName": "bitsadmin/wesng",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 months ago",
+        "languages": [
+            "Python",
+            "PowerShell",
+            "VBScript"
+        ],
+        "openIssues": 9,
+        "openPRs": 0
+    },
+    {
+        "fullName": "software-mansion/react-native-svg",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "Java",
+            "TypeScript",
+            "Objective-C++",
+            "C++",
+            "JavaScript",
+            "Objective-C",
+            "Ruby",
+            "PEG.js",
+            "Kotlin",
+            "C",
+            "Swift",
+            "CMake",
+            "Metal",
+            "Shell"
+        ],
+        "openIssues": 137,
+        "openPRs": 41
+    },
+    {
+        "fullName": "bitsandbytes-foundation/bitsandbytes",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "Python",
+            "Cuda",
+            "HIP",
+            "C++",
+            "CMake",
+            "Metal",
+            "Shell",
+            "Objective-C++",
+            "C"
+        ],
+        "openIssues": 147,
+        "openPRs": 7
+    },
+    {
+        "fullName": "modelscope/FunClip",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 36,
+        "openPRs": 0
+    },
+    {
+        "fullName": "anthropics/claude-quickstarts",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 hours ago",
+        "languages": [
+            "TypeScript",
+            "Python",
+            "Jupyter Notebook",
+            "JavaScript",
+            "Shell",
+            "CSS",
+            "HTML",
+            "Dockerfile"
+        ],
+        "openIssues": 97,
+        "openPRs": 34
+    },
+    {
+        "fullName": "facebookresearch/moco",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 57,
+        "openPRs": 5
+    },
+    {
+        "fullName": "misskey-dev/misskey",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 hours ago",
+        "languages": [
+            "TypeScript",
+            "Vue",
+            "JavaScript",
+            "GLSL",
+            "SCSS",
+            "Pug",
+            "CSS",
+            "Dockerfile",
+            "Shell",
+            "Smarty",
+            "HTML",
+            "MDX",
+            "Procfile"
+        ],
+        "openIssues": 2188,
+        "openPRs": 230
+    },
+    {
+        "fullName": "vispy/vispy",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 hours ago",
+        "languages": [
+            "Python",
+            "GLSL",
+            "C",
+            "Cython",
+            "Makefile",
+            "Shell"
+        ],
+        "openIssues": 342,
+        "openPRs": 42
+    },
+    {
+        "fullName": "MervinPraison/PraisonAI",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 days ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "Shell",
+            "JavaScript",
+            "Dockerfile",
+            "Ruby",
+            "CSS"
+        ],
+        "openIssues": 43,
+        "openPRs": 16
+    },
+    {
+        "fullName": "spinnaker/spinnaker",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 days ago",
+        "languages": [
+            "Java",
+            "Groovy",
+            "TypeScript",
+            "Kotlin",
+            "JavaScript",
+            "HTML",
+            "Go",
+            "Scala",
+            "Less",
+            "Shell",
+            "FreeMarker",
+            "Slim",
+            "HCL",
+            "PowerShell",
+            "CSS",
+            "MDX",
+            "Python",
+            "Jinja",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 113,
+        "openPRs": 20
+    },
+    {
+        "fullName": "r0x0r/pywebview",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "27 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Java",
+            "C#",
+            "HTML",
+            "Shell",
+            "PowerShell",
+            "CSS"
+        ],
+        "openIssues": 13,
+        "openPRs": 1
+    },
+    {
+        "fullName": "visjs/vis-network",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 319,
+        "openPRs": 19
+    },
+    {
+        "fullName": "MichaelGrupp/evo",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 days ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Shell",
+            "TeX"
+        ],
+        "openIssues": 6,
+        "openPRs": 3
+    },
+    {
+        "fullName": "mikedh/trimesh",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "23 hours ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Dockerfile",
+            "Makefile",
+            "Shell",
+            "HTML"
+        ],
+        "openIssues": 472,
+        "openPRs": 1
+    },
+    {
+        "fullName": "miguelgrinberg/python-socketio",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 7,
+        "openPRs": 1
+    },
+    {
+        "fullName": "EFForg/privacybadger",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 days ago",
+        "languages": [
+            "JavaScript",
+            "Python",
+            "CSS",
+            "HTML",
+            "Shell",
+            "Makefile"
+        ],
+        "openIssues": 140,
+        "openPRs": 21
+    },
+    {
+        "fullName": "ansible/molecule",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "Python",
+            "Jinja",
+            "Shell"
+        ],
+        "openIssues": 72,
+        "openPRs": 3
+    },
+    {
+        "fullName": "qtile/qtile",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 hours ago",
+        "languages": [
+            "Python",
+            "C",
+            "Shell",
+            "Nix",
+            "Makefile"
+        ],
+        "openIssues": 131,
+        "openPRs": 13
+    },
+    {
+        "fullName": "midoks/mdserver-web",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Shell",
+            "CSS",
+            "HTML",
+            "C",
+            "PHP",
+            "Lua",
+            "Smarty",
+            "Perl",
+            "Dockerfile",
+            "VCL"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "middyjs/middy",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "CSS",
+            "Shell"
+        ],
+        "openIssues": 7,
+        "openPRs": 5
+    },
+    {
+        "fullName": "socketio/socket.io-client-java",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 months ago",
+        "languages": [
+            "Java",
+            "JavaScript",
+            "Makefile"
+        ],
+        "openIssues": 115,
+        "openPRs": 11
+    },
+    {
+        "fullName": "BrowserBox/BrowserBox",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 days ago",
+        "languages": [
+            "JavaScript",
+            "Shell",
+            "HTML",
+            "PowerShell",
+            "CSS",
+            "TypeScript",
+            "Dockerfile",
+            "AppleScript",
+            "Standard ML"
+        ],
+        "openIssues": 39,
+        "openPRs": 0
+    },
+    {
+        "fullName": "feeluown/FeelUOwn",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "27 minutes ago",
+        "languages": [
+            "Python",
+            "Makefile"
+        ],
+        "openIssues": 72,
+        "openPRs": 3
+    },
+    {
+        "fullName": "tangyoha/telegram_media_downloader",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "Python",
+            "HTML",
+            "Dockerfile",
+            "Makefile"
+        ],
+        "openIssues": 80,
+        "openPRs": 18
+    },
+    {
+        "fullName": "Mr-xn/Penetration_Testing_POC",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "HTML",
+            "PowerShell",
+            "Java",
+            "Python",
+            "C",
+            "PHP",
+            "C++",
+            "Assembly",
+            "JavaScript",
+            "Go",
+            "Ruby",
+            "Makefile",
+            "ASP.NET",
+            "VBScript",
+            "Shell"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "ansible/ansible-lint",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "Shell"
+        ],
+        "openIssues": 117,
+        "openPRs": 8
+    },
+    {
+        "fullName": "microsoft/presidio",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 hours ago",
+        "languages": [
+            "Python",
+            "Dockerfile",
+            "HTML",
+            "Shell"
+        ],
+        "openIssues": 61,
+        "openPRs": 9
+    },
+    {
+        "fullName": "bitwarden/clients",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 minutes ago",
+        "languages": [
+            "TypeScript",
+            "HTML",
+            "SCSS",
+            "Rust",
+            "JavaScript",
+            "MDX",
+            "Swift",
+            "CSS",
+            "PowerShell",
+            "Objective-C",
+            "Shell",
+            "Dockerfile",
+            "NSIS",
+            "EJS"
+        ],
+        "openIssues": 575,
+        "openPRs": 417
+    },
+    {
+        "fullName": "microsoft/mcp-for-beginners",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Jupyter Notebook",
+            "Python",
+            "Java",
+            "TypeScript",
+            "C#",
+            "Rust",
+            "JavaScript",
+            "HTML",
+            "Dockerfile"
+        ],
+        "openIssues": 0,
+        "openPRs": 3
+    },
+    {
+        "fullName": "microsoft/magentic-ui",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "JavaScript",
+            "CSS",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 71,
+        "openPRs": 20
+    },
+    {
+        "fullName": "siteboon/claudecodeui",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "19 days ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Shell"
+        ],
+        "openIssues": 48,
+        "openPRs": 25
+    },
+    {
+        "fullName": "filamentphp/filament",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 days ago",
+        "languages": [
+            "PHP",
+            "Blade",
+            "JavaScript",
+            "CSS",
+            "Shell"
+        ],
+        "openIssues": 72,
+        "openPRs": 21
+    },
+    {
+        "fullName": "microsoft/calculator",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "C++",
+            "C#",
+            "C",
+            "PowerShell",
+            "Shell"
+        ],
+        "openIssues": 410,
+        "openPRs": 26
+    },
+    {
+        "fullName": "bkerler/mtkclient",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "C",
+            "Assembly",
+            "Makefile",
+            "Linker Script",
+            "Nix",
+            "CMake",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 45,
+        "openPRs": 3
+    },
+    {
+        "fullName": "microsoft/TaskWeaver",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "21 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "CSS",
+            "Shell",
+            "Dockerfile",
+            "PowerShell"
+        ],
+        "openIssues": 40,
+        "openPRs": 9
+    },
+    {
+        "fullName": "firecrawl/firecrawl-mcp-server",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 days ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 48,
+        "openPRs": 17
+    },
+    {
+        "fullName": "qilingframework/qiling",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "19 days ago",
+        "languages": [
+            "Python",
+            "CodeQL",
+            "Dockerfile",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 76,
+        "openPRs": 19
+    },
+    {
+        "fullName": "NVIDIA/garak",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 hours ago",
+        "languages": [
+            "Python",
+            "Jinja",
+            "Shell"
+        ],
+        "openIssues": 258,
+        "openPRs": 36
+    },
+    {
+        "fullName": "shinnytech/tqsdk-python",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "HTML"
+        ],
+        "openIssues": 86,
+        "openPRs": 3
+    },
+    {
+        "fullName": "micronaut-projects/micronaut-core",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 hours ago",
+        "languages": [
+            "Java",
+            "Groovy",
+            "Kotlin",
+            "HTML",
+            "Shell"
+        ],
+        "openIssues": 702,
+        "openPRs": 95
+    },
+    {
+        "fullName": "NVIDIAGameWorks/kaolin",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "21 hours ago",
+        "languages": [
+            "Python",
+            "Cuda",
+            "C++",
+            "Groovy",
+            "JavaScript",
+            "Jupyter Notebook",
+            "C",
+            "Cython",
+            "Shell",
+            "HTML",
+            "CSS",
+            "GLSL",
+            "Makefile",
+            "PowerShell"
+        ],
+        "openIssues": 54,
+        "openPRs": 9
+    },
+    {
+        "fullName": "zjunlp/DeepKE",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 2,
+        "openPRs": 0
+    },
+    {
+        "fullName": "angristan/openvpn-install",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "Shell"
+        ],
+        "openIssues": 141,
+        "openPRs": 48
+    },
+    {
+        "fullName": "micheleg/dash-to-dock",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "JavaScript",
+            "SCSS",
+            "Makefile",
+            "Nix"
+        ],
+        "openIssues": 752,
+        "openPRs": 35
+    },
+    {
+        "fullName": "Neo23x0/Loki",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 months ago",
+        "languages": [
+            "Python",
+            "Java",
+            "Batchfile",
+            "Shell",
+            "Classic ASP"
+        ],
+        "openIssues": 15,
+        "openPRs": 5
+    },
+    {
+        "fullName": "qd-today/qd",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "CoffeeScript",
+            "Shell",
+            "TypeScript",
+            "Less",
+            "Dockerfile",
+            "Procfile"
+        ],
+        "openIssues": 68,
+        "openPRs": 3
+    },
+    {
+        "fullName": "meta-pytorch/torchtune",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 341,
+        "openPRs": 100
+    },
+    {
+        "fullName": "androidx/androidx",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Kotlin",
+            "Java",
+            "C++",
+            "AIDL",
+            "Python",
+            "Shell",
+            "TypeScript",
+            "Groovy",
+            "HTML",
+            "C",
+            "ANTLR",
+            "Svelte",
+            "CMake",
+            "Swift",
+            "JavaScript",
+            "GLSL",
+            "Objective-C++",
+            "WGSL",
+            "Linker Script",
+            "Objective-C"
+        ],
+        "openIssues": 0,
+        "openPRs": 41
+    },
+    {
+        "fullName": "meta-llama/PurpleLlama",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "C++",
+            "JavaScript",
+            "Jupyter Notebook",
+            "CSS",
+            "C",
+            "PHP",
+            "Shell",
+            "Dockerfile",
+            "MDX"
+        ],
+        "openIssues": 15,
+        "openPRs": 10
+    },
+    {
+        "fullName": "Netflix/vmaf",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 hours ago",
+        "languages": [
+            "Python",
+            "C",
+            "MATLAB",
+            "Cuda",
+            "C++",
+            "Assembly",
+            "Meson",
+            "Cython",
+            "Makefile",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 60,
+        "openPRs": 24
+    },
+    {
+        "fullName": "wireservice/csvkit",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": 34,
+        "openPRs": 1
+    },
+    {
+        "fullName": "NewFuture/DDNS",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Batchfile",
+            "Dockerfile"
+        ],
+        "openIssues": 6,
+        "openPRs": 5
+    },
+    {
+        "fullName": "tebelorg/RPA-Python",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "25 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 5,
+        "openPRs": 0
+    },
+    {
+        "fullName": "menloresearch/jan",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 hours ago",
+        "languages": [
+            "TypeScript",
+            "Rust",
+            "Python",
+            "JavaScript",
+            "Shell",
+            "PowerShell",
+            "CSS",
+            "Makefile",
+            "Dockerfile",
+            "HTML"
+        ],
+        "openIssues": null,
+        "openPRs": null
+    },
+    {
+        "fullName": "bytedance/LatentSync",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 204,
+        "openPRs": 10
+    },
+    {
+        "fullName": "pywinauto/pywinauto",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "PowerShell",
+            "Batchfile"
+        ],
+        "openIssues": 507,
+        "openPRs": 27
+    },
+    {
+        "fullName": "pytorch/ignite",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 days ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Shell",
+            "Apex"
+        ],
+        "openIssues": 112,
+        "openPRs": 40
+    },
+    {
+        "fullName": "technomancy/leiningen",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 months ago",
+        "languages": [
+            "Clojure",
+            "Shell",
+            "HTML",
+            "CSS",
+            "Batchfile",
+            "PowerShell",
+            "Emacs Lisp",
+            "JavaScript",
+            "Makefile",
+            "Java"
+        ],
+        "openIssues": 87,
+        "openPRs": 7
+    },
+    {
+        "fullName": "NomicFoundation/hardhat",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "TypeScript",
+            "Solidity",
+            "JavaScript",
+            "HTML",
+            "Shell",
+            "Vyper",
+            "CSS"
+        ],
+        "openIssues": 625,
+        "openPRs": 22
+    },
+    {
+        "fullName": "apocas/dockerode",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 27,
+        "openPRs": 4
+    },
+    {
+        "fullName": "python-jsonschema/jsonschema",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "16 hours ago",
+        "languages": [
+            "Python",
+            "TypeScript"
+        ],
+        "openIssues": 44,
+        "openPRs": 1
+    },
+    {
+        "fullName": "andialbrecht/sqlparse",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 minutes ago",
+        "languages": [
+            "Python",
+            "PLpgSQL",
+            "Makefile"
+        ],
+        "openIssues": 246,
+        "openPRs": 17
+    },
+    {
+        "fullName": "vulhub/vulhub",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Dockerfile",
+            "Python",
+            "Java",
+            "Shell",
+            "PHP",
+            "HTML",
+            "JavaScript",
+            "Ruby",
+            "CSS",
+            "Groovy",
+            "Erlang",
+            "C",
+            "Perl",
+            "Twig"
+        ],
+        "openIssues": 18,
+        "openPRs": 24
+    },
+    {
+        "fullName": "mbloch/mapshaper",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "TeX"
+        ],
+        "openIssues": 132,
+        "openPRs": 7
+    },
+    {
+        "fullName": "wbond/package_control",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 47,
+        "openPRs": 10
+    },
+    {
+        "fullName": "mapstruct/mapstruct",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "Java",
+            "FreeMarker",
+            "Kotlin"
+        ],
+        "openIssues": 458,
+        "openPRs": 44
+    },
+    {
+        "fullName": "pyeve/eve",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "Makefile"
+        ],
+        "openIssues": 27,
+        "openPRs": 6
+    },
+    {
+        "fullName": "mandiant/capa",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 hours ago",
+        "languages": [
+            "Python",
+            "Vue",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Dockerfile",
+            "Just"
+        ],
+        "openIssues": 248,
+        "openPRs": 25
+    },
+    {
+        "fullName": "anc95/ChatGPT-CodeReview",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "33 months ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "HTML",
+            "Dockerfile"
+        ],
+        "openIssues": 48,
+        "openPRs": 5
+    },
+    {
+        "fullName": "tencentmusic/cube-studio",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "19 months ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "Jupyter Notebook",
+            "Less",
+            "HTML",
+            "Shell",
+            "JavaScript",
+            "CSS",
+            "Dockerfile",
+            "Mustache",
+            "R",
+            "Mako"
+        ],
+        "openIssues": 31,
+        "openPRs": 11
+    },
+    {
+        "fullName": "makeplane/plane",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 hours ago",
+        "languages": [
+            "TypeScript",
+            "Python",
+            "HTML",
+            "CSS",
+            "Shell",
+            "JavaScript",
+            "Dockerfile",
+            "Nix"
+        ],
+        "openIssues": 527,
+        "openPRs": 62
+    },
+    {
+        "fullName": "freeCodeCamp/freeCodeCamp",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "43 minutes ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "CSS",
+            "Dockerfile",
+            "HTML",
+            "Shell"
+        ],
+        "openIssues": 194,
+        "openPRs": 97
+    },
+    {
+        "fullName": "OpenRA/OpenRA",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "C#",
+            "Lua",
+            "Fluent",
+            "Shell",
+            "Objective-C",
+            "GLSL",
+            "NSIS",
+            "Python",
+            "PowerShell",
+            "Makefile",
+            "Batchfile",
+            "C"
+        ],
+        "openIssues": 1451,
+        "openPRs": 99
+    },
+    {
+        "fullName": "freedomofpress/securedrop",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "CSS",
+            "HTML",
+            "JavaScript",
+            "Jinja",
+            "Makefile",
+            "Rust",
+            "Dockerfile",
+            "Mako"
+        ],
+        "openIssues": 456,
+        "openPRs": 5
+    },
+    {
+        "fullName": "OpenShot/openshot-qt",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "Inno Setup",
+            "Shell",
+            "Makefile",
+            "Batchfile"
+        ],
+        "openIssues": 321,
+        "openPRs": 13
+    },
+    {
+        "fullName": "mahdibland/V2RayAggregator",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "25 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "JavaScript"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "didi/mpx",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 hours ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "Vue",
+            "Stylus",
+            "EJS",
+            "CSS",
+            "HTML",
+            "Shell",
+            "Less",
+            "SCSS"
+        ],
+        "openIssues": 21,
+        "openPRs": 41
+    },
+    {
+        "fullName": "beeware/toga",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "15 hours ago",
+        "languages": [
+            "Python",
+            "CSS",
+            "QML"
+        ],
+        "openIssues": 263,
+        "openPRs": 32
+    },
+    {
+        "fullName": "amqp-node/amqplib",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "JavaScript",
+            "Makefile"
+        ],
+        "openIssues": 9,
+        "openPRs": 28
+    },
+    {
+        "fullName": "dipakkr/A-to-Z-Resources-for-Students",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [],
+        "openIssues": 10,
+        "openPRs": 10
+    },
+    {
+        "fullName": "madmaze/pytesseract",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 12,
+        "openPRs": 4
+    },
+    {
+        "fullName": "disposable-email-domains/disposable-email-domains",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 days ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 13,
+        "openPRs": 20
+    },
+    {
+        "fullName": "gabime/spdlog",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 days ago",
+        "languages": [
+            "C++",
+            "CMake",
+            "C",
+            "Shell",
+            "Python"
+        ],
+        "openIssues": 37,
+        "openPRs": 9
+    },
+    {
+        "fullName": "PINTO0309/PINTO_model_zoo",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Jupyter Notebook",
+            "C++",
+            "Dockerfile"
+        ],
+        "openIssues": 3,
+        "openPRs": 0
+    },
+    {
+        "fullName": "mac-s-g/react-json-view",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "JavaScript",
+            "Shell",
+            "SCSS",
+            "Dockerfile"
+        ],
+        "openIssues": 156,
+        "openPRs": 32
+    },
+    {
+        "fullName": "lyswhut/lx-music-mobile",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Java",
+            "Objective-C",
+            "Ruby",
+            "Objective-C++"
+        ],
+        "openIssues": 604,
+        "openPRs": 6
+    },
+    {
+        "fullName": "amitshekhariitbhu/Fast-Android-Networking",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "89 months ago",
+        "languages": [
+            "Java"
+        ],
+        "openIssues": 219,
+        "openPRs": 11
+    },
+    {
+        "fullName": "PaddlePaddle/FastDeploy",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 hours ago",
+        "languages": [
+            "Python",
+            "C++",
+            "Cuda",
+            "Shell",
+            "C",
+            "CMake"
+        ],
+        "openIssues": 279,
+        "openPRs": 254
+    },
+    {
+        "fullName": "certd/certd",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 days ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "Vue",
+            "CSS",
+            "HTML",
+            "Less",
+            "SCSS",
+            "Shell",
+            "Dockerfile",
+            "Raku",
+            "Apex"
+        ],
+        "openIssues": 58,
+        "openPRs": 1
+    },
+    {
+        "fullName": "amitshekhariitbhu/Android-Debug-Database",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "15 months ago",
+        "languages": [
+            "Java",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 73,
+        "openPRs": 7
+    },
+    {
+        "fullName": "gboeing/osmnx",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 4,
+        "openPRs": 4
+    },
+    {
+        "fullName": "prometheus/client_python",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 days ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 110,
+        "openPRs": 33
+    },
+    {
+        "fullName": "allenai/OLMo",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 hours ago",
+        "languages": [
+            "Python",
+            "Cuda",
+            "Jupyter Notebook",
+            "Shell",
+            "C++",
+            "Jsonnet",
+            "Dockerfile",
+            "Makefile",
+            "C"
+        ],
+        "openIssues": 16,
+        "openPRs": 65
+    },
+    {
+        "fullName": "alirezamika/autoscraper",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 1,
+        "openPRs": 2
+    },
+    {
+        "fullName": "getgauge/taiko",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "HTML",
+            "Ruby",
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": 63,
+        "openPRs": 3
+    },
+    {
+        "fullName": "FedML-AI/FedML",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 months ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Java",
+            "Shell",
+            "C++",
+            "Dockerfile",
+            "Batchfile",
+            "Smarty",
+            "CMake",
+            "Jinja",
+            "C",
+            "PowerShell"
+        ],
+        "openIssues": 121,
+        "openPRs": 25
+    },
+    {
+        "fullName": "behave/behave",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "Gherkin",
+            "Just",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 46,
+        "openPRs": 19
+    },
+    {
+        "fullName": "pritunl/pritunl",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 days ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "JavaScript",
+            "Dart",
+            "SCSS",
+            "Shell",
+            "Go",
+            "HCL",
+            "Dockerfile"
+        ],
+        "openIssues": 0,
+        "openPRs": 1
+    },
+    {
+        "fullName": "gildas-lormeau/zip.js",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 days ago",
+        "languages": [
+            "JavaScript",
+            "HTML"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "yeoman/yo",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 days ago",
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": 34,
+        "openPRs": 0
+    },
+    {
+        "fullName": "princeton-vl/RAFT",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Cuda",
+            "Shell",
+            "C++"
+        ],
+        "openIssues": 67,
+        "openPRs": 8
+    },
+    {
+        "fullName": "pre-commit/pre-commit-hooks",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 hours ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 5,
+        "openPRs": 4
+    },
+    {
+        "fullName": "alibaba/jetcache",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Java"
+        ],
+        "openIssues": 416,
+        "openPRs": 9
+    },
+    {
+        "fullName": "ppy/osu",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 hours ago",
+        "languages": [
+            "C#",
+            "PowerShell",
+            "Shell",
+            "GLSL",
+            "RenderScript"
+        ],
+        "openIssues": 1392,
+        "openPRs": 269
+    },
+    {
+        "fullName": "linyqh/NarratoAI",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Dockerfile",
+            "Makefile",
+            "HTML"
+        ],
+        "openIssues": 2,
+        "openPRs": 1
+    },
+    {
+        "fullName": "alibaba/formily",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "81 months ago",
+        "languages": [
+            "TypeScript",
+            "Vue",
+            "JavaScript",
+            "SCSS",
+            "Less",
+            "Stylus",
+            "EJS"
+        ],
+        "openIssues": 104,
+        "openPRs": 30
+    },
+    {
+        "fullName": "cookiecutter-flask/cookiecutter-flask",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python",
+            "HTML",
+            "JavaScript",
+            "Dockerfile",
+            "Shell",
+            "CSS",
+            "Procfile"
+        ],
+        "openIssues": 3,
+        "openPRs": 20
+    },
+    {
+        "fullName": "django-crispy-forms/django-crispy-forms",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 days ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "Makefile"
+        ],
+        "openIssues": 55,
+        "openPRs": 17
+    },
+    {
+        "fullName": "line/armeria",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Java",
+            "MDX",
+            "TypeScript",
+            "Scala",
+            "Kotlin",
+            "Thrift",
+            "Less",
+            "JavaScript",
+            "CSS",
+            "Shell",
+            "HTML"
+        ],
+        "openIssues": 621,
+        "openPRs": 88
+    },
+    {
+        "fullName": "shuding/nextra",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 days ago",
+        "languages": [
+            "TypeScript",
+            "CSS",
+            "JavaScript",
+            "MDX"
+        ],
+        "openIssues": 255,
+        "openPRs": 35
+    },
+    {
+        "fullName": "gitkraken/vscode-gitlens",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 hours ago",
+        "languages": [
+            "TypeScript",
+            "HTML",
+            "SCSS",
+            "JavaScript",
+            "Handlebars",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 861,
+        "openPRs": 46
+    },
+    {
+        "fullName": "google-ai-edge/mediapipe",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "C++",
+            "Python",
+            "Starlark",
+            "Java",
+            "Objective-C",
+            "Objective-C++",
+            "TypeScript",
+            "C",
+            "Swift",
+            "Shell",
+            "JavaScript",
+            "HTML",
+            "Dockerfile",
+            "Makefile",
+            "Linker Script",
+            "Batchfile"
+        ],
+        "openIssues": 463,
+        "openPRs": 153
+    },
+    {
+        "fullName": "gocd/gocd",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "Java",
+            "TypeScript",
+            "Groovy",
+            "JavaScript",
+            "SCSS",
+            "Ruby",
+            "HTML",
+            "XSLT",
+            "FreeMarker",
+            "NSIS",
+            "Shell",
+            "EJS",
+            "CSS",
+            "Batchfile"
+        ],
+        "openIssues": 59,
+        "openPRs": 14
+    },
+    {
+        "fullName": "lincolnloop/python-qrcode",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 41,
+        "openPRs": 11
+    },
+    {
+        "fullName": "lightbend/config",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Java",
+            "Scala",
+            "HTML"
+        ],
+        "openIssues": 234,
+        "openPRs": 5
+    },
+    {
+        "fullName": "FreeCAD/FreeCAD",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "C++",
+            "Python",
+            "C",
+            "CMake",
+            "NSIS",
+            "Lex",
+            "HTML",
+            "Shell",
+            "Yacc",
+            "JavaScript",
+            "CSS",
+            "Batchfile",
+            "Makefile",
+            "Objective-C",
+            "GLSL",
+            "QMake",
+            "Max",
+            "OpenSCAD"
+        ],
+        "openIssues": 3030,
+        "openPRs": 316
+    },
+    {
+        "fullName": "PyCQA/pycodestyle",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "19 hours ago",
+        "languages": [
+            "Python",
+            "Makefile"
+        ],
+        "openIssues": 89,
+        "openPRs": 16
+    },
+    {
+        "fullName": "weaviate/Verba",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 months ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "HTML",
+            "GLSL",
+            "JavaScript",
+            "Dockerfile",
+            "CSS",
+            "Shell"
+        ],
+        "openIssues": 52,
+        "openPRs": 2
+    },
+    {
+        "fullName": "aliasrobotics/cai",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "PHP",
+            "Jupyter Notebook",
+            "Dockerfile",
+            "Shell",
+            "Makefile"
+        ],
+        "openIssues": 1,
+        "openPRs": 1
+    },
+    {
+        "fullName": "polakowo/vectorbt",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "Python",
+            "CSS",
+            "Dockerfile",
+            "Shell",
+            "Procfile"
+        ],
+        "openIssues": 119,
+        "openPRs": 8
+    },
+    {
+        "fullName": "sickcodes/Docker-OSX",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 days ago",
+        "languages": [
+            "Shell",
+            "Dockerfile",
+            "Python",
+            "Mustache"
+        ],
+        "openIssues": 393,
+        "openPRs": 19
+    },
+    {
+        "fullName": "lets-blade/blade",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 months ago",
+        "languages": [
+            "Java",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 12,
+        "openPRs": 2
+    },
+    {
+        "fullName": "leerob/next-mdx-blog",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "CSS",
+            "JavaScript"
+        ],
+        "openIssues": 4,
+        "openPRs": 3
+    },
+    {
+        "fullName": "lazy-luo/smarGate",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": 1,
+        "openPRs": 0
+    },
+    {
+        "fullName": "lastmile-ai/mcp-agent",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "CSS",
+            "Shell",
+            "Makefile",
+            "HTML"
+        ],
+        "openIssues": 81,
+        "openPRs": 21
+    },
+    {
+        "fullName": "testing-library/dom-testing-library",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 days ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript"
+        ],
+        "openIssues": 89,
+        "openPRs": 29
+    },
+    {
+        "fullName": "ssut/py-googletrans",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 3,
+        "openPRs": 1
+    },
+    {
+        "fullName": "django/channels",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "CSS",
+            "HTML"
+        ],
+        "openIssues": 88,
+        "openPRs": 29
+    },
+    {
+        "fullName": "pig-mesh/pig",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Java",
+            "PLpgSQL",
+            "FreeMarker",
+            "Dockerfile"
+        ],
+        "openIssues": 284,
+        "openPRs": 2
+    },
+    {
+        "fullName": "google-deepmind/dm_control",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Shell",
+            "Linker Script"
+        ],
+        "openIssues": 110,
+        "openPRs": 6
+    },
+    {
+        "fullName": "webpack-contrib/sass-loader",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 days ago",
+        "languages": [
+            "JavaScript",
+            "SCSS",
+            "Sass",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": null,
+        "openPRs": null
+    },
+    {
+        "fullName": "pi-hole/pi-hole",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 days ago",
+        "languages": [
+            "Shell",
+            "Python",
+            "Dockerfile",
+            "Roff"
+        ],
+        "openIssues": 34,
+        "openPRs": 15
+    },
+    {
+        "fullName": "l0o0/translators_CN",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "Shell"
+        ],
+        "openIssues": 23,
+        "openPRs": 3
+    },
+    {
+        "fullName": "kyegomez/swarms",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "15 hours ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "PowerShell",
+            "Dockerfile"
+        ],
+        "openIssues": 26,
+        "openPRs": 26
+    },
+    {
+        "fullName": "google-deepmind/graphcast",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "23 months ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook"
+        ],
+        "openIssues": 65,
+        "openPRs": 4
+    },
+    {
+        "fullName": "webpack/tapable",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": 7,
+        "openPRs": 0
+    },
+    {
+        "fullName": "corda/corda",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Kotlin",
+            "Java",
+            "C++",
+            "Python",
+            "Shell",
+            "CSS",
+            "Groovy",
+            "CMake",
+            "Dockerfile",
+            "Batchfile",
+            "PowerShell",
+            "C"
+        ],
+        "openIssues": 52,
+        "openPRs": 7
+    },
+    {
+        "fullName": "al-one/hass-xiaomi-miot",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 783,
+        "openPRs": 2
+    },
+    {
+        "fullName": "Future-House/paper-qa",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 days ago",
+        "languages": [
+            "Python",
+            "HTML"
+        ],
+        "openIssues": 126,
+        "openPRs": 6
+    },
+    {
+        "fullName": "RetireJS/retire.js",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 days ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "Shell",
+            "HTML",
+            "Batchfile"
+        ],
+        "openIssues": 3,
+        "openPRs": 2
+    },
+    {
+        "fullName": "ReversecLabs/drozer",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "Java",
+            "HTML",
+            "C",
+            "Batchfile",
+            "Shell",
+            "JavaScript",
+            "Dockerfile",
+            "Makefile"
+        ],
+        "openIssues": 5,
+        "openPRs": 1
+    },
+    {
+        "fullName": "akveo/nebular",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "TypeScript",
+            "SCSS",
+            "HTML",
+            "JavaScript",
+            "Shell"
+        ],
+        "openIssues": 852,
+        "openPRs": 77
+    },
+    {
+        "fullName": "dotansimha/graphql-code-generator",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 hours ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "JavaScript",
+            "Rust",
+            "Shell",
+            "CSS"
+        ],
+        "openIssues": 527,
+        "openPRs": 86
+    },
+    {
+        "fullName": "RhinoSecurityLabs/pacu",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 days ago",
+        "languages": [
+            "Python",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 26,
+        "openPRs": 8
+    },
+    {
+        "fullName": "awslabs/gluonts",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "R",
+            "Shell",
+            "Just",
+            "Dockerfile"
+        ],
+        "openIssues": 336,
+        "openPRs": 107
+    },
+    {
+        "fullName": "yangzongzhuan/RuoYi",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "HTML",
+            "JavaScript",
+            "Java",
+            "CSS",
+            "Batchfile",
+            "Shell"
+        ],
+        "openIssues": 14,
+        "openPRs": 14
+    },
+    {
+        "fullName": "google-research/text-to-text-transfer-transformer",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 days ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook"
+        ],
+        "openIssues": 59,
+        "openPRs": 47
+    },
+    {
+        "fullName": "RomelTorres/alpha_vantage",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "16 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 0,
+        "openPRs": 1
+    },
+    {
+        "fullName": "btraceio/btrace",
+        "weight": "1.01",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "Java",
+            "Shell",
+            "Batchfile",
+            "C",
+            "DTrace"
+        ],
+        "openIssues": 2,
+        "openPRs": 10
+    },
+    {
+        "fullName": "cluic/wxauto",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "20 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 0,
+        "openPRs": 6
+    },
+    {
+        "fullName": "clojure/clojure",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Java",
+            "Clojure",
+            "HTML",
+            "Shell"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "Automattic/wp-calypso",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 minutes ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "SCSS",
+            "PHP",
+            "HTML",
+            "Shell",
+            "CSS",
+            "MDX",
+            "Dockerfile",
+            "Ruby",
+            "Handlebars",
+            "Makefile",
+            "EJS",
+            "Pug"
+        ],
+        "openIssues": 3858,
+        "openPRs": 140
+    },
+    {
+        "fullName": "biolab/orange3",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Cython",
+            "C",
+            "Jupyter Notebook",
+            "C++",
+            "Shell"
+        ],
+        "openIssues": 136,
+        "openPRs": 18
+    },
+    {
+        "fullName": "chengaopan/AutoMergePublicNodes",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 5,
+        "openPRs": 0
+    },
+    {
+        "fullName": "vuejs/eslint-plugin-vue",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "Vue"
+        ],
+        "openIssues": 187,
+        "openPRs": 24
+    },
+    {
+        "fullName": "rollup/plugins",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "26 days ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "Shell"
+        ],
+        "openIssues": 16,
+        "openPRs": 11
+    },
+    {
+        "fullName": "chatopera/Synonyms",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "63 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 31,
+        "openPRs": 0
+    },
+    {
+        "fullName": "vyperlang/vyper",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 months ago",
+        "languages": [
+            "Python",
+            "Makefile",
+            "Batchfile",
+            "Dockerfile",
+            "Shell",
+            "Vyper"
+        ],
+        "openIssues": 463,
+        "openPRs": 94
+    },
+    {
+        "fullName": "chartist-js/chartist",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "JavaScript",
+            "SCSS",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 197,
+        "openPRs": 42
+    },
+    {
+        "fullName": "vuejs/vitepress",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 days ago",
+        "languages": [
+            "TypeScript",
+            "Vue",
+            "CSS",
+            "JavaScript"
+        ],
+        "openIssues": 407,
+        "openPRs": 101
+    },
+    {
+        "fullName": "bluesky-social/social-app",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "Kotlin",
+            "Go",
+            "Swift",
+            "Shell",
+            "CSS",
+            "Ruby",
+            "Dockerfile",
+            "Makefile"
+        ],
+        "openIssues": 1772,
+        "openPRs": 365
+    },
+    {
+        "fullName": "commixproject/commix",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 7,
+        "openPRs": 0
+    },
+    {
+        "fullName": "callstack/react-native-paper",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Kotlin",
+            "Shell",
+            "CSS",
+            "HTML"
+        ],
+        "openIssues": 272,
+        "openPRs": 70
+    },
+    {
+        "fullName": "vuestorefront/vue-storefront",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 36,
+        "openPRs": 16
+    },
+    {
+        "fullName": "vwxyzjn/cleanrl",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "HCL",
+            "Dockerfile"
+        ],
+        "openIssues": 60,
+        "openPRs": 25
+    },
+    {
+        "fullName": "bytedeco/javacv",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Java",
+            "C"
+        ],
+        "openIssues": 454,
+        "openPRs": 9
+    },
+    {
+        "fullName": "botpress/botpress",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 hours ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Shell",
+            "Starlark"
+        ],
+        "openIssues": 19,
+        "openPRs": 48
+    },
+    {
+        "fullName": "bytedance/trae-agent",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "Makefile",
+            "Shell"
+        ],
+        "openIssues": 75,
+        "openPRs": 18
+    },
+    {
+        "fullName": "sohzm/cheating-daddy",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML"
+        ],
+        "openIssues": 69,
+        "openPRs": 23
+    },
+    {
+        "fullName": "brentvollebregt/auto-py-to-exe",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript",
+            "Python",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 1,
+        "openPRs": 0
+    },
+    {
+        "fullName": "rmm5t/jquery-timeago",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "Ruby"
+        ],
+        "openIssues": 27,
+        "openPRs": 17
+    },
+    {
+        "fullName": "burnash/gspread",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 53,
+        "openPRs": 21
+    },
+    {
+        "fullName": "rjsf-team/react-jsonschema-form",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "CSS",
+            "MDX",
+            "HTML",
+            "Shell"
+        ],
+        "openIssues": 180,
+        "openPRs": 8
+    },
+    {
+        "fullName": "resilience4j/resilience4j",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 months ago",
+        "languages": [
+            "Java",
+            "Kotlin",
+            "Groovy",
+            "Dockerfile"
+        ],
+        "openIssues": 256,
+        "openPRs": 23
+    },
+    {
+        "fullName": "CodeGenieApp/serverless-express",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "23 months ago",
+        "languages": [
+            "JavaScript",
+            "Shell",
+            "EJS"
+        ],
+        "openIssues": 95,
+        "openPRs": 8
+    },
+    {
+        "fullName": "redis/node-redis",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "15 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 284,
+        "openPRs": 38
+    },
+    {
+        "fullName": "reddelexc/hackerone-reports",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "11 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 1,
+        "openPRs": 0
+    },
+    {
+        "fullName": "realm/realm-java",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Java",
+            "Kotlin",
+            "C++",
+            "Shell",
+            "JavaScript",
+            "CMake",
+            "Groovy",
+            "Dockerfile",
+            "Python",
+            "HTML"
+        ],
+        "openIssues": 362,
+        "openPRs": 34
+    },
+    {
+        "fullName": "DEAP/deap",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 days ago",
+        "languages": [
+            "Python",
+            "C",
+            "C++"
+        ],
+        "openIssues": 234,
+        "openPRs": 48
+    },
+    {
+        "fullName": "Acode-Foundation/Acode",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 hours ago",
+        "languages": [
+            "JavaScript",
+            "Java",
+            "SCSS",
+            "CSS",
+            "Handlebars",
+            "Shell",
+            "HTML"
+        ],
+        "openIssues": 61,
+        "openPRs": 6
+    },
+    {
+        "fullName": "soybeanjs/soybean-admin",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "TypeScript",
+            "Vue",
+            "CSS",
+            "SCSS",
+            "JavaScript",
+            "HTML"
+        ],
+        "openIssues": 4,
+        "openPRs": 0
+    },
+    {
+        "fullName": "reactjs/react-rails",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "JavaScript",
+            "Ruby",
+            "HTML",
+            "TypeScript",
+            "CoffeeScript",
+            "CSS",
+            "Shell"
+        ],
+        "openIssues": 22,
+        "openPRs": 2
+    },
+    {
+        "fullName": "DigitalPlatDev/FreeDomain",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "HTML",
+            "Python"
+        ],
+        "openIssues": 0,
+        "openPRs": 7
+    },
+    {
+        "fullName": "rasbt/mlxtend",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "TeX"
+        ],
+        "openIssues": 135,
+        "openPRs": 18
+    },
+    {
+        "fullName": "ranaroussi/quantstats",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "HTML"
+        ],
+        "openIssues": 8,
+        "openPRs": 4
+    },
+    {
+        "fullName": "qunitjs/qunit",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 days ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "TypeScript"
+        ],
+        "openIssues": 45,
+        "openPRs": 9
+    },
+    {
+        "fullName": "qodo-ai/pr-agent",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 hours ago",
+        "languages": [
+            "Python",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 50,
+        "openPRs": 12
+    },
+    {
+        "fullName": "spotipy-dev/spotipy",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 48,
+        "openPRs": 6
+    },
+    {
+        "fullName": "EleutherAI/gpt-neox",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "Python",
+            "C++",
+            "Cuda",
+            "Shell",
+            "Dockerfile",
+            "C",
+            "Makefile"
+        ],
+        "openIssues": 61,
+        "openPRs": 26
+    },
+    {
+        "fullName": "pyro-ppl/pyro",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "Makefile",
+            "C++",
+            "Shell",
+            "TeX",
+            "Dockerfile",
+            "CSS"
+        ],
+        "openIssues": 242,
+        "openPRs": 31
+    },
+    {
+        "fullName": "py-why/dowhy",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 days ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 144,
+        "openPRs": 2
+    },
+    {
+        "fullName": "pwndbg/pwndbg",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "16 hours ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Nix",
+            "C",
+            "Makefile",
+            "Assembly",
+            "Dockerfile",
+            "C++",
+            "Go"
+        ],
+        "openIssues": 197,
+        "openPRs": 23
+    },
+    {
+        "fullName": "FilipePS/Traduzir-paginas-web",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 346,
+        "openPRs": 5
+    },
+    {
+        "fullName": "poloclub/transformer-explainer",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript",
+            "Svelte",
+            "TypeScript",
+            "Python",
+            "HTML",
+            "SCSS",
+            "CSS"
+        ],
+        "openIssues": 11,
+        "openPRs": 9
+    },
+    {
+        "fullName": "stamparm/maltrail",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 86,
+        "openPRs": 5
+    },
+    {
+        "fullName": "snailyp/gemini-balance",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "JavaScript",
+            "CSS",
+            "Dockerfile"
+        ],
+        "openIssues": 91,
+        "openPRs": 1
+    },
+    {
+        "fullName": "GeeeekExplorer/nano-vllm",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 18,
+        "openPRs": 21
+    },
+    {
+        "fullName": "stanfordnlp/stanza",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "HTML",
+            "Shell",
+            "CSS"
+        ],
+        "openIssues": 92,
+        "openPRs": 0
+    },
+    {
+        "fullName": "peass-ng/PEASS-ng",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 days ago",
+        "languages": [
+            "C#",
+            "Shell",
+            "PowerShell",
+            "Python",
+            "Batchfile",
+            "Ruby",
+            "HTML"
+        ],
+        "openIssues": 23,
+        "openPRs": 2
+    },
+    {
+        "fullName": "pdfminer/pdfminer.six",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 days ago",
+        "languages": [
+            "Python",
+            "Makefile",
+            "Shell"
+        ],
+        "openIssues": 217,
+        "openPRs": 8
+    },
+    {
+        "fullName": "GoogleChrome/lighthouse-ci",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "Shell",
+            "HTML"
+        ],
+        "openIssues": 206,
+        "openPRs": 8
+    },
+    {
+        "fullName": "GoogleChromeLabs/ui-element-samples",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Nunjucks",
+            "Python"
+        ],
+        "openIssues": 28,
+        "openPRs": 51
+    },
+    {
+        "fullName": "patroni/patroni",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 days ago",
+        "languages": [
+            "Python",
+            "Gherkin",
+            "Dockerfile",
+            "Shell",
+            "Clojure"
+        ],
+        "openIssues": 39,
+        "openPRs": 28
+    },
+    {
+        "fullName": "palantir/blueprint",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "TypeScript",
+            "SCSS",
+            "JavaScript",
+            "Shell",
+            "HTML",
+            "Handlebars",
+            "Less"
+        ],
+        "openIssues": 743,
+        "openPRs": 115
+    },
+    {
+        "fullName": "GoogleContainerTools/jib",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "58 months ago",
+        "languages": [
+            "Java",
+            "Shell",
+            "HTML",
+            "Batchfile",
+            "JavaScript"
+        ],
+        "openIssues": 180,
+        "openPRs": 57
+    },
+    {
+        "fullName": "GreyDGL/PentestGPT",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "Dockerfile",
+            "Shell",
+            "Makefile"
+        ],
+        "openIssues": 45,
+        "openPRs": 10
+    },
+    {
+        "fullName": "HIPS/autograd",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 hours ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 163,
+        "openPRs": 23
+    },
+    {
+        "fullName": "HKUDS/AutoAgent",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 49,
+        "openPRs": 2
+    },
+    {
+        "fullName": "HKUDS/DeepCode",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 13,
+        "openPRs": 14
+    },
+    {
+        "fullName": "opencv/opencv-python",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 154,
+        "openPRs": 17
+    },
+    {
+        "fullName": "HKUDS/RAG-Anything",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 hours ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 87,
+        "openPRs": 2
+    },
+    {
+        "fullName": "open-duelyst/duelyst",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "JavaScript",
+            "CoffeeScript",
+            "SCSS",
+            "Handlebars",
+            "GLSL",
+            "HCL",
+            "TypeScript",
+            "Shell",
+            "CSS",
+            "Python",
+            "Dockerfile",
+            "HTML",
+            "Lua"
+        ],
+        "openIssues": 24,
+        "openPRs": 0
+    },
+    {
+        "fullName": "style-dictionary/style-dictionary",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "Shell"
+        ],
+        "openIssues": 217,
+        "openPRs": 23
+    },
+    {
+        "fullName": "oblador/react-native-vector-icons",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "24 days ago",
+        "languages": [
+            "TypeScript",
+            "Ruby",
+            "Kotlin",
+            "JavaScript",
+            "Shell",
+            "Objective-C++",
+            "CSS",
+            "HTML",
+            "Dockerfile",
+            "Objective-C",
+            "Python"
+        ],
+        "openIssues": 13,
+        "openPRs": 2
+    },
+    {
+        "fullName": "noraj/OSCP-Exam-Report-Template-Markdown",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "11 months ago",
+        "languages": [
+            "Ruby"
+        ],
+        "openIssues": 2,
+        "openPRs": 0
+    },
+    {
+        "fullName": "nodejs/Release",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": 36,
+        "openPRs": 7
+    },
+    {
+        "fullName": "nodegit/nodegit",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "JavaScript",
+            "C++",
+            "Python",
+            "C",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 342,
+        "openPRs": 36
+    },
+    {
+        "fullName": "nocobase/nocobase",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 hours ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Smarty",
+            "Shell",
+            "Dockerfile",
+            "Less",
+            "CSS"
+        ],
+        "openIssues": 124,
+        "openPRs": 115
+    },
+    {
+        "fullName": "sass/sass",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "19 hours ago",
+        "languages": [
+            "TypeScript",
+            "Shell",
+            "JavaScript"
+        ],
+        "openIssues": 109,
+        "openPRs": 5
+    },
+    {
+        "fullName": "nextjs/saas-starter",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "TypeScript",
+            "CSS",
+            "JavaScript"
+        ],
+        "openIssues": 17,
+        "openPRs": 17
+    },
+    {
+        "fullName": "nextcloud/server",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "11 seconds ago",
+        "languages": [
+            "PHP",
+            "JavaScript",
+            "Vue",
+            "TypeScript",
+            "Gherkin",
+            "SCSS",
+            "Shell",
+            "HTML",
+            "CSS",
+            "Dockerfile",
+            "Handlebars",
+            "Nix",
+            "Makefile"
+        ],
+        "openIssues": 2367,
+        "openPRs": 542
+    },
+    {
+        "fullName": "LawnchairLauncher/lawnchair",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 hours ago",
+        "languages": [
+            "Java",
+            "Kotlin",
+            "AIDL",
+            "Python",
+            "Makefile",
+            "Shell"
+        ],
+        "openIssues": 569,
+        "openPRs": 17
+    },
+    {
+        "fullName": "negomi/react-burger-menu",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 months ago",
+        "languages": [
+            "JavaScript",
+            "Less",
+            "HTML"
+        ],
+        "openIssues": 4,
+        "openPRs": 5
+    },
+    {
+        "fullName": "nccgroup/ScoutSuite",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "JavaScript",
+            "CSS",
+            "Shell"
+        ],
+        "openIssues": 238,
+        "openPRs": 46
+    },
+    {
+        "fullName": "mwilliamson/mammoth.js",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Makefile"
+        ],
+        "openIssues": 58,
+        "openPRs": 5
+    },
+    {
+        "fullName": "LmeSzinc/AzurLaneAutoScript",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Python",
+            "Batchfile",
+            "CSS",
+            "TypeScript",
+            "Vue",
+            "JavaScript",
+            "Shell",
+            "Dockerfile",
+            "HTML"
+        ],
+        "openIssues": 770,
+        "openPRs": 37
+    },
+    {
+        "fullName": "mscdex/ssh2",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "JavaScript",
+            "C++",
+            "C",
+            "Python",
+            "Batchfile"
+        ],
+        "openIssues": 49,
+        "openPRs": 30
+    },
+    {
+        "fullName": "mpetroff/pannellum",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "JavaScript",
+            "Python",
+            "CSS",
+            "HTML",
+            "TeX",
+            "Dockerfile",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 209,
+        "openPRs": 4
+    },
+    {
+        "fullName": "szimek/signature_pad",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript"
+        ],
+        "openIssues": 5,
+        "openPRs": 2
+    },
+    {
+        "fullName": "shibing624/pycorrector",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Dockerfile"
+        ],
+        "openIssues": 23,
+        "openPRs": 0
+    },
+    {
+        "fullName": "MaartenGr/BERTopic",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 days ago",
+        "languages": [
+            "Python",
+            "Makefile"
+        ],
+        "openIssues": 410,
+        "openPRs": 20
+    },
+    {
+        "fullName": "Mailtrain-org/mailtrain",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "80 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "Handlebars",
+            "CSS",
+            "SCSS",
+            "Shell",
+            "Less",
+            "Dockerfile"
+        ],
+        "openIssues": 9,
+        "openPRs": 104
+    },
+    {
+        "fullName": "Mailu/Mailu",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "Shell",
+            "Dockerfile",
+            "HCL",
+            "JavaScript",
+            "PHP",
+            "CSS",
+            "Lua",
+            "Sieve",
+            "Gherkin",
+            "Mako",
+            "C++",
+            "Pawn",
+            "Pascal"
+        ],
+        "openIssues": 114,
+        "openPRs": 14
+    },
+    {
+        "fullName": "modelscope/modelscope",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "Python",
+            "Cuda",
+            "C++",
+            "Shell",
+            "Smarty",
+            "Makefile"
+        ],
+        "openIssues": 10,
+        "openPRs": 4
+    },
+    {
+        "fullName": "miroslavpejic85/mirotalk",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Shell",
+            "PHP",
+            "Python",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 3,
+        "openPRs": 2
+    },
+    {
+        "fullName": "mindskip/xzs-mysql",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "45 months ago",
+        "languages": [
+            "JavaScript",
+            "Java",
+            "Vue",
+            "HTML",
+            "SCSS",
+            "CSS"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "mindskip/xzs",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "39 months ago",
+        "languages": [
+            "JavaScript",
+            "Java",
+            "Vue",
+            "HTML",
+            "SCSS",
+            "CSS"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "mindcraft-bots/mindcraft",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "19 days ago",
+        "languages": [
+            "JavaScript",
+            "Python",
+            "HTML",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 88,
+        "openPRs": 16
+    },
+    {
+        "fullName": "MikeMcl/bignumber.js",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "Java",
+            "TypeScript"
+        ],
+        "openIssues": 19,
+        "openPRs": 5
+    },
+    {
+        "fullName": "talebook/talebook",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "21 days ago",
+        "languages": [
+            "JavaScript",
+            "Python",
+            "Vue",
+            "CSS",
+            "HTML",
+            "Dockerfile",
+            "Shell",
+            "Makefile"
+        ],
+        "openIssues": 156,
+        "openPRs": 9
+    },
+    {
+        "fullName": "sandstorm-io/sandstorm",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "29 days ago",
+        "languages": [
+            "JavaScript",
+            "C++",
+            "Cap'n Proto",
+            "HTML",
+            "SCSS",
+            "Shell",
+            "Perl",
+            "C",
+            "TypeScript",
+            "Makefile",
+            "Yacc",
+            "Raku",
+            "Assembly",
+            "Lex",
+            "Python",
+            "Standard ML"
+        ],
+        "openIssues": 621,
+        "openPRs": 21
+    },
+    {
+        "fullName": "microsoft/UFO",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 days ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "CSS",
+            "JavaScript",
+            "HTML"
+        ],
+        "openIssues": 36,
+        "openPRs": 6
+    },
+    {
+        "fullName": "microsoft/RD-Agent",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 days ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Makefile",
+            "Dockerfile",
+            "Shell",
+            "JavaScript"
+        ],
+        "openIssues": 58,
+        "openPRs": 65
+    },
+    {
+        "fullName": "microsoft/MMdnn",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "TypeScript",
+            "CSS",
+            "HTML",
+            "Shell"
+        ],
+        "openIssues": 323,
+        "openPRs": 14
+    },
+    {
+        "fullName": "mher/flower",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "JavaScript",
+            "Shell",
+            "Dockerfile",
+            "CSS",
+            "SCSS"
+        ],
+        "openIssues": 137,
+        "openPRs": 42
+    },
+    {
+        "fullName": "NicolasHug/Surprise",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 months ago",
+        "languages": [
+            "Python",
+            "Cython",
+            "Shell"
+        ],
+        "openIssues": 76,
+        "openPRs": 17
+    },
+    {
+        "fullName": "melonjs/melonJS",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "GLSL",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 30,
+        "openPRs": 0
+    },
+    {
+        "fullName": "yihong0618/xiaogpt",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": 65,
+        "openPRs": 0
+    },
+    {
+        "fullName": "meetfranz/franz",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "47 months ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "SCSS",
+            "HTML"
+        ],
+        "openIssues": 0,
+        "openPRs": 9
+    },
+    {
+        "fullName": "mediacms-io/mediacms",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "JavaScript",
+            "Python",
+            "TypeScript",
+            "SCSS",
+            "CSS",
+            "HTML",
+            "Shell",
+            "EJS",
+            "Dockerfile",
+            "Io",
+            "Makefile"
+        ],
+        "openIssues": 112,
+        "openPRs": 6
+    },
+    {
+        "fullName": "mcp-use/mcp-use",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 hours ago",
+        "languages": [
+            "TypeScript",
+            "Python",
+            "MDX",
+            "JavaScript",
+            "Shell",
+            "CSS",
+            "Jupyter Notebook",
+            "HTML",
+            "Dockerfile"
+        ],
+        "openIssues": 24,
+        "openPRs": 16
+    },
+    {
+        "fullName": "matthewhudson/current-device",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "30 months ago",
+        "languages": [
+            "JavaScript",
+            "Makefile"
+        ],
+        "openIssues": 35,
+        "openPRs": 27
+    },
+    {
+        "fullName": "mapbox/mapbox-gl-js",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "GLSL",
+            "CSS",
+            "Shell",
+            "EJS"
+        ],
+        "openIssues": 1391,
+        "openPRs": 25
+    },
+    {
+        "fullName": "magic-research/magic-animate",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 96,
+        "openPRs": 13
+    },
+    {
+        "fullName": "mage-ai/mage-ai",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 hours ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "HTML",
+            "CSS",
+            "SCSS",
+            "JavaScript",
+            "Shell",
+            "Dockerfile",
+            "Jinja",
+            "Jupyter Notebook",
+            "Mako",
+            "Makefile",
+            "R"
+        ],
+        "openIssues": 427,
+        "openPRs": 105
+    },
+    {
+        "fullName": "Orz-3/QuantumultX",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "tensorflow/tfjs",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "C++",
+            "Python",
+            "Starlark",
+            "HTML",
+            "Shell",
+            "CSS",
+            "Objective-C",
+            "Java",
+            "Batchfile",
+            "Ruby",
+            "Dockerfile",
+            "C"
+        ],
+        "openIssues": 349,
+        "openPRs": 265
+    },
+    {
+        "fullName": "lyricat/wechat-format",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "77 months ago",
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "HTML"
+        ],
+        "openIssues": 2,
+        "openPRs": 2
+    },
+    {
+        "fullName": "longitachi/ZLPhotoBrowser",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "28 days ago",
+        "languages": [
+            "Swift",
+            "Objective-C",
+            "Ruby",
+            "C"
+        ],
+        "openIssues": 19,
+        "openPRs": 0
+    },
+    {
+        "fullName": "log4js-node/log4js-node",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "16 months ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "Shell"
+        ],
+        "openIssues": 83,
+        "openPRs": 14
+    },
+    {
+        "fullName": "samyk/evercookie",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "C#",
+            "CSS",
+            "Java",
+            "PHP"
+        ],
+        "openIssues": 50,
+        "openPRs": 2
+    },
+    {
+        "fullName": "PaddlePaddle/PaddleX",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "C++",
+            "CMake",
+            "Cuda",
+            "Shell",
+            "C",
+            "Batchfile",
+            "HTML",
+            "Dockerfile",
+            "Jinja"
+        ],
+        "openIssues": 634,
+        "openPRs": 44
+    },
+    {
+        "fullName": "lmcinnes/umap",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 days ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "TeX",
+            "Makefile"
+        ],
+        "openIssues": 487,
+        "openPRs": 31
+    },
+    {
+        "fullName": "Physical-Intelligence/openpi",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 161,
+        "openPRs": 31
+    },
+    {
+        "fullName": "llamastack/llama-stack",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 hours ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "Shell",
+            "Swift",
+            "Dockerfile",
+            "JavaScript",
+            "CSS",
+            "Objective-C"
+        ],
+        "openIssues": 129,
+        "openPRs": 41
+    },
+    {
+        "fullName": "lipku/LiveTalking",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "HTML",
+            "Dockerfile"
+        ],
+        "openIssues": 383,
+        "openPRs": 4
+    },
+    {
+        "fullName": "PowerJob/PowerJob",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Java",
+            "Shell",
+            "Dockerfile",
+            "HTML",
+            "JavaScript"
+        ],
+        "openIssues": 285,
+        "openPRs": 32
+    },
+    {
+        "fullName": "linshenkx/prompt-optimizer",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "TypeScript",
+            "Vue",
+            "JavaScript",
+            "Shell",
+            "CSS",
+            "Dockerfile",
+            "Batchfile",
+            "PowerShell",
+            "HTML"
+        ],
+        "openIssues": 23,
+        "openPRs": 4
+    },
+    {
+        "fullName": "termux/termux-packages",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 hours ago",
+        "languages": [
+            "Shell",
+            "C",
+            "C++",
+            "CMake",
+            "Python",
+            "Roff",
+            "Perl",
+            "Assembly",
+            "RAML",
+            "JavaScript",
+            "HTML",
+            "Vim Script",
+            "Java",
+            "Dockerfile",
+            "PowerShell",
+            "Nushell",
+            "Emacs Lisp",
+            "Meson"
+        ],
+        "openIssues": 791,
+        "openPRs": 140
+    },
+    {
+        "fullName": "librosa/librosa",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "MATLAB",
+            "Jupyter Notebook",
+            "Shell"
+        ],
+        "openIssues": 60,
+        "openPRs": 9
+    },
+    {
+        "fullName": "libnoname/noname",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 hours ago",
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "TypeScript",
+            "HTML",
+            "Vue",
+            "PowerShell"
+        ],
+        "openIssues": 37,
+        "openPRs": 2
+    },
+    {
+        "fullName": "lanpa/tensorboardX",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 80,
+        "openPRs": 10
+    },
+    {
+        "fullName": "languagetool-org/languagetool",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Java",
+            "HTML",
+            "Python",
+            "Shell",
+            "Perl",
+            "Awk",
+            "XSLT",
+            "CSS",
+            "Batchfile",
+            "Lex",
+            "Gnuplot"
+        ],
+        "openIssues": 2025,
+        "openPRs": 31
+    },
+    {
+        "fullName": "langchain4j/langchain4j",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 hours ago",
+        "languages": [
+            "Java",
+            "Kotlin",
+            "Shell",
+            "Makefile"
+        ],
+        "openIssues": 539,
+        "openPRs": 97
+    },
+    {
+        "fullName": "langchain-ai/local-deep-researcher",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": 36,
+        "openPRs": 2
+    },
+    {
+        "fullName": "labring/sealos",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 hours ago",
+        "languages": [
+            "TypeScript",
+            "Go",
+            "Smarty",
+            "Shell",
+            "Makefile",
+            "Mustache",
+            "Dockerfile",
+            "SCSS",
+            "CSS",
+            "JavaScript",
+            "HTML",
+            "PowerShell",
+            "HCL"
+        ],
+        "openIssues": 33,
+        "openPRs": 26
+    },
+    {
+        "fullName": "kubeflow/kubeflow",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 days ago",
+        "languages": [],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "sidorares/node-mysql2",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 hours ago",
+        "languages": [
+            "JavaScript",
+            "TypeScript",
+            "Shell",
+            "HTML"
+        ],
+        "openIssues": 449,
+        "openPRs": 47
+    },
+    {
+        "fullName": "RedSiege/EyeWitness",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 days ago",
+        "languages": [
+            "Python",
+            "PowerShell",
+            "Shell",
+            "CSS",
+            "Dockerfile"
+        ],
+        "openIssues": 18,
+        "openPRs": 4
+    },
+    {
+        "fullName": "koral--/android-gif-drawable",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Java",
+            "C",
+            "Assembly",
+            "CMake"
+        ],
+        "openIssues": 31,
+        "openPRs": 1
+    },
+    {
+        "fullName": "kohya-ss/sd-scripts",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 765,
+        "openPRs": 118
+    },
+    {
+        "fullName": "RsaCtfTool/RsaCtfTool",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "21 days ago",
+        "languages": [
+            "Python",
+            "Sage",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 5,
+        "openPRs": 1
+    },
+    {
+        "fullName": "SDWebImage/SDWebImage",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Objective-C",
+            "C",
+            "Ruby",
+            "Shell",
+            "Swift"
+        ],
+        "openIssues": 116,
+        "openPRs": 5
+    },
+    {
+        "fullName": "sachinchoolur/lightgallery.js",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "JavaScript",
+            "CSS"
+        ],
+        "openIssues": 0,
+        "openPRs": 3
+    },
+    {
+        "fullName": "kangax/html-minifier",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "20 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 88,
+        "openPRs": 22
+    },
+    {
+        "fullName": "jwtk/jjwt",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Java",
+            "Groovy",
+            "Shell"
+        ],
+        "openIssues": 28,
+        "openPRs": 18
+    },
+    {
+        "fullName": "SevaSk/ecoute",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "30 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 106,
+        "openPRs": 10
+    },
+    {
+        "fullName": "ShareX/ShareX",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "C#",
+            "Inno Setup",
+            "CSS",
+            "HTML"
+        ],
+        "openIssues": 567,
+        "openPRs": 9
+    },
+    {
+        "fullName": "theturtle32/WebSocket-Node",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "EJS",
+            "CSS",
+            "Shell",
+            "Makefile"
+        ],
+        "openIssues": 61,
+        "openPRs": 12
+    },
+    {
+        "fullName": "jsx-eslint/eslint-plugin-jsx-a11y",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 months ago",
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": 102,
+        "openPRs": 16
+    },
+    {
+        "fullName": "json-editor/json-editor",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "11 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 249,
+        "openPRs": 34
+    },
+    {
+        "fullName": "thinkjs/thinkjs",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": 134,
+        "openPRs": 1
+    },
+    {
+        "fullName": "Soundnode/soundnode-app",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "HTML"
+        ],
+        "openIssues": 263,
+        "openPRs": 11
+    },
+    {
+        "fullName": "SparkAudio/Spark-TTS",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 186,
+        "openPRs": 12
+    },
+    {
+        "fullName": "jianchang512/ChatTTS-ui",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 days ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "Go",
+            "Batchfile"
+        ],
+        "openIssues": 192,
+        "openPRs": 0
+    },
+    {
+        "fullName": "jiaaro/pydub",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 337,
+        "openPRs": 76
+    },
+    {
+        "fullName": "s3tools/s3cmd",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "Roff",
+            "Perl",
+            "Makefile",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 261,
+        "openPRs": 43
+    },
+    {
+        "fullName": "jessevig/bertviz",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "40 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Jupyter Notebook"
+        ],
+        "openIssues": 20,
+        "openPRs": 1
+    },
+    {
+        "fullName": "SwiftGGTeam/the-swift-programming-language-in-chinese",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "11 months ago",
+        "languages": [
+            "Markdown",
+            "HTML",
+            "Swift",
+            "JavaScript",
+            "Shell"
+        ],
+        "openIssues": 1,
+        "openPRs": 0
+    },
+    {
+        "fullName": "Sygil-Dev/sygil-webui",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Vue",
+            "Jupyter Notebook",
+            "Shell",
+            "CSS",
+            "Batchfile",
+            "HTML",
+            "TypeScript",
+            "Dockerfile"
+        ],
+        "openIssues": 78,
+        "openPRs": 10
+    },
+    {
+        "fullName": "TeamAmaze/AmazeFileManager",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 months ago",
+        "languages": [
+            "Kotlin",
+            "Java",
+            "HTML",
+            "C",
+            "CMake"
+        ],
+        "openIssues": 582,
+        "openPRs": 30
+    },
+    {
+        "fullName": "java-native-access/jna",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "Java",
+            "C",
+            "Assembly",
+            "M4",
+            "Shell",
+            "HTML",
+            "Makefile",
+            "Roff",
+            "Python",
+            "Perl",
+            "C++"
+        ],
+        "openIssues": 101,
+        "openPRs": 17
+    },
+    {
+        "fullName": "ixartz/Next-js-Boilerplate",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "CSS"
+        ],
+        "openIssues": 5,
+        "openPRs": 1
+    },
+    {
+        "fullName": "The-Pocket/PocketFlow",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 53,
+        "openPRs": 5
+    },
+    {
+        "fullName": "xiaolin/react-image-gallery",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 months ago",
+        "languages": [
+            "JavaScript",
+            "SCSS",
+            "CSS",
+            "HTML"
+        ],
+        "openIssues": 12,
+        "openPRs": 7
+    },
+    {
+        "fullName": "Tib3rius/AutoRecon",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 days ago",
+        "languages": [
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": null,
+        "openPRs": null
+    },
+    {
+        "fullName": "sensepost/objection",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "15 days ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "JavaScript",
+            "Objective-C",
+            "Makefile"
+        ],
+        "openIssues": 60,
+        "openPRs": 12
+    },
+    {
+        "fullName": "ionic-team/ionicons",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "19 months ago",
+        "languages": [
+            "TypeScript",
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "openIssues": 56,
+        "openPRs": 3
+    },
+    {
+        "fullName": "invertase/react-native-firebase",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Java",
+            "Objective-C",
+            "Ruby",
+            "Objective-C++",
+            "Shell",
+            "Swift",
+            "Kotlin",
+            "Starlark",
+            "CSS"
+        ],
+        "openIssues": 62,
+        "openPRs": 22
+    },
+    {
+        "fullName": "inventree/InvenTree",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 hours ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "HTML",
+            "Shell",
+            "Dockerfile",
+            "JavaScript",
+            "Procfile",
+            "CSS"
+        ],
+        "openIssues": 152,
+        "openPRs": 29
+    },
+    {
+        "fullName": "infobyte/faraday",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "38 months ago",
+        "languages": [
+            "Python",
+            "Nix",
+            "JavaScript",
+            "HTML",
+            "Shell",
+            "Jinja",
+            "Dockerfile",
+            "Mako"
+        ],
+        "openIssues": 47,
+        "openPRs": 14
+    },
+    {
+        "fullName": "ihmily/DouyinLiveRecorder",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "HTML",
+            "VBScript",
+            "Dockerfile"
+        ],
+        "openIssues": 400,
+        "openPRs": 0
+    },
+    {
+        "fullName": "igrigorik/videospeed",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "HTML"
+        ],
+        "openIssues": 61,
+        "openPRs": 10
+    },
+    {
+        "fullName": "icsharpcode/ILSpy",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "11 hours ago",
+        "languages": [
+            "C#",
+            "JavaScript",
+            "PowerShell",
+            "Visual Basic .NET",
+            "HTML",
+            "Less",
+            "Jupyter Notebook",
+            "CSS",
+            "F#",
+            "Shell",
+            "Batchfile",
+            "Dockerfile"
+        ],
+        "openIssues": 215,
+        "openPRs": 13
+    },
+    {
+        "fullName": "Usagi-org/ai-goofish-monitor",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "29 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "Dockerfile"
+        ],
+        "openIssues": 52,
+        "openPRs": 2
+    },
+    {
+        "fullName": "hyperopt/hyperopt",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 months ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook"
+        ],
+        "openIssues": 3,
+        "openPRs": 1
+    },
+    {
+        "fullName": "huiyadanli/RevokeMsgPatcher",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 days ago",
+        "languages": [
+            "C#"
+        ],
+        "openIssues": 60,
+        "openPRs": 0
+    },
+    {
+        "fullName": "Wei-Shaw/claude-relay-service",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 hours ago",
+        "languages": [
+            "JavaScript",
+            "Vue",
+            "Shell",
+            "CSS",
+            "Makefile",
+            "Dockerfile",
+            "HTML"
+        ],
+        "openIssues": 108,
+        "openPRs": 3
+    },
+    {
+        "fullName": "timesler/facenet-pytorch",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "16 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 79,
+        "openPRs": 6
+    },
+    {
+        "fullName": "home-assistant/operating-system",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Makefile",
+            "HTML",
+            "Dockerfile",
+            "Groovy"
+        ],
+        "openIssues": 70,
+        "openPRs": 3
+    },
+    {
+        "fullName": "YaoFANGUK/video-subtitle-extractor",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 months ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Shell"
+        ],
+        "openIssues": 224,
+        "openPRs": 6
+    },
+    {
+        "fullName": "YaoFANGUK/video-subtitle-remover",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": 129,
+        "openPRs": 2
+    },
+    {
+        "fullName": "hiddify/Hiddify-Manager",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Jinja",
+            "JavaScript",
+            "HCL",
+            "HTML",
+            "CSS",
+            "Makefile",
+            "Erlang",
+            "Dockerfile"
+        ],
+        "openIssues": 241,
+        "openPRs": 14
+    },
+    {
+        "fullName": "Yummypets/YPImagePicker",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Swift",
+            "Ruby",
+            "Objective-C"
+        ],
+        "openIssues": 48,
+        "openPRs": 3
+    },
+    {
+        "fullName": "tinymce/tinymce",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 hours ago",
+        "languages": [
+            "TypeScript",
+            "HTML",
+            "Less",
+            "JavaScript",
+            "CSS",
+            "Makefile",
+            "MDX"
+        ],
+        "openIssues": 391,
+        "openPRs": 49
+    },
+    {
+        "fullName": "haraka/Haraka",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "JavaScript",
+            "Shell",
+            "HTML",
+            "Dockerfile",
+            "Perl"
+        ],
+        "openIssues": 17,
+        "openPRs": 3
+    },
+    {
+        "fullName": "tobymao/sqlglot",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 hours ago",
+        "languages": [
+            "Python",
+            "Rust",
+            "Makefile",
+            "Jinja"
+        ],
+        "openIssues": 5,
+        "openPRs": 6
+    },
+    {
+        "fullName": "a2aproject/A2A",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "57 minutes ago",
+        "languages": [
+            "Shell"
+        ],
+        "openIssues": 107,
+        "openPRs": 20
+    },
+    {
+        "fullName": "guofei9987/scikit-opt",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 69,
+        "openPRs": 1
+    },
+    {
+        "fullName": "toji/gl-matrix",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "54 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 74,
+        "openPRs": 13
+    },
+    {
+        "fullName": "graphql/graphql-js",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "25 days ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "JavaScript",
+            "CSS",
+            "Shell"
+        ],
+        "openIssues": 93,
+        "openPRs": 74
+    },
+    {
+        "fullName": "adap/flower",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Swift",
+            "TypeScript",
+            "Smarty",
+            "Shell",
+            "Kotlin",
+            "C++",
+            "MDX",
+            "HTML",
+            "CSS",
+            "Dockerfile",
+            "JavaScript",
+            "CMake",
+            "Makefile",
+            "Batchfile"
+        ],
+        "openIssues": 31,
+        "openPRs": 194
+    },
+    {
+        "fullName": "adityatelange/hugo-PaperMod",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+        "openIssues": 25,
+        "openPRs": 50
+    },
+    {
+        "fullName": "ag-grid/ag-grid",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 hours ago",
+        "languages": [
+            "TypeScript",
+            "SCSS",
+            "JavaScript",
+            "CSS",
+            "Shell",
+            "HTML",
+            "Vue",
+            "sed"
+        ],
+        "openIssues": 45,
+        "openPRs": 76
+    },
+    {
+        "fullName": "grab/cursor-talk-to-figma-mcp",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "28 days ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "TypeScript",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 58,
+        "openPRs": 14
+    },
+    {
+        "fullName": "simstudioai/sim",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 hours ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "Python",
+            "CSS",
+            "Smarty",
+            "Dockerfile",
+            "Shell",
+            "JavaScript",
+            "PLpgSQL"
+        ],
+        "openIssues": 85,
+        "openPRs": 30
+    },
+    {
+        "fullName": "googleapis/google-api-nodejs-client",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Nunjucks",
+            "Python"
+        ],
+        "openIssues": 210,
+        "openPRs": 3
+    },
+    {
+        "fullName": "google/guice",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "20 days ago",
+        "languages": [
+            "Java",
+            "Starlark",
+            "Shell",
+            "HTML"
+        ],
+        "openIssues": 339,
+        "openPRs": 17
+    },
+    {
+        "fullName": "aiogram/aiogram",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "21 days ago",
+        "languages": [
+            "Python",
+            "Makefile",
+            "Jinja"
+        ],
+        "openIssues": 24,
+        "openPRs": 14
+    },
+    {
+        "fullName": "tradingview/lightweight-charts",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "MDX",
+            "CSS",
+            "Vue",
+            "Shell"
+        ],
+        "openIssues": 118,
+        "openPRs": 11
+    },
+    {
+        "fullName": "transitive-bullshit/agentic",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "CSS",
+            "JavaScript",
+            "Starlark",
+            "Shell"
+        ],
+        "openIssues": 14,
+        "openPRs": 1
+    },
+    {
+        "fullName": "ajenti/ajenti",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "HTML",
+            "CoffeeScript",
+            "Less",
+            "Shell",
+            "Makefile",
+            "Augeas"
+        ],
+        "openIssues": 11,
+        "openPRs": 0
+    },
+    {
+        "fullName": "alexlenail/NN-SVG",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "TeX"
+        ],
+        "openIssues": 20,
+        "openPRs": 7
+    },
+    {
+        "fullName": "google-deepmind/alphafold3",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python",
+            "C++",
+            "Shell",
+            "Dockerfile",
+            "CMake"
+        ],
+        "openIssues": 24,
+        "openPRs": 1
+    },
+    {
+        "fullName": "globalizejs/globalize",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript",
+            "Shell",
+            "HTML"
+        ],
+        "openIssues": 150,
+        "openPRs": 0
+    },
+    {
+        "fullName": "gitpython-developers/GitPython",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Dockerfile",
+            "Makefile"
+        ],
+        "openIssues": 169,
+        "openPRs": 5
+    },
+    {
+        "fullName": "alibaba/ice",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "21 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "CSS",
+            "EJS",
+            "AppleScript",
+            "Shell"
+        ],
+        "openIssues": 340,
+        "openPRs": 30
+    },
+    {
+        "fullName": "gevent/gevent",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 days ago",
+        "languages": [
+            "Python",
+            "Cython",
+            "C",
+            "Shell",
+            "PowerShell",
+            "Batchfile"
+        ],
+        "openIssues": 125,
+        "openPRs": 3
+    },
+    {
+        "fullName": "geopandas/geopandas",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 357,
+        "openPRs": 77
+    },
+    {
+        "fullName": "alteryx/featuretools",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 months ago",
+        "languages": [
+            "Python",
+            "Makefile"
+        ],
+        "openIssues": 151,
+        "openPRs": 12
+    },
+    {
+        "fullName": "tusen-ai/naive-ui",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "54 months ago",
+        "languages": [
+            "TypeScript",
+            "Vue",
+            "HTML",
+            "JavaScript",
+            "Shell"
+        ],
+        "openIssues": 402,
+        "openPRs": 225
+    },
+    {
+        "fullName": "androguard/androguard",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Java"
+        ],
+        "openIssues": 32,
+        "openPRs": 10
+    },
+    {
+        "fullName": "formbricks/formbricks",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 hours ago",
+        "languages": [
+            "TypeScript",
+            "Shell",
+            "JavaScript",
+            "CSS",
+            "MDX",
+            "PLpgSQL",
+            "Smarty",
+            "Dockerfile",
+            "HTML"
+        ],
+        "openIssues": 196,
+        "openPRs": 19
+    },
+    {
+        "fullName": "tyiannak/pyAudioAnalysis",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "25 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "HTML",
+            "CSS",
+            "MATLAB"
+        ],
+        "openIssues": 191,
+        "openPRs": 15
+    },
+    {
+        "fullName": "flyway/flyway",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Java",
+            "Python",
+            "HTML",
+            "Dockerfile",
+            "Shell",
+            "Batchfile",
+            "Makefile",
+            "JavaScript"
+        ],
+        "openIssues": 217,
+        "openPRs": 17
+    },
+    {
+        "fullName": "angr/angr",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "58 minutes ago",
+        "languages": [
+            "Python",
+            "C++",
+            "Rust",
+            "Shell",
+            "C",
+            "Makefile"
+        ],
+        "openIssues": 480,
+        "openPRs": 98
+    },
+    {
+        "fullName": "firerpa/lamda",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python",
+            "C",
+            "Shell",
+            "Dockerfile",
+            "JavaScript"
+        ],
+        "openIssues": 37,
+        "openPRs": 1
+    },
+    {
+        "fullName": "fengyuanchen/cropperjs",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Shell"
+        ],
+        "openIssues": 37,
+        "openPRs": 0
+    },
+    {
+        "fullName": "feast-dev/feast",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "Go",
+            "TypeScript",
+            "Java",
+            "JavaScript",
+            "Makefile",
+            "Shell",
+            "HCL",
+            "Astro",
+            "CSS",
+            "Jupyter Notebook",
+            "Dockerfile",
+            "HTML",
+            "Mustache",
+            "Jinja",
+            "Smarty"
+        ],
+        "openIssues": 153,
+        "openPRs": 51
+    },
+    {
+        "fullName": "facebookresearch/vggt",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 221,
+        "openPRs": 20
+    },
+    {
+        "fullName": "facebookresearch/mmf",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "79 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "C",
+            "CSS",
+            "Shell",
+            "MDX"
+        ],
+        "openIssues": 115,
+        "openPRs": 35
+    },
+    {
+        "fullName": "facebook/metro",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "JavaScript",
+            "SCSS",
+            "CSS",
+            "TypeScript"
+        ],
+        "openIssues": 356,
+        "openPRs": 65
+    },
+    {
+        "fullName": "expressjs/body-parser",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "23 hours ago",
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": 23,
+        "openPRs": 22
+    },
+    {
+        "fullName": "explodinggradients/ragas",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 hours ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Makefile",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 275,
+        "openPRs": 9
+    },
+    {
+        "fullName": "sitespeedio/sitespeed.io",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "23 days ago",
+        "languages": [
+            "JavaScript",
+            "Pug",
+            "SCSS",
+            "Shell",
+            "Dockerfile",
+            "Python",
+            "HTML",
+            "Ruby",
+            "CSS"
+        ],
+        "openIssues": 129,
+        "openPRs": 10
+    },
+    {
+        "fullName": "umijs/qiankun",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Vue",
+            "EJS",
+            "HTML",
+            "CSS",
+            "Less",
+            "Shell"
+        ],
+        "openIssues": 410,
+        "openPRs": 15
+    },
+    {
+        "fullName": "erikbern/ann-benchmarks",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "Dockerfile",
+            "HTML"
+        ],
+        "openIssues": 91,
+        "openPRs": 22
+    },
+    {
+        "fullName": "umijs/umi",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "TypeScript",
+            "Smarty",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Less",
+            "Vue"
+        ],
+        "openIssues": 223,
+        "openPRs": 94
+    },
+    {
+        "fullName": "wechatsync/Wechatsync",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "27 months ago",
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "PHP",
+            "Vue",
+            "HTML",
+            "SCSS",
+            "Shell"
+        ],
+        "openIssues": 70,
+        "openPRs": 1
+    },
+    {
+        "fullName": "unit8co/darts",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "Python",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 225,
+        "openPRs": 27
+    },
+    {
+        "fullName": "element-hq/element-web",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 minutes ago",
+        "languages": [
+            "TypeScript",
+            "CSS",
+            "JavaScript",
+            "HTML",
+            "Python",
+            "Shell",
+            "Perl",
+            "Dockerfile"
+        ],
+        "openIssues": 3141,
+        "openPRs": 56
+    },
+    {
+        "fullName": "dzhng/deep-research",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 67,
+        "openPRs": 10
+    },
+    {
+        "fullName": "dreammis/social-auto-upload",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Python",
+            "Vue",
+            "JavaScript",
+            "SCSS",
+            "Dockerfile",
+            "Batchfile",
+            "HTML"
+        ],
+        "openIssues": 28,
+        "openPRs": 3
+    },
+    {
+        "fullName": "dotnet/core",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "PowerShell",
+            "Shell"
+        ],
+        "openIssues": 327,
+        "openPRs": 5
+    },
+    {
+        "fullName": "documenso/documenso",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 hours ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Shell",
+            "CSS",
+            "PLpgSQL",
+            "Dockerfile"
+        ],
+        "openIssues": 170,
+        "openPRs": 54
+    },
+    {
+        "fullName": "webpack-contrib/css-loader",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "68 months ago",
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": null,
+        "openPRs": null
+    },
+    {
+        "fullName": "dockur/windows",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 68,
+        "openPRs": 1
+    },
+    {
+        "fullName": "vasanthv/ahey",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "EJS",
+            "HTML",
+            "CSS",
+            "Dockerfile"
+        ],
+        "openIssues": null,
+        "openPRs": null
+    },
+    {
+        "fullName": "vastsa/FileCodeBox",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": 72,
+        "openPRs": 0
+    },
+    {
+        "fullName": "django-extensions/django-extensions",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "64 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "HTML",
+            "Makefile",
+            "CSS"
+        ],
+        "openIssues": 176,
+        "openPRs": 35
+    },
+    {
+        "fullName": "django-commons/django-debug-toolbar",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 hours ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Makefile",
+            "Jinja"
+        ],
+        "openIssues": 64,
+        "openPRs": 14
+    },
+    {
+        "fullName": "apollographql/apollo-server",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Shell"
+        ],
+        "openIssues": 56,
+        "openPRs": 21
+    },
+    {
+        "fullName": "apostrophecms/apostrophe",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "JavaScript",
+            "Vue",
+            "SCSS",
+            "HTML",
+            "CSS",
+            "Shell"
+        ],
+        "openIssues": 120,
+        "openPRs": 8
+    },
+    {
+        "fullName": "Azgaar/Fantasy-Map-Generator",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Shell",
+            "Dockerfile",
+            "Batchfile"
+        ],
+        "openIssues": 4,
+        "openPRs": 9
+    },
+    {
+        "fullName": "aquasecurity/cloudsploit",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 131,
+        "openPRs": 75
+    },
+    {
+        "fullName": "sketchplugins/plugin-directory",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Ruby"
+        ],
+        "openIssues": 0,
+        "openPRs": 1
+    },
+    {
+        "fullName": "ardalis/CleanArchitecture",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "C#"
+        ],
+        "openIssues": 17,
+        "openPRs": 5
+    },
+    {
+        "fullName": "dependency-check/DependencyCheck",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 hours ago",
+        "languages": [
+            "Java",
+            "PLSQL",
+            "Groovy",
+            "PLpgSQL",
+            "TSQL",
+            "Shell",
+            "Dockerfile",
+            "Batchfile",
+            "JavaScript"
+        ],
+        "openIssues": 261,
+        "openPRs": 4
+    },
+    {
+        "fullName": "delta-io/delta",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 hours ago",
+        "languages": [
+            "Scala",
+            "HTML",
+            "Java",
+            "Python",
+            "CSS",
+            "Shell",
+            "HCL",
+            "ANTLR",
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 748,
+        "openPRs": 473
+    },
+    {
+        "fullName": "deepspeedai/DeepSpeedExamples",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 298,
+        "openPRs": 23
+    },
+    {
+        "fullName": "deeppavlov/DeepPavlov",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 28,
+        "openPRs": 22
+    },
+    {
+        "fullName": "victornpb/undiscord",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 65,
+        "openPRs": 23
+    },
+    {
+        "fullName": "daytonaio/daytona",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 hours ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "Go",
+            "Python",
+            "JavaScript",
+            "Astro",
+            "SCSS",
+            "Dockerfile",
+            "EJS",
+            "Shell",
+            "CSS",
+            "HTML"
+        ],
+        "openIssues": 169,
+        "openPRs": 63
+    },
+    {
+        "fullName": "davidteather/TikTok-Api",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "Batchfile",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 131,
+        "openPRs": 5
+    },
+    {
+        "fullName": "datawhalechina/fun-rec",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 2,
+        "openPRs": 0
+    },
+    {
+        "fullName": "video-dev/hls.js",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 hours ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "Shell",
+            "CSS"
+        ],
+        "openIssues": 163,
+        "openPRs": 17
+    },
+    {
+        "fullName": "dagrejs/dagre",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "Shell",
+            "Makefile"
+        ],
+        "openIssues": 170,
+        "openPRs": 0
+    },
+    {
+        "fullName": "autogluon/autogluon",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "45 minutes ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Batchfile",
+            "Dockerfile"
+        ],
+        "openIssues": 348,
+        "openPRs": 22
+    },
+    {
+        "fullName": "rouge-ruby/rouge",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 days ago",
+        "languages": [
+            "Ruby",
+            "sed",
+            "TypeScript",
+            "JavaScript",
+            "Lua",
+            "Fortran",
+            "HTML",
+            "Perl",
+            "R",
+            "Hy",
+            "MoonScript"
+        ],
+        "openIssues": 158,
+        "openPRs": 108
+    },
+    {
+        "fullName": "aws/aws-sam-cli",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 days ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Java",
+            "Ruby",
+            "PowerShell",
+            "C#",
+            "Makefile",
+            "Go",
+            "JavaScript"
+        ],
+        "openIssues": 509,
+        "openPRs": 41
+    },
+    {
+        "fullName": "crytic/slither",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "Solidity",
+            "Shell",
+            "Vyper",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 408,
+        "openPRs": 71
+    },
+    {
+        "fullName": "cryptpad/cryptpad",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript",
+            "Fluent",
+            "Less",
+            "HTML",
+            "CSS",
+            "TypeScript",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 315,
+        "openPRs": 41
+    },
+    {
+        "fullName": "awslabs/mcp",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 hours ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Dockerfile",
+            "HTML",
+            "TypeScript",
+            "Jinja",
+            "CSS",
+            "MDX"
+        ],
+        "openIssues": 169,
+        "openPRs": 47
+    },
+    {
+        "fullName": "crabbly/Print.js",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "33 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "SCSS",
+            "CSS"
+        ],
+        "openIssues": 159,
+        "openPRs": 20
+    },
+    {
+        "fullName": "coze-dev/coze-studio",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "TypeScript",
+            "Go",
+            "Less",
+            "Thrift",
+            "JavaScript",
+            "HTML",
+            "HCL",
+            "Shell",
+            "MDX",
+            "Python",
+            "CSS",
+            "Makefile",
+            "Dockerfile",
+            "Smarty"
+        ],
+        "openIssues": 374,
+        "openPRs": 22
+    },
+    {
+        "fullName": "cowrie/cowrie",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 hours ago",
+        "languages": [
+            "Python",
+            "Makefile",
+            "Dockerfile",
+            "Assembly"
+        ],
+        "openIssues": 38,
+        "openPRs": 5
+    },
+    {
+        "fullName": "corpnewt/gibMacOS",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "Python",
+            "Batchfile",
+            "Shell"
+        ],
+        "openIssues": 107,
+        "openPRs": 8
+    },
+    {
+        "fullName": "visgl/deck.gl",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "Python",
+            "Jupyter Notebook",
+            "CSS",
+            "Makefile",
+            "Shell",
+            "MDX",
+            "Jinja",
+            "Dockerfile"
+        ],
+        "openIssues": 420,
+        "openPRs": 55
+    },
+    {
+        "fullName": "baidu/san",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 days ago",
+        "languages": [
+            "JavaScript",
+            "Smarty",
+            "TypeScript",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 7,
+        "openPRs": 2
+    },
+    {
+        "fullName": "conan-io/conan",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 days ago",
+        "languages": [
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": 762,
+        "openPRs": 62
+    },
+    {
+        "fullName": "composer/composer",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "PHP"
+        ],
+        "openIssues": 116,
+        "openPRs": 14
+    },
+    {
+        "fullName": "compiler-explorer/compiler-explorer",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 hours ago",
+        "languages": [
+            "TypeScript",
+            "Python",
+            "SCSS",
+            "Pug",
+            "JavaScript",
+            "PowerShell",
+            "Makefile",
+            "Shell",
+            "Julia",
+            "Clojure",
+            "Smali",
+            "Ruby",
+            "Yul",
+            "Raku",
+            "HTML",
+            "C++",
+            "Java",
+            "BitBake",
+            "Dockerfile",
+            "Go",
+            "Pascal",
+            "Solidity",
+            "Odin",
+            "Kotlin"
+        ],
+        "openIssues": 844,
+        "openPRs": 32
+    },
+    {
+        "fullName": "codeceptjs/CodeceptJS",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "Hack",
+            "TypeScript",
+            "PHP",
+            "Gherkin",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 172,
+        "openPRs": 12
+    },
+    {
+        "fullName": "code-charity/youtube",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "Python",
+            "HTML"
+        ],
+        "openIssues": 1075,
+        "openPRs": 60
+    },
+    {
+        "fullName": "bentoml/BentoML",
+        "weight": "1.02",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 hours ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Jinja",
+            "Starlark",
+            "Dockerfile",
+            "HTML",
+            "Makefile",
+            "CSS",
+            "JavaScript"
+        ],
+        "openIssues": 134,
+        "openPRs": 4
+    },
+    {
+        "fullName": "giampaolo/psutil",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "Python",
+            "C",
+            "Makefile",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 308,
+        "openPRs": 41
+    },
+    {
+        "fullName": "bayesian-optimization/BayesianOptimization",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Python",
+            "Batchfile",
+            "Makefile",
+            "Shell"
+        ],
+        "openIssues": 8,
+        "openPRs": 2
+    },
+    {
+        "fullName": "PaddlePaddle/PaddleSeg",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "Java",
+            "Shell",
+            "C++",
+            "Cuda",
+            "CMake",
+            "Cython",
+            "C",
+            "Jupyter Notebook",
+            "JavaScript",
+            "HTML",
+            "TypeScript"
+        ],
+        "openIssues": 13,
+        "openPRs": 2
+    },
+    {
+        "fullName": "lobsters/lobsters",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "34 minutes ago",
+        "languages": [
+            "Ruby",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Shell",
+            "Makefile",
+            "M4"
+        ],
+        "openIssues": 172,
+        "openPRs": 6
+    },
+    {
+        "fullName": "localsend/localsend",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "11 days ago",
+        "languages": [
+            "Dart",
+            "Rust",
+            "C++",
+            "Swift",
+            "CMake",
+            "Inno Setup",
+            "Kotlin",
+            "Shell",
+            "PowerShell",
+            "Ruby",
+            "HTML",
+            "JavaScript",
+            "Batchfile",
+            "C",
+            "Dockerfile",
+            "Objective-C"
+        ],
+        "openIssues": 801,
+        "openPRs": 22
+    },
+    {
+        "fullName": "axolotl-ai-cloud/axolotl",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "Jinja",
+            "Shell",
+            "CSS",
+            "Dockerfile"
+        ],
+        "openIssues": 106,
+        "openPRs": 93
+    },
+    {
+        "fullName": "camel-ai/camel",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 hours ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "JavaScript",
+            "Makefile",
+            "Dockerfile",
+            "HTML"
+        ],
+        "openIssues": 397,
+        "openPRs": 202
+    },
+    {
+        "fullName": "vercel/ai",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "JavaScript",
+            "Vue",
+            "Svelte"
+        ],
+        "openIssues": 811,
+        "openPRs": 186
+    },
+    {
+        "fullName": "lucidrains/denoising-diffusion-pytorch",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 146,
+        "openPRs": 4
+    },
+    {
+        "fullName": "ludwig-ai/ludwig",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": 42,
+        "openPRs": 15
+    },
+    {
+        "fullName": "PaddlePaddle/ERNIE",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Shell",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 21,
+        "openPRs": 42
+    },
+    {
+        "fullName": "mack-a/v2ray-agent",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Shell"
+        ],
+        "openIssues": 14,
+        "openPRs": 0
+    },
+    {
+        "fullName": "OthersideAI/self-operating-computer",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 80,
+        "openPRs": 23
+    },
+    {
+        "fullName": "fullcalendar/fullcalendar",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "TypeScript",
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "PHP",
+            "Smarty"
+        ],
+        "openIssues": 1029,
+        "openPRs": 50
+    },
+    {
+        "fullName": "yihong0618/bilingual_book_maker",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "10 days ago",
+        "languages": [
+            "Python",
+            "Makefile",
+            "Dockerfile"
+        ],
+        "openIssues": 134,
+        "openPRs": 8
+    },
+    {
+        "fullName": "frontend-collective/react-sortable-tree",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "54 months ago",
+        "languages": [
+            "JavaScript",
+            "CSS"
+        ],
+        "openIssues": 297,
+        "openPRs": 50
+    },
+    {
+        "fullName": "OpenRefine/OpenRefine",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "Java",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Shell",
+            "Velocity Template Language",
+            "Batchfile",
+            "Python",
+            "Inno Setup",
+            "mIRC Script",
+            "Less"
+        ],
+        "openIssues": 656,
+        "openPRs": 23
+    },
+    {
+        "fullName": "mail-in-a-box/mailinabox",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "HTML",
+            "PHP",
+            "Handlebars"
+        ],
+        "openIssues": 533,
+        "openPRs": 59
+    },
+    {
+        "fullName": "OpenFeign/feign",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 hours ago",
+        "languages": [
+            "Java",
+            "Kotlin",
+            "Shell",
+            "Mustache"
+        ],
+        "openIssues": 229,
+        "openPRs": 13
+    },
+    {
+        "fullName": "mde/ejs",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 months ago",
+        "languages": [
+            "JavaScript"
+        ],
+        "openIssues": 100,
+        "openPRs": 16
+    },
+    {
+        "fullName": "OctoPrint/OctoPrint",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "G-code",
+            "Jinja",
+            "Less",
+            "HTML",
+            "CSS"
+        ],
+        "openIssues": 254,
+        "openPRs": 4
+    },
+    {
+        "fullName": "Nyr/openvpn-install",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Shell"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "andrewyng/aisuite",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "14 days ago",
+        "languages": [
+            "Python",
+            "TypeScript",
+            "CSS",
+            "JavaScript",
+            "HTML"
+        ],
+        "openIssues": 54,
+        "openPRs": 48
+    },
+    {
+        "fullName": "bfirsh/jsnes",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "JavaScript",
+            "HTML"
+        ],
+        "openIssues": 55,
+        "openPRs": 9
+    },
+    {
+        "fullName": "bmaltais/kohya_ss",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "CSS",
+            "Dockerfile",
+            "JavaScript",
+            "Batchfile",
+            "PowerShell"
+        ],
+        "openIssues": 555,
+        "openPRs": 6
+    },
+    {
+        "fullName": "arkime/arkime",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "21 hours ago",
+        "languages": [
+            "JavaScript",
+            "Vue",
+            "C",
+            "Perl",
+            "Lua",
+            "HTML",
+            "Pug",
+            "Shell",
+            "CSS",
+            "Yacc",
+            "M4",
+            "Makefile",
+            "Python",
+            "Zeek",
+            "Stylus",
+            "SCSS",
+            "Handlebars",
+            "Dockerfile",
+            "Groovy",
+            "YARA"
+        ],
+        "openIssues": 46,
+        "openPRs": 4
+    },
+    {
+        "fullName": "typescript-eslint/typescript-eslint",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "19 hours ago",
+        "languages": [
+            "TypeScript",
+            "MDX",
+            "JavaScript",
+            "CSS",
+            "Vue"
+        ],
+        "openIssues": 290,
+        "openPRs": 46
+    },
+    {
+        "fullName": "budtmo/docker-android",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 149,
+        "openPRs": 2
+    },
+    {
+        "fullName": "Netflix/zuul",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 days ago",
+        "languages": [
+            "Java"
+        ],
+        "openIssues": 5,
+        "openPRs": 8
+    },
+    {
+        "fullName": "meta-llama/llama-models",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 145,
+        "openPRs": 18
+    },
+    {
+        "fullName": "Countly/countly-server",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 hours ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "SCSS",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 10,
+        "openPRs": 29
+    },
+    {
+        "fullName": "ymcui/Chinese-BERT-wwm",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "69 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
+    },
+    {
+        "fullName": "microg/GmsCore",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Java",
+            "Kotlin",
+            "AIDL",
+            "HTML",
+            "Makefile"
+        ],
+        "openIssues": 1139,
+        "openPRs": 27
+    },
+    {
+        "fullName": "fishaudio/Bert-VITS2",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 days ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "CSS"
+        ],
+        "openIssues": 0,
+        "openPRs": 1
+    },
+    {
+        "fullName": "bridgecrewio/checkov",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 days ago",
+        "languages": [
+            "Python",
+            "HCL",
+            "TypeScript",
+            "Bicep",
+            "Shell",
+            "Dockerfile",
+            "Jinja",
+            "Perl",
+            "Smarty",
+            "Java",
+            "Batchfile",
+            "JavaScript"
+        ],
+        "openIssues": 104,
+        "openPRs": 42
+    },
+    {
+        "fullName": "firecrawl/open-lovable",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "TypeScript",
+            "CSS",
+            "JavaScript"
+        ],
+        "openIssues": 80,
+        "openPRs": 35
+    },
+    {
+        "fullName": "NVIDIA/apex",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 days ago",
+        "languages": [
+            "Python",
+            "Cuda",
+            "C++",
+            "C",
+            "Shell"
+        ],
+        "openIssues": 675,
+        "openPRs": 79
+    },
+    {
+        "fullName": "taojy123/KeymouseGo",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "Python",
+            "QMake"
+        ],
+        "openIssues": 114,
+        "openPRs": 0
+    },
+    {
+        "fullName": "conventional-changelog/standard-version",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "55 months ago",
+        "languages": [
+            "JavaScript",
+            "Elixir"
+        ],
+        "openIssues": 265,
+        "openPRs": 46
+    },
+    {
+        "fullName": "microsoft/fluentui",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 minutes ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "MDX",
+            "SCSS",
+            "HTML",
+            "CSS",
+            "Shell",
+            "Handlebars",
+            "Dockerfile"
+        ],
+        "openIssues": 436,
+        "openPRs": 226
+    },
+    {
+        "fullName": "felangel/bloc",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "Dart",
+            "TypeScript",
+            "Kotlin",
+            "HTML",
+            "Java",
+            "JavaScript"
+        ],
+        "openIssues": 61,
+        "openPRs": 11
+    },
+    {
+        "fullName": "microsoft/semantic-kernel",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 hours ago",
+        "languages": [
+            "C#",
+            "Python",
+            "Jupyter Notebook",
+            "TypeScript",
+            "Bicep",
+            "CSS",
+            "PowerShell",
+            "HTML",
+            "Handlebars",
+            "Makefile",
+            "F#",
+            "JavaScript",
+            "Smalltalk",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 502,
+        "openPRs": 74
+    },
+    {
+        "fullName": "microsoft/vcpkg",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "30 minutes ago",
+        "languages": [
+            "CMake",
+            "PowerShell",
+            "Shell",
+            "C++",
+            "Python",
+            "C",
+            "JavaScript",
+            "Dockerfile",
+            "Qt Script",
+            "Nix",
+            "Batchfile",
+            "HTML"
+        ],
+        "openIssues": 1064,
+        "openPRs": 271
+    },
+    {
+        "fullName": "AirtestProject/Airtest",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "JavaScript",
+            "CSS",
+            "Shell"
+        ],
+        "openIssues": 452,
+        "openPRs": 16
+    },
+    {
+        "fullName": "whyour/qinglong",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 days ago",
+        "languages": [
+            "TypeScript",
+            "Shell",
+            "Less",
+            "Python",
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 65,
+        "openPRs": 3
+    },
+    {
+        "fullName": "sapientinc/HRM",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "Jupyter Notebook",
+            "JavaScript"
+        ],
+        "openIssues": 57,
+        "openPRs": 12
+    },
+    {
+        "fullName": "continuedev/continue",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Kotlin",
+            "Python",
+            "Rust",
+            "Tree-sitter Query",
+            "CSS",
+            "Shell",
+            "Java",
+            "PowerShell",
+            "HTML",
+            "PHP",
+            "C#",
+            "Jupyter Notebook",
+            "Scheme",
+            "Ruby",
+            "Dockerfile",
+            "Go"
+        ],
+        "openIssues": 630,
+        "openPRs": 29
+    },
+    {
+        "fullName": "CopilotKit/CopilotKit",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "TypeScript",
+            "Python",
+            "CSS",
+            "Shell",
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 336,
+        "openPRs": 109
+    },
+    {
+        "fullName": "facebookresearch/pytorch3d",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python",
+            "C++",
+            "Cuda",
+            "C",
+            "Shell",
+            "JavaScript",
+            "Batchfile",
+            "CSS"
+        ],
+        "openIssues": 278,
+        "openPRs": 26
+    },
+    {
+        "fullName": "mitre/caldera",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "12 days ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "CSS",
+            "Sass",
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 65,
+        "openPRs": 11
+    },
+    {
+        "fullName": "modelscope/FunASR",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 months ago",
+        "languages": [
+            "Python",
+            "C++",
+            "Shell",
+            "JavaScript",
+            "C#",
+            "Vue",
+            "Java",
+            "CMake",
+            "SCSS",
+            "Perl",
+            "Objective-C++",
+            "Objective-C",
+            "HTML",
+            "Go",
+            "Cuda",
+            "Makefile",
+            "Kotlin",
+            "C",
+            "Ruby"
+        ],
+        "openIssues": 469,
+        "openPRs": 10
+    },
+    {
+        "fullName": "davidjbradshaw/iframe-resizer",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "Vue",
+            "TypeScript",
+            "Shell",
+            "CSS"
+        ],
+        "openIssues": 5,
+        "openPRs": 5
+    },
+    {
+        "fullName": "mongo-express/mongo-express",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "2 days ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Dockerfile"
+        ],
+        "openIssues": 158,
+        "openPRs": 21
+    },
+    {
+        "fullName": "voicepaw/so-vits-svc-fork",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 hours ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "Batchfile",
+            "Nix",
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 145,
+        "openPRs": 12
+    },
+    {
+        "fullName": "monkeytypegame/monkeytype",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "TypeScript",
+            "HTML",
+            "SCSS",
+            "CSS",
+            "JavaScript",
+            "Lua",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 45,
+        "openPRs": 35
+    },
+    {
+        "fullName": "LonamiWebs/Telethon",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 days ago",
+        "languages": [
+            "Python",
+            "CSS",
+            "HTML",
+            "JavaScript",
+            "Batchfile",
+            "Makefile",
+            "Shell"
+        ],
+        "openIssues": 100,
+        "openPRs": 6
+    },
+    {
+        "fullName": "mvdctop/Movie_Data_Capture",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 months ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Makefile",
+            "PowerShell",
+            "Dockerfile"
+        ],
+        "openIssues": 0,
+        "openPRs": 2
+    },
+    {
+        "fullName": "fabricjs/fabric.js",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "13 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "HTML",
+            "Vue",
+            "CSS"
+        ],
+        "openIssues": 423,
+        "openPRs": 36
+    },
+    {
+        "fullName": "Lightning-AI/litgpt",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 hours ago",
+        "languages": [
+            "Python",
+            "Dockerfile"
+        ],
+        "openIssues": 233,
+        "openPRs": 15
+    },
+    {
+        "fullName": "expressjs/session",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "23 days ago",
+        "languages": [
+            "JavaScript",
+            "Shell"
+        ],
+        "openIssues": 52,
+        "openPRs": 53
+    },
+    {
+        "fullName": "LibreTranslate/LibreTranslate",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "8 days ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "Dockerfile",
+            "CSS",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 144,
+        "openPRs": 0
+    },
+    {
+        "fullName": "neo4j/neo4j",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "105 months ago",
+        "languages": [
+            "Java",
+            "Scala",
+            "Gherkin",
+            "Roff",
+            "Shell",
+            "PowerShell",
+            "Makefile",
+            "Batchfile",
+            "Dockerfile",
+            "HTML"
+        ],
+        "openIssues": 256,
+        "openPRs": 4
+    },
+    {
+        "fullName": "Comfy-Org/ComfyUI-Manager",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Jupyter Notebook",
+            "CSS",
+            "Shell",
+            "Batchfile"
+        ],
+        "openIssues": 206,
+        "openPRs": 41
+    },
+    {
+        "fullName": "dataarts/dat.gui",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "45 months ago",
+        "languages": [
+            "JavaScript",
+            "HTML",
+            "SCSS",
+            "CSS"
+        ],
+        "openIssues": 78,
+        "openPRs": 41
+    },
+    {
+        "fullName": "evilsocket/pwnagotchi",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "9 months ago",
+        "languages": [
+            "Python",
+            "HTML",
+            "Makefile"
+        ],
+        "openIssues": 267,
+        "openPRs": 29
+    },
+    {
+        "fullName": "darkreader/darkreader",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 hours ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Less"
+        ],
+        "openIssues": 1353,
+        "openPRs": 39
+    },
+    {
+        "fullName": "ultrafunkamsterdam/undetected-chromedriver",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "27 months ago",
+        "languages": [
+            "Python"
+        ],
+        "openIssues": 1084,
+        "openPRs": 57
+    },
+    {
+        "fullName": "ether/etherpad-lite",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "7 days ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "Shell",
+            "Dockerfile",
+            "Batchfile",
+            "NSIS"
+        ],
+        "openIssues": 116,
+        "openPRs": 10
+    },
+    {
+        "fullName": "baidu/amis",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "4 days ago",
+        "languages": [
+            "TypeScript",
+            "SCSS",
+            "JavaScript",
+            "XSLT",
+            "CSS",
+            "Python",
+            "HTML",
+            "Shell",
+            "Jupyter Notebook",
+            "Dockerfile"
+        ],
+        "openIssues": 1693,
+        "openPRs": 20
+    },
+    {
+        "fullName": "errbit/errbit",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Ruby",
+            "HTML",
+            "Haml",
+            "JavaScript",
+            "Dockerfile",
+            "CSS",
+            "Shell",
+            "Procfile"
+        ],
+        "openIssues": 76,
+        "openPRs": 28
+    },
+    {
+        "fullName": "wechaty/wechaty",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 171,
+        "openPRs": 17
+    },
+    {
+        "fullName": "sktime/sktime",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "18 hours ago",
+        "languages": [
+            "Python",
+            "Jupyter Notebook",
+            "CSS",
+            "MATLAB",
+            "Makefile",
+            "Shell",
+            "Dockerfile"
+        ],
+        "openIssues": 1216,
+        "openPRs": 433
+    },
+    {
+        "fullName": "zfile-dev/zfile",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "6 months ago",
+        "languages": [
+            "Java",
+            "HTML",
+            "Shell",
+            "Dockerfile",
+            "Batchfile"
+        ],
+        "openIssues": 47,
+        "openPRs": 0
+    },
+    {
+        "fullName": "bytedance/xgplayer",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 days ago",
+        "languages": [
+            "JavaScript",
+            "SCSS",
+            "HTML",
+            "TypeScript"
+        ],
+        "openIssues": 38,
+        "openPRs": 3
+    },
+    {
+        "fullName": "nerfstudio-project/nerfstudio",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "TypeScript",
+            "Shell",
+            "SCSS",
+            "Dockerfile",
+            "HTML"
+        ],
+        "openIssues": 834,
+        "openPRs": 85
+    },
+    {
+        "fullName": "Kaggle/kaggle-api",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "17 hours ago",
+        "languages": [
+            "Python",
+            "Shell",
+            "Jupyter Notebook",
+            "Dockerfile"
+        ],
+        "openIssues": 141,
+        "openPRs": 0
+    },
+    {
+        "fullName": "JoeanAmier/XHS-Downloader",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 days ago",
+        "languages": [
+            "Python",
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 26,
+        "openPRs": 2
+    },
+    {
+        "fullName": "webtorrent/webtorrent-desktop",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "28 days ago",
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "EJS",
+            "Shell"
+        ],
+        "openIssues": 59,
+        "openPRs": 17
+    },
+    {
+        "fullName": "wangrongding/wechat-bot",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "JavaScript",
+            "Dockerfile"
+        ],
+        "openIssues": 106,
+        "openPRs": 4
+    },
+    {
+        "fullName": "shentao/vue-multiselect",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 months ago",
+        "languages": [
+            "JavaScript",
+            "Vue",
+            "HTML"
+        ],
+        "openIssues": 242,
+        "openPRs": 55
+    },
+    {
+        "fullName": "redis/redis-rb",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "23 hours ago",
+        "languages": [
+            "Ruby",
+            "Makefile",
+            "Shell",
+            "HTML"
+        ],
+        "openIssues": 19,
+        "openPRs": 3
+    },
+    {
+        "fullName": "Jiayi-Pan/TinyZero",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": null,
+        "languages": [
+            "Python",
+            "Shell"
+        ],
+        "openIssues": 70,
+        "openPRs": 11
+    },
+    {
+        "fullName": "numba/numba",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "1 days ago",
+        "languages": [
+            "Python",
+            "C",
+            "C++",
+            "Shell",
+            "Batchfile",
+            "HTML",
+            "Cuda",
+            "GDB"
+        ],
+        "openIssues": 1641,
+        "openPRs": 108
+    },
+    {
+        "fullName": "sub-store-org/Sub-Store",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "22 months ago",
+        "languages": [
+            "JavaScript",
+            "Vim Snippet"
+        ],
+        "openIssues": 9,
+        "openPRs": 5
+    },
+    {
+        "fullName": "Jackywine/Bella",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "3 months ago",
+        "languages": [
+            "JavaScript",
+            "CSS",
+            "HTML"
+        ],
+        "openIssues": 60,
+        "openPRs": 15
+    },
+    {
+        "fullName": "elasticsearch-dump/elasticsearch-dump",
+        "weight": "1.03",
+        "inactiveAt": null,
+        "lastMergedAgo": "5 months ago",
+        "languages": [
+            "JavaScript",
+            "Dockerfile",
+            "Shell"
+        ],
+        "openIssues": 0,
+        "openPRs": 0
     }
 ]
