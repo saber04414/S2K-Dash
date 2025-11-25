@@ -13,6 +13,8 @@ type GitTensorItem = {
     inactiveAt: string
     lastMergedAgo: string | null
     languages: string[]
+    openIssues: number
+    openPRs: number
 }
 
 const ALLOWED_LANGUAGES = ['Python', 'JavaScript', 'TypeScript', 'Go', 'Rust', 'PHP', 'Java', 'C', 'C++'];
@@ -105,6 +107,12 @@ const Sn74Page = () => {
                     const langA = filteredA.join(', ') || '';
                     const langB = filteredB.join(', ') || '';
                     return dir * langA.localeCompare(langB);
+                }
+                case "openIssues": {
+                    return dir * ((a.openIssues || 0) - (b.openIssues || 0));
+                }
+                case "openPRs": {
+                    return dir * ((a.openPRs || 0) - (b.openPRs || 0));
                 }
                 default:
                     return 0;
@@ -222,6 +230,12 @@ const Sn74Page = () => {
                                 <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('languages')}>
                                     Languages {renderSortIcon('languages')}
                                 </th>
+                                <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('openIssues')}>
+                                    Open Issues {renderSortIcon('openIssues')}
+                                </th>
+                                <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('openPRs')}>
+                                    Open PRs {renderSortIcon('openPRs')}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -261,6 +275,8 @@ const Sn74Page = () => {
                                             );
                                         })()}
                                     </td>
+                                    <td className='text-center py-3'>{item.openIssues ?? 0}</td>
+                                    <td className='text-center py-3'>{item.openPRs ?? 0}</td>
                                 </tr>
                             ))}
                         </tbody>
