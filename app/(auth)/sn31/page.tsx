@@ -28,7 +28,7 @@ const Sn31Page = () => {
     const [itemsPerPage, setItemsPerPage] = useState<number>(50);
     const [searchQuery, setSearchQuery] = useState<string>('');
     const [connectionFilter, setConnectionFilter] = useState<string>('all');
-    const { data, error, isLoading } = useSWR<VPSResponse>('http://2.56.179.136:31000/api/candles', fetcher, {
+    const { data, error, isLoading } = useSWR<VPSResponse>('/api/getVPSStatus', fetcher, {
         refreshInterval: 10_000, // Refresh every 10 seconds
         revalidateOnFocus: false,
     })
