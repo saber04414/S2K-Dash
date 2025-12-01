@@ -35,10 +35,12 @@ export async function GET(req: Request) {
     const response = await axios.get(
       `http://2.56.179.136:41410/metagraph/netuid/${subnetId}/`
     );
+
     const response_data = await response.data;
     const sidebar_res = await axios.get(
       `https://api.dev.taomarketcap.com/internal/v1/subnets/${subnetId}/`
     );
+
     const sidebar_data = await sidebar_res.data.latest_snapshot;
 
     const filtered_data = response_data.data.neurons.neurons.filter((res_item: any) =>

@@ -66,6 +66,22 @@ const Sn74Page = () => {
         return Infinity;
     };
 
+    const formatDate = (dateString: string | null): string => {
+        if (!dateString) return 'N/A';
+        try {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        } catch {
+            return dateString;
+        }
+    };
+
     const filterData = (data: GitTensorItem[]) => {
         if (!data) return [];
         
@@ -100,6 +116,11 @@ const Sn74Page = () => {
                     const daysA = parseLastMerged(a.lastMergedAgo);
                     const daysB = parseLastMerged(b.lastMergedAgo);
                     return dir * (daysA - daysB);
+                }
+                case "inactiveAt": {
+                    const dateA = a.inactiveAt ? new Date(a.inactiveAt).getTime() : 0;
+                    const dateB = b.inactiveAt ? new Date(b.inactiveAt).getTime() : 0;
+                    return dir * (dateA - dateB);
                 }
                 case "languages": {
                     const filteredA = (a.languages || []).filter(lang => ALLOWED_LANGUAGES.includes(lang));
@@ -227,6 +248,9 @@ const Sn74Page = () => {
                                 <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('lastMerged')}>
                                     Last Merged {renderSortIcon('lastMerged')}
                                 </th>
+                                <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('inactiveAt')}>
+                                    Inactive At {renderSortIcon('inactiveAt')}
+                                </th>
                                 <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('languages')}>
                                     Languages {renderSortIcon('languages')}
                                 </th>
@@ -254,6 +278,7 @@ const Sn74Page = () => {
                                     </td>
                                     <td className='text-center py-3'>{item.weight}</td>
                                     <td className='text-center py-3'>{item.lastMergedAgo || 'N/A'}</td>
+                                    <td className='text-center py-3'>{formatDate(item.inactiveAt)}</td>
                                     <td className='text-center py-3'>
                                         {(() => {
                                             const filteredLanguages = item.languages?.filter(lang => 
