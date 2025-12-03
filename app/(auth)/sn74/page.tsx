@@ -28,8 +28,13 @@ const Sn74Page = () => {
     const [searchQuery, setSearchQuery] = useState<string>('');
     const [selectedLanguage, setSelectedLanguage] = useState<string>('all');
     const [weightFilter, setWeightFilter] = useState<string>('');
+    const [weightOperator, setWeightOperator] = useState<string>('>');
     const [lastMergedFilter, setLastMergedFilter] = useState<string>('');
+    const [lastMergedOperator, setLastMergedOperator] = useState<string>('<');
     const [openIssuesFilter, setOpenIssuesFilter] = useState<string>('');
+    const [openIssuesOperator, setOpenIssuesOperator] = useState<string>('<');
+    const [openPRsFilter, setOpenPRsFilter] = useState<string>('');
+    const [openPRsOperator, setOpenPRsOperator] = useState<string>('<');
     const { data, error, isLoading } = useSWR('/gittensor.json', fetcher, {
         revalidateOnFocus: false,
     })
@@ -97,34 +102,71 @@ const Sn74Page = () => {
             const matchesLanguage = selectedLanguage === 'all' || 
                 (item.languages && item.languages.includes(selectedLanguage));
             
-            // Weight filter (bigger than)
+            // Weight filter with operator
             const matchesWeight = weightFilter === '' || 
                 (() => {
                     const filterValue = parseFloat(weightFilter);
                     if (isNaN(filterValue)) return true;
                     const itemWeight = parseFloat(item.weight) || 0;
-                    return itemWeight > filterValue;
+                    switch (weightOperator) {
+                        case '>': return itemWeight > filterValue;
+                        case '<': return itemWeight < filterValue;
+                        case '>=': return itemWeight >= filterValue;
+                        case '<=': return itemWeight <= filterValue;
+                        case '=': return itemWeight === filterValue;
+                        default: return true;
+                    }
                 })();
             
-            // Last Merged filter (less than X days)
+            // Last Merged filter with operator
             const matchesLastMerged = lastMergedFilter === '' || 
                 (() => {
                     const filterDays = parseFloat(lastMergedFilter);
                     if (isNaN(filterDays)) return true;
                     const itemDays = parseLastMerged(item.lastMergedAgo);
-                    return itemDays < filterDays;
+                    switch (lastMergedOperator) {
+                        case '>': return itemDays > filterDays;
+                        case '<': return itemDays < filterDays;
+                        case '>=': return itemDays >= filterDays;
+                        case '<=': return itemDays <= filterDays;
+                        case '=': return itemDays === filterDays;
+                        default: return true;
+                    }
                 })();
             
-            // Open Issues filter (under X)
+            // Open Issues filter with operator
             const matchesOpenIssues = openIssuesFilter === '' || 
                 (() => {
                     const filterValue = parseInt(openIssuesFilter, 10);
                     if (isNaN(filterValue)) return true;
                     const itemIssues = item.openIssues || 0;
-                    return itemIssues < filterValue;
+                    switch (openIssuesOperator) {
+                        case '>': return itemIssues > filterValue;
+                        case '<': return itemIssues < filterValue;
+                        case '>=': return itemIssues >= filterValue;
+                        case '<=': return itemIssues <= filterValue;
+                        case '=': return itemIssues === filterValue;
+                        default: return true;
+                    }
                 })();
             
-            return matchesSearch && matchesLanguage && matchesWeight && matchesLastMerged && matchesOpenIssues;
+            // Open PRs filter with operator
+            const matchesOpenPRs = openPRsFilter === '' || 
+                (() => {
+                    const filterValue = parseInt(openPRsFilter, 10);
+                    if (isNaN(filterValue)) return true;
+                    const itemPRs = item.openPRs || 0;
+                    switch (openPRsOperator) {
+                        case '>': return itemPRs > filterValue;
+                        case '<': return itemPRs < filterValue;
+                        case '>=': return itemPRs >= filterValue;
+                        case '<=': return itemPRs <= filterValue;
+                        case '=': return itemPRs === filterValue;
+                        default: return true;
+                    }
+                })();
+            
+            return matchesSearch && matchesLanguage && matchesWeight && matchesLastMerged && matchesOpenIssues && matchesOpenPRs;
         });
     };
 
@@ -271,7 +313,21 @@ const Sn74Page = () => {
                         <span className='text-sm text-slate-400'>Filters:</span>
                     </div>
                     <div className='flex flex-row items-center gap-2'>
-                        <label className='text-sm text-slate-400'>Weight &gt;</label>
+                        <label className='text-sm text-slate-400'>Weight</label>
+                        <select
+                            value={weightOperator}
+                            onChange={(e) => {
+                                setWeightOperator(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='px-2 py-1 bg-slate-800 border border-slate-600 rounded text-sm text-white focus:outline-none focus:border-slate-500'
+                        >
+                            <option value='>'>&gt;</option>
+                            <option value='<'>&lt;</option>
+                            <option value='>='>&gt;=</option>
+                            <option value='<='>&lt;=</option>
+                            <option value='='>=</option>
+                        </select>
                         <input
                             type='number'
                             step='0.01'
@@ -296,7 +352,21 @@ const Sn74Page = () => {
                         )}
                     </div>
                     <div className='flex flex-row items-center gap-2'>
-                        <label className='text-sm text-slate-400'>Last Merged &lt;</label>
+                        <label className='text-sm text-slate-400'>Last Merged</label>
+                        <select
+                            value={lastMergedOperator}
+                            onChange={(e) => {
+                                setLastMergedOperator(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='px-2 py-1 bg-slate-800 border border-slate-600 rounded text-sm text-white focus:outline-none focus:border-slate-500'
+                        >
+                            <option value='>'>&gt;</option>
+                            <option value='<'>&lt;</option>
+                            <option value='>='>&gt;=</option>
+                            <option value='<='>&lt;=</option>
+                            <option value='='>=</option>
+                        </select>
                         <input
                             type='number'
                             step='0.1'
@@ -321,7 +391,21 @@ const Sn74Page = () => {
                         )}
                     </div>
                     <div className='flex flex-row items-center gap-2'>
-                        <label className='text-sm text-slate-400'>Open Issues &lt;</label>
+                        <label className='text-sm text-slate-400'>Open Issues</label>
+                        <select
+                            value={openIssuesOperator}
+                            onChange={(e) => {
+                                setOpenIssuesOperator(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='px-2 py-1 bg-slate-800 border border-slate-600 rounded text-sm text-white focus:outline-none focus:border-slate-500'
+                        >
+                            <option value='>'>&gt;</option>
+                            <option value='<'>&lt;</option>
+                            <option value='>='>&gt;=</option>
+                            <option value='<='>&lt;=</option>
+                            <option value='='>=</option>
+                        </select>
                         <input
                             type='number'
                             placeholder='e.g. 10'
@@ -344,12 +428,51 @@ const Sn74Page = () => {
                             </button>
                         )}
                     </div>
-                    {(weightFilter || lastMergedFilter || openIssuesFilter) && (
+                    <div className='flex flex-row items-center gap-2'>
+                        <label className='text-sm text-slate-400'>Open PRs</label>
+                        <select
+                            value={openPRsOperator}
+                            onChange={(e) => {
+                                setOpenPRsOperator(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='px-2 py-1 bg-slate-800 border border-slate-600 rounded text-sm text-white focus:outline-none focus:border-slate-500'
+                        >
+                            <option value='>'>&gt;</option>
+                            <option value='<'>&lt;</option>
+                            <option value='>='>&gt;=</option>
+                            <option value='<='>&lt;=</option>
+                            <option value='='>=</option>
+                        </select>
+                        <input
+                            type='number'
+                            placeholder='e.g. 5'
+                            value={openPRsFilter}
+                            onChange={(e) => {
+                                setOpenPRsFilter(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='w-20 px-2 py-1 bg-slate-800 border border-slate-600 rounded text-sm text-white placeholder-slate-500 focus:outline-none focus:border-slate-500'
+                        />
+                        {openPRsFilter && (
+                            <button
+                                onClick={() => {
+                                    setOpenPRsFilter('');
+                                    setCurrentPage(1);
+                                }}
+                                className='text-slate-400 hover:text-white transition-colors'
+                            >
+                                <X size={14} />
+                            </button>
+                        )}
+                    </div>
+                    {(weightFilter || lastMergedFilter || openIssuesFilter || openPRsFilter) && (
                         <button
                             onClick={() => {
                                 setWeightFilter('');
                                 setLastMergedFilter('');
                                 setOpenIssuesFilter('');
+                                setOpenPRsFilter('');
                                 setCurrentPage(1);
                             }}
                             className='text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1'
