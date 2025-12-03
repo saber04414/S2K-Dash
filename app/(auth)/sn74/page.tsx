@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import useSWR from 'swr'
 import { fetcher } from '@/utils/fetcher'
 import ImageLoadingSpinner from '@/components/ImageLoadingSpinner'
-import { ArrowLeft, ArrowUp, ArrowDown, ChevronLeft, ChevronRight, Search } from 'lucide-react'
+import { ArrowLeft, ArrowUp, ArrowDown, ChevronLeft, ChevronRight, Search, Filter, X } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import clsx from 'clsx'
 
@@ -27,6 +27,9 @@ const Sn74Page = () => {
     const [itemsPerPage, setItemsPerPage] = useState<number>(50);
     const [searchQuery, setSearchQuery] = useState<string>('');
     const [selectedLanguage, setSelectedLanguage] = useState<string>('all');
+    const [weightFilter, setWeightFilter] = useState<string>('');
+    const [lastMergedFilter, setLastMergedFilter] = useState<string>('');
+    const [openIssuesFilter, setOpenIssuesFilter] = useState<string>('');
     const { data, error, isLoading } = useSWR('/gittensor.json', fetcher, {
         revalidateOnFocus: false,
     })
@@ -94,7 +97,34 @@ const Sn74Page = () => {
             const matchesLanguage = selectedLanguage === 'all' || 
                 (item.languages && item.languages.includes(selectedLanguage));
             
-            return matchesSearch && matchesLanguage;
+            // Weight filter (bigger than)
+            const matchesWeight = weightFilter === '' || 
+                (() => {
+                    const filterValue = parseFloat(weightFilter);
+                    if (isNaN(filterValue)) return true;
+                    const itemWeight = parseFloat(item.weight) || 0;
+                    return itemWeight > filterValue;
+                })();
+            
+            // Last Merged filter (less than X days)
+            const matchesLastMerged = lastMergedFilter === '' || 
+                (() => {
+                    const filterDays = parseFloat(lastMergedFilter);
+                    if (isNaN(filterDays)) return true;
+                    const itemDays = parseLastMerged(item.lastMergedAgo);
+                    return itemDays < filterDays;
+                })();
+            
+            // Open Issues filter (under X)
+            const matchesOpenIssues = openIssuesFilter === '' || 
+                (() => {
+                    const filterValue = parseInt(openIssuesFilter, 10);
+                    if (isNaN(filterValue)) return true;
+                    const itemIssues = item.openIssues || 0;
+                    return itemIssues < filterValue;
+                })();
+            
+            return matchesSearch && matchesLanguage && matchesWeight && matchesLastMerged && matchesOpenIssues;
         });
     };
 
@@ -233,6 +263,101 @@ const Sn74Page = () => {
                             ))}
                         </select>
                     </div>
+                </div>
+                {/* Filter Section */}
+                <div className='flex flex-row gap-4 items-center justify-center flex-wrap'>
+                    <div className='flex flex-row items-center gap-2'>
+                        <Filter size={16} className='text-slate-400' />
+                        <span className='text-sm text-slate-400'>Filters:</span>
+                    </div>
+                    <div className='flex flex-row items-center gap-2'>
+                        <label className='text-sm text-slate-400'>Weight &gt;</label>
+                        <input
+                            type='number'
+                            step='0.01'
+                            placeholder='e.g. 6'
+                            value={weightFilter}
+                            onChange={(e) => {
+                                setWeightFilter(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='w-20 px-2 py-1 bg-slate-800 border border-slate-600 rounded text-sm text-white placeholder-slate-500 focus:outline-none focus:border-slate-500'
+                        />
+                        {weightFilter && (
+                            <button
+                                onClick={() => {
+                                    setWeightFilter('');
+                                    setCurrentPage(1);
+                                }}
+                                className='text-slate-400 hover:text-white transition-colors'
+                            >
+                                <X size={14} />
+                            </button>
+                        )}
+                    </div>
+                    <div className='flex flex-row items-center gap-2'>
+                        <label className='text-sm text-slate-400'>Last Merged &lt;</label>
+                        <input
+                            type='number'
+                            step='0.1'
+                            placeholder='days (e.g. 1)'
+                            value={lastMergedFilter}
+                            onChange={(e) => {
+                                setLastMergedFilter(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='w-24 px-2 py-1 bg-slate-800 border border-slate-600 rounded text-sm text-white placeholder-slate-500 focus:outline-none focus:border-slate-500'
+                        />
+                        {lastMergedFilter && (
+                            <button
+                                onClick={() => {
+                                    setLastMergedFilter('');
+                                    setCurrentPage(1);
+                                }}
+                                className='text-slate-400 hover:text-white transition-colors'
+                            >
+                                <X size={14} />
+                            </button>
+                        )}
+                    </div>
+                    <div className='flex flex-row items-center gap-2'>
+                        <label className='text-sm text-slate-400'>Open Issues &lt;</label>
+                        <input
+                            type='number'
+                            placeholder='e.g. 10'
+                            value={openIssuesFilter}
+                            onChange={(e) => {
+                                setOpenIssuesFilter(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='w-20 px-2 py-1 bg-slate-800 border border-slate-600 rounded text-sm text-white placeholder-slate-500 focus:outline-none focus:border-slate-500'
+                        />
+                        {openIssuesFilter && (
+                            <button
+                                onClick={() => {
+                                    setOpenIssuesFilter('');
+                                    setCurrentPage(1);
+                                }}
+                                className='text-slate-400 hover:text-white transition-colors'
+                            >
+                                <X size={14} />
+                            </button>
+                        )}
+                    </div>
+                    {(weightFilter || lastMergedFilter || openIssuesFilter) && (
+                        <button
+                            onClick={() => {
+                                setWeightFilter('');
+                                setLastMergedFilter('');
+                                setOpenIssuesFilter('');
+                                setCurrentPage(1);
+                            }}
+                            className='text-sm text-slate-400 hover:text-white transition-colors flex items-center gap-1'
+                        >
+                            <X size={14} />
+                            Clear All
+                        </button>
+                    )}
                 </div>
                 <div className='flex flex-col gap-2'>
                     <table className='w-full'>
