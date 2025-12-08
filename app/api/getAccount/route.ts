@@ -6,7 +6,7 @@ export async function GET(req: Request) {
     try {
         const url = new URL(req.url); // Create a URL object from the request URL
         const coldkey_address = url.searchParams.get('coldkey_address'); // Get the 'day' query parameter
-        const result = await axios.get(`http://2.56.179.136:41410/metagraph/coldkey/${coldkey_address}`);
+        const result = await axios.get(`http://88.99.66.154:41410/metagraph/coldkey/${coldkey_address}`);
         const response = await fetch(
             "https://api.mexc.com/api/v3/ticker/price?symbol=TAOUSDT",
             {

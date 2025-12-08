@@ -33,7 +33,7 @@ export async function GET(req: Request) {
 
   try {
     const response = await axios.get(
-      `http://2.56.179.136:41410/metagraph/netuid/${subnetId}/`
+      `http://88.99.66.154:41410/metagraph/netuid/${subnetId}/`
     );
 
     const response_data = await response.data;

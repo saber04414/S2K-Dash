@@ -6,7 +6,7 @@ export const revalidate = 0;
 
 export async function GET() {
     try {
-        const response = await axios.get('http://2.56.179.136:31000/api/candles', {
+        const response = await axios.get('http://88.99.66.154:31000/api/candles', {
             headers: {
                 'Content-Type': 'application/json',
             },

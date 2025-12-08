@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 0;
 export async function GET() {
     try {
-        const result = await axios.get(`http://2.56.179.136:41410/subnets`);
+        const result = await axios.get(`http://88.99.66.154:41410/subnets`);
         const data = result.data;
         return NextResponse.json({ data }, { status: 200 });
 
