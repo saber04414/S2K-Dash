@@ -147,6 +147,8 @@ const MyStatusPage = () => {
             return dir * a.hotkey.localeCompare(b.hotkey);
           case "incentive":
             return dir * (a.incentive - b.incentive);
+          case "emission":
+            return dir * (a.emission - b.emission);
           // case "performance":
           //   return dir * (a.miner_performance - b.miner_performance);
           case "axon":
@@ -583,6 +585,12 @@ const MyStatusPage = () => {
                         onClick={() => handleSort("incentive")}
                       >
                         Incentive {renderSortIcon("incentive")}
+                      </th>
+                      <th
+                        className="text-center py-2 cursor-pointer hover:bg-slate-600 transition-colors"
+                        onClick={() => handleSort("emission")}
+                      >
+                        Emission {renderSortIcon("emission")}
                       </th>
                       {/* <th
                         className="text-center py-2 cursor-pointer"

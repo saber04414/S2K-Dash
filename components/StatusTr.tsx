@@ -61,6 +61,7 @@ const StatusTr = (props: Props) => {
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.coldkey)}>{showKey(item.coldkey)}</td>
             <td className='text-center py-2 cursor-pointer' onClick={() => copyKey(item.hotkey)}>{showKey(item.hotkey)}</td>
             <td className='text-center py-2'>{showNumber(item.incentive, 4)}</td>
+            <td className='text-center py-2'>{showNumber(item.emission, 4)}</td>
             {/* <td className='text-center py-2'>{showNumber(item.miner_performance, 2)}</td> */}
             <td className='text-center py-2'>{item.axon}</td>
             <td className="text-center py-2">
