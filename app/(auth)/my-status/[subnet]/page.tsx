@@ -673,6 +673,7 @@ const MyStatusPage = () => {
                       <td></td>
                       <td></td>
                       <td></td>
+                      <td></td>
                       {currency === "TAO" ? (
                         <td className="text-center py-2">
                           {showNumber(
