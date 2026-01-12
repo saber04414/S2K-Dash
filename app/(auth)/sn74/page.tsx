@@ -28,6 +28,7 @@ const Sn74Page = () => {
     const [itemsPerPage, setItemsPerPage] = useState<number>(50);
     const [searchQuery, setSearchQuery] = useState<string>('');
     const [selectedLanguage, setSelectedLanguage] = useState<string>('all');
+    const [selectedTier, setSelectedTier] = useState<string>('all');
     const [weightFilter, setWeightFilter] = useState<string>('');
     const [weightOperator, setWeightOperator] = useState<string>('>');
     const [lastMergedFilter, setLastMergedFilter] = useState<string>('');
@@ -103,6 +104,10 @@ const Sn74Page = () => {
             const matchesLanguage = selectedLanguage === 'all' || 
                 (item.languages && item.languages.includes(selectedLanguage));
             
+            // Tier filter
+            const matchesTier = selectedTier === 'all' || 
+                (item.tier && item.tier === selectedTier);
+            
             // Weight filter with operator
             const matchesWeight = weightFilter === '' || 
                 (() => {
@@ -167,7 +172,7 @@ const Sn74Page = () => {
                     }
                 })();
             
-            return matchesSearch && matchesLanguage && matchesWeight && matchesLastMerged && matchesOpenIssues && matchesOpenPRs;
+            return matchesSearch && matchesLanguage && matchesTier && matchesWeight && matchesLastMerged && matchesOpenIssues && matchesOpenPRs;
         });
     };
 
@@ -310,6 +315,22 @@ const Sn74Page = () => {
                             {ALLOWED_LANGUAGES.map((lang) => (
                                 <option key={lang} value={lang}>{lang}</option>
                             ))}
+                        </select>
+                    </div>
+                    <div className='flex flex-row items-center gap-2'>
+                        <label className='text-sm text-slate-400'>Filter by tier:</label>
+                        <select
+                            value={selectedTier}
+                            onChange={(e) => {
+                                setSelectedTier(e.target.value);
+                                setCurrentPage(1);
+                            }}
+                            className='px-3 py-2 bg-slate-800 border border-slate-600 rounded-md text-white focus:outline-none focus:border-slate-500'
+                        >
+                            <option value='all'>All Tiers</option>
+                            <option value='Gold'>Gold</option>
+                            <option value='Silver'>Silver</option>
+                            <option value='Bronze'>Bronze</option>
                         </select>
                     </div>
                 </div>
