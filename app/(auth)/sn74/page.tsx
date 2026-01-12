@@ -15,6 +15,7 @@ type GitTensorItem = {
     languages: string[]
     openIssues: number
     openPRs: number
+    tier: string
 }
 
 const ALLOWED_LANGUAGES = ['Python', 'JavaScript', 'TypeScript', 'Go', 'Rust', 'PHP', 'Java', 'C', 'C++'];
@@ -206,6 +207,12 @@ const Sn74Page = () => {
                 }
                 case "openPRs": {
                     return dir * ((a.openPRs || 0) - (b.openPRs || 0));
+                }
+                case "tier": {
+                    const tierOrder: { [key: string]: number } = { 'Gold': 3, 'Silver': 2, 'Bronze': 1 };
+                    const tierA = tierOrder[a.tier] || 0;
+                    const tierB = tierOrder[b.tier] || 0;
+                    return dir * (tierA - tierB);
                 }
                 default:
                     return 0;
@@ -508,6 +515,9 @@ const Sn74Page = () => {
                                 <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('openPRs')}>
                                     Open PRs {renderSortIcon('openPRs')}
                                 </th>
+                                <th className='text-center py-3 cursor-pointer hover:bg-slate-600 transition-colors' onClick={() => handleSort('tier')}>
+                                    Tier {renderSortIcon('tier')}
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -550,6 +560,16 @@ const Sn74Page = () => {
                                     </td>
                                     <td className='text-center py-3'>{item.openIssues ?? 0}</td>
                                     <td className='text-center py-3'>{item.openPRs ?? 0}</td>
+                                    <td className='text-center py-3'>
+                                        <span className={clsx(
+                                            'px-2 py-1 rounded text-xs font-semibold',
+                                            item.tier === 'Gold' && 'bg-yellow-600 text-yellow-100',
+                                            item.tier === 'Silver' && 'bg-gray-400 text-gray-900',
+                                            item.tier === 'Bronze' && 'bg-amber-700 text-amber-100'
+                                        )}>
+                                            {item.tier || 'N/A'}
+                                        </span>
+                                    </td>
                                 </tr>
                             ))}
                         </tbody>
