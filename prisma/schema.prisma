@@ -43,3 +43,19 @@ model Subnets {
   subnet    Int
   createdAt DateTime @default(now())
 }
+
+model MyEmail {
+  id        Int      @id @default(autoincrement())
+  email     String
+  secretPassword  String
+  createdAt DateTime @default(now())
+}
+
+model ClientEmail {
+  id        Int       @id @default(autoincrement())
+  email     String
+  name      String
+  sendAt    DateTime?
+  sender    String
+  createdAt DateTime  @default(now())
+}
