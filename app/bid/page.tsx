@@ -13,8 +13,8 @@ interface ValidatedData {
 }
 
 const BidPage = () => {
-    const { data: emailsData, isLoading: isLoadingEmails, error: errorEmails } = useSWR('/api/getEmails', fetcher)
-    const { data: myemailsData, isLoading: isLoadingMyemails, error: errorMyemails } = useSWR('/api/getMyEmails', fetcher)
+    const { data: emailsData } = useSWR('/api/getEmails', fetcher)
+    const { data: myemailsData } = useSWR('/api/getMyEmails', fetcher)
     
     const emails = Array.isArray(emailsData?.emails) ? emailsData.emails : (Array.isArray(emailsData) ? emailsData : [])
     const myemails = Array.isArray(myemailsData?.myemails) ? myemailsData.myemails : (Array.isArray(myemailsData) ? myemailsData : [])
@@ -47,7 +47,7 @@ const BidPage = () => {
         const lines = textareaValue.split('\n').filter(line => line.trim() !== '')
         const validated: ValidatedData[] = []
 
-        lines.forEach((line, index) => {
+        lines.forEach((line) => {
             const trimmedLine = line.trim()
             // Check if line contains a comma
             if (trimmedLine.includes(',')) {
@@ -447,7 +447,7 @@ const BidPage = () => {
                                                 return true
                                             })
                                             
-                                            return (
+    return (
                                         <tr 
                                             key={email.id || index} 
                                             className={`border-b border-slate-300 hover:bg-slate-50 ${selectedEmails.has(email.id) ? 'bg-blue-50' : ''}`}
