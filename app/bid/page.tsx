@@ -31,15 +31,6 @@ const BidPage = () => {
     const [selectedEmails, setSelectedEmails] = useState<Set<number>>(new Set())
     const [isDeleting, setIsDeleting] = useState(false)
     const [lastSelectedIndex, setLastSelectedIndex] = useState<number | null>(null)
-    // useEffect(() => {
-    //     const fetchEmails = async () => {
-    //         const response = await axios.get('/api/getEmails')
-    //         setEmails(response.data.emails)
-    //         const response2 = await axios.get('/api/getMyEmails')
-    //         setMyemails(response2.data.myemails || [])
-    //     }
-    //     fetchEmails()
-    // }, [])
     const handleValidate = () => {
         setValidateStatus(false) // Show spinner (validating)
 
